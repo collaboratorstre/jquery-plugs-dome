@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>辖区实时流量分布情况</title>
+	<link rel="stylesheet" type="text/css" href="./css/two.css">
+	<script type="text/javascript" src="./js/echarts.js"></script>
+</head>
+<body>
+    <div class="body_content">
+		<div class="layout_top"></div>             
+		<div class="layout_middle">
+	          <div class="column_left">
+	              <div class="top">
+                      <p>5分钟实时报警台</p>
+                       <div id="real_time">
+                            <table>
+                              <tbody id="time_up">
+                                   <tr><td>时间</td><td>卡点名称</td><td>报警情况</td></tr>
+                               </tbody>
+                            </table>
+                            <table style="width: 100%; height: 100%">
+                               <tbody id="time_content" style="color:#7094c6"></tbody>
+                           </table>
+                       </div>
+	              </div>
+	              <div class="bottom">
+                       <p>本市流量卡口排名<em>TOP10</em><span>(单位: 辆)</span></p>
+                        <div class="bot_runoff"><span>卡口名称</span><span>卡口流量</span><span>排名变化</span></div>
+                       <div id="flow_content">
+                          
+                       </div>
+	              </div>
+	          </div>
+	          <div class="column_center">
+                  <div class="top" id="col_centertop">
+                        <div class="center_fluxdis">今日全市过车总流量 : <span id="center_distru">1800000</span>次</div>
+                        <div id="flux_distra" style="width: 100%; height: 100%"></div>
+                  </div>
+                  <div class="bottom">
+                     <div id="times_trend" style="width: 100%;height: 100%;"></div>  
+                  </div>
+	          </div>
+	          <div class="column_right">
+                  <div class="top">
+                     <p>今日卡点流量排行<em>TOP10</em></p>
+                     <div id="flux_pm">
+                           <table>
+                              <tbody id="flux_up">
+                                   <tr><td>排名</td><td>通过卡点</td><td>方向</td><td>车道</td><td>卡点流量</td></tr>
+                               </tbody>
+                           </table>
+                             <table style="width: 100%; height: 100%">
+                               <tbody class="rankTable" id="flux_pmtab" style="color:#7094c6"></tbody>
+                           </table>
+                      </div>
+                  </div>
+                  <div class="bottom">
+                      <p>本市车流量随辖区分布<span>(单位: 次)</span></p>
+                      <div id="xiaqu_flux">
+                         
+                      </div>
+                  </div>
+	          </div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/discharge.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+</body>
+</html>

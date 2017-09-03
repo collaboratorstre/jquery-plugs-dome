@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>辖区通行机动车总量</title>
+	<link rel="stylesheet" type="text/css" href="./css/two.css">
+	<script type="text/javascript" src="./js/echarts.js"></script>
+  
+</head>
+<body>
+    <div class="body_content">
+		<div class="layout_top"></div>             
+		<div class="layout_middle">
+	          <div class="column_left">
+	          <!-- 通行机动车车辆类型分布 -->
+	              <div class="top">
+                        <p>通行机动车车辆类型分布<span>(单位:辆)</span></p>
+                        <div id="tpy_shan" style="width: 100%; height: 100%;"></div>
+	              </div>
+	              <div class="bottom">
+                       <p>通行机动车卡口排名<em>TOP10</em><span>(单位: 辆)</span></p>
+                        <div class="bot_top"><span>卡口名称</span><span>今日本卡口通行动车总数</span><span>排名变化</span></div>
+                       <div id="bay_rank">
+                          
+                       </div>
+	              </div>
+	          </div>
+	          <div class="column_center" style="margin-top: 0.3%;">
+                  <div class="top">
+                      <div id="total_distra" style="width: 100%; height: 100%"></div>
+                  </div>
+                  <div class="bottom" id="fiveyear_change">
+                        <div class="change1">最近五年驾驶人平均增长率<span id="change1_one">33%</span></div>
+                        <div class="change2">最近五年机动车平均增长率<span id="change1_two">27%</span></div>
+                       <div id="temp_change" style="width: 100%; height: 100%"></div>
+                  </div>
+	          </div>
+	          <div class="column_right">
+                  <div class="top">
+                      <p>通行机动车总量排名<em>TOP10</em></p>
+                      <div id="totel_pm">
+                           <table>
+                              <tbody id="pm_up">
+                                   <tr><td>排名</td><td>通过卡点</td><td>方向</td><td>车道</td><td>通行机动车总量</td></tr>
+                               </tbody>
+                           </table>
+                           <table style="width: 100%; height: 100%">
+                               <tbody class="rankTable" id="totel_pmtab" style="color:#7094c6"></tbody>
+                           </table>
+                      </div>
+
+                  </div>
+                  <div class="bottom">
+                      <p>本市通行机动车总量随辖区分布<span>(单位: 辆)</span></p>
+                      <div id="xiaqu_distru">
+                           
+                      </div>
+                  </div>
+	          </div>
+		</div>
+	</div>
+
+ 
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/keshihua.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+</body>
+</html>

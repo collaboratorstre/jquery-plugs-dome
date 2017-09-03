@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>辖区机动车驾驶人分布情况</title>
+	<link rel="stylesheet" type="text/css" href="./css/two.css">
+	<script type="text/javascript" src="./js/echarts.js"></script>
+</head>
+<body>
+    <div class="body_content">
+		<div class="layout_top"></div>             
+		<div class="layout_middle">
+	          <div class="column_left">
+	              <div class="top">
+                     <p>车辆类型分布<span>(单位:辆)</span></p>
+                     <div id="typ_distru" style="width: 100%; height: 100%;"></div>
+	              </div>
+	              <div class="bottom">
+                     <p>车辆状态排名<span>(单位:辆)</span></p>
+                     <div id="typ_rank"></div>
+	              </div>
+	          </div>
+	          <div class="column_center">
+                  <div class="top">
+                      <div id="dirve_distra" style="width: 100%; height: 100%"></div>
+                  </div>
+                  <div class="bottom">
+                       <div id="change_trend" style="width: 100%; height: 100%;"></div>
+                  </div>
+	          </div>
+	          <div class="column_right">
+                  <div class="top">
+                      <p>机动车号牌种类分布<span>(单位: 辆)</span></p>
+                      <div id="haopai_distru" style="width: 100%; height: 100%"></div>
+                  </div>
+                  <div class="bottom">
+                     <p>机动车保有量辖区排名<span>(单位: 辆)</span></p>
+                     <div id="xiaqu_rank">
+                        
+                     </div>
+                  </div>
+	          </div>
+		</div>
+	</div>
+<!-- 
+    <script type="text/javascript" src="./js/highcharts.js"></script>
+    <script type="text/javascript" src="./js/highcharts-3d.js"></script> -->
+  	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/dirverdistru.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+   
+</body>
+</html>
