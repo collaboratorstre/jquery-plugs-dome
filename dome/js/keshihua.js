@@ -70,6 +70,96 @@ var kakoupaiming = function(containerId,data){
 }
 
 //今日各辖区通行机动车总量分布情况
+var geoCoordMap = {
+    "牡丹区":[115.4231225000,35.2575260046],
+    "鄄城县":[115.5166712692,35.5691801963],
+    "曹县":[115.5486273308,34.8316376196],
+    "陶区":[115.5712688711,35.0799378114],
+    "单县":[116.0938209482,34.8001368920],
+    "郓城县":[115.9500457019,35.6060749361],
+    "巨野县":[116.1015347225,35.4020821605],
+    "东明县":[115.0965807297,35.2958747106],
+    "成武县":[115.8961774224,34.9583706200]
+}
+var BJData = [
+  [{name:'牡丹区'},{name:'曹县',value:30}]
+]
+var BJData2 = [
+  [{name:'牡丹区'},{name:'鄄城县',value:60}]
+]
+                
+var convertData = function (data) {  
+        var res = [];  
+        for (var i = 0; i < data.length; i++) {  
+            var dataItem = data[i];  
+            var fromCoord = geoCoordMap[dataItem[0].name];  
+            var toCoord = geoCoordMap[dataItem[1].name];  
+            if (fromCoord && toCoord) {  
+                res.push({  
+                    fromName: dataItem[0].name,  
+                    toName: dataItem[1].name,  
+                    coords: [fromCoord, toCoord]  
+                });  
+            }  
+        } 
+        return res;  
+    };  
+  // var res1 =  convertData({name:'曹县',value:30})
+  // console.log(res1);
+    var   color = ['#a6c84c', '#ffa022', '#46bee9'];
+     var series = [];  
+         series.push(
+                {
+                name:'机动车总量分布图',
+                type:'map',
+                map:'菏泽',
+                itemStyle: {
+                  normal:{
+                    color: 'red',
+                    areaColor: '#0b0c45',
+                    borderColor: '#2b6cc0'
+                  },
+                  emphasis:{
+                    areaColor: '#00a2ff'
+                  }
+                },
+                mapLocation:{
+                  y:60
+                },
+                data:[
+                      {value:8335, name:'牡丹区'},
+                      {value:7310, name:'定陶区'},
+                      {value:6234, name:'巨野县'},
+                      {value:5135, name:'曹县'},
+                      {value:7335, name:'成武县'},
+                      {value:4310, name:'单县'},
+                      {value:3234, name:'郓城县'},
+                      {value:6135, name:'鄄城县'},
+                      {value:4310, name:'东明县'}
+
+                ]
+              }
+          )
+         var array =[];
+         array.push(['牡丹区',BJData]);
+         console.log(array);
+     /* [['牡丹区',BJData]]*/array.forEach(function (item, i) {  
+          series.push(  
+          {  
+              name: item[0] + ' 客运流出量 ',  
+              type: 'lines',  
+              zlevel: 4,  
+              lineStyle: {  
+                  normal: {  
+                      color: '#b0e24b',  
+                      width: 20,  
+                      opacity: 2  
+                  }  
+              },  
+              data: convertData(item[1])  
+          });  
+         }); 
+         console.log(series);
  $.get('json/菏泽市.json', function (heZe) {
         echarts.registerMap('菏泽', heZe);
         var chart = echarts.init(document.getElementById('total_distra'));
@@ -83,6 +173,7 @@ var kakoupaiming = function(containerId,data){
                   fontSize: 13 
                 }
             },
+          
             tooltip: {
                     position: ['40%','50%'],
                     trigger: 'item',
@@ -91,6 +182,8 @@ var kakoupaiming = function(containerId,data){
                     formatter: '今日{b0}机动车通行总量<br/><span style="color: yellow;font-size: 20px;margin-left: 60px;">{c0}</span>辆'
                     // }
                 },
+                series: series
+
             // dataRange:{
             // 	min:0,
             // 	max:500,
@@ -99,38 +192,52 @@ var kakoupaiming = function(containerId,data){
             // 	calculable:true,
             // 	color:['orangered','yellow','green']
             // },
-            series:[
-            	{
-            		name:'机动车总量分布图',
-            		type:'map',
-            		map:'菏泽',
-                itemStyle: {
-                  normal:{
-                    color: 'red',
-                    areaColor: '#0b0c45',
-                    borderColor: '#2b6cc0'
-                  },
-                  emphasis:{
-                    areaColor: '#00a2ff'
-                  }
-                },
-            		mapLocation:{
-            			y:60
-            		},
-            		data:[
-                      {value:8335, name:'牡丹区'},
-                      {value:7310, name:'定陶区'},
-                      {value:6234, name:'巨野县'},
-                      {value:5135, name:'曹县'},
-                      {value:7335, name:'成武县'},
-                      {value:4310, name:'单县'},
-                      {value:3234, name:'郓城县'},
-                      {value:6135, name:'鄄城县'},
-                      {value:4310, name:'东明县'}
+            // series:[
+            // 	{
+            // 		name:'机动车总量分布图',
+            // 		type:'map',
+            // 		map:'菏泽',
+            //     itemStyle: {
+            //       normal:{
+            //         color: 'red',
+            //         areaColor: '#0b0c45',
+            //         borderColor: '#2b6cc0'
+            //       },
+            //       emphasis:{
+            //         areaColor: '#00a2ff'
+            //       }
+            //     },
+            // 		mapLocation:{
+            // 			y:60
+            // 		},
+            // 		data:[
+            //           {value:8335, name:'牡丹区'},
+            //           {value:7310, name:'定陶区'},
+            //           {value:6234, name:'巨野县'},
+            //           {value:5135, name:'曹县'},
+            //           {value:7335, name:'成武县'},
+            //           {value:4310, name:'单县'},
+            //           {value:3234, name:'郓城县'},
+            //           {value:6135, name:'鄄城县'},
+            //           {value:4310, name:'东明县'}
 
-            		]
-            	}
-            ],
+            // 		]
+            // 	}
+
+            //   ,{
+            //         name:   '牡丹区',  
+            //         type: 'lines',  
+            //         zlevel: 2,  
+            //         lineStyle: {  
+            //             normal: {  
+            //                 color: '#fe7c00 ',  
+            //                 width: 20,  
+            //                 opacity: 2  
+            //             }  
+            //         },  
+            //         data: convertData(BJData2)  
+            //   }
+            // ],
             
         };
         chart.setOption(option);

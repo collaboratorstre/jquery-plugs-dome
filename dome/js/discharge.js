@@ -30,27 +30,251 @@ var fluxpai = function(containerId,data){
 	}
 }
 //各辖区实时流量分布情况
+var geoCoordMap = {
+    "牡丹区":[115.4231225000,35.2575260046],
+    "鄄城县":[115.5166712692,35.5691801963],
+    "曹县":[115.5486273308,34.8316376196],
+    "陶区":[115.5712688711,35.0799378114],
+    "单县":[116.0938209482,34.8001368920],
+    "郓城县":[115.9500457019,35.6060749361],
+    "巨野县":[116.1015347225,35.4020821605],
+    "东明县":[115.0965807297,35.2958747106],
+    "成武县":[115.8961774224,34.9583706200]
+}
+var convertData = function (data) {
+    var res = [];
+    for (var i = 0; i < data.length; i++) {
+        var geoCoord = geoCoordMap[data[i].name];
+        if (geoCoord) {
+            res.push(geoCoord.concat(data[i].value));
+        }
+    }
+    console.log(res);
+    return res;
+};
 $.get('json/菏泽市.json', function (heZe) {
-        echarts.registerMap('菏泽', heZe);
-        var chart = echarts.init(document.getElementById('flux_distra'));
-        
-        option = {
-            title: {
-                text: '各辖区实时流量分布情况',
-                x:'center',
-                textStyle: {
-                  color: "#2c83e0",
-                  fontSize: 13 
+    echarts.registerMap('菏泽', heZe);
+    var chart = echarts.init(document.getElementById('flux_distra'));
+
+    option = {
+        title: {
+            text: '本市各辖区拥堵延迟指数',
+            x:'center',
+            textStyle: {
+                color: "#2c83e0",
+                fontSize: 13,
+                fontFamily: 'Microsoft YaHei'
+            },
+
+        },
+        tooltip: {
+            trigger: 'item',
+            textStyle:{
+                fontFamily: 'Microsoft YaHei'
+            }
+        },
+
+        visualMap: {
+            type: 'continuous',
+            min: 0,
+            max: 5,
+            text: ['严重拥堵','畅通'],
+            // inRange: {
+            //     color: ['#d94e5d','#eac736','#50a3ba'].reverse()
+            // },
+            textStyle: {
+                color: '#fff'
+            },
+
+            itemWidth: 11,
+            itemHeight: 117,
+            realtime: false,
+            // calculable: true,
+            color: ['#fe150b','#ffee01','#35ff00']
+        },
+               geo: [
+            {
+                map: '菏泽',
+                label: {
+                    emphasis: {
+                        show: false
+                    }
+                },
+                roam: false,
+                itemStyle: {
+                    normal: {
+                        areaColor: '#0b0c45',
+                        borderColor: '#2b6cbe',
+                        borderWidth:3,
+                        shadowColor: 'rgba(45,110,192,2)',
+                        shadowBlur: 40
+                    },
+                    emphasis: {
+                        areaColor: '#0b0c45'
+                    }
                 }
             },
-            tooltip: {
-                    position: ['40%','50%'],
-                    trigger: 'item',
-                    // formatter: function(){
-                    //     return '每年小型车车辆总数<br><span>'+234523+'</span>辆';
-                    formatter: '今日{b0}机动车通行总量<br/><span style="color: yellow;">857601</span>辆'
-                    // }
+            {
+                map: '菏泽',
+                label: {
+                    emphasis: {
+                        show: false
+                    }
                 },
+                roam: false,
+                itemStyle: {
+                    normal: {
+                        areaColor: '#0b0c45',
+                        borderColor: '#2b6cbe',
+                        borderWidth:1,
+                        // shadowColor: 'rgba(45,110,192,2)',
+                        // shadowBlur: 30,
+                    },
+                    emphasis: {
+                        areaColor: '#0b0c45'
+                    }
+                }
+            }
+        ],
+        series: [
+            {
+                name: '菏泽',
+                type: 'heatmap',
+                textStyle: {
+                    color: 'white',
+                    fontFamily: 'Microsoft YaHei'
+
+                },
+                zlevel: 1,
+                coordinateSystem: 'geo',
+                data: convertData([
+                    {name: "牡丹区", value: 2.8},
+                    {name: "鄄城县", value: 2.1},
+                    {name: "曹县", value: 1.4},
+                    {name: "陶区", value: 2.6},
+                    {name: "单县", value: 3.5},
+                    {name: "郓城县", value: 4},
+                    {name: "巨野县", value: 2.6},
+                    {name: "东明县", value: 4.5},
+                    {name: "成武县", value: 1.6}
+                ])
+            },
+              {
+               name:'机动车总量分布图',
+               type:'map',
+               map:'菏泽',
+                zlevel: 3,
+                label: {
+                  normal:{
+                    show: false
+                  },
+                  emphasis:{
+                    show: true,
+                    
+                  }
+                },
+                itemStyle: {
+                  normal:{
+                 
+                    areaColor: 'transparent',
+                    borderColor: 'transparent'
+                  },
+                 
+                  emphasis:{
+                    areaColor: '#00a2ff',
+                    borderColor: 'red',
+                  }
+                 
+                },
+               mapLocation:{
+                 y:60
+               },
+               data:[
+            
+
+               ]
+             }
+        ],
+    };
+    chart.setOption(option);
+});
+
+
+// $.get('json/菏泽市.json', function (heZe) {
+//         echarts.registerMap('菏泽', heZe);
+//         var chart = echarts.init(document.getElementById('flux_distra'));
+        
+//         option = {
+//                 // backgroundColor: '#0b0c45',
+//         tooltip : {
+//             trigger: 'item',
+//              formatter: '今日{b0}机动车通行总量<br/><span style="color: yellow;">857601</span>辆',
+//              alwaysShowContent: true
+//         },
+//         geo: [
+//             {
+//                 map: '菏泽',
+//                 label: {
+//                     emphasis: {
+//                         show: false
+//                     }
+//                 },
+//                 roam: false,
+//                 itemStyle: {
+//                     normal: {
+//                         areaColor: '#0b0c45',
+//                         borderColor: '#2b6cbe',
+//                         borderWidth:3,
+//                         shadowColor: 'rgba(45,110,192,2)',
+//                         shadowBlur: 40
+//                     },
+//                     emphasis: {
+//                         areaColor: '#0b0c45'
+//                     }
+//                 }
+//             },
+//             {
+//                 map: '菏泽',
+//                 label: {
+//                     emphasis: {
+//                         show: false
+//                     }
+//                 },
+//                 roam: false,
+//                 itemStyle: {
+//                     normal: {
+//                         areaColor: '#0b0c45',
+//                         borderColor: '#2b6cbe',
+//                         borderWidth:1,
+//                         // shadowColor: 'rgba(45,110,192,2)',
+//                         // shadowBlur: 30,
+//                     },
+//                     emphasis: {
+//                         areaColor: '#0b0c45'
+//                     }
+//                 }
+//             }
+//         ],
+
+
+
+
+            // title: {
+            //     text: '各辖区实时流量分布情况',
+            //     x:'center',
+            //     textStyle: {
+            //       color: "#2c83e0",
+            //       fontSize: 13 
+            //     }
+            // },
+            // tooltip: {
+            //         position: ['40%','50%'],
+            //         trigger: 'item',
+            //         // formatter: function(){
+            //         //     return '每年小型车车辆总数<br><span>'+234523+'</span>辆';
+            //         formatter: '今日{b0}机动车通行总量<br/><span style="color: yellow;">857601</span>辆'
+            //         // }
+            //     },
             // dataRange:{
             // 	min:0,
             // 	max:500,
@@ -59,35 +283,47 @@ $.get('json/菏泽市.json', function (heZe) {
             // 	calculable:true,
             // 	color:['orangered','yellow','green']
             // },
-            series:[
-            	{
-            		name:'机动车总量分布图',
-            		type:'map',
-            		map:'菏泽',
-                itemStyle: {
-                  normal:{
+          
+
+
+//             series:[
+//             	{
+//             		name:'机动车总量分布图',
+//             		type:'map',
+//             		map:'菏泽',
+//                 zlevel: 3,
+//                 itemStyle: {
+//                   normal:{
                  
-                    areaColor: '#0b0c45',
-                    borderColor: '#2b6cc0'
-                  },
-                  emphasis:{
-                     color: 'blue',
-                    areaColor: 'refreshData'
-                  }
-                },
-            		mapLocation:{
-            			y:60
-            		},
-            		data:[
+//                     areaColor: '#0b0c45',
+//                     borderColor: '#2b6cc0'
+//                   },
+//                   emphasis:{
+//                      color: 'blue',
+//                     areaColor: 'refreshData'
+//                   }
+//                 },
+//             		mapLocation:{
+//             			y:60
+//             		},
+//             		data:[
+//                     {
+//                       name: '牡丹区',
+//                       selected: true,
+//                       tooltip: {
+//                         trigger: 'item',
+//                         formatter: '今日{b0}机动车通行总量<br/><span style="color: yellow;">888881</span>辆'
+//                       }
 
+//                     }
 
-            		]
-            	}
-            ],
+//             		]
+//             	}
+//             ],
             
-        };
-        chart.setOption(option);
-});
+//         };
+//         chart.setOption(option);
+// });
 
 //本市流量随时间变化趋势
 echarts.init(document.getElementById("times_trend")).setOption({
