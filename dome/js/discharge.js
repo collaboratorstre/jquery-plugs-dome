@@ -49,7 +49,7 @@ var convertData = function (data) {
             res.push(geoCoord.concat(data[i].value));
         }
     }
-    console.log(res);
+    // console.log(res);
     return res;
 };
 $.get('json/菏泽市.json', function (heZe) {
@@ -68,6 +68,7 @@ $.get('json/菏泽市.json', function (heZe) {
 
         },
         tooltip: {
+            show: false,
             trigger: 'item',
             textStyle:{
                 fontFamily: 'Microsoft YaHei'
@@ -151,7 +152,7 @@ $.get('json/菏泽市.json', function (heZe) {
                     {name: "牡丹区", value: 2.8},
                     {name: "鄄城县", value: 2.1},
                     {name: "曹县", value: 1.4},
-                    {name: "陶区", value: 2.6},
+                    {name: "定陶区", value: 2.6},
                     {name: "单县", value: 3.5},
                     {name: "郓城县", value: 4},
                     {name: "巨野县", value: 2.6},
@@ -190,13 +191,35 @@ $.get('json/菏泽市.json', function (heZe) {
                  y:60
                },
                data:[
-            
-
                ]
              }
         ],
     };
     chart.setOption(option);
+    chart.on('mouseover',function(params){
+       $.get("json/tongxingye.json",function(data){
+        for(var i=0;i<data.yczspm.length;i++) {
+          // console.log(data.yczspm[0]);
+          if(data.yczspm[i].name == params.name){
+             $("#motaikuang").html(params.name+'当前拥堵指数<br/><div style="font-size:33px; color: yellow;padding-left: 30%">'+data.yczspm[i].indexs+'</div>');
+          }
+        }
+         $("#motaikuang").show().css({
+         background:"grey",
+         borderRadius: '8px',
+         color: 'white'
+         })
+       })
+       
+    })
+    chart.on('mouseout',function(params){
+      // console.log(params.name)
+      // alert(params.name+params.value);
+       $("#motaikuang").hide()
+       $("#motaikuang").html("")
+      
+    })
+    
 });
 
 
@@ -579,11 +602,18 @@ echarts.init(document.getElementById("times_trend")).setOption({
      //    delayindex("index_content",data.yczspm)
     	    });
 };
-console.log($);
+// console.log($);
 
 $(document).ready(function(){
     refreshData();
+
+
     // setInterval(function(){
     //     refreshData();
     // },30*1000);
 });
+    // console.log($("#flux_pmtab").html())
+
+    if ( $("#flux_pmtab>tr").length > 0 ) { 
+    $("#flux_pmtab>tr").text("hi"); 
+ }
