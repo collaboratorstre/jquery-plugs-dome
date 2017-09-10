@@ -96,13 +96,16 @@ $.get('json/菏泽市.json', function (heZe) {
                 map:'菏泽',
                 itemStyle: {
                   normal:{
-                    color: 'red',
                     areaColor: '#0b0c45',
                     borderColor: '#2b6cc0'
                   },
                   emphasis:{
+                    color: 'blue',
                     areaColor: '#00a2ff'
                   }
+                },
+                label:{
+                  
                 },
                 mapLocation:{
                   y:60
@@ -116,6 +119,13 @@ $.get('json/菏泽市.json', function (heZe) {
             
         };
         chart.setOption(option);
+        chart.on("mouseover", function (params){   
+            
+                chart.dispatchAction({  
+                type: 'downplay'  
+                });  
+             
+        }); 
 });
 
 //本市机动车和驾驶人最近5年变化趋势
