@@ -357,7 +357,6 @@ var geoCoordMap = {
 
  //本周拥堵延迟指数排名	
 var congestindex = function(containerId,data){
-  console.log("datatatatat",data)
         $("#"+containerId).empty();
           if(data){
             $.each(data,function(i,n){

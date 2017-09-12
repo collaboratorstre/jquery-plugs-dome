@@ -52,7 +52,7 @@ var convertData = function (data) {
     // console.log(res);
     return res;
 };
-$.get('json/菏泽市.json', function (heZe) {
+$.get('json/hezeshi.json', function (heZe) {
     echarts.registerMap('菏泽', heZe);
     var chart = echarts.init(document.getElementById('flux_distra'));
 
@@ -197,8 +197,11 @@ $.get('json/菏泽市.json', function (heZe) {
     };
     chart.setOption(option);
     chart.on('mouseover',function(params){
+      // console.log(params);
+      console.log(params.name);
        $.get("json/tongxingye.json",function(data){
         for(var i=0;i<data.yczspm.length;i++) {
+          // console.log(params.name);
           // console.log(data.yczspm[0]);
           if(data.yczspm[i].name == params.name){
              $("#motaikuang").html(params.name+'当前拥堵指数<br/><div style="font-size:33px; color: yellow;padding-left: 30%">'+data.yczspm[i].indexs+'</div>');
@@ -595,7 +598,8 @@ echarts.init(document.getElementById("times_trend")).setOption({
          realalarm('time_content',data.realpolice);
          fluxpai('flow_content',data.kopm);
          todayflux('flux_pmtab',data.zlph);
-         xiaquflow('xiaqu_flux',data.zlxqfb)
+         xiaquflow('xiaqu_flux',data.zlxqfb);
+
 
     	// traveltime('hour_content',data.lxpm);
     	// congestindex('exponent_content',data.ydzs);

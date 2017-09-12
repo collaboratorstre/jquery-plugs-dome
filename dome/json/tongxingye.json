@@ -116,5 +116,13 @@
      {"name":"鄄城县","indexs": "2.3"},
      {"name":"东明县","indexs": "3.2"}
   ],
-  "count":12334
+  "count":12334,
+  "regionjam": [
+     {"jamindex": 1.226,"regionname": "牡丹区","trgionno":"371702"},
+     {"jamindex": 1.7626,"regionname": "曹县","trgionno":"371702"},
+     {"jamindex": 1.626,"regionname": "定陶区","trgionno":"371702"},
+     {"jamindex": 1.26,"regionname": "单县","trgionno":"371702"},
+     {"jamindex": 1.26,"regionname": "成武县","trgionno":"371702"},
+     {"jamindex": 1.26,"regionname": "东明县","trgionno":"371702"}
+  ]
 }

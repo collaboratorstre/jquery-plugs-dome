@@ -1,3 +1,6 @@
+// $.get('json/hezeshi.json', function (heZe) {
+//     echarts.registerMap('菏泽', heZe);
+// });
 //通行机动车车辆类型分布
 echarts.init(document.getElementById("tpy_shan")).setOption({
           tooltip: {
@@ -81,52 +84,12 @@ var geoCoordMap = {
     "东明县":[115.0965807297,35.2958747106],
     "成武县":[115.8961774224,34.9583706200]
 }
-var BJData = [
-  [{name:'牡丹区'},{name:'曹县',value:30}]
-]
-var BJData2 = [
-  [{name:'牡丹区'},{name:'鄄城县',value:60}]
-]
-                
-var convertData = function (data) {  
-        var res = [];  
-        for (var i = 0; i < data.length; i++) {  
-            var dataItem = data[i];  
-            var fromCoord = geoCoordMap[dataItem[0].name];  
-            var toCoord = geoCoordMap[dataItem[1].name];  
-            if (fromCoord && toCoord) {  
-                res.push({  
-                    fromName: dataItem[0].name,  
-                    toName: dataItem[1].name,  
-                    coords: [fromCoord, toCoord]  
-                });  
-            }  
-        } 
-        return res;  
-    };  
-  // var res1 =  convertData({name:'曹县',value:30})
-  // console.log(res1);
-    var   color = ['#a6c84c', '#ffa022', '#46bee9'];
-     var series = [];  
-         series.push(
-                {
-                name:'机动车总量分布图',
-                type:'map',
-                map:'菏泽',
-                itemStyle: {
-                  normal:{
-                    color: 'red',
-                    areaColor: '#0b0c45',
-                    borderColor: '#2b6cc0'
-                  },
-                  emphasis:{
-                    areaColor: '#00a2ff'
-                  }
-                },
-                mapLocation:{
-                  y:60
-                },
-                data:[
+     
+ $.get('json/hezeshi.json', function (heZe) {
+        echarts.registerMap('菏泽', heZe);
+        var chart = echarts.init(document.getElementById('total_distra'));
+
+        var dataShow = [
                       {value:8335, name:'牡丹区'},
                       {value:7310, name:'定陶区'},
                       {value:6234, name:'巨野县'},
@@ -136,33 +99,7 @@ var convertData = function (data) {
                       {value:3234, name:'郓城县'},
                       {value:6135, name:'鄄城县'},
                       {value:4310, name:'东明县'}
-
-                ]
-              }
-          )
-         var array =[];
-         array.push(['牡丹区',BJData]);
-         console.log(array);
-     /* [['牡丹区',BJData]]*/array.forEach(function (item, i) {  
-          series.push(  
-          {  
-              name: item[0] + ' 客运流出量 ',  
-              type: 'lines',  
-              zlevel: 4,  
-              lineStyle: {  
-                  normal: {  
-                      color: '#b0e24b',  
-                      width: 20,  
-                      opacity: 2  
-                  }  
-              },  
-              data: convertData(item[1])  
-          });  
-         }); 
-         console.log(series);
- $.get('json/菏泽市.json', function (heZe) {
-        echarts.registerMap('菏泽', heZe);
-        var chart = echarts.init(document.getElementById('total_distra'));
+                       ]
         
         option = {
             title: {
@@ -173,7 +110,12 @@ var convertData = function (data) {
                   fontSize: 13 
                 }
             },
-          
+            grid: {
+              left: '3%',
+              right: '4%',
+              bottom: '3%',
+              top: '10%'
+            },
             tooltip: {
                     position: ['40%','50%'],
                     trigger: 'item',
@@ -182,65 +124,180 @@ var convertData = function (data) {
                     formatter: '今日{b0}机动车通行总量<br/><span style="color: yellow;font-size: 20px;margin-left: 60px;">{c0}</span>辆'
                     // }
                 },
-                series: series
-
-            // dataRange:{
-            // 	min:0,
-            // 	max:500,
-            // 	text:['高','低'],
-            // 	realtime:true,
-            // 	calculable:true,
-            // 	color:['orangered','yellow','green']
-            // },
-            // series:[
-            // 	{
-            // 		name:'机动车总量分布图',
-            // 		type:'map',
-            // 		map:'菏泽',
-            //     itemStyle: {
-            //       normal:{
-            //         color: 'red',
-            //         areaColor: '#0b0c45',
-            //         borderColor: '#2b6cc0'
-            //       },
-            //       emphasis:{
-            //         areaColor: '#00a2ff'
-            //       }
-            //     },
-            // 		mapLocation:{
-            // 			y:60
-            // 		},
-            // 		data:[
-            //           {value:8335, name:'牡丹区'},
-            //           {value:7310, name:'定陶区'},
-            //           {value:6234, name:'巨野县'},
-            //           {value:5135, name:'曹县'},
-            //           {value:7335, name:'成武县'},
-            //           {value:4310, name:'单县'},
-            //           {value:3234, name:'郓城县'},
-            //           {value:6135, name:'鄄城县'},
-            //           {value:4310, name:'东明县'}
-
-            // 		]
-            // 	}
-
-            //   ,{
-            //         name:   '牡丹区',  
-            //         type: 'lines',  
-            //         zlevel: 2,  
-            //         lineStyle: {  
-            //             normal: {  
-            //                 color: '#fe7c00 ',  
-            //                 width: 20,  
-            //                 opacity: 2  
-            //             }  
-            //         },  
-            //         data: convertData(BJData2)  
-            //   }
-            // ],
+            geo: [
+                   {
+                    type: 'map',
+                    map: '菏泽',
+                    label: {
+                      emphasis: {
+                        show : true,
+                        color: 'transparent'
+                      }
+                    },
+                    roam: false,
+                    itemStyle: {
+                      normal: {
+                        areaColor: '#0b0c45',
+                        borderColor: '#2b5cbe',
+                        borderWidth: 3,
+                        shadowColor: 'rgba(45,110,192,2)',
+                        shadowBlur: 40
+                      },
+                      emphasis: {
+                        areaColor: '#0b0c45'
+                      }
+                     }
+                    },
+                    {
+                      type: 'map',
+                      map: '菏泽',
+                      itemStyle: {
+                        normal: {
+                          color: 'blue',
+                          areaColor: '#0b0c45',
+                          borderColor: '#2b6cc0'
+                        },
+                        emphasis: {
+                          color: 'blue',
+                          areaColor: 'transparent'
+                        }
+                      },
+                      label: {
+                        normal: {
+                          fontFamily: 'Microsoft YaHei'
+                        },
+                        emphasis: {
+                          fontFamily: 'Microsoft YaHei'
+                        }
+                      }
+                    }
+            ],
+            series: [
+                  {
+                      name: '机动车总量分布图',
+                      map: '菏泽',
+                      type: 'map',
+                      itemStyle: {
+                        normal: {
+                          color: 'red',
+                        areaColor: '#0b0c45',
+                        borderColor: '#2b6cc0'
+                      },
+                      emphasis: {
+                        color: 'transparent',
+                        areaColor: '#00a2ff'
+                      }
+                     },
+                     label:{
+                      normal:{
+                        color: 'blue',
+                        fontFamily: 'Microsoft YaHei'
+                      },
+                      emphasis: {
+                        color: 'blue',
+                        fontFamily: 'Microsoft YaHei'
+                      }
+                     },
+                     mapLocation:{
+                      y: 60
+                     },
+                   
+                    data: dataShow
+                  }
+              ]       
             
-        };
+        }
         chart.setOption(option);
+        chart.on("mouseover", function (params){   
+                
+                chart.dispatchAction({  
+                type: 'downplay'  
+                });  
+             
+        });
+
+
+        var options = {
+          xAxis: [],
+          yAxis: [],
+          grid: [],
+          series: []
+        }
+
+        $.each(dataShow,function(idx,dataItem){
+          if(!(dataItem.name in  geoCoordMap))return;
+          var geoCoord = geoCoordMap[dataItem.name];
+          var coord = chart.convertToPixel('geo',geoCoord);
+          idx += '';
+
+          options.xAxis.push({
+            id: idx,
+            gridId: idx,
+            type: 'category',
+            nameStyle: {
+              color: 'white',
+              fontSize: 12
+            },
+            nameTextStyle: {
+              color: 'white'
+            },
+            nameLocation: 'middle',
+            mameGap: 3,
+            splitLine: {
+              show: false
+            },
+            axisTick: {
+              show: false
+            },
+            axisLabel: {
+              show: false
+            },
+            axisLine: {
+              show: false,
+              lineStyle: {
+                color: '#bbb'
+              }
+            },
+            data: [dataItem.name]
+          });
+
+         options.yAxis.push({
+          id: idx,
+          gridId: idx,
+          show: false
+         });
+
+         options.grid.push({
+          id: idx,
+          width: 30,
+          height: 50,
+          left: coord[0] - 15,
+          top: coord[1] - 35
+         });
+
+         options.series.push({
+          name: dataItem.name,
+          type: 'bar',
+          stack: 'bar' + idx,
+          xAxisId: idx,
+          yAxisId: idx,
+          barWidth: 12,
+          itemStyle: {
+            normal: {
+              color: 'rgba(254,0,255,0.5)'
+            }
+          },
+          data: [dataItem.value]
+         })
+        })
+        chart.setOption(options);
+          chart.on("mouseover", function (params){   
+                
+                chart.dispatchAction({  
+                type: 'downplay'  
+                });  
+             
+        });
 });
 
 //今日本市通行机动车随时间变化趋势

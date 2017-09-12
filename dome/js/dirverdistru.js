@@ -60,7 +60,7 @@
   }
 }
 //本市各辖区机动车驾驶人分布情况
-$.get('json/菏泽市.json', function (heZe) {
+$.get('json/hezeshi.json', function (heZe) {
         echarts.registerMap('菏泽', heZe);
         var chart = echarts.init(document.getElementById('dirve_distra'));
         
@@ -74,6 +74,7 @@ $.get('json/菏泽市.json', function (heZe) {
                 }
             },
             tooltip: {
+                    show: false,
                     position: ['40%','50%'],
                     trigger: 'item',
                     // formatter: function(){
@@ -119,13 +120,29 @@ $.get('json/菏泽市.json', function (heZe) {
             
         };
         chart.setOption(option);
-        chart.on("mouseover", function (params){   
-            
-                chart.dispatchAction({  
-                type: 'downplay'  
-                });  
-             
-        }); 
+        chart.on('mouseover',function(params){
+            $.get("json/tongxingye.json",function(data){
+                for(var i=0;i<data.regionjam.length;i++) {
+                            
+                  if(data.regionjam[i].regionname == params.data.name){
+                         $("#motaikuang").html(data.regionjam[i].regionname+'当前拥堵指数<br/><div style="font-size:33px; color: yellow;padding-left: 30%">'+data.regionjam[i].jamindex+'</div>');
+                                 }   
+
+                     }
+
+                })
+           $("#motaikuang").show().css({
+                    background:"grey",
+                    borderRadius: '8px',
+                    color: 'white'
+                  })
+               
+               })
+         chart.on('mouseout',function(params){
+       $("#motaikuang").hide()
+       $("#motaikuang").html("")
+      
+    })
 });
 
 //本市机动车和驾驶人最近5年变化趋势
@@ -443,7 +460,23 @@ echarts.init(document.getElementById("change_trend")).setOption({
     $("#"+containerId).html("<span>暂时没有数据</span>")
   }
 }
+// chart.on('mouseover',function(params){
+// $.get("json/tongxingye.json",function(data){
+//   console.log(data);
+//       $.each(data.regionjam,function(i,n){
+//                     if(n.regionname == '牡丹区'){
+//                         $("#motaikuang").html(n.regionname+'当前拥堵指数<br/><div style="font-size:33px; color: yellow;padding-left: 30%">'+n.jamindex+'</div>');
+//                     }
+//                     if(n.regionname == '曹县'){
+//                         $("#motaikuang").html(n.regionname+'当前拥堵指数<br/><div style="font-size:33px; color: yellow;padding-left: 30%">'+n.jamindex+'</div>');
+//                     }
+//                     if(n.regionname == '定陶区'){
+//                         $("#motaikuang").html(n.regionname+'当前拥堵指数<br/><div style="font-size:33px; color: yellow;padding-left: 30%">'+n.jamindex+'</div>');
+//                     }
+//                 })
 
+//       })
+//    })
  //数据统一处理
  var refreshData = function(){
     $.get("json/tongxingye.json",function(data){
