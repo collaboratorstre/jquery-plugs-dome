@@ -88,6 +88,7 @@ var geoCoordMap = {
  $.get('json/hezeshi.json', function (heZe) {
         echarts.registerMap('菏泽', heZe);
         var chart = echarts.init(document.getElementById('total_distra'));
+         
 
         var dataShow = [
                       {value:8335, name:'牡丹区'},
@@ -208,13 +209,7 @@ var geoCoordMap = {
             
         }
         chart.setOption(option);
-        chart.on("mouseover", function (params){   
-                
-                chart.dispatchAction({  
-                type: 'downplay'  
-                });  
-             
-        });
+      
 
 
         var options = {

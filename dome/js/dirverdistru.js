@@ -120,6 +120,13 @@ $.get('json/hezeshi.json', function (heZe) {
             
         };
         chart.setOption(option);
+        //   chart.on("mouseover", function (params){   
+                
+        //         chart.dispatchAction({  
+        //         type: 'downplay'  
+        //         });  
+             
+        // });
         chart.on('mouseover',function(params){
             $.get("json/tongxingye.json",function(data){
                 for(var i=0;i<data.regionjam.length;i++) {
