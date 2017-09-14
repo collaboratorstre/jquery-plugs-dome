@@ -48,13 +48,23 @@
           font-size: 13px;
         }
         .amap-icon img{
-          width: 19px !important; height: 33px !important; top: 0px !important; left: 0px !important;
+          width: 16px !important;
+           height: 21px !important; 
+           top: 1px !important; 
+           left: 0px !important;
+        }
+        #options_place{
+          left: 10px;
+          bottom: 10px;
+        }
+        .amap-info div:last-of-type{
+          z-index: 101;
         }
      </style>
 </head>
 <body>
  <div id="column_center" style="position: relative;">
-    <div id="options_place" >
+    <div id="options_place" style="position: absolute;">
        <select name="" id="sle" >
           <option value="">请选择辖区</option>
           <option value="曹县">曹县</option>
