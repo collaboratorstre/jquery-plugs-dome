@@ -17,7 +17,7 @@
  </style>
 <body>
      <div style="height: 550px"></div>
-	 <div id="bottom_left" style="width: 50%;height: 70px;">
+	 <div id="bottom_left" style="width: 100%;height: 70px;">
          
 	 </div>
 
@@ -35,10 +35,15 @@
                     tooltip : {
                         trigger: 'axis',
                         formatter:  function(params){
-                              // console.log(params);
-                              return data[0].name + '<br>机动车数量 : <br>'+params[0].data + '辆';
+                              console.log(params);
+                              console.log(data);
+                              return data[params[0].dataIndex].name + '<br>机动车数量 : <br>'+params[0].data + '辆';
+                              // return '机动车数量 : <br>'+params[0].data + '辆';
                         
                     },
+                        // formatter: function(){
+                          
+                        // },
                         axisPointer : {            // 坐标轴指示器，坐标轴触发有效
                             type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
                         }
@@ -61,8 +66,33 @@
                             axisLabel : {
                                 // rotate: -10,
                                 // color:['#00b8d3'],
-                                interval:0
+                                interval:0,
+                                // formatter : function(params){
+                                //     var newParamsName = "";
+                                //     var paramsNameNumber = params.length;
+                                //     var provideNumber = 6;
+                                //     var rowNumber = Math.ceil(paramsNameNumber / provideNumber);
+                                //     if (paramsNameNumber > provideNumber) {
+                                //         for (var p = 0; p < rowNumber; p++) {
+                                //             var tempStr = "";
+                                //             var start = p * provideNumber;
+                                //             var end = start + provideNumber;
+                                //             if (p == rowNumber - 1) {
+                                //                 tempStr = params.substring(start, paramsNameNumber);
+                                //             } else {
+                                //                 tempStr = params.substring(start, end) + "\n";
+                                //             }
+                                //             newParamsName += tempStr;
+                                //         }
+
+                                //     } else {
+                                //         newParamsName = params;
+                                //     }
+                                //     return newParamsName
+                                // }
+
                             },
+                            
                             nameTestStyle: {
                                 fontSize: 3
                             }
@@ -88,14 +118,15 @@
     };
 
     $.each(data,function(i,n) {
-    	console.log(data);
-    	console.log(n);
-           arr_o.push((n.name).substr(0,4)+'...') ;
+    	// console.log(data);
+    	// console.log(n);
+           arr_o.push((n.name).substr(3,6)+'...') ;
+           // arr_o.push(n.name);
            arr_t.push (n.value);
 
     });
-    console.log(arr_t);
-    console.log(arr_o);
+    // console.log(arr_t);
+    // console.log(arr_o);
      if(data){
          var x = {
              value: '',
