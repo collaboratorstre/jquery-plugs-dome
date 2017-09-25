@@ -147,10 +147,54 @@
             "value":820
         }
     ],
-    "pcm": {
-    "controller": null,
-    "viceController": null,
-    "policyForceList": [
+   "impCarType":[
+        {
+            "name":"大型公路客运",
+            "value":1159
+        },
+        {
+            "name":"危化品车",
+            "value":583
+        },
+        {
+            "name":"大型旅游客运",
+            "value":58
+        },
+        {
+            "name":"渣土车",
+            "value":0
+        },
+        {
+            "name":"校车",
+            "value":0
+        }
+    ],
+    "impDrivinglicenseType":[
+        {
+            "name":"大型公路客运",
+            "value":4
+        },
+        {
+            "name":"危化品车",
+            "value":0
+        },
+        {
+            "name":"大型旅游客运",
+            "value":0
+        },
+        {
+            "name":"渣土车",
+            "value":0
+        },
+        {
+            "name":"校车",
+            "value":0
+        }
+    ],
+     "pcm": {
+       "controller": null,
+        "viceController": null,
+         "policyForceList": [
       {
         "regionNo": "371700000000",
         "regionName": "菏泽交警支队",
@@ -186,5 +230,5 @@
         "onlineAmount": 0
       }
     ]
-  },
+  }
 }

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>柱状图</title>
+	<style>
+       #name_box{
+       	width: 300px;
+       	height: 300px;
+       }
+	</style>
+
+	<script type="text/javascript" src="../../js/echarts.js"></script>
+</head>
+<body>
+	
+	<div id="name_box">
+        <div id="name_content" style="width: 100%; height: 100%"></div>
+	</div>
+
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript">
+       
+      //柱状图
+      var car_location = function(containerId,data){
+	      $("#"+containerId).empty();
+          console.log(data)
+	      var location_chart = echarts.init(document.getElementById(containerId));
+	       
+	      var car_model = [];
+	      var car_number = [];
+	      var dirver_number = [];
+
+	      $.each(data.impCarType,function(i,n){
+	        car_model.push(n.name);
+	        car_number.push(n.value);
+	      });
+	    $.each(data.impDrivinglicenseType,function(i,n){
+	        dirver_number.push(n.value);
+	    });
+
+      var location_option = {
+                    // title: {
+                    //       text: '单位 : 辆',
+                    //       textStyle:{
+                                
+                    //             color: 'white',
+                    //             fontSize: 14
+                    //               }
+                    //           },
+                    color: ['#febe14', '#287cdc'],
+                    tooltip : {
+                        trigger: 'axis',
+                        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                        }
+                    },
+                    grid: {
+                        left: '2%',
+                        right: '10%',
+                        bottom: '2%',
+                        top: '15%',
+                        containLabel: true
+                    },
+                    legend: {
+                        
+                        data: ['机动车(辆)','驾驶人(人)'],
+                        // textStyle:{
+                        //     color: '#fff'    //设置字体颜色抬头
+                        // }
+                    },
+                    calcuable: true,
+                    xAxis : [
+                        {
+                            type : 'category',
+                            data : car_model,  
+                            axisTick: {
+                                show: false
+                            },
+                            axisLabel : {
+                                interval:0,   //把横轴上的内容都显示出来
+                                rotate: 10,  //设置字体的倾斜
+                                show: true,
+                                // textStyle: {
+                                //    color: '#fff'  //横轴字体颜色
+                                // }
+                            },
+                            nameTestStyle: {
+                                fontSize: 8       //设置字体大小
+                            }
+                        }
+                    ],
+                    yAxis : [
+                       {
+                        show : true,
+                        type : 'value',
+                        splitLine:{        //y轴分割线
+                            lineStyle:{
+                                color: 'red',
+                                type: 'solid'
+                            }
+                        }
+                       }
+                    ],
+                    //设置双柱状图
+                    series : [
+                        {
+                            name:'机动车(辆)',
+                            type:'bar',
+                            barWidth: '20%',
+                            data:car_number
+                        },
+                        {
+                            name:'驾驶人(人)',
+                            type:'bar',
+                            barWidth: '20%',
+                            data:dirver_number
+                        }
+                    ]
+        };
+       location_chart.setOption(location_option);
+      
+    }
+     
+
+
+       //数据的统一处理
+       var refreshData = function(){
+       	$.get("../json/tongxingye.json",function(data){
+             
+             car_location('name_content',data);
+       	})
+       }
+       $(document).ready(function(){
+       	refreshData();
+       	setInterval(refreshData,60*1000);
+       })
+	</script>
+</body>
+</html>

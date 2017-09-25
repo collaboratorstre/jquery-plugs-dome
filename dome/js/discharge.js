@@ -34,7 +34,7 @@ var geoCoordMap = {
     "牡丹区":[115.4231225000,35.2575260046],
     "鄄城县":[115.5166712692,35.5691801963],
     "曹县":[115.5486273308,34.8316376196],
-    "陶区":[115.5712688711,35.0799378114],
+    "定陶区":[115.5712688711,35.0799378114],
     "单县":[116.0938209482,34.8001368920],
     "郓城县":[115.9500457019,35.6060749361],
     "巨野县":[116.1015347225,35.4020821605],
@@ -52,9 +52,27 @@ var convertData = function (data) {
     // console.log(res);
     return res;
 };
+
+$.get("json/tongxingye.json",function(data1){
+        console.log(data1);
+    
 $.get('json/hezeshi.json', function (heZe) {
     echarts.registerMap('菏泽', heZe);
     var chart = echarts.init(document.getElementById('flux_distra'));
+    var arr1 = [];
+
+    $.each(data1.regionjam,function(i,n){
+         var obj = {};
+         obj.name = n.regionname;
+         obj.value = n.jamindex;
+         arr1.push(obj)
+
+        // arr1.push('{name:"' + n.regionname + '",value:' + n.jamindex + '}');
+    })
+    console.log(arr1)
+     
+    // arr1[0].replace(/\"/g, );
+     console.log(arr1);
 
     option = {
         title: {
@@ -148,17 +166,7 @@ $.get('json/hezeshi.json', function (heZe) {
                 },
                 zlevel: 1,
                 coordinateSystem: 'geo',
-                data: convertData([
-                    {name: "牡丹区", value: 2.8},
-                    {name: "鄄城县", value: 2.1},
-                    {name: "曹县", value: 1.4},
-                    {name: "定陶区", value: 2.6},
-                    {name: "单县", value: 3.5},
-                    {name: "郓城县", value: 4},
-                    {name: "巨野县", value: 2.6},
-                    {name: "东明县", value: 4.5},
-                    {name: "成武县", value: 1.6}
-                ])
+                data: convertData(arr1)
             },
               {
                name:'机动车总量分布图',
@@ -224,7 +232,7 @@ $.get('json/hezeshi.json', function (heZe) {
     })
     
 });
-
+ })
 
 // $.get('json/菏泽市.json', function (heZe) {
 //         echarts.registerMap('菏泽', heZe);

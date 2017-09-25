@@ -1,46 +1,130 @@
 //车辆类型分布
  
- echarts.init(document.getElementById("typ_distru")).setOption({
-    tooltip : {
-        trigger: 'item',
-        formatter: "{a} <br/>{b} : {c} ({d}%)"
-    },
-    calculable : true,
-    series : [
-        {
-            name:'全市小车总量',
-            type:'pie',
-            radius : [20, 110],
-            roseType : 'radius',
-            label: {
-                normal: {
-                    show: false
-                },
-                emphasis: {
-                    show: true
-                }
-            },
-            lableLine: {
-                normal: {
-                    show: false
-                },
-                emphasis: {
-                    show: true
-                }
-            },
-            data:[
-                {value:10, name:'小型货车'},
-                {value:5, name:'大型客车'},
-                {value:15, name:'校车'},
-                {value:25, name:'渣车'},
-                {value:20, name:'大型货车'},
-                {value:35, name:'小型客车'},
-                {value:30, name:'危险品车'},
-                {value:40, name:'春运车'}
-            ]
-        }
-    ]
- });
+ // echarts.init(document.getElementById("typ_distru")).setOption({
+ //    tooltip : {
+ //        trigger: 'item',
+ //        formatter: "{a} <br/>{b} : {c} ({d}%)"
+ //    },
+ //    calculable : true,
+ //    series : [
+ //        {
+ //            name:'全市小车总量',
+ //            type:'pie',
+ //            radius : [20, 110],
+ //            roseType : 'radius',
+ //            label: {
+ //                normal: {
+ //                    show: false
+ //                },
+ //                emphasis: {
+ //                    show: true
+ //                }
+ //            },
+ //            lableLine: {
+ //                normal: {
+ //                    show: false
+ //                },
+ //                emphasis: {
+ //                    show: true
+ //                }
+ //            },
+ //            data:[
+ //                {value:10, name:'小型货车'},
+ //                {value:5, name:'大型客车'},
+ //                {value:15, name:'校车'},
+ //                {value:25, name:'渣车'},
+ //                {value:20, name:'大型货车'},
+ //                {value:35, name:'小型客车'},
+ //                {value:30, name:'危险品车'},
+ //                {value:40, name:'春运车'}
+ //            ]
+ //        }
+ //    ]
+ // });
+ 
+  var car_type = function(containerId,data){
+    $("#"+containerId).empty();
+     var chart_type = echarts.init(document.getElementById(containerId));
+     var arr1 = [];
+    $.each(data,function(i,n){
+        arr1.push(n.name);
+    })
+    console.log(arr1);
+     option = {
+                 color:["#f7ca43","#fd6354","#79a5c7","#46d3be","#70cf28"],
+
+               tooltip : {
+                          trigger: 'item',
+                            // formatter: "{a} <br/>{b} : {c} ({d}%)",
+                          formatter:  function(data){
+                                  return  data.name +'单位数量<br><span style="color: yellow;font-size: 20px;margin-left: 40px;">'+data.value + '</span>辆';
+                              }
+                      },
+           
+                legend: {
+                    show: true,
+                    data: arr1,
+                    top: '3%',
+                    orient: 'vertical',
+                    x: 'left',
+                    y: 'top',
+                    textStyle:{
+                        fontSize:14,
+                        color: 'white'
+                    },
+                    formatter: function (name) {
+                        if(name.length >= 8){
+                            return name.substring(0,8) + "...";
+                        }else{
+                            return name;
+                        }
+                        //return echarts.format.truncateText(name, 150, '14px Microsoft Yahei', '...');
+                    },
+                  },
+              series : [
+                  {
+                      name: '访问来源',
+                      type: 'pie',
+                      radius : '50%',
+                      center: ['50%', '50%'],
+                      itemStyle: {
+                              normal : { 
+                                        borderWidth : 5,
+                                        borderColor : 'white'
+                                        },
+                                   },
+                      label: {
+                          normal:{
+                              formatter: '{b}({c}辆)',
+                              textStyle:{
+                                  color: 'white'
+                              },
+                              fontFamily: 'Microsoft YaHei'
+                          }
+                      },
+                      labelLine: {
+                              normal: {
+                                lineStyle: {
+                                  color: 'white'
+                                }
+                              }
+                            },
+                      data:data,
+                      itemStyle: {
+                          emphasis: {
+                              shadowBlur: 10,
+                              shadowOffsetX: 0,
+                              shadowColor: 'rgba(0, 0, 0, 0.5)'
+                          }
+                      }
+                  }
+              ]
+     }
+     chart_type.setOption(option);
+
+  }
+
+
 
  //车辆状态排名
  var carstaterank = function(containerId,data){
@@ -120,13 +204,13 @@ $.get('json/hezeshi.json', function (heZe) {
             
         };
         chart.setOption(option);
-        //   chart.on("mouseover", function (params){   
+          chart.on("mouseover", function (params){   
                 
-        //         chart.dispatchAction({  
-        //         type: 'downplay'  
-        //         });  
+                chart.dispatchAction({  
+                type: 'downplay'  
+                });  
              
-        // });
+        });
         chart.on('mouseover',function(params){
             $.get("json/tongxingye.json",function(data){
                 for(var i=0;i<data.regionjam.length;i++) {
@@ -283,171 +367,6 @@ echarts.init(document.getElementById("change_trend")).setOption({
     ]
 
  })
-// $(function () {
-   
-//     if (!Highcharts.theme) {
-//         Highcharts.setOptions({
-//             chart: {
-//                 backgroundColor: 'blue'
-//             },
-//             colors: ['#ff3433', '#ff3433', '#ff3433','#ff3433','#ff3433','#ff3433'],
-//             title: {
-//                 style: {
-//                     color: 'silver'
-//                 }
-//             },
-//             tooltip: {
-//                 style: {
-//                     color: 'white'
-//                 }
-//             }
-//         });
-//     }
-//     Highcharts.chart('haopai_distru', {
-//         chart: {
-//             type: 'solidgauge',
-//             marginTop: 50
-//         },
-//         credits: {
-//             text: 'hcharts.cn',
-//         },
-//         title: {
-//             text: '',
-//             style: {
-//                 fontSize: '24px'
-//             }
-//         },
-//         tooltip: {
-//             borderWidth: 0,
-//             backgroundColor: 'none',
-//             style: {
-//                 fontSize: '10px',
-//                 color: 'white'
-//             },
-//             pointFormat: '{series.name}<br><span style="font-size:2em; color: {point.color}; font-weight: bold">{point.y}%</span>',
-//             positioner: function (labelWidth, labelHeight) {
-//                 return {
-//                     x: 50,
-//                     y: 350
-//                 };
-//             }
-//         },
-//         pane: {
-//             startAngle: 0,
-//             endAngle: 360,
-//             background: [{ // Track for Move
-//                 outerRadius: '',
-//                 innerRadius: '',
-//                 backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.3).get(),
-//                 borderWidth: 0
-//             }, { // Track for Exercise
-//                 outerRadius: '',
-//                 innerRadius: '',
-//                 backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[1]).setOpacity(0.3).get(),
-//                 borderWidth: 0
-//             }, { // Track for Exercise
-//                 outerRadius: '',
-//                 innerRadius: '',
-//                 backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[2]).setOpacity(0.3).get(),
-//                 borderWidth: 0
-//             }, { // Track for Exercise
-//                 outerRadius: '',
-//                 innerRadius: '',
-//                 backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[3]).setOpacity(0.3).get(),
-//                 borderWidth: 0
-//             }, { // Track for Exercise
-//                 outerRadius: '',
-//                 innerRadius: '',
-//                 backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[4]).setOpacity(0.3).get(),
-//                 borderWidth: 0
-//             }, { // Track for Stand
-//                 outerRadius: '',
-//                 innerRadius: '',
-//                 backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[5]).setOpacity(0.3).get(),
-//                 borderWidth: 0
-//             }]
-//         },
-//         yAxis: {
-//             min: 0,
-//             max: 100,
-//             lineWidth: 0,
-//             tickPositions: []
-//         },
-//         plotOptions: {
-//             solidgauge: {
-//                 borderWidth: '4px',
-//                 dataLabels: {
-//                     enabled: false
-//                 },
-//                 linecap: 'round',
-//                 stickyTracking: false
-//             }
-//         },
-//         series: [{
-//             name: '全市大型汽车号牌总量',
-//             borderColor: Highcharts.getOptions().colors[0],
-//             data: [{
-//                 color: Highcharts.getOptions().colors[0],
-//                 radius: '100%',
-//                 innerRadius: '100%',
-//                 y: 60
-//             }]
-//         }, {
-//             name: '全市小型汽车号牌总量',
-//             borderColor: Highcharts.getOptions().colors[1],
-//             data: [{
-//                 color: Highcharts.getOptions().colors[1],
-//                 radius: '85%',
-//                 innerRadius: '85%',
-//                 y: 50
-//             }]
-//         },{
-//             name: '全市校车号牌总量',
-//             borderColor: Highcharts.getOptions().colors[1],
-//             data: [{
-//                 color: Highcharts.getOptions().colors[1],
-//                 radius: '70%',
-//                 innerRadius: '70%',
-//                 y: 45
-//             }]
-//         }, {
-//             name: '全市大型货车总量',
-//             borderColor: Highcharts.getOptions().colors[2],
-//             data: [{
-//                 color: Highcharts.getOptions().colors[2],
-//                 radius: '60%',
-//                 innerRadius: '60%',
-//                 y: 40
-//             }]
-//         },
-//                  {
-//                      name: '全市小型货车总量',
-//                      borderColor: Highcharts.getOptions().colors[3],
-//                      data: [{
-//                          color: Highcharts.getOptions().colors[3],
-//                          radius: '50%',
-//                          innerRadius: '50%',
-//                          y: 35
-//                      }]
-//                  }, {
-//                      name: '全市轧车数量',
-//                      borderColor: Highcharts.getOptions().colors[4],
-//                      data: [{
-//                          color: Highcharts.getOptions().colors[4],
-//                          radius: '40%',
-//                          innerRadius: '40%',
-//                          y: 30
-//                      }]
-//                  }]
-//     },
-//                      /**
-//      * In the chart load callback, add icons on top of the circular shapes
-//      */
-//                      function callback() {
-//         // Move icon
-//         // Stand icon
-//     });
-// });
 
 
 //机动车保有量辖区排名
@@ -487,7 +406,8 @@ echarts.init(document.getElementById("change_trend")).setOption({
  //数据统一处理
  var refreshData = function(){
     $.get("json/tongxingye.json",function(data){
-
+      
+      car_type('typ_distru',data.its)
     	carstaterank('typ_rank',data.zlztpm);
     	carxiaqurank('xiaqu_rank',data.zlxqfb);
 

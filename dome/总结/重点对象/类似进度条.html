@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>类似进度条</title>
+	<style type="text/css">
+	    #box{
+	    	width: 300px;
+	    	height: 200px;
+	    }
+        .title-gradient{
+        	  width: 95%;
+			  height: 30px;
+			  line-height: 30px;
+			  color: white;
+			  font-size: 16px;
+			  font-weight: bold;
+			  margin: auto;
+			  margin-top: 10px;
+			  padding-left: 5px;
+			  background: linear-gradient(to right, #2c8af1 35%, #112d70);
+			  /*display: flex;*/
+			  flex-direction: row;
+	    }
+	    /* 按钮样式 */
+	    #lButtonB #lButtonA{
+		  border-top-left-radius: 0;
+		  border-bottom-left-radius: 0;
+		}
+        .btn.btnDefault {
+		  background-color: #3380FF;
+		  color: #ffffff;
+		  border-color: #3380FF;
+		  border-radius: 6px;
+		}
+		.btn.btnChecked{
+		  background-color: #0b0c45;
+		  color: #3380FF;
+		  border-color: #3380FF;
+		  border-radius: 6px;
+		}
+        
+    /* 在线离线 */
+         .progress-header {
+		  height: 30px;
+		  line-height: 30px;
+		  width: 100%;
+		  font-weight: normal;
+		  color: red;
+		}
+		/* line 507, ../sass/screen.scss */
+		 .progress-header div {
+		  display: inline-block;
+		  text-align: right;
+		}
+		/* line 510, ../sass/screen.scss */
+		.progress-header div:first-child {
+		  width: 41%;
+		}
+		/* line 513, ../sass/screen.scss */
+		 .progress-header div:last-child {
+		  text-align: right;
+		  width: 48%;
+		}
+
+	</style>
+</head>
+<body>
+    <div id="box">
+	   <div class="title-gradient" id="jing_li">即时警力</div>
+       <div id="lButton" class="btn-group" style="margin: 10px 0px 0px 61%;" >
+             <button id="lButtonB" class="btn btnDefault">警力</button>
+             <button id="lButtonA" class="btn btnChecked">警车</button>
+        </div>
+        <div class="progress-header">
+             <div>在线</div>
+             <div>总数</div>
+        </div>
+        <div class="content" id="readyCar_Wrap">
+
+             <div id="readyCar">
+                          
+
+             </div>
+        </div>
+        <div class="content" id="readydiver_Wrap">
+
+             <div id="readydiver">
+             </div>
+        </div>
+    </div>
+	 <script type="text/javascript" src="../../js/jquery.min.js"></script>
+	 <script type="text/javascript">
+         var readyCar = function(containerId,data){
+            console.log(data);
+         	console.log(data.policyForceList);
+		    $("#"+containerId).empty();
+		    if(data && data.policyForceList){
+		        $.each(data.policyForceList,function(i,n){
+		            var progressStr = "<div class='progress-container'><div class='progress-title'>"+n.regionName+"</div>"
+		                +"<div class='progress-content'><progress max='"+n.policyAmount+"' value='"+n.onlineAmount+"'></progress>"
+		                +"<span>"+n.onlineAmount+"</span></div>";
+		            $("#"+containerId).append($(progressStr));
+		        });
+		    }
+		    else{
+		        $("#"+containerId).html("<span>暂时没有数据</span>");
+		    }
+		}
+        var readydiver = function(containerId,data){
+		    $("#"+containerId).empty();
+		    if(data && data.policyForceList){
+		        $.each(data.policyForceList,function(i,n){
+		            var progressStr = "<div class='progress-container'><div class='progress-title'>"+n.regionName+"</div>"
+		                +"<div class='progress-content' style='position: relative;'><div class='content_number' style='position: absolute'>"+n.onlineAmount+"</div><progress max='"+n.carAmount+"' value='"+n.onlineAmount+"'></progress>"
+		                +"<span>"+n.carAmount+"</span></div>";
+		            $("#"+containerId).append($(progressStr));
+		        });
+		    }
+		    else{
+		        $("#"+containerId).html("<span>暂时没有数据</span>");
+		    }
+		}
+         
+       // 警力和警车的切换
+			$("#readydiver_Wrap").hide();
+			$("#readyCar_Wrap").show();
+			$("#lButtonA").click(function(){
+			    $("#lButtonA").removeClass('btnChecked').addClass('btnDefault') ;
+			    $("#lButtonB").removeClass('btnDefault').addClass('btnChecked') ;
+
+			    $("#readydiver_Wrap").show();
+			    $("#readyCar_Wrap").hide();
+			})
+			$("#lButtonB").click(function(){
+			    $("#lButtonA").removeClass('btnDefault').addClass('btnChecked') ;
+			    $("#lButtonB").removeClass('btnChecked').addClass('btnDefault') ;
+
+			    $("#readydiver_Wrap").hide();
+			    $("#readyCar_Wrap").show();
+			})
+
+       //数据的统一处理
+       // var refreshData = function(){
+       // 	$.get("../json/tongxingye.json",function(data){
+       // 		   console.log(data);
+       //         readyCar("readyCar",data.pfm);
+       //         readydiver("readydiver",data.pcm);
+       // 	})
+       // }
+       // $(document).ready(function(){
+       // 	refreshData();
+       // 	setInterval(refreshData,60*1000);
+       // })
+       $(function() {
+       	$.get("../json/tongxingye.json",function(data){
+       		   console.log(data);
+               readyCar("readyCar",data.pfm);
+               readydiver("readydiver",data.pcm);		})
+       })
+	 </script>
+</body>
+</html>

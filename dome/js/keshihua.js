@@ -209,7 +209,13 @@ var geoCoordMap = {
             
         }
         chart.setOption(option);
-      
+       chart.on("mouseover", function (params){   
+                
+                chart.dispatchAction({  
+                type: 'downplay'  
+                });  
+             
+        });
 
 
         var options = {

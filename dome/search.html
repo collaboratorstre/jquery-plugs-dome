@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模糊搜索</title>
+</head>
+<body>
+	<input type="text" id="search_txt">
+	<button id="search_btn" style="background-color: #1A3B7B; border-color: #005588; color: white; ">搜索</button>
+      <ul id="search_content"></ul>
+    
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript">
+          
+           	  // $("#search_btn").click(function(){
+              //        $("#search_content").css("display","block");
+              //         var txt = $("#search_txt").val()
+              //         if($.trim(txt) != ""){
+              //         	   $.get("./json/searchs.json",function(data){
+              //                    console.log(data);
+              //         	   })
+              //         }
+           	  // })
+               
+              
+                $("#search_btn").click(function(){
+                     $("#search_content").css("display","block");
+                      var txt = $("#search_txt").val()
+
+                      if($.trim(txt) != ""){
+                           // $.get("./json/searchs.json",function(data){
+                           //       console.log(data);
+                           // })
+                           var params = "key="+$("#search_txt").val();
+                          
+                           $.post("./json/searchs.json",params,function(data){
+                                  console.log(data);
+                           },'json')
+                           
+                           // $.ajax({
+                           //  type: "POST",
+                           //  dataType: "JSON",
+                           //  url: "./json/searchs.json",
+
+                           //  data: 
+                           //  success: function(data){
+                           //    console.log(data);
+                           //  }
+                           // })
+                      }
+              })
+           
+          
+    </script>
+</body>
+</html>
