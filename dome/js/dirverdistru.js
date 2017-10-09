@@ -44,6 +44,7 @@
  
   var car_type = function(containerId,data){
     $("#"+containerId).empty();
+    console.log(data);
      var chart_type = echarts.init(document.getElementById(containerId));
      var arr1 = [];
     $.each(data,function(i,n){

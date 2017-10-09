@@ -62,6 +62,73 @@
 		  text-align: right;
 		  width: 48%;
 		}
+       
+      #readyCar .progress-container {
+  margin: 10px;
+  display: flex;
+}
+/* line 528, ../sass/screen.scss */
+#readyCar .progress-title {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  /*color: #FFFFFF;*/
+  color: black;
+  width: 30%;
+}
+/* line 535, ../sass/screen.scss */
+#readyCar .progress-content {
+  width: 75%;
+  /*color: #FFFFFF;*/
+  color: black;
+}
+
+/* line 540, ../sass/screen.scss */
+progress {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 10px;
+  width: 85%;
+}
+
+/* line 546, ../sass/screen.scss */
+#readyCar progress[value]::-webkit-progress-bar {
+  background-color: #17254f;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+/* line 551, ../sass/screen.scss */
+#readyCar progress[value]::-webkit-progress-value {
+  background-color: #70cb2d;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+#readydiver progress[value]::-webkit-progress-value {
+  background-color: #70cb2d;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+#readydiver .progress-container {
+  margin: 10px;
+  display: flex;
+}
+/* line 528, ../sass/screen.scss */
+#readydiver .progress-title {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+ /* color: #FFFFFF;*/
+  color: black;
+  width: 30%;
+}
+/* line 535, ../sass/screen.scss */
+#readydiver .progress-content {
+  width: 75%;
+  /*color: #FFFFFF;*/
+
+}
 
 	</style>
 </head>
@@ -98,8 +165,8 @@
 		    if(data && data.policyForceList){
 		        $.each(data.policyForceList,function(i,n){
 		            var progressStr = "<div class='progress-container'><div class='progress-title'>"+n.regionName+"</div>"
-		                +"<div class='progress-content'><progress max='"+n.policyAmount+"' value='"+n.onlineAmount+"'></progress>"
-		                +"<span>"+n.onlineAmount+"</span></div>";
+		                +"<div class='progress-content' style='position: relative;'><div class='content_number' style='position: absolute'>"+n.onlineAmount+"</div><progress max='"+n.policyAmount+"' value='"+n.onlineAmount+"'></progress>"
+		                +"<span>"+n.policyAmount+"</span></div>";
 		            $("#"+containerId).append($(progressStr));
 		        });
 		    }

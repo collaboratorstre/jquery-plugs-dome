@@ -77,7 +77,7 @@ var geoCoordMap = {
     "牡丹区":[115.4231225000,35.2575260046],
     "鄄城县":[115.5166712692,35.5691801963],
     "曹县":[115.5486273308,34.8316376196],
-    "陶区":[115.5712688711,35.0799378114],
+    "定陶区":[115.5712688711,35.0799378114],
     "单县":[116.0938209482,34.8001368920],
     "郓城县":[115.9500457019,35.6060749361],
     "巨野县":[116.1015347225,35.4020821605],
@@ -127,7 +127,7 @@ var geoCoordMap = {
                 },
             geo: [
                    {
-                    type: 'map',
+                    // type: 'map',
                     map: '菏泽',
                     label: {
                       emphasis: {
@@ -210,11 +210,13 @@ var geoCoordMap = {
         }
         chart.setOption(option);
        chart.on("mouseover", function (params){   
-                
+            console.log(params);
+            console.log(params.componentType);
+                if(params.componentType == "geo"){
                 chart.dispatchAction({  
                 type: 'downplay'  
                 });  
-             
+             }
         });
 
 
@@ -235,6 +237,7 @@ var geoCoordMap = {
             id: idx,
             gridId: idx,
             type: 'category',
+            name: dataItem.name,  //柱状图下面的名字
             nameStyle: {
               color: 'white',
               fontSize: 12

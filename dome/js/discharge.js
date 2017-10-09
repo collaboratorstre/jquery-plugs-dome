@@ -587,18 +587,24 @@ echarts.init(document.getElementById("times_trend")).setOption({
   // console.log(data);
   if(data){
           $.each(data,function(i,n){
+              // if(n.name == '曹县'){
+              //     n.name = '曹<span style="display: inline-block;width: 12px;"></span>县'
+              // }else if(n.name == '单县'){
+              //     n.name = '单<span style="display: inline-block;width: 12px;"></span>县'
+              // }
              var progressStr = "<div class='progress-container'><div class='progress-title'>"+n.name+"</div>"
                 +"<div class='progress-content'>"
                 + '<div class="legalRate" style="width:'+ (n.value/1000000)*100 +'%;';
             progressStr+='"><div class="xianqu" style="color: white;">'+n.value+'</div></div></div>'
                 +'<div class="progress-amount">'+'</div></div>';
             $("#"+containerId).append($(progressStr));
+            
           })
   }else{
     $("#"+containerId).html("<span>暂时没有数据</span>")
   }
 }
-
+ 
 //数据的统一处理
  var refreshData = function(){
     $.get("json/tongxingye.json",function(data){
@@ -607,7 +613,22 @@ echarts.init(document.getElementById("times_trend")).setOption({
          fluxpai('flow_content',data.kopm);
          todayflux('flux_pmtab',data.zlph);
          xiaquflow('xiaqu_flux',data.zlxqfb);
+             
+        
 
+         var len = $('#xiaqu_flux .progress-title').length;
+
+        
+         for(var i=0;i<len;i++){
+          
+            if($('#xiaqu_flux').find('.progress-title')[i].innerHTML == '曹县'){
+                  $('#xiaqu_flux').find('.progress-title')[i].innerHTML = '曹<span style="display: inline-block;width: 12px;"></span>县'
+              }else if($('#xiaqu_flux').find('.progress-title')[i].innerHTML == '单县'){
+                  $('#xiaqu_flux').find('.progress-title')[i].innerHTML = '单<span style="display: inline-block;width: 12px;"></span>县'
+              }
+         }
+         
+          
 
     	// traveltime('hour_content',data.lxpm);
     	// congestindex('exponent_content',data.ydzs);
@@ -628,4 +649,5 @@ $(document).ready(function(){
 
     if ( $("#flux_pmtab>tr").length > 0 ) { 
     $("#flux_pmtab>tr").text("hi"); 
+
  }

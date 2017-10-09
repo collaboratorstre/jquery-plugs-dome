@@ -146,45 +146,5 @@
             "name":"校车",
             "value":820
         }
-    ],
-    "pcm": {
-    "controller": null,
-    "viceController": null,
-    "policyForceList": [
-      {
-        "regionNo": "371700000000",
-        "regionName": "菏泽交警支队",
-        "forceman": null,
-        "carAmount": 18,
-        "onlineAmount": 16
-      }
     ]
-  },
-   "pfm": {
-    "controller": null,
-    "viceController": null,
-    "policyForceList": [
-      {
-        "regionNo": "000000000001",
-        "regionName": "情报中心",
-        "forceman": null,
-        "policyAmount": 1,
-        "onlineAmount": 0
-      },
-      {
-        "regionNo": "371700000000",
-        "regionName": "菏泽交警支队",
-        "forceman": null,
-        "policyAmount": 1,
-        "onlineAmount": 0
-      },
-      {
-        "regionNo": "371701000000",
-        "regionName": "市区大队",
-        "forceman": null,
-        "policyAmount": 10,
-        "onlineAmount": 0
-      }
-    ]
-  },
 }
