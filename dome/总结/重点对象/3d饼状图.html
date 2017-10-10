@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3d饼状图</title>
+</head>
+<body>
+	 <div class="content" id="stableSituation_wrap" style="position: absolute;left: 120px; top: 70px; width: 750px; height: 600px;">
+
+                    </div>
+
+     <script type="text/javascript" src="../../js/jquery.min.js"></script>
+     <script type="text/javascript" src="../../js/highcharts.js"></script>
+     <script type="text/javascript" src="../../js/highcharts-3d.js"></script>
+
+     <script type="text/javascript">
+
+     var status_analysid = function(containerId,data){
+			     $("#"+containerId).empty();
+			      // console.log($("#"+containerId));
+			      // console.log(data);
+			      var arr = []
+			      var temp = '';
+			      $.each(data,function(i,n) {
+			            arr.push (JSON.parse('{"'+'name'+'":'+'"'+n.name+'"'+',"'+'y'+'"'+':'+n.value+'}'));
+
+			        });
+			      console.log(arr);
+			             $(function () {
+			            $("#"+containerId).highcharts({
+			                chart: {
+			                    type: 'pie',
+			                    colors: 'white',
+			                    backgroundColor: '#1A3B7B',
+			                    options3d: {
+			                        enabled: true,
+			                        alpha: 45,
+			                        beta: 0
+			                    }
+			                },
+			               colors: ["#67b7dc","#fdd400","#84b761","#cc4748","#cd82ad","#25376d"],
+			                title: {
+			                    text: null
+			                },
+			                tooltip: {
+			                    pointFormat: '机动车数量:<br/>{point.y}辆',
+			                    borderColor: 'transparent',
+			                    backgroundColor: 'rgba(96,96,96,0.85)',
+			                    style:{
+			                        color:'white'
+			                    }
+			                },
+			                plotOptions: {
+			                    pie: {
+			                        allowPointSelect: true,
+			                        cursor: 'pointer',
+			                        depth: 35,
+			                        dataLabels: {
+			                            enabled: true,
+			                            connectorColor: 'white',
+			                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+			                            style: {
+			                                color: 'white'
+			                            }
+			                        }
+			                    }
+			                },
+			                series: [{
+			                    type: 'pie',
+			                    data: arr
+			                }],
+			                credits: {
+			                    enabled: false
+			                }
+			            });
+			        });
+			}
+       
+
+       //数据的统一处理
+       var refreshData = function(){
+       	$.get("../json/tongxingye.json",function(data){
+         
+             status_analysid('stableSituation_wrap',data.impCarStatus);
+       	})
+       }
+       $(document).ready(function(){
+       	refreshData();
+       	setInterval(refreshData,60*1000);
+       })
+     </script>
+</body>
+</html>

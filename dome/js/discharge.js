@@ -66,7 +66,7 @@ $.get('json/hezeshi.json', function (heZe) {
          obj.name = n.regionname;
          obj.value = n.jamindex;
          arr1.push(obj)
-
+       
         // arr1.push('{name:"' + n.regionname + '",value:' + n.jamindex + '}');
     })
     console.log(arr1)
