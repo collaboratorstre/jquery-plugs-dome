@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>雷达图</title>
+	<script type="text/javascript" src="../../js/echarts.js"></script>
+</head>
+<body>
+	<div class="content" id="busySpeed" style="width: 500px;height: 500px;"></div>
+
+   <script type="text/javascript" src="../../js/jquery.min.js"></script>
+   <script type="text/javascript">
+
+        var maxOfArray = function(arr){
+			    var flowMax =0;
+			    if(arr!=null && arr.length>0){
+			        for(var i=0;i<arr.length;i++){
+			            flowMax = Math.max(flowMax,arr[i]);
+			        }
+			    }
+			    return flowMax;
+			};
+         
+         var mainCityAlarm = function(containerId,data){
+			    var mainCityAlarm_radar = echarts.init(document.getElementById(containerId), 'dark');
+
+			    var indicator=[];
+			    var lastWeekData=[];
+			    var thisWeekData=[];
+			    var maxArray=[];
+			    if(data){
+			        $.each(data.lastWeekList,function(i,n){
+			            lastWeekData.push(n);
+			            maxArray.push(n);
+			        });
+
+			        $.each(data.thisWeekList,function(i,n){
+			            maxArray.push(n);
+			        });
+			        var max = maxOfArray(maxArray);
+			        $.each(data.lastWeekList,function(i){
+			            var name=data.typeList[i];
+			            indicator.push({
+			                text:name,
+			                max:max*1.2
+			            });
+			        });
+			     /*   $.each(indicator,function(i,n){
+			            /!*var item=n.text;
+			             if(item=="违反标\n志标线") item.replace("\n","");*!/
+			            thisWeekData.push(
+			                data.thisWeekList[n.text]
+			            );
+			        });*/
+
+			    }
+			    var mainCityAlarm_option= {
+			        title: {
+			            text: ''
+			        },
+			        tooltip: {
+			            trigger: 'axis'
+			        },
+			        color:['#43a3fd','#ff9600'],
+			        legend: {
+			            x: 'center',
+			          //  icon:'diamond',
+			            data:['上周','本周']
+			        },
+			        animationDuration:'2000',
+			        areaStyle:{
+			            normal:{
+			                opacity:0.1
+			            }
+			        },
+			        radar: [
+			            {
+			                indicator: indicator,
+			                center: ['50%','65%'],
+			             //   startAngle:235,
+			                radius: 100
+			            }
+
+			        ],
+			        series: [
+			            {
+			                type: 'radar',
+			                tooltip: {
+			                    trigger: 'item'
+			                },
+			                itemStyle: {
+			                    normal: {
+			                        areaStyle: {
+			                            type: 'default',
+			                            opacity:0.2
+
+			                        }
+
+			                    }
+
+			                },
+			                data: [
+			                    {
+			                        value: data.lastWeekList,
+			                        name: '上周'
+			                    },
+			                    {
+			                        value: data.thisWeekList,
+			                        name: '本周'
+			                    }
+			                ]
+			            }
+			        ]
+			    };
+			    mainCityAlarm_radar.setOption(mainCityAlarm_option);
+			};
+
+         var refreshData = function(){
+		       	$.get("../json/tongxingye.json",function(data){
+		             mainCityAlarm("busySpeed",data.trafficAlarm);
+		            
+		       	})
+		       }
+		 $(document).ready(function(){
+		       	 refreshData();
+		     
+		       })
+   </script>
+</body>
+</html>

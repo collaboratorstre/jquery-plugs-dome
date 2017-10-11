@@ -49,8 +49,11 @@
             }
         })
         $(".neirz_list").on("click",".neir_content",function() {
+            // console.log($(this));
             var text = $(this).text();
+            // console.log(text);
             $(".neir").find("input").val(text);
+            // console.log( $(".neir").find("input").val(text));
             $(".neirz_list").hide()
         })
         $(".btn").click(function() {

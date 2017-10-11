@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>折线图1</title>
+
+	<script type="text/javascript" src="../../js/echarts.js"></script>
+</head>
+<body>
+	
+	<div id="change_trend" style="width: 500px; height: 500px;"></div>
+
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript">
+        
+
+           //数据的统一处理
+       var refreshData = function(){
+       	$.get("../json/tongxingye.json",function(data){
+         
+            
+       	})
+       }
+       $(document).ready(function(){
+       	refreshData();
+       
+       })
+    </script>
+</body>
+</html>
