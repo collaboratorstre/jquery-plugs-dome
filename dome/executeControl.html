@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>布控立体防护云</title>
+	<link rel="stylesheet" type="text/css" href="./css/executeControl.css">
+	<script type="text/javascript" src="./js/echarts.js"></script>
+</head>
+<body>
+	 <div class="body_content">
+          <div class="layout_top"></div>
+          <div class="layout_middle">
+              <div class="title_top">
+                 菏泽稽查布控立体防护云
+              </div>
+              <div class="content_left">
+                   <div id="map_container" style="width: 99.3%; height: 99%; margin: 5px"></div>
+              </div>
+              <div class="content_right">
+                  <div class="top">
+                     <div class="warn_top">
+                         <h4>敏感区域车辆<img src="./img/warn.png" alt=""></h4>
+                     </div>
+                     <div class="total_count">
+                           本日预警数目
+                          <div class="count1" id="yujing">15</div>
+                     </div>
+                     <div class="real_count">
+                          布控查实数
+                          <div class="count2" id="reals">3</div>
+                     </div>
+
+                     <div class="bottom_left">
+                        <div class="bayonet_title">近30日主要出现卡口分布</div>
+                        <ul class="bayonet_left">
+                          <li>10</li>
+                          <li>08</li>
+                          <li>06</li>
+                          <li>04</li>
+                          <li>00</li>
+                        </ul>
+                        <div id="bayonet_title1"></div>
+                     </div>
+
+                     <div class="bottom_right">
+                        <div class="distru_title">近30日主要时段分布</div>
+                        <div id="distru_title1"></div>
+                     </div>
+                    
+                     <div class="content" style="color: white;position: absolute;top: 47px;left: 384;left: 384px;">
+                        <table class="no-border">
+                            <thead class="no-border">
+                                <tr class="no-border">
+                                   <th>敏感区域</th>
+                                   <th>号牌号码</th>
+                                   <th>号牌种类</th>
+                                   <th>时间</th>
+                                   <th>出现位置</th>
+                                </tr>
+                            </thead>
+                            <tbody id="sensitive_data"></tbody>
+                        </table>
+
+                     </div>
+                  </div>
+                  <div class="middle">
+                     <div class="warn_middle">
+                         <h4>逾期未年检车辆<img src="./img/warn.png" alt=""></h4>
+                     </div>
+                      <div class="total_count">
+                           本日预警数目
+                          <div class="count1" id="nianjian">1920</div>
+                     </div>
+                     <div class="real_count">
+                          布控查实数
+                          <div class="count2" id="overdue">1080</div>
+                     </div>
+
+                     <div class="bottom_left">
+                        <div class="bayonet_title">近30日主要出现卡口分布</div>
+                        <ul class="bayonet_left">
+                          <li>10</li>
+                          <li>08</li>
+                          <li>06</li>
+                          <li>04</li>
+                          <li>00</li>
+                        </ul>
+                        <div id="overdue_title1"></div>
+                     </div>
+
+                     <div class="bottom_right">
+                        <div class="distru_title">近30日主要时段分布</div>
+                        <div id="distru_title2"></div>
+                     </div>
+                    
+                     <div class="content" style="color: white;position: absolute;top: 47px;left: 384;left: 384px;">
+                        <table class="no-border">
+                            <thead class="no-border">
+                                <tr class="no-border">
+                                   <th></th>
+                                   <th>号牌号码</th>
+                                   <th>号牌种类</th>
+                                   <th>时间</th>
+                                   <th>出现位置</th>
+                                </tr>
+                            </thead>
+                            <tbody id="overdue_data"></tbody>
+                        </table>
+
+                     </div>
+                  </div>
+                  <div class="bottom">
+                      <div class="warn_bottom">
+                         <h4>假套牌车辆<img src="./img/warn.png" alt=""></h4>
+                     </div>
+                      <div class="total_count">
+                           本日预警数目
+                          <div class="count1" id="taopai">42</div>
+                     </div>
+                     <div class="real_count">
+                          布控查实数
+                          <div class="count2" id="fake">7</div>
+                     </div>
+
+                     <div class="bottom_left">
+                        <div class="bayonet_title">近30日主要出现卡口分布</div>
+                        <ul class="bayonet_left">
+                          <li>10</li>
+                          <li>08</li>
+                          <li>06</li>
+                          <li>04</li>
+                          <li>00</li>
+                        </ul>
+                        <div id="fake_title1"></div>
+                     </div>
+
+                     <div class="bottom_right">
+                        <div class="distru_title">近30日主要时段分布</div>
+                        <div id="distru_title3"></div>
+                     </div>
+                    
+                     <div class="content" style="color: white;position: absolute;top: 47px;left: 384;left: 384px;">
+                        <table class="no-border">
+                            <thead class="no-border">
+                                <tr class="no-border">
+                                   <th></th>
+                                   <th>号牌号码</th>
+                                   <th>号牌种类</th>
+                                   <th>时间</th>
+                                   <th>出现位置</th>
+                                </tr>
+                            </thead>
+                            <tbody id="fake_data"></tbody>
+                        </table>
+
+                     </div>
+                  </div>
+              </div>
+          </div> 
+	 </div>
+    
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+     <!-- <script type="text/javascript"
+            src="http://webapi.amap.com/maps?v=1.3&key=a67bab9e2c29241c092fde49544cd428"></script> -->
+      <script type="text/javascript"
+            src="http://webapi.amap.com/maps?v=1.3&key=7825ba25fa5bb7414db78418b7a0a0b2"></script>    
+	<script type="text/javascript" src="./js/executeControl.js"></script>
+</body>
+</html>

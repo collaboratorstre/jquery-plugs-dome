@@ -1,0 +1,360 @@
+{
+	"yucount": 15,
+	"bukucount": 9,
+	"timetru":[
+        {
+            "name":"07:00~8:00",
+            "value":70
+        },
+        {
+            "name":"09:00~10:00",
+            "value":55
+        },
+        {
+            "name":"11:00~12:00",
+            "value":40
+        },
+         {
+            "name":"15:00~16:00",
+            "value":30
+        }
+    ],
+    "timetru_one":[
+        {
+            "name":"07:00~8:00",
+            "value":70
+        },
+        {
+            "name":"09:00~10:00",
+            "value":55
+        },
+        {
+            "name":"11:00~12:00",
+            "value":40
+        },
+         {
+            "name":"15:00~16:00",
+            "value":30
+        }
+    ],
+     "timetru_two":[
+        {
+            "name":"07:00~8:00",
+            "value":70
+        },
+        {
+            "name":"09:00~10:00",
+            "value":55
+        },
+        {
+            "name":"11:00~12:00",
+            "value":40
+        },
+         {
+            "name":"15:00~16:00",
+            "value":30
+        }
+    ],
+    "bayonet":[
+        {
+            "name":"牡丹大街",
+            "value":70
+        },
+        {
+            "name":"牡丹大街",
+            "value":55
+        },
+        {
+            "name":"牡丹大街",
+            "value":40
+        },
+         {
+            "name":"牡丹大街",
+            "value":30
+        },
+         {
+            "name":"牡丹大街",
+            "value":20
+        }
+    ],
+      "overdue":[
+        {
+            "name":"牡丹大街",
+            "value":70
+        },
+        {
+            "name":"牡丹大街",
+            "value":55
+        },
+        {
+            "name":"牡丹大街",
+            "value":40
+        },
+         {
+            "name":"牡丹大街",
+            "value":30
+        },
+         {
+            "name":"牡丹大街",
+            "value":20
+        }
+    ],
+      "fake":[
+        {
+            "name":"牡丹大街",
+            "value":70
+        },
+        {
+            "name":"牡丹大街",
+            "value":55
+        },
+        {
+            "name":"牡丹大街",
+            "value":40
+        },
+         {
+            "name":"牡丹大街",
+            "value":30
+        },
+         {
+            "name":"牡丹大街",
+            "value":20
+        }
+    ],
+	"sensitive": [
+        {
+        	"region": "新疆",
+        	"numbers": "新A00001",
+        	"types": "小型汽车",
+        	"times": "06:00",
+        	"pos": "牡丹街道西出口"
+        },
+         {
+        	"region": "西藏",
+        	"numbers": "藏A00001",
+        	"types": "小型汽车",
+        	"times": "07:00",
+        	"pos": "西安路西向东300"
+        },
+         {
+        	"region": "云南",
+        	"numbers": "云A00001",
+        	"types": "小型汽车",
+        	"times": "08:00",
+        	"pos": "双河立交A1出口"
+        },
+         {
+        	"region": "甘肃",
+        	"numbers": "甘A00001",
+        	"types": "小型汽车",
+        	"times": "09:00",
+        	"pos": "双河立交A2出口"
+        },
+         {
+        	"region": "黑龙江",
+        	"numbers": "黑A00001",
+        	"types": "小型汽车",
+        	"times": "10:00",
+        	"pos": "牡丹街道西出口"
+        },
+         {
+        	"region": "黑龙江",
+        	"numbers": "黑A00001",
+        	"types": "小型汽车",
+        	"times": "11:00",
+        	"pos": "牡丹街道西出口"
+        },
+         {
+        	"region": "黑龙江",
+        	"numbers": "黑A00001",
+        	"types": "小型汽车",
+        	"times": "12:00",
+        	"pos": "牡丹街道西出口"
+        }
+	],
+	"overdue_data": [
+        {
+        	"region": "新疆",
+        	"numbers": "新A00001",
+        	"types": "小型汽车",
+        	"times": "06:00",
+        	"pos": "牡丹街道西出口"
+        },
+         {
+        	"region": "西藏",
+        	"numbers": "藏A00001",
+        	"types": "小型汽车",
+        	"times": "07:00",
+        	"pos": "西安路西向东300"
+        },
+         {
+        	"region": "云南",
+        	"numbers": "云A00001",
+        	"types": "小型汽车",
+        	"times": "08:00",
+        	"pos": "双河立交A1出口"
+        },
+         {
+        	"region": "甘肃",
+        	"numbers": "甘A00001",
+        	"types": "小型汽车",
+        	"times": "09:00",
+        	"pos": "双河立交A2出口"
+        },
+         {
+        	"region": "黑龙江",
+        	"numbers": "黑A00001",
+        	"types": "小型汽车",
+        	"times": "10:00",
+        	"pos": "牡丹街道西出口"
+        },
+         {
+        	"region": "黑龙江",
+        	"numbers": "黑A00001",
+        	"types": "小型汽车",
+        	"times": "11:00",
+        	"pos": "牡丹街道西出口"
+        },
+         {
+        	"region": "黑龙江",
+        	"numbers": "黑A00001",
+        	"types": "小型汽车",
+        	"times": "12:00",
+        	"pos": "牡丹街道西出口"
+        }
+	],
+	"fake_data": [
+        {
+        	"region": "新疆",
+        	"numbers": "新A00001",
+        	"types": "小型汽车",
+        	"times": "06:00",
+        	"pos": "牡丹街道西出口"
+        },
+         {
+        	"region": "西藏",
+        	"numbers": "藏A00001",
+        	"types": "小型汽车",
+        	"times": "07:00",
+        	"pos": "西安路西向东300"
+        },
+         {
+        	"region": "云南",
+        	"numbers": "云A00001",
+        	"types": "小型汽车",
+        	"times": "08:00",
+        	"pos": "双河立交A1出口"
+        },
+         {
+        	"region": "甘肃",
+        	"numbers": "甘A00001",
+        	"types": "小型汽车",
+        	"times": "09:00",
+        	"pos": "双河立交A2出口"
+        },
+         {
+        	"region": "黑龙江",
+        	"numbers": "黑A00001",
+        	"types": "小型汽车",
+        	"times": "10:00",
+        	"pos": "牡丹街道西出口"
+        },
+         {
+        	"region": "黑龙江",
+        	"numbers": "黑A00001",
+        	"types": "小型汽车",
+        	"times": "11:00",
+        	"pos": "牡丹街道西出口"
+        },
+         {
+        	"region": "黑龙江",
+        	"numbers": "黑A00001",
+        	"types": "小型汽车",
+        	"times": "12:00",
+        	"pos": "牡丹街道西出口"
+        }
+	],
+	 "impCurGps":[
+        {
+            "plateNum":"220国道北向南...",
+            "plateType":"小型汽车",
+            "lon":"115.548616",
+            "lat":"35.555225",
+            "gpsTime":"2017-09-01 09:00",
+            "regionId":"京A00001",
+            "regionName":"逾期未年检",
+            "pepName": "某某某"
+        },
+         {
+            "plateNum":"338省道南向南...",
+            "plateType":"小型汽车",
+           "lon":"115.543505",
+            "lat":"34.817995",
+            "gpsTime":"2017-09-01 09:00",
+            "regionId":"冀A00001",
+            "regionName":"套牌车",
+            "pepName": "某某某"
+        },
+         {
+            "plateNum":"261省道北向南...",
+            "plateType":"小型汽车",
+            "lon":"115.941025",
+            "lat":"35.597963",
+            "gpsTime":"2017-09-01 09:00",
+            "regionId":"京A00001",
+            "regionName":"报废车辆",
+            "pepName": "某某某"
+        },
+         {
+            "plateNum":"234省道东向南...",
+            "plateType":"小型汽车",
+            "lon":"116.100221",
+            "lat":"35.392609",
+            "gpsTime":"2017-09-01 09:00",
+            "regionId":"北A00001",
+            "regionName":"未年检",
+            "pepName": "某某某"
+        },
+         {
+            "plateNum":"993省道西向南...",
+            "plateType":"小型汽车",
+            "lon":"116.104068",
+            "lat":"34.9742729",
+            "gpsTime":"2017-09-01 09:00",
+            "regionId":"羽A00001",
+            "regionName":"逾期",
+            "pepName": "某某某"
+        },
+         {
+            "plateNum":"982国道北向南...",
+            "plateType":"小型汽车",
+             "lon":"116.065655",
+            "lat":"34.788959",
+            "gpsTime":"2017-09-01 09:00",
+            "regionId":"狼A00001",
+            "regionName":"逾年检",
+            "pepName": "某某某"
+        },
+         {
+            "plateNum":"985省道北向南...",
+            "plateType":"小型汽车",
+            "lon":"116.045108",
+            "lat":"35.3871899",
+            "gpsTime":"2017-09-01 09:00",
+            "regionId":"晋A00001",
+            "regionName":"未年检",
+            "pepName": "某某某"
+        },
+         {
+            "plateNum":"211省道来向南...",
+            "plateType":"小型汽车",
+             "lon":"115.5435166",
+            "lat":"34.8182333",
+            "gpsTime":"2017-09-01 09:00",
+            "regionId":"陕A00001",
+            "regionName":"年检",
+            "pepName": "某某某"
+        }
+       
+    ]
+}

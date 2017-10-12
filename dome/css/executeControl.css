@@ -1,0 +1,316 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /*font: inherit;*/
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 10, ../sass/screen.scss */
+body,html {
+  background: #00387c;
+
+  opacity: 1.0;
+  width: 100%;
+  /*height: 100%;*/
+  height: 1080px;
+
+}
+.body_content{
+  /*height: 100%;*/
+   height: 1080px;
+    font-family: "Microsoft YaHei" !important;
+}
+.layout_top{
+  width: 100%;
+  /*height: 8%;*/
+  height: 80px;
+}
+
+.layout_middle{
+    width: 100%;
+    /*height: 92%;*/
+    height: 1000px;
+    /*background-color: #0d043d;*/
+    background-color: #181717;
+    border-top: 0.1px solid;
+    box-sizing: border-box;
+}
+.layout_middle .title_top{
+   width: 597px;
+   height: 97px;
+   margin-top: 6px;
+   margin-left: 5px;
+   background: url('../img/title.png') no-repeat;
+   font-size: 40px;
+   color: white;
+   font-weight: bold;
+   box-sizing: border-box;
+   padding: 17px;
+}
+
+.content_left{
+  width: 1109px;
+  height: 878px;
+  margin-left: 5px;
+  background: url('../img/insideleft.png') no-repeat;
+  float: left;
+}
+.content_right{
+  height: 878px;
+  width: 775px;
+  margin-left: 8px;
+  float: left;
+
+
+}
+.content_right .top{
+  position: relative;
+  height: 277px;
+  background: url('../img/insideright.png') no-repeat;
+}
+.content_right .middle{
+  position: relative;
+  margin-top: 22px;
+   height: 277px;
+  background: url('../img/insideright.png') no-repeat;
+}
+.content_right .bottom{
+  position: relative;
+  margin-top: 24px;
+   height: 277px;
+  background: url('../img/insideright.png') no-repeat;
+}
+ .content_right .top .warn_top,.content_right .middle .warn_middle,.content_right .bottom .warn_bottom{
+  position: absolute;
+    top: 6px;
+    left: 43px;
+ }
+ .warn_top h4,.warn_middle h4,.warn_bottom h4{
+  font-size: 20px;
+  color: white;
+ }
+ .warn_top img,.warn_middle img,.warn_bottom img{
+  vertical-align: middle;
+  margin-left: 6px;
+ }
+.column_left{
+  width: 26%;
+  height:98%;
+  float: left;
+  margin: 0.3%;
+  margin-left: 0.5%;
+    font-family: "Microsoft YaHei";
+}
+
+.total_count,.real_count{
+  position: absolute;
+  color: white;
+}
+.total_count{
+  top: 51px;
+  left: 76px;
+}
+.total_count .count1{
+    position: absolute;
+   color: #ffb400;
+   font-size: 23px;
+    top: 24px;
+    left: 39px;
+}
+.real_count{
+    top: 51px;
+  left: 257px;
+}
+.real_count .count2{
+    position: absolute;
+   color: #ffb400;
+   font-size: 23px;
+    top: 24px;
+    left: 34px;
+}
+.bottom_left{
+   position: absolute;
+   top: 125px;
+   left: 31px;
+   width: 179px;
+   height: 128px;
+  /* background: orange;*/
+}
+.bayonet_title{
+  color: white;
+  font-size: 10px;
+  margin-bottom: 7px;
+  margin-left: 30px;
+}
+.bayonet_left{
+  position: absolute;
+  color: white;
+  width: 17px;
+  font-size: 10px;
+  left: 13px;
+}
+.bayonet_left li{
+  margin-bottom: 12px;
+}
+.bottom_right{
+  position: absolute;
+  width: 123px;
+  height: 128px;
+  top: 125px;
+  left: 236px;
+}
+.distru_title{
+  color: white;
+  font-size: 10px;
+  margin-bottom: 7px;
+  margin-left: 7px;
+}
+ #distru_title1 .progress-container, #distru_title2 .progress-container,#distru_title3 .progress-container{
+  margin: 0px;
+  /*display: flex;*/
+ /* height: 13px;
+ border-radius: 11px;
+ border: 0.1px solid #959595;*/
+}
+/* line 287, ../sass/screen.scss */
+ #distru_title1 .progress-container .progress-content,#distru_title2 .progress-container .progress-content,#distru_title3 .progress-container .progress-content{
+ /* width: 60%;
+  display: flex;
+  line-height: 40px;
+  margin: auto;
+  float: left;
+  padding-top: 5px;
+  margin-top: 10px;*/
+   height: 9px;
+ border-radius: 11px;
+ border: 0.1px solid #959595;
+}
+#bayonet_title1,#overdue_title1,#fake_title1{
+    position: absolute;
+    left: 32px;
+    width: 162px;
+}
+
+ #bayonet_title1 .progress-container,#overdue_title1 .progress-container,#fake_title1 .progress-container{
+  margin: 0px;
+      width: 13px;
+    float: left;
+  /*display: flex;*/
+ /* height: 13px;
+ border-radius: 11px;
+ border: 0.1px solid #959595;*/
+}
+/* line 287, ../sass/screen.scss */
+ #bayonet_title1 .progress-container .progress-content,#overdue_title1 .progress-container .progress-content,#fake_title1 .progress-container .progress-content{
+ /* width: 60%;
+  display: flex;
+  line-height: 40px;
+  margin: auto;
+  float: left;
+  padding-top: 5px;
+  margin-top: 10px;*/
+   height: 106px;
+   background: #00ffff;
+ border: 0.1px solid #959595;
+ width: 13px;
+}
+
+caption, th, td{
+  text-align: center;
+    font-weight: normal;
+    vertical-align: middle;
+    width: 76px;
+    /* height: 14px; */
+    line-height: 26px;
+    font-size: 10px;
+}
+
+.info_box{
+  border: 0.5px solid #00ffff;
+  background: #00ffff;
+  color: white;
+  font-size: 16px;
+}
+.info_box div{
+  margin-bottom: 4px;
+}
+.amap-info-content {
+    background: #00ffff;
+    border: 1px solid #ccc;
+    padding: 10px 18px 10px 10px;
+    line-height: 1.4;
+    overflow: visible;
+    opacity: 0.4;
+    width: 258px;
+    height: 177px;
+    box-sizing: border-box;
+    border: 1px solid #00ffff;
+    color: white;
+}
+
+   /*  高德地图去除左下角的logo */
+          .amap-logo {
+            display: none;
+         } 
+       .amap-copyright {
+              bottom:-100px;
+               display: none;
+        }  
+

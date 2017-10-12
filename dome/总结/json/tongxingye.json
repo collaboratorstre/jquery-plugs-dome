@@ -390,5 +390,43 @@
             542,
             7627
         ]
-    }
+    },
+    "yearDrivinglicenseTotal":[
+        {
+            "name":"2017",
+            "value":1444468,
+            "rate": 40,
+            "rate1": 30
+        },
+        {
+            "name":"2016",
+            "value":1087491,
+             "rate": 33,
+            "rate1": 50
+        },
+        {
+            "name":"2015",
+            "value":760223,
+             "rate": 30,
+            "rate1": 40
+        },
+        {
+            "name":"2014",
+            "value":509836,
+             "rate": 25,
+            "rate1": 33
+        },
+        {
+            "name":"2013",
+            "value":355402,
+             "rate": 20,
+            "rate1": 25
+        },
+        {
+            "name":"2012",
+            "value":248645,
+             "rate": 13,
+            "rate1": 20
+        }
+    ]
 }
