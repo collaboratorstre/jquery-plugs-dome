@@ -282,6 +282,10 @@ caption, th, td{
     font-size: 10px;
 }
 
+.amap-info>div:last-of-type{
+   bottom: 6px !important;
+}
+
 .info_box{
  
   color: white;
@@ -301,6 +305,9 @@ caption, th, td{
     border: 1px solid #00ffff;
     color: white;
 }
+/*.amap-info-sharp{
+  background-image: url('./xian.png')
+}*/
 
    /*  高德地图去除左下角的logo */
           .amap-logo {
