@@ -145,7 +145,7 @@
   }
 }
 //本市各辖区机动车驾驶人分布情况
-$.get('json/hezeshi.json', function (heZe) {
+$.get('json/hebei.json', function (heZe) {
         echarts.registerMap('菏泽', heZe);
         var chart = echarts.init(document.getElementById('dirve_distra'));
         

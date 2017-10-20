@@ -97,6 +97,121 @@
 				        }
 				    });
 				}
+	//调转
+	$("#zdclxq").click(function(){
+    window.open("http://localhost/dome/%E6%B2%B3%E5%8C%97/flow.html")
+    })
+    
+	$("#jrwfxq").click(function(){
+    window.open("http://localhost/dome/%E6%B2%B3%E5%8C%97/transgress.html")
+    })
+    
+    //  地图
+ var map = new AMap.Map('hebei_map', {
+			    resizeEnable: true,
+			    zoom:12,
+			    center: [114.48,38.03],
+			    // mapStyle:'amap://styles/9520d22f7b2eb0a9dee2d26724da5f94'
+			    //前往创建自定义地图样式：http://lbs.amap.com/dev/mapstyle/index
+			    mapStyle: 'amap://styles/b7060f3c169f3bbd73b5deccdc9942bf'
+			    // mapStyle: 'amap://styles/dark'
+			});
+            // var icon = new AMap.Icon({
+            // 	image: 'dian1.png',
+            // 	size: new AMap.Size(15,15)
+            // });
+            // var markers = [];
+
+            // var infoWindow = new AMap.InfoWindow();
+
+            // $.get('json/execute.json',function(data){
+            	// console.log(data);
+            	// $.each(data.impCurGps,function(i,n){
+            	// 	console.log(n)
+            	// 	markers.push([n.lon,n.lat]);
+            	// })
+            	// console.log(markers.length);
+            	// for(var i = 0,len=markers.length; i<len;  i++){
+             //   var marker;
+
+             //       marker = new AMap.Marker({
+             //       	icon: icon,
+             //       	position: markers[i],
+             //       	offset: new AMap.Pixel(-12,-12),
+             //       	zIndex: 101,
+             //       	map: map
+             //       })
+
+             //       // marker.content = data.impCurGps[i].regionName+'<br>'+data.impCurGps[i].gpsTime;
+             //       marker.content = '<div class="info_box">'+
+             //         '<div>卡口名称 : <span style="color:white;"> '+ data.impCurGps[i].plateNum +'</span></div>' +
+             //         '<div>预警时间 : <span style="color:white;"> '+ data.impCurGps[i].gpsTime +'</span></div>' +
+             //         '<div>预警类型 : <span style="color:white;"> '+ data.impCurGps[i].regionName +'</span></div>' +
+             //         '<div>车主姓名 : <span style="color:white;"> '+ data.impCurGps[i].pepName +'</span></div>' +
+             //         '<div>号牌号码 : <span style="color:white;"> '+ data.impCurGps[i].regionId +'</span></div>' +
+             //         '<div>号牌种类 : <span style="color:white;"> '+ data.impCurGps[i].plateType +'</span></div>' +
+                   
+             //       '<div>'
+
+             //       marker.on('click',markerClick);
+            	// }
+            	// function markerClick(e){
+             //      infoWindow.setContent(e.target.content);
+             //      infoWindow.open(map, e.target.getPosition());
+             //  }
+            // })
+			// var trafficLayer;
+			// var addTrafficLayer = function() {
+			//     // 实时路况图层
+			//     trafficLayer = new AMap.TileLayer.Traffic({
+			//         zIndex: 10
+			//     });
+			//     trafficLayer.setMap(map);
+			// };
+	var addHeZe = function() {
+			    // 加载行政区划插件
+    AMap.service('AMap.DistrictSearch', function() {
+		        var opts = {
+		            subdistrict: 1,   // 返回下一级行政区
+		            extensions: 'all',  // 返回行政区边界坐标组等具体信息
+		            level: 'city'  // 查询行政级别为 市
+		        };
+		        // 实例化DistrictSearch
+		        district = new AMap.DistrictSearch(opts);
+		        district.setLevel('district');
+		        // 行政区查询
+		        district.search('河北省', function(status, result) {
+		            var bounds = result.districtList[0].boundaries;
+		            var polygons = [];
+		            if (bounds) {
+		                for (var i = 0, l = bounds.length; i < l; i++) {
+		                    // 生成行政区划polygon
+		                    var polygon = new AMap.Polygon({
+		                        map: map,
+		                        strokeWeight: 2,
+		                        path: bounds[i],
+		                        fillOpacity: 0.3,
+		                        strokeWeight: 3,
+		                        shadowOffsetX: 4,
+		                        shadowOffsetY: 4,
+		                        shadowBlur: 5,
+		                        shadowColor: '#26e7e7',
+		                        fillColor: '#000000',
+		                        strokeColor: '#26e7e7'
+		                    });
+		                    polygons.push(polygon);
+		                }
+		                map.setFitView();// 地图自适应
+		                map.setZoomAndCenter(9, [114.48,38.03]);
+		            }
+		        });
+		       
+		    });
+         } 
+          $(document).ready(function(){
+       	      // addTrafficLayer();
+	          addHeZe();
+       })
           
      
     // 卡口排名

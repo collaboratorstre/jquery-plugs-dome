@@ -12,7 +12,7 @@
     <script type="text/javascript" src="../shandong.js"></script>
     <script type="text/javascript">
         var thisProvMigration_in = function(containerId,data){
-
+             console.log(data);
         	var thisProvMigrationIn_chart = echarts.init(document.getElementById(containerId));
         	 var geoCoordMap = {
 						        '东营市': [118.7073,37.5513],
@@ -43,6 +43,7 @@
 			    console.log(HZData);
 
 			 var x = HZData[0][1].todayamount;
+			 console.log(x);
 			 var convertData = function (data) {
 				        var res = [];
 				        for (var i = 0; i < data.length; i++) {

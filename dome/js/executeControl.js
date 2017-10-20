@@ -1,7 +1,7 @@
  //  地图
  var map = new AMap.Map('map_container', {
 			    resizeEnable: true,
-			    zoom:12,
+			    zoom:20,
 			    center: [115.469381,35.246531],
 			    // mapStyle:'amap://styles/9520d22f7b2eb0a9dee2d26724da5f94'
 			    //前往创建自定义地图样式：http://lbs.amap.com/dev/mapstyle/index

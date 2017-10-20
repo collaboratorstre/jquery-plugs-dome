@@ -52,7 +52,27 @@
                    </div>
               </div>
                <div class="column_center">
-                   <div class="top"></div>
+                   <div class="top" style="position: relative;">
+                       <p style="position: absolute;left: 42%;top: 1%;color: #3299fe;">外埠车辆来源迁徙图</p>
+                       <div class="vehicleorigin">
+                           <p>外省外埠车辆来源排名<span>(单位: 辆)</span></p>
+                           <table style="width: 100%;">
+                              <thead style="color:#3380FF;background-color: #083671">
+                              <tr>
+                                  <th style="width:92px;text-align:center">排名</th>
+                                  <th style="width:157px;text-align:center">来源城市</th>
+                                  <th style="width:120px;text-align:center">数量</th>
+                              </tr>
+                              </thead>
+                          </table>
+                          <div id="box" style="height: 73%;overflow: auto;">
+                             <table style="width: 100%; height: 100%">
+                                 <tbody id="hour_content" style="color:#7094c6"></tbody>
+                             </table>
+                           </div>
+                       </div>
+                       <div id="lyqxtu" style="width: 98%;height: 93%;margin-top: 4%;margin-left: 1%;"></div>
+                   </div>
                    <div class="bottom">
                        <div id="zdclsjbhqs" style="width: 100%; height: 99%"></div>
                    </div>
@@ -77,7 +97,8 @@
 	</div>
 
 <script type="text/javascript" src="../js/jquery.min.js"></script>
-  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/china.js"></script>
     <script type="text/javascript" src="../js/flow.js"></script>
 </body>
 </html>
