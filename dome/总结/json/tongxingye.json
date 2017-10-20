@@ -352,6 +352,63 @@
             "name":"潍坊市"
         }
     ],
+     "sideCitiesResident":[
+        {
+            "alwaysamount":140,
+            "todayamount":0,
+            "name":"石家庄市"
+        },
+        {
+            "alwaysamount":76,
+            "todayamount":0,
+            "name":"唐山市"
+        },
+        {
+            "alwaysamount":56,
+            "todayamount":0,
+            "name":"秦皇岛市"
+        },
+        {
+            "alwaysamount":57,
+            "todayamount":0,
+            "name":"邯郸市"
+        },
+        {
+            "alwaysamount":139,
+            "todayamount":0,
+            "name":"邢台市"
+        },
+        {
+            "alwaysamount":194,
+            "todayamount":0,
+            "name":"保定市"
+        },
+        {
+            "alwaysamount":73,
+            "todayamount":0,
+            "name":"张家口市"
+        },
+        {
+            "alwaysamount":1596,
+            "todayamount":0,
+            "name":"承德市"
+        },
+        {
+            "alwaysamount":117,
+            "todayamount":0,
+            "name":"沧州市"
+        },
+        {
+            "alwaysamount":143,
+            "todayamount":0,
+            "name":"廊坊市"
+        },
+        {
+            "alwaysamount":213,
+            "todayamount":0,
+            "name":"衡水市"
+        }
+    ],
     "impCarStatus":[
         {
             "name":"正常",

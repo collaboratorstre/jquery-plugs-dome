@@ -228,6 +228,8 @@
  //数据的统一处理
  var refreshData = function(){
     $.get("json/execute.json",function(data){
+
+     
             
      distru_title1("distru_title1",data.timetru);
      bayonet_title1("bayonet_title1",data.bayonet);  
@@ -243,6 +245,7 @@
 
 		    	    });
 		};
+
 $(document).ready(function(){
     refreshData();
     // setInterval(function(){

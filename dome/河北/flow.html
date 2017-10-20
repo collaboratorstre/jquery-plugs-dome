@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>重点车辆流量</title>
+   <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+	<link rel="stylesheet" href="../css/flow.css">
+  <script type="text/javascript" src="../js/echarts.js"></script>
+
+	 <style type="text/css">
+        /* --------------覆盖样式表文件里的样式，请勿移动   begin ----------------*/
+        table tr:nth-child(2n) {
+            background: none;
+        }
+
+        table td {
+            border: none;
+            padding: 0;
+            color:#FFFFFF;
+        }
+
+        table td:last-child {
+            border: none;
+        }
+
+        .amap-logo,.amap-copyright {
+            z-index: -1;
+        }
+
+        /* --------------覆盖样式表文件里的样式，请勿移动   end ----------------*/
+    </style>
+</head>
+<body>
+	<div class="body-content">
+        <div class="layout-top">
+        </div>
+        <div class="layout_middle">
+              <div class="column_left">
+                   <div class="top">
+                        <p>卡口重点车流量排名<em>TOP10</em><span>(单位: 辆)</span></p>
+                          <div class="bot_top">
+                            <span style="margin-left: 5%">卡口名称</span><span style="margin-left: 17%">今日本卡口通行动车总数</span><span style="margin-left: 24%">排名变化</span>
+                        </div>
+                        <div id="zdcllpm">
+                          
+                        </div>
+                   </div>
+                   <div class="bottom">
+                       <p>重点车辆类型分布<span>(单位: 辆)</span></p>
+                       <div id="zdcllxfb" style="width: 100%; height: 86%; margin-top: 8%;"></div>
+                   </div>
+              </div>
+               <div class="column_center">
+                   <div class="top"></div>
+                   <div class="bottom">
+                       <div id="zdclsjbhqs" style="width: 100%; height: 99%"></div>
+                   </div>
+               </div>
+               <div class="column_right">
+                    <div class="top">
+                          <p>重点车检车量排名<em>TOP10</em><span>(单位: 辆)</span></p>
+                          <div class="bot_top">
+                            <span style="margin-left: 5%">检车站名称</span><span style="margin-left: 17%">今日本卡口通行动车总数</span><span style="margin-left: 24%">排名变化</span>
+                        </div>
+
+                        <div id="zdcjclpm">
+                            
+                        </div>
+                    </div>
+                    <div class="bottom">
+                          <p>重点车辆违法类型分布<span>(单位: 辆)</span></p>
+                          <div id="zdclwflxfb" style="width: 100%; height: 86%; margin-top: 8%;"></div>
+                    </div>
+               </div>
+         </div>
+	</div>
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/flow.js"></script>
+</body>
+</html>

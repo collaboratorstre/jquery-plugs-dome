@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>来源迁徙图</title>
+	<script type="text/javascript" src="../../js/echarts.js"></script>
+</head>
+<body>
+	<div id="lThisMig" style="position: absolute;left: 120px; top: 70px; width: 750px; height: 600px;"></div>
+
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../hebei.js"></script>
+    <script type="text/javascript">
+        var thisProvMigration_in = function(containerId,data){
+
+        	var thisProvMigrationIn_chart = echarts.init(document.getElementById(containerId));
+        	 var geoCoordMap = {
+						        '石家庄市': [114.52,38.05],
+						        '唐山市': [118.2,39.63],
+						        '秦皇岛市': [119.6,39.93],
+						        '邯郸市': [114.48,36.62],
+						        '邢台市': [114.48,37.07],
+						        '保定市': [115.47,38.87],
+						        '张家口市': [114.88,40.82],
+						        '承德市': [117.93,40.97],
+						        '沧州市': [116.83,38.3],
+						        '廊坊市': [116.7,39.52],
+						        '衡水市': [115.68,37.73]
+						    };
+            var centerCity = {name:'石家庄市'};
+            var HZData = new Array();  //先声明一维
+             for(var i=0; i<data.length; i++){    //一维长度为i,i为变量，可以根据实际情况改变
+			        HZData[i]=new Array();  //声明二维，每一个一维数组里面的一个元素都是一个数组；
+			        HZData[i][0]= centerCity;
+			        HZData[i][1]= data[i];
+			    }
+			    console.log(HZData);
+
+			 var x = HZData[0][1].todayamount;
+			 var convertData = function (data) {
+				        var res = [];
+				        for (var i = 0; i < data.length; i++) {
+				            var dataItem = data[i];
+				            var fromCoord = geoCoordMap[dataItem[1].name];
+				            var toCoord = geoCoordMap[dataItem[0].name];
+				            if (fromCoord && toCoord) {
+				                res.push({
+				                    fromName: dataItem[1].name,
+				                    toName: dataItem[0].name,
+				                    coords: [fromCoord, toCoord]
+				                });
+				            }
+				        }
+				        return res;
+				    };
+
+			    var series = [];
+			    [['石家庄', HZData]].forEach(function (item, i) {
+			        series.push({
+			                name: item[0] + ' Top10',
+			                type: 'lines',
+			                zlevel: 1,
+			                effect: {
+			                    show: true,
+			                    period: 6,
+			                    trailLength: 0.7,
+			                    color: '#7bb4d2',
+			                    symbolSize: 3
+			                },
+			                lineStyle: {
+			                    normal: {
+			                        color: '#ffffff',
+			                        width: 0,
+			                        curveness: 0.2
+			                    }
+			                },
+			                data: convertData(item[1])
+			            },
+			            {
+			                name: item[0] + ' Top10',
+			                type: 'lines',
+			                zlevel: 2,
+			                // symbol: ['none', 'triangle'],
+			                symbolSize: 1,
+			                effect: {
+			                    show: true,
+			                    period: 6,
+			                    trailLength: 0,
+			                    symbol: 'diamond',
+			                    symbolSize: 6,
+			                    color:'#7bb4d2'
+			                },
+			                lineStyle: {
+			                    normal: {
+			                        color: '#7bb4d2',
+			                        width: 1,
+			                        opacity: 0.6,
+			                        curveness: 0.2
+			                    }
+			                },
+			                data: convertData(item[1])
+			            },
+			            {
+			                name: item[0] + ' Top10',
+			                type: 'effectScatter',
+			                coordinateSystem: 'geo',
+			                zlevel: 2,
+			                rippleEffect: {
+			                    brushType: 'stroke'
+			                },
+			                label: {
+			                    normal: {
+			                        show: true,
+			                        position: 'right',
+			                        formatter: function(params){
+			                            return params.data[2];
+			                        }
+			                    }
+			                },
+			                symbolSize: function (val) {
+			                    if(val[2]==0){
+			                        return 0.5;
+			                    }else{
+			                        return val[2]/Math.pow(10, x.toString().length-1);
+			                    }
+			                },
+			                itemStyle: {
+			                    normal: {
+			                        color: '#7bb4d2'
+			                    }
+			                },
+			                data: item[1].map(function (dataItem) {
+			                    return {
+			                        name: dataItem[1].name,
+			                        value: geoCoordMap[dataItem[1].name].concat([dataItem[1].todayamount])
+			                    };
+			                })
+			            });
+			    });
+
+			    var thisProvMigrationIn_option = {
+		        backgroundColor: '#0b0c45',
+		        tooltip : {
+		            trigger: 'item'
+		        },
+		        geo: [
+		            {
+		                map: '河北',
+		                label: {
+		                    emphasis: {
+		                        show: false
+		                    }
+		                },
+		                roam: true,
+		                itemStyle: {
+		                    normal: {
+		                        areaColor: '#0b0c45',
+		                        borderColor: '#2b6cbe',
+		                        borderWidth:3,
+		                        shadowColor: 'rgba(45,110,192,2)',
+		                        shadowBlur: 40
+		                    },
+		                    emphasis: {
+		                        areaColor: '#0b0c45'
+		                    }
+		                }
+		            },
+		            {
+		                map: '河北',
+		                label: {
+		                    emphasis: {
+		                        show: false
+		                    }
+		                },
+		                roam: true,
+		                itemStyle: {
+		                    normal: {
+		                        areaColor: '#0b0c45',
+		                        borderColor: '#2b6cbe',
+		                        borderWidth:1,
+		                        // shadowColor: 'rgba(45,110,192,2)',
+		                        // shadowBlur: 30,
+		                    },
+		                    emphasis: {
+		                        areaColor: '#0b0c45'
+		                    }
+		                }
+		            }
+		        ],
+		        series: series
+		    };
+
+		    thisProvMigrationIn_chart.setOption(thisProvMigrationIn_option);
+
+        }
+
+
+       //数据的统一处理
+       var refreshData = function(){
+       	$.get("../json/tongxingye.json",function(data){
+             
+             thisProvMigration_in("lThisMig",data.sideCitiesResident);
+       	})
+       }
+       $(document).ready(function(){
+       	refreshData();
+       	setInterval(refreshData,60*1000);
+       })  
+    </script>
+</body>
+</html>
