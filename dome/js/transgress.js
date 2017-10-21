@@ -200,6 +200,98 @@
 	    $("#"+containerId).html("<span>暂时没有数据</span>")
 	  }
 	}
+
+	//违法事故分布情况
+	$.get('../json/hebei.json', function (heZe) {
+        echarts.registerMap('河北', heZe);
+        var chart = echarts.init(document.getElementById('hebei_map'));
+        
+        option = {
+          
+            tooltip: {
+                    show: false,
+                    position: ['40%','50%'],
+                    trigger: 'item',
+                    // formatter: function(){
+                    //     return '每年小型车车辆总数<br><span>'+234523+'</span>辆';
+                    formatter: '今日{b0}机动车通行总量<br/><span style="color: yellow;">857601</span>辆'
+                    // }
+                },
+                    geo: [
+            {
+                map: '河北',
+                label: {
+                    emphasis: {
+                        show: false
+                    }
+                },
+                roam: false,
+                itemStyle: {
+                    normal: {
+                        areaColor: '#0b0c45',
+                        borderColor: '#2b6cbe',
+                        borderWidth:3,
+                        shadowColor: 'rgba(45,110,192,2)',
+                        shadowBlur: 40
+                    },
+                    emphasis: {
+                        areaColor: '#0b0c45'
+                    }
+                }
+            },
+            {
+                map: '河北',
+                label: {
+                    emphasis: {
+                        show: false
+                    }
+                },
+                roam: false,
+                itemStyle: {
+                    normal: {
+                        areaColor: '#0b0c45',
+                        borderColor: '#2b6cbe',
+                        borderWidth:1,
+                        // shadowColor: 'rgba(45,110,192,2)',
+                        // shadowBlur: 30,
+                    },
+                    emphasis: {
+                        areaColor: '#0b0c45'
+                    }
+                }
+            }
+        ],
+            series:[
+              {
+                name:'机动车总量分布图',
+                type:'map',
+                map:'河北',
+                itemStyle: {
+                  normal:{
+                    areaColor: '#0b0c45',
+                    borderColor: '#2b6cc0'
+                  },
+                  emphasis:{
+                    color: 'blue',
+                    areaColor: '#00a2ff'
+                  }
+                },
+                label:{
+                  
+                },
+                mapLocation:{
+                  y:60
+                },
+                data:[
+
+
+                ]
+              }
+            ],
+            
+        };
+        chart.setOption(option);
+});
  
  //数据的统一处理
   var refreshData = function(){

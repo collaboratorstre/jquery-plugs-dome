@@ -232,6 +232,7 @@ var geoCoordMap = {
           var geoCoord = geoCoordMap[dataItem.name];
           var coord = chart.convertToPixel('geo',geoCoord);
           idx += '';
+          console.log(idx);
 
           options.xAxis.push({
             id: idx,
@@ -278,8 +279,8 @@ var geoCoordMap = {
           left: coord[0] - 15,
           top: coord[1] - 35
          });
-
-         options.series.push({
+          
+        options.series.push( {
           name: dataItem.name,
           type: 'bar',
           stack: 'bar' + idx,
@@ -293,6 +294,37 @@ var geoCoordMap = {
           },
           data: [dataItem.value]
          })
+
+         // options.series.push([
+         // {
+         //  name: dataItem.name,
+         //  type: 'bar',
+         //  stack: 'bar' + idx,
+         //  xAxisId: idx,
+         //  yAxisId: idx,
+         //  barWidth: 12,
+         //  itemStyle: {
+         //    normal: {
+         //      color: 'rgba(254,0,255,0.5)'
+         //    }
+         //  },
+         //  data: [dataItem.value]
+         // },
+         // {
+         //  name: dataItem.name,
+         //  type: 'bar',
+         //  stack: 'bar' + idx,
+         //  xAxisId: idx,
+         //  yAxisId: idx,
+         //  barWidth: 12,
+         //  itemStyle: {
+         //    normal: {
+         //      color: 'rgba(254,0,255,0.5)'
+         //    }
+         //  },
+         //  data: [dataItem.value]
+         // }
+         // ])
         })
         chart.setOption(options);
           chart.on("mouseover", function (params){   
