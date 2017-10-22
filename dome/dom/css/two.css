@@ -1,0 +1,674 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 10, ../sass/screen.scss */
+body,html {
+  background: #00387c;
+  opacity: 1.0;
+  width: 100%;
+  height: 100%;
+}
+.body_content{
+  height: 100%;
+}
+.layout_middle{
+    width: 100%;
+    height: 92%;
+    background-color: #0d043d;
+}
+.layout_top{
+  width: 100%;
+  height: 8%;
+}
+.column_left{
+  width: 26%;
+  height:100%;
+  float: left;
+  margin: 0.3%;
+  margin-left: 0.5%;
+}  
+/* 车辆类型分析 */
+.column_left .top{
+  width: 100%;
+  height: 40%;
+  background: url('../img/LeftUP_bg_img.png') no-repeat;
+  background-size: 100% 100%;
+  margin-bottom: 1%;
+  border-top: 0.01px solid #0d043d;
+}
+/* 改动 */
+.column_left .top p,.column_left .bottom p,.column_left_congest p{
+  color: #3299fe;
+  font-size: 13px;
+  height: 3%;
+  margin: 9px 0px 7px 10px;
+}
+.column_left .top p span,.column_left .bottom p span,.column_left_congest p span{
+  color: #5772a1;
+ font-size:10px; 
+}
+.column_left .bottom{
+  width: 100%;
+  height: 60%;
+  background: url('../img/LeftDOWN_bg_img.png') no-repeat;
+  background-size: 100% 100%;
+  border-top: 0.01px solid #0d043d;
+}
+.column_left .bottom .bot_top,.bot_runoff{
+  background-color: #09326a;
+   opacity: 0.5;
+   height: 26px;
+   margin-top: 11px;
+   box-sizing: border-box;
+   padding-top: 3px;
+}
+.column_left .bottom .bot_top span,.bot_runoff span{
+  color: #3299fe;
+  display: inline-block;
+  font-size: 10px;
+ margin-left: 10%;
+}
+.bot_runoff span:first-of-type{
+    width: 18%;
+    margin-left: 8%;
+}
+.bot_runoff span:nth-of-type(2){
+       margin-left: 13%;
+}
+.bot_runoff span:nth-of-type(3){
+        margin-left: 30%;
+}
+.column_left .bottom p em{
+    font-weight: bold;
+    color: #00e8ff;
+}
+
+      #bay_rank .progress-container,#flow_content .progress-container{
+       margin: 0px;
+      display: flex;
+      height: 31px;
+      line-height: 20px;
+      font-size: 12px;
+      margin-left: 9%;
+    }
+      #totel_pmtab tr,#flux_pmtab tr{
+       height: 15px;
+       line-height: 15px;
+    }
+      #xiaqu_distru .progress-container,#xiaqu_rank .progress-container,#xiaqu_flux .progress-container{
+       margin: 0px;
+      display: flex;
+         height: 34px;
+        line-height: 33px;
+      font-size: 12px;
+      margin-left: 9%;
+    }
+     #hour_content tr{
+      line-height: 28px;
+    }
+    #exponent_content tr{
+      line-height: 18px;
+    }
+
+/*@media screen and (min-width:1280px) and (max-width:1680px){
+      #bay_rank .progress-container,#flow_content .progress-container{
+       margin: 0px;
+      display: flex;
+      height: 58px;
+      line-height: 20px;
+      font-size: 12px;
+      margin-left: 9%;
+    }
+      #totel_pmtab tr,#flux_pmtab tr{
+     height: 36px;
+     line-height: 16px;
+  }
+    #xiaqu_distru .progress-container,#xiaqu_rank .progress-container,#xiaqu_flux .progress-container{
+     margin: 0px;
+    display: flex;
+       height: 64px;
+      line-height: 33px;
+    font-size: 12px;
+    margin-left: 9%;
+  }
+    #hour_content tr{
+    line-height: 51px;
+  }
+  #exponent_content tr{
+      line-height: 36px;
+    }
+}*/
+
+#index_content tr{
+  line-height: 58px;
+  height: 63px;
+}
+#index_content tr td:first-of-type{
+  width: 28%;
+  text-align: center;
+}
+#index_content tr td:nth-of-type(2){
+    text-align: center;
+    width: 48%;;
+}
+#index_content tr td:nth-of-type(3){
+ 
+  text-align: center;
+}
+
+#index_content tr:first-of-type td:nth-of-type(2),#index_content tr:nth-of-type(2) td:nth-of-type(2),#index_content tr:nth-of-type(3) td:nth-of-type(2),#index_content tr:nth-of-type(4) td:nth-of-type(2),#index_content tr:nth-of-type(5) td:nth-of-type(2){
+  color: #f00913;
+  font-weight: bold;
+}
+#index_content tr:nth-of-type(6) td:nth-of-type(2),#index_content tr:nth-of-type(7) td:nth-of-type(2),#index_content tr:nth-of-type(8) td:nth-of-type(2){
+  color: #ffb400;
+  font-weight: bold;
+}
+#index_content tr:nth-of-type(9) td:nth-of-type(2){
+   color: #31be3b;
+  font-weight: bold;
+}
+#index_content tr:first-of-type td:nth-of-type(3),#index_content tr:nth-of-type(2) td:nth-of-type(3),#index_content tr:nth-of-type(4) td:nth-of-type(3){
+  background: url('../img/jian_top.png') no-repeat 33px 16px;
+}
+#index_content tr:nth-of-type(3) td:nth-of-type(3),#index_content tr:nth-of-type(5) td:nth-of-type(3),#index_content tr:nth-of-type(6) td:nth-of-type(3),#index_content tr:nth-of-type(8) td:nth-of-type(3){
+  background: url('../img/jian_bot.png') no-repeat 33px 16px;
+}
+#index_content tr:nth-of-type(7) td:nth-of-type(3),#index_content tr:nth-of-type(9) td:nth-of-type(3),#index_content tr:nth-of-type(10) td:nth-of-type(3){
+  background: url('../img/jian_mid.png') no-repeat 28px 27px;
+}
+#bay_rank .progress-container .progress-title,#flow_content .progress-container .progress-title{
+  width: 23%;
+  color: #80a8d9;
+}
+#bay_rank .progress-container .progress-amount,#flow_content .progress-container .progress-amount{
+  width: 10%;
+  color: #FFFFFF;
+  padding-left: 5px;
+}
+#bay_rank .progress-container:first-of-type .progress-amount,#flow_content .progress-container:first-of-type .progress-amount{
+   background: url('../img/jian_top.png') no-repeat 15px 1px;
+}
+#bay_rank .progress-container:nth-of-type(2) .progress-amount,#flow_content .progress-container:nth-of-type(2) .progress-amount{
+    background: url('../img/jian_top.png') no-repeat 15px 1px;
+}
+#bay_rank .progress-container:nth-of-type(3) .progress-amount,#flow_content .progress-container:nth-of-type(3) .progress-amount{
+    background: url('../img/jian_bot.png') no-repeat 15px 1px;
+}
+#bay_rank .progress-container:nth-of-type(4) .progress-amount,#flow_content .progress-container:nth-of-type(4) .progress-amount{
+    background: url('../img/jian_top.png') no-repeat 15px 1px;
+}
+#bay_rank .progress-container:nth-of-type(5) .progress-amount,#flow_content .progress-container:nth-of-type(5) .progress-amount{
+      background: url('../img/jian_bot.png') no-repeat 15px 1px;
+}
+#bay_rank .progress-container:nth-of-type(6) .progress-amount,#flow_content .progress-container:nth-of-type(6) .progress-amount{
+       background: url('../img/jian_bot.png') no-repeat 15px 1px;
+}
+#bay_rank .progress-container:nth-of-type(7) .progress-amount,#flow_content .progress-container:nth-of-type(7) .progress-amount{
+       background: url('../img/jian_mid.png') no-repeat 15px 8px;
+}
+#bay_rank .progress-container:nth-of-type(8) .progress-amount,#flow_content .progress-container:nth-of-type(8) .progress-amount{
+      background: url('../img/jian_bot.png') no-repeat 15px 1px
+}
+#bay_rank .progress-container:nth-of-type(9) .progress-amount,#flow_content .progress-container:nth-of-type(9) .progress-amount{
+     background: url('../img/jian_mid.png') no-repeat 15px 8px;
+}
+#bay_rank .progress-container:nth-of-type(10) .progress-amount,#flow_content .progress-container:nth-of-type(10) .progress-amount{
+   background: url('../img/jian_mid.png') no-repeat 15px 8px;
+}
+#bay_rank .progress-container .progress-content,#flow_content .progress-container .progress-content{
+  width: 56%;
+  display: flex;
+  line-height: 40px;
+  height: 15px;
+  background-color: #00042a;
+  border-radius: 8px;
+  margin-top: 1.5%;
+}
+ #bay_rank .progress-container .legalRate,#flow_content .progress-container .legalRate,#flow_content .progress-container .legalRate{
+   border-radius: 8px;
+   background-color: #287cdc;
+   position: relative;
+ }
+  #bay_rank .progress-container .legalRate .shuzi,#flow_content .progress-container .legalRate .shuzi{
+    position: absolute;
+    top: -12px;
+    right: -44px;
+  }
+.column_left_congest{
+  width: 26%;
+  height: 100%;
+  margin: 0.3%;
+  margin-left: 0.5%;
+  margin-top: 0.2%;
+  float: left;
+  background: url('../img/YSFX_Left_bg_img.png') no-repeat;
+  background-size: 100% 100%;
+}
+.column_center{
+  width: 46%;
+  height: 100%;
+  float: left;
+  margin: 0.2%;
+}
+.column_center .top{
+  width: 100%;
+  height: 70%;
+  background: url('../img/MiddleUP_bg_img.png') no-repeat;
+  background-size: 100% 100%;
+  margin-bottom: 0.8%;
+}
+.column_center .bottom{
+  width: 100%;
+  height: 30%;
+  background: url('../img/MiddleDOWN_bg_img.png') no-repeat;
+  background-size: 100% 100%;
+}
+.column_right{
+  width: 26%;
+  height: 100%;
+  float: left;
+  margin: 0.3%;
+
+}
+.column_right .top{
+  width: 100%;
+  height: 40%;
+  background: url('../img/RightUP_bg_img.png') no-repeat;
+  background-size: 100% 100%;
+  margin-bottom: 1%;
+   border-top: 0.01px solid #0d043d;
+}
+/* 通行机动车总量排行TOP10  5分钟实时报警台*/
+/* 改动 */
+.column_right .top p{
+  color: #3299fe;
+  font-size: 13px;
+  height: 3%
+  margin: 9px 0px 7px 140px;
+}
+.column_right .top p em{
+   font-weight: bold;
+    color: #00e8ff;
+}
+#totel_pm,#real_time,#flux_pm,#hourage,#congest_pai{
+  font-size: 12px;
+  width: 100%;
+}
+#real_time table,#hourage table,#congest_pai table{
+  width: 100%;
+}
+
+#pm_up tr{
+  background: #09326a;
+    color: #2a83dd;
+    line-height: 14px;
+}
+#time_up tr,#flux_up tr,#hour_up tr,#exponent_up tr{
+ background: #09326a;
+  color: #2a83dd;
+  line-height: 23px;
+}
+#pm_up tr td,#flux_up tr td{
+    width: 1%;
+    text-align: center;
+}
+#time_up tr td,#hour_up tr td,#exponent_up tr td{
+    width: 0%;
+    text-align: center;
+}
+
+
+#time_content tr{
+    text-align: right;
+    border: .1px solid #09487e;
+    height: 37px;
+    line-height: 16px;
+}
+#time_content tr td{
+   line-height: 17px;
+    text-align: center;
+    border: 0.1px solid #09487e;
+}
+#time_content tr td:first-of-type{
+  width: 21%;
+}
+#time_content tr td:nth-of-type(2){
+  width: 38%;
+}
+#time_content tr td:nth-of-type(3){
+  color: #d49418;
+}
+#totel_pmtab tr td,#flux_pmtab tr td{
+    width: 19%;
+    text-align: center;
+    border: 0.1px solid #09487e;
+}
+/*#totel_pmtab tr td:nth-of-type(2),#totel_pmtab tr td:nth-of-type(3){
+  text-align: right;
+}*/
+
+#totel_pmtab tr td:nth-of-type(4),#flux_pmtab tr td:nth-of-type(4){
+  padding-left: 1%;
+}
+#totel_pmtab tr td:last-of-type,#flux_pmtab tr td:last-of-type{
+  text-align: right;
+}
+.rankTable tr:first-of-type{
+      color: #9f203d;
+}
+.rankTable tr:nth-of-type(2){
+  color: #fe8831;
+}
+.rankTable tr:nth-of-type(3){
+  color: #b99d0d;
+}
+.rankTable tr td:last-of-type{
+
+  color: #2a83dd;
+}
+.rankTable tr td:last-of-type span{
+  font-size: 18px;
+    font-weight: bold;
+    color: #d29516;
+}
+/* 所有页面的公共部分（右边） */
+.column_right .bottom{
+  width: 100%;
+  height: 60%;
+  background: url('../img/RightDOWN_bg_img.png') no-repeat;
+  background-size: 100% 100%;
+   border-top: 0.01px solid #0d043d;
+}
+/* 本市通行机动车总量随辖区分布  */
+.column_right .bottom p{
+  color: #3299fe;
+  font-size: 13px;
+  margin: 9px 0px 7px 160px;
+}
+.column_right .top p span,.column_right .bottom p span{
+  color: #5772a1;
+ font-size:10px; 
+}
+#xiaqu_distru,#xiaqu_rank,#xiaqu_flux{
+  margin-top: 9%;
+}
+
+#typ_rank .progress-container{
+    margin: 0px;
+    display: flex;
+     height: 23px;
+    line-height: 33px;
+   font-size: 12px;
+   margin-left: 6%;
+   margin-top: 5%;
+}
+#xiaqu_distru .progress-container .progress-title,#xiaqu_rank .progress-container .progress-title,#xiaqu_flux .progress-container .progress-title{
+  width: 17%;
+  color: #80a8d9;
+}
+#typ_rank .progress-container .progress-title{
+  width: 21%;
+  color: #80a8d9;
+}
+#xiaqu_distru .progress-container .progress-content,#xiaqu_rank .progress-container .progress-content,#xiaqu_flux .progress-container .progress-content{
+  width: 80%;
+  display: flex;
+  line-height: 40px;
+  height: 15px;
+  background-color: #00042a;
+  border-radius: 8px;
+  margin-top: 2.7%;
+}
+#typ_rank .progress-container .progress-content{
+  width: 72%;
+  display: flex;
+  line-height: 40px;
+  height: 15px;
+  background-color: #00042a;
+  border-radius: 8px;
+  margin-top: 2.7%;
+}
+#xiaqu_distru .progress-container .legalRate,#xiaqu_rank .progress-container .legalRate,#xiaqu_flux .progress-container .legalRate,#xiaqu_flux .progress-container .legalRate,#typ_rank .progress-container .legalRate,#xiaqu_rank .progress-container .legalRate{
+   border-radius: 8px;
+   background-color: #ff3334;
+   position: relative;
+}
+#xiaqu_distru .xianqu,#xiaqu_flux .xianqu,#typ_rank .shuzi,#xiaqu_rank .xianqu{
+   position: absolute;
+    top: -12px;
+    right: -40px;
+}
+#typ_rank .progress-container .legalRate{
+  border-radius: 8px;
+  background-color: #287cdc;
+}
+
+/* 卡点对旅行时间排名 */
+
+#hour_content tr td{
+  border: .1px solid #056ca6;
+}
+#hour_content tr:first-of-type{
+  color: #b80322;
+}
+#hour_content tr:nth-of-type(2){
+  color: #fd8936;
+}
+#hour_content tr:nth-of-type(3){
+  color: #c9aa01;
+}
+#hour_content tr td:first-of-type{
+  width: 19%;
+  text-align: center;
+}
+#hour_content tr td:nth-of-type(2){
+  width: 48%;
+  text-align: center;
+}
+#hour_content tr td:nth-of-type(3){
+  text-align: center;
+  font-size: 15px;
+  color: #ffb401;
+  font-weight: bold;
+}
+
+/*  本市流量卡口排名 */
+/*#exponent_content tr{
+  line-height: 36px;
+}*/
+#exponent_content tr td{
+  border: .1px solid #056ca6;
+}
+#exponent_content tr:first-of-type{
+  color: #b80322;
+}
+#exponent_content tr:nth-of-type(2){
+  color: #fd8936;
+}
+#exponent_content tr:nth-of-type(3){
+  color: #c9aa01;
+}
+#exponent_content tr td:first-of-type{
+  width: 19%;
+  text-align: center;
+}
+#exponent_content tr td:nth-of-type(2){
+  width: 48%;
+  text-align: center;
+}
+#exponent_content tr td:nth-of-type(3){
+  text-align: center;
+}
+
+#exponent_content tr:first-of-type td:nth-of-type(3),#exponent_content tr:nth-of-type(2) td:nth-of-type(3),#exponent_content tr:nth-of-type(3) td:nth-of-type(3){
+    font-size: 15px;
+    font-weight: bold;
+    color: #b80322;
+}
+#exponent_content tr:nth-of-type(4) td:nth-of-type(3),#exponent_content tr:nth-of-type(5) td:nth-of-type(3),#exponent_content tr:nth-of-type(6) td:nth-of-type(3){
+    font-size: 15px;
+    font-weight: bold;
+    color: #c9aa01;
+}
+#exponent_content tr:nth-of-type(7) td:nth-of-type(3),#exponent_content tr:nth-of-type(8) td:nth-of-type(3),#exponent_content tr:nth-of-type(9) td:nth-of-type(3),#exponent_content tr:nth-of-type(10) td:nth-of-type(3){
+    font-size: 15px;
+    font-weight: bold;
+    color: #05ee18;
+}
+
+#tpy_shan canvas{
+  top : -20px !important;
+}
+#typ_distru canvas{
+  top : -10px !important;
+}
+/*#haopai_distru canvas{
+  top: -40px !important;
+}*/
+/*  新增 实时流量分布情况总流量 */
+#col_centertop{
+  position: relative;
+}
+.center_topcar,.center_topdiver,.center_fluxdis{
+    position: absolute;
+    color: white;
+    font-size: 13px;
+    top: 7%;
+    left: 27%;
+    z-index: 1;
+}
+#top_carnumber,#top_number,#center_distru{
+    color: #ffb400;
+    font-size:20px;
+    font-weight: bold;
+}
+
+/* 新增通行机动车总量 */
+#fiveyear_change{
+  position: relative;
+}
+#fiveyear_change .change1,#fiveyear_change .change2{
+  position: absolute;
+  font-size: 13px;
+  color: white;
+  left: 1%;
+}
+#change1_one,#change1_two{
+  font-weight: bold;
+  color: #f5ad01;
+  font-size: 16px;
+}
+#fiveyear_change .change1{
+       top: 18%;
+}
+#fiveyear_change .change2{
+       top: 28%;
+}
+
+/* 滚动条样式 */
+.column_left_congest{
+    overflow: hidden;
+    overflow-y: scroll;
+}
+::-webkit-scrollbar{
+  width:3px !important;
+}
+::-webkit-scrollbar-button {
+}
+::-webkit-scrollbar-track{
+  /*background-color:#f3f3f3;*/
+  background-color: #0b0c45;
+}
+::-webkit-scrollbar-track-piece{
+  /*background-color:#f3f3f3;*/
+  background-color: #0b0c45;
+  -webkit-border-radius:4px;
+}
+::-webkit-scrollbar-thumb{
+  /*background-color:#999999; */ 
+  background-color: #0b0c45;
+  border:solid 1px #0b0c45;
+  border-radius:4px;  
+} 
+::-webkit-scrollbar-corner {
+ /* background-color: #999999;*/
+ background-color: #0b0c45;
+} 
+::-webkit-resizer {
+  background: no-repeat bottom right;
+}
+
+#motaikuang{
+  position: absolute;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    line-height: 25px;
+    width: 17%;
+    padding: 1% 1%;
+        opacity: 0.8;
+         
+}

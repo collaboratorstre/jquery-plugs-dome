@@ -99,15 +99,6 @@ var geoCoordMap = {
                       {value:4310, name:'单县'},
                       {value:3234, name:'郓城县'},
                       {value:6135, name:'鄄城县'},
-                      {value:4310, name:'东明县'},
-                      {value:8335, name:'牡丹区'},
-                      {value:7310, name:'定陶区'},
-                      {value:6234, name:'巨野县'},
-                      {value:5135, name:'曹县'},
-                      {value:7335, name:'成武县'},
-                      {value:4310, name:'单县'},
-                      {value:3234, name:'郓城县'},
-                      {value:6135, name:'鄄城县'},
                       {value:4310, name:'东明县'}
                        ]
         
@@ -131,7 +122,7 @@ var geoCoordMap = {
                     trigger: 'item',
                     // formatter: function(){
                     //     return '每年小型车车辆总数<br><span>'+234523+'</span>辆';
-                    //formatter: '今日{b0}机动车通行总量<br/><span style="color: yellow;font-size: 20px;margin-left: 60px;">{c0}</span>辆'
+                    formatter: '今日{b0}机动车通行总量<br/><span style="color: yellow;font-size: 20px;margin-left: 60px;">{c0}</span>辆'
                     // }
                 },
             geo: [
@@ -237,12 +228,10 @@ var geoCoordMap = {
         }
 
         $.each(dataShow,function(idx,dataItem){
-          console.log(">>><><><",dataShow)
           if(!(dataItem.name in  geoCoordMap))return;
           var geoCoord = geoCoordMap[dataItem.name];
           var coord = chart.convertToPixel('geo',geoCoord);
           idx += '';
-          console.log(idx);
 
           options.xAxis.push({
             id: idx,
@@ -289,8 +278,8 @@ var geoCoordMap = {
           left: coord[0] - 15,
           top: coord[1] - 35
          });
-          
-        options.series.push( {
+
+         options.series.push({
           name: dataItem.name,
           type: 'bar',
           stack: 'bar' + idx,
@@ -303,39 +292,7 @@ var geoCoordMap = {
             }
           },
           data: [dataItem.value]
-         });
-
-
-         // options.series.push([
-         // {
-         //  name: dataItem.name,
-         //  type: 'bar',
-         //  stack: 'bar' + idx,
-         //  xAxisId: idx,
-         //  yAxisId: idx,
-         //  barWidth: 12,
-         //  itemStyle: {
-         //    normal: {
-         //      color: 'rgba(254,0,255,0.5)'
-         //    }
-         //  },
-         //  data: [dataItem.value]
-         // },
-         // {
-         //  name: dataItem.name,
-         //  type: 'bar',
-         //  stack: 'bar' + idx,
-         //  xAxisId: idx,
-         //  yAxisId: idx,
-         //  barWidth: 12,
-         //  itemStyle: {
-         //    normal: {
-         //      color: 'rgba(254,0,255,0.5)'
-         //    }
-         //  },
-         //  data: [dataItem.value]
-         // }
-         // ])
+         })
         })
         chart.setOption(options);
           chart.on("mouseover", function (params){   

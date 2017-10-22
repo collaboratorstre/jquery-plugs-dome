@@ -1,0 +1,301 @@
+/*  页面布局 --start-- */
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+/* line 26, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 30, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 10, ../sass/screen.scss */
+body {
+  background: #00387c;
+  overflow: auto;
+  opacity: 1.0;
+}
+body,html {
+  background: #00387c;
+  opacity: 1.0;
+  width: 100%;
+  height: 100%;
+
+}
+.body-content{
+  height: 100%;
+    font-family: "Microsoft YaHei" !important;
+}
+
+.layout-top {
+  width: 100%;
+ /* height: 88px;*/
+  height: 8%;
+}
+
+.layout_middle{
+    width: 100%;
+    height: 92%;
+    background-color: #0d043d;
+
+}
+
+.column_left{
+  width: 26%;
+  height:98%;
+  float: left;
+  margin: 0.3%;
+  margin-left: 0.5%;
+    font-family: "Microsoft YaHei";
+}
+.column_right{
+  width: 26%;
+  height: 98%;
+  float: left;
+  margin: 0.3%;
+
+}
+.column_left .top,.column_right .top{
+  width: 100%;
+  height: 60%;
+    background: url(../img/LeftDOWN_bg_img.png) no-repeat;
+  background-size: 100% 100%;
+  margin-bottom: 1%;
+  border-top: 0.01px solid #0d043d;
+
+}
+.column_left .bottom,.column_right .bottom{
+  width: 100%;
+  height: 40%;
+  background: url('../img/LeftUP_bg_img.png') no-repeat;
+  background-size: 100% 100%;
+  border-top: 0.01px solid #0d043d;
+}
+
+.column_center{
+  width: 46%;
+  height: 98%;
+  float: left;
+  margin: 0.2%;
+}
+.column_center .top{
+  width: 100%;
+  height: 70%;
+  background: url('../img/MiddleUP_bg_img.png') no-repeat;
+  background-size: 100% 100%;
+  margin-top: 0.8%;
+  position: relative;
+  border-top: 0.1px solid black;
+}
+.column_center .bottom{
+  width: 100%;
+  height: 30%;
+  background: url('../img/MiddleDOWN_bg_img.png') no-repeat;
+  background-size: 100% 100%;
+      margin-top: 0.1%;
+}
+/*  页面布局 --end-- */
+
+/* 重点车辆流量排名  检车重点车排名*/
+.column_left .top p,.column_right .top p,.column_left .bottom p,.column_right .bottom p{
+   color: #3299fe;
+    font-size: 16px;
+    height: 0%;
+    box-sizing: border-box;
+    padding-top: 9px;
+    margin: 0px 0px 7px 10px
+}
+.column_left .top p em,.column_right .top p em{
+   font-weight: bold;
+    color: #00e8ff;
+}
+.column_left .top p span,.column_right .top p span,.column_left .bottom p span,.column_right .bottom p span{
+   color: #5772a1;
+ font-size:10px;
+}
+.column_left .top .bot_top,.column_right .top .bot_top{
+      background-color: #09326a;
+   opacity: 0.5;
+   height: 26px;
+   margin-top: 8%;
+   box-sizing: border-box;
+    line-height:26px;
+}
+.column_left .top .bot_top span,.column_right .top .bot_top span{
+   color: #3299fe;
+  display: inline-block;
+  font-size: 10px;
+ margin-left: 10%;
+}
+/*#bay_rank{
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 90%;
+}*/
+ #zdcllpm .progress-container,#zdcjclpm .progress-container{
+  margin: 0px;
+        display: flex;
+        height: 46px;
+        line-height: 20px;
+        font-size: 12px
+ }
+#zdcllpm .progress-container .progress-title,#zdcjclpm .progress-container .progress-title{
+     width: 16%;
+    margin: 0 2%;
+    color: #80a8d9;
+    text-align: center;
+}
+#zdcllpm .progress-container .progress-amount,#zdcjclpm .progress-container .progress-amount{
+    width: 10%;
+  color: #FFFFFF;
+  padding-left: 5px;
+}
+#zdcllpm .progress-container .progress-content,#zdcjclpm .progress-container .progress-content{
+   width: 56%;
+  display: flex;
+  line-height: 40px;
+  height: 15px;
+  background-color: #00042a;
+  border-radius: 8px;
+  margin-top: 1.5%;
+    position: relative;
+}
+ #zdcllpm .progress-container .legalRate,#zdcjclpm .progress-container .legalRate{
+    border-radius: 8px;
+   background-color: #287cdc;
+ }
+ #zdcllpm .progress-container .legalRate .shuzi,#zdcjclpm .progress-container .legalRate .shuzi{
+    position: absolute;
+    top: -12px;
+     right: 10px;
+ }
+
+ .column_center .vehicleorigin{
+     width: 394px;
+    height: 286px;
+    background: url(../img/whclly.png) no-repeat;
+    position: absolute;
+    top: 53%;
+    left: 1%;
+    z-index: 1000;
+    /* background-color: rgba(0,255,255,.4); */
+    opacity: .6;
+ }
+.column_center .vehicleorigin p{
+      color: #3299fe;
+    margin: 3%;
+    margin-bottom: 8%;
+}
+.column_center .vehicleorigin p span{
+   color: #5772a1;
+ font-size:10px;
+}
+
+ #hour_content tr{
+  line-height: 28px;
+ }
+ #hour_content tr td:nth-of-type(3){
+    text-align: center;
+    color: #ffb401;
+    
+ }
+ #hour_content tr td {
+    border: .1px solid #056ca6;
+}
+#hour_content tr td:nth-of-type(1){
+  width: 25%;
+  text-align: center;
+}
+#hour_content tr td:nth-of-type(2){
+  width: 41%;
+  text-align: center;
+}
+ #hour_content tr:last-of-type td{
+  border: none;
+ }
+  #hour_content tr:last-of-type td:first-of-type,#hour_content tr:last-of-type td:nth-of-type(2){
+  border-right:  .1px solid #056ca6;
+ }
+
+ /* 滚动条样式 */
+.column_left_congest{
+    overflow: hidden;
+}
+::-webkit-scrollbar{
+    width:3px !important;
+}
+::-webkit-scrollbar-button {
+}
+::-webkit-scrollbar-track{
+    /*background-color:#f3f3f3;*/
+    background-color: #0b0c45;
+}
+::-webkit-scrollbar-track-piece{
+    /*background-color:#f3f3f3;*/
+    background-color: #0b0c45;
+    -webkit-border-radius:4px;
+}
+::-webkit-scrollbar-thumb{
+    /*background-color:#999999; */
+    background-color:rgba(255,255,255,0.75);
+    border:solid 1px #0b0c45;
+    border-radius:4px;
+}
+::-webkit-scrollbar-corner {
+    /* background-color: #999999;*/
+    background-color: #0b0c45;
+}
+::-webkit-resizer {
+    background: no-repeat bottom right;
+}

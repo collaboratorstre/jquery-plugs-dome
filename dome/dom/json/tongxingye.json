@@ -1,0 +1,150 @@
+{
+  "kopm": [
+	{ "value": 287371},
+	{ "value": 264310},
+	{ "value": 257610},
+	{ "value": 227800},
+	{ "value": 198990},
+	{ "value": 187850},
+	{ "value": 166601},
+	{ "value": 159780},
+	{ "value": 75761},
+	{ "value": 57602}
+             ],
+  "zlxqfb": [
+    {"name":"牡丹区","value": 857601},
+    {"name":"定陶区","value": 785210},
+    {"name":"巨野县","value": 321780},
+    {"name":"曹县","value": 304218},
+    {"name":"成武县","value": 287371},
+    {"name":"单县","value": 264310},
+    {"name":"郓城县","value": 257601},
+    {"name":"鄄城县","value": 227890},
+    {"name":"东明县","value": 198990}
+  ],
+  "zlph": [
+    {"direc": "南向北","role":3,"totel":12789},
+    {"direc": "东向西","role":2,"totel":12531},
+    {"direc": "北向南","role":4,"totel":11980},
+    {"direc": "西向东","role":3,"totel":11741},
+    {"direc": "南向北","role":3,"totel":11571},
+    {"direc": "东向西","role":2,"totel":11428},
+    {"direc": "西向东","role":3,"totel":11189},
+    {"direc": "南向北","role":4,"totel":11050},
+    {"direc": "北向南","role":3,"totel":10989},
+    {"direc": "南向北","role":1,"totel":10752}
+  ],
+  "zlztpm": [
+    {"name":"正常","value": 857601},
+    {"name":"转出","value": 785210},
+    {"name":"被强盗","value": 321780},
+    {"name":"停驶","value": 304218},
+    {"name":"注销","value": 287371},
+    {"name":"违法未处理","value": 264310},
+    {"name":"海关监管","value": 257601},
+    {"name":"事故未处理","value": 227890},
+    {"name":"嫌疑车","value": 198990},
+    {"name":"查封","value": 187880},
+    {"name":"暂扣","value": 166601},
+    {"name":"强制注销","value": 159780},
+    {"name":"事故逃逸","value": 75761},
+    {"name":"锁定","value": 57602}
+  ],
+  "realpolice": [
+     {"times":"9:00","statuk": "5分钟流量减少超过20%"},
+     {"times":"9:01","statuk": "5分钟流量减少超过20%"},
+     {"times":"9:02","statuk": "5分钟流量减少超过20%"},
+     {"times":"9:03","statuk": "5分钟流量减少超过20%"},
+     {"times":"9:04","statuk": "5分钟流量减少超过20%"},
+     {"times":"9:05","statuk": "5分钟流量减少超过20%"},
+     {"times":"9:06","statuk": "5分钟流量减少超过20%"},
+     {"times":"9:07","statuk": "5分钟流量减少超过20%"},
+     {"times":"9:08","statuk": "5分钟流量减少超过20%"},
+     {"times":"9:09","statuk": "5分钟流量减少超过20%"}
+  ],
+  "lxpm": [
+     {"time": 60}, 
+     {"time": 59},
+     {"time": 58},
+     {"time": 57},
+     {"time": 56},
+     {"time": 55},
+     {"time": 54},
+     {"time": 53},
+     {"time": 52},
+     {"time": 51},
+     {"time": 50},
+     {"time": 49},
+     {"time": 48},
+     {"time": 47},
+     {"time": 46},
+     {"time": 45},
+     {"time": 44},
+     {"time": 43},
+     {"time": 42}
+  ],
+  "ydzs": [
+     {"indexs": "3.0"},
+     {"indexs": "3.0"},
+     {"indexs": "3.0"},
+     {"indexs": "2.2"},
+     {"indexs": "2.2"},
+     {"indexs": "2.2"},
+     {"indexs": "1.2"},
+     {"indexs": "1.2"},
+     {"indexs": "1.2"},
+     {"indexs": "1.2"}
+
+  ],
+  "ydyczs":[
+   {"showtime":"2017-8-23(星期三)","ydzs":"3.0"},
+   {"showtime":"2017-8-23(星期二)","ydzs":"2.0"},
+   {"showtime":"2017-8-23(星期五)","ydzs":"3.0"}, 
+   {"showtime":"2017-8-23(星期六)","ydzs":"4.2"},
+   {"showtime":"2017-8-23(星期天)","ydzs":"3.2"},
+   {"showtime":"2017-8-23(星期一)","ydzs":"2.2"},
+   {"showtime":"2017-8-23(星期四)","ydzs":"1.2"}
+  ],
+  "yczspm": [
+     {"name":"牡丹区","indexs": "3.0"},
+     {"name":"定陶区","indexs": "3.0"},
+     {"name":"巨野县","indexs": "2.9"},
+     {"name":"曹县","indexs": "2.8"},
+     {"name":"成武县","indexs": "2.7"},
+     {"name":"单县","indexs": "2.5"},
+     {"name":"郓城县","indexs": "2.4"},
+     {"name":"鄄城县","indexs": "2.3"},
+     {"name":"东明县","indexs": "3.2"}
+  ],
+  "count":12334,
+  "regionjam": [
+     {"jamindex": 1.226,"regionname": "牡丹区","trgionno":"371702"},
+     {"jamindex": 1.7626,"regionname": "曹县","trgionno":"371702"},
+     {"jamindex": 1.626,"regionname": "定陶区","trgionno":"371702"},
+     {"jamindex": 1.26,"regionname": "单县","trgionno":"371702"},
+     {"jamindex": 1.26,"regionname": "成武县","trgionno":"371702"},
+     {"jamindex": 1.26,"regionname": "东明县","trgionno":"371702"}
+  ],
+  "its":[
+        {
+            "name":"公路客运",
+            "value":851
+        },
+        {
+            "name":"危化品车",
+            "value":1339
+        },
+        {
+            "name":"旅游客运",
+            "value":97
+        },
+        {
+            "name":"渣土车",
+            "value":271
+        },
+        {
+            "name":"校车",
+            "value":820
+        }
+    ]
+}

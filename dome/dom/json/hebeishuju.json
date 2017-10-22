@@ -1,0 +1,580 @@
+{
+	"ssll": 1941,
+	"wbjdc": 62524,
+	"zdclll": 6034,
+	"jrsf": 396,
+	"kkllpm":[
+       {
+          "name":"卡口.No.1",
+          "count": 287371,
+          "trend": 1
+       },
+       {
+          "name":"卡口.No.2",
+          "count": 264310,
+          "trend": 1
+       },
+       {
+          "name":"卡口.No.3",
+          "count": 257601,
+          "trend": -1
+       },
+       {
+          "name":"卡口.No.4",
+          "count": 227890,
+          "trend": 1
+       },
+       {
+          "name":"卡口.No.5",
+          "count": 198990,
+          "trend": -1
+       },
+       {
+          "name":"卡口.No.6",
+          "count": 187880,
+          "trend": -1
+       },
+       {
+          "name":"卡口.No.7",
+          "count": 166601,
+          "trend": 0
+       },
+       {
+          "name":"卡口.No.8",
+          "count": 159789,
+          "trend": -1
+       },
+       {
+          "name":"卡口.No.9",
+          "count": 75761,
+          "trend": 0
+       },
+       {
+          "name":"卡口.No.10",
+          "count": 57602,
+          "trend": 0
+       }
+	],
+	"sfzllpm":[
+       {
+          "name":"收费站.No.1",
+          "count": 287371,
+          "trend": 1
+       },
+       {
+          "name":"收费站.No.2",
+          "count": 264310,
+          "trend": 1
+       },
+       {
+          "name":"收费站.No.3",
+          "count": 257601,
+          "trend": -1
+       },
+       {
+          "name":"收费站.No.4",
+          "count": 227890,
+          "trend": 1
+       },
+       {
+          "name":"收费站.No.5",
+          "count": 198990,
+          "trend": -1
+       },
+       {
+          "name":"收费站.No.6",
+          "count": 187880,
+          "trend": -1
+       },
+       {
+          "name":"收费站.No.7",
+          "count": 166601,
+          "trend": 0
+       },
+       {
+          "name":"收费站.No.8",
+          "count": 159789,
+          "trend": -1
+       },
+       {
+          "name":"收费站.No.9",
+          "count": 75761,
+          "trend": 0
+       },
+       {
+          "name":"收费站.No.10",
+          "count": 57602,
+          "trend": 0
+       }
+	],
+	"zdcjclpm":[
+       {
+          "name":"检查站.No.1",
+          "count": 287371,
+          "trend": 1
+       },
+       {
+          "name":"检查站.No.2",
+          "count": 264310,
+          "trend": 1
+       },
+       {
+          "name":"检查站.No.3",
+          "count": 257601,
+          "trend": -1
+       },
+       {
+          "name":"检查站.No.4",
+          "count": 227890,
+          "trend": 1
+       },
+       {
+          "name":"检查站.No.5",
+          "count": 198990,
+          "trend": -1
+       },
+       {
+          "name":"检查站.No.6",
+          "count": 187880,
+          "trend": -1
+       },
+       {
+          "name":"检查站.No.7",
+          "count": 166601,
+          "trend": 0
+       },
+       {
+          "name":"检查站.No.8",
+          "count": 159789,
+          "trend": -1
+       },
+       {
+          "name":"检查站.No.9",
+          "count": 75761,
+          "trend": 0
+       },
+       {
+          "name":"检查站.No.10",
+          "count": 57602,
+          "trend": 0
+       }
+	],
+	"cllxpm": [
+        {
+            "name":"小型汽车",
+            "value":27879
+        },
+        {
+            "name":"小型货车",
+            "value":24879
+        },
+        {
+            "name":"小型客车",
+            "value":29879
+        },
+        {
+            "name":"大型客车",
+            "value":25879
+        },
+        {
+            "name":"大型货车",
+            "value":24979
+        },
+         {
+            "name":"出租车",
+            "value":31879
+        },
+        {
+            "name":"面包车",
+            "value":29879
+        },
+        {
+            "name":"半挂车",
+            "value":19879
+        },
+        {
+            "name":"牵引车",
+            "value":20000
+        },
+        {
+            "name":"出租车",
+            "value":24879
+        }
+	],
+	"wflxpm": [
+        {
+            "name":"事故逃逸",
+            "value":916
+        },
+        {
+            "name":"事故未处理",
+            "value":552
+        },
+        {
+            "name":"多次违法",
+            "value":843
+        },
+        {
+            "name":"酒后驾车",
+            "value":459
+        },
+        {
+            "name":"套牌车",
+            "value":930
+        },
+        {
+            "name":"逾期未年检",
+            "value":1145
+        },
+         {
+            "name":"报废在驶",
+            "value":700
+        },
+        {
+            "name":"停驶",
+            "value":321
+        },
+        {
+            "name":"盗抢车",
+            "value":201
+        },
+        {
+            "name":"假套牌",
+            "value":412
+        }
+	],
+	"zdcllxfb": [
+         {
+            "name":"大型客车",
+            "value":916
+        },
+        {
+            "name":"渣土车",
+            "value":552
+        },
+        {
+            "name":"校车",
+            "value":431
+        },
+        {
+            "name":"危险品车",
+            "value":311
+        },
+        {
+            "name":"大型货车",
+            "value":1879
+        }
+	],
+	"zdclwflxfb": [
+        {
+            "name":"假套牌",
+            "value":83
+        },
+        {
+            "name":"报废在驶",
+            "value":79
+        },
+        {
+            "name":"多次违法未处理",
+            "value":69
+        },
+        {
+            "name":"事故逃逸",
+            "value":33
+        },
+        {
+            "name":"失驾",
+            "value":187
+        }
+	],
+	"zdclsjbhqs": [
+        {
+        	"time": 1,
+        	"value": 0
+        },
+        {
+        	"time": 2,
+        	"value": 0
+        },
+        {
+        	"time": 3,
+        	"value": 0
+        },
+        {
+        	"time": 4,
+        	"value": 0
+        },
+        {
+        	"time": 5,
+        	"value": 0
+        },
+        {
+        	"time": 6,
+        	"value": 1234
+        },
+        {
+        	"time": 7,
+        	"value": 4523
+        },
+        {
+        	"time": 8,
+        	"value": 5345
+        },
+        {
+        	"time": 9,
+        	"value": 6435
+        },
+        {
+        	"time": 10,
+        	"value": 5345
+        },
+        {
+        	"time": 11,
+        	"value": 5845
+        },
+        {
+        	"time": 12,
+        	"value": 4845
+        },
+        {
+        	"time": 13,
+        	"value": 3845
+        },
+        {
+        	"time": 14,
+        	"value": 3845
+        },
+        {
+        	"time": 15,
+        	"value": 4845
+        },
+        {
+        	"time": 16,
+        	"value": 5845
+        },
+        {
+        	"time": 17,
+        	"value": 6845
+        },
+        {
+        	"time": 18,
+        	"value": 5845
+        },
+        {
+        	"time": 19,
+        	"value": 4845
+        },
+        {
+        	"time": 20,
+        	"value": 3845
+        },
+        {
+        	"time": 21,
+        	"value": 2845
+        },
+        {
+        	"time": 22,
+        	"value": 1845
+        },
+        {
+        	"time": 23,
+        	"value": 845
+        }
+	],
+	"wfldpm": [
+    {"name":"路段1","value": 857601},
+    {"name":"路段2","value": 785210},
+    {"name":"路段3","value": 321780},
+    {"name":"路段4","value": 304218},
+    {"name":"路段5","value": 287371},
+    {"name":"路段6","value": 264310},
+    {"name":"路段7","value": 257601},
+    {"name":"路段8","value": 227890},
+    {"name":"路段9","value": 198990},
+    {"name":"路段10","value": 187880}
+  ],
+   "wswbclpm":[
+        {"name":"山东省","value": 42380},
+	    {"name":"河南省","value": 41560},
+	    {"name":"天津市","value": 41356},
+	    {"name":"北京市","value": 39799},
+	    {"name":"山西省","value": 38380},
+	    {"name":"辽宁省","value": 37174},
+	    {"name":"江苏省","value": 35267},
+	    {"name":"安徽省","value": 34741},
+	    {"name":"浙江省","value": 32789},
+	    {"name":"湖北省","value": 31987}
+   ],
+    "outsideProvincesResident":[
+        {
+            "alwaysamount":6006,
+            "todayamount":12539,
+            "name":"山东"
+        },
+        {
+            "alwaysamount":1046,
+            "todayamount":998,
+            "name":"河南"
+        },
+        {
+            "alwaysamount":95,
+            "todayamount":482,
+            "name":"湖北"
+        },
+        {
+            "alwaysamount":226,
+            "todayamount":449,
+            "name":"浙江"
+        },
+        {
+            "alwaysamount":212,
+            "todayamount":425,
+            "name":"河北"
+        },
+        {
+            "alwaysamount":192,
+            "todayamount":397,
+            "name":"安徽"
+        },
+        {
+            "alwaysamount":375,
+            "todayamount":359,
+            "name":"江苏"
+        },
+        {
+            "alwaysamount":50,
+            "todayamount":220,
+            "name":"辽宁"
+        },
+        {
+            "alwaysamount":31,
+            "todayamount":206,
+            "name":"黑龙江"
+        },
+        {
+            "alwaysamount":74,
+            "todayamount":202,
+            "name":"山西"
+        },
+        {
+            "alwaysamount":75,
+            "todayamount":201,
+            "name":"广东"
+        },
+        {
+            "alwaysamount":48,
+            "todayamount":138,
+            "name":"宁夏"
+        },
+        {
+            "alwaysamount":35,
+            "todayamount":130,
+            "name":"四川"
+        },
+        {
+            "alwaysamount":35,
+            "todayamount":112,
+            "name":"湖南"
+        },
+        {
+            "alwaysamount":80,
+            "todayamount":102,
+            "name":"福建"
+        },
+        {
+            "alwaysamount":4,
+            "todayamount":91,
+            "name":"云南"
+        },
+        {
+            "alwaysamount":36,
+            "todayamount":86,
+            "name":"内蒙古"
+        },
+        {
+            "alwaysamount":11,
+            "todayamount":77,
+            "name":"吉林"
+        },
+        {
+            "alwaysamount":11,
+            "todayamount":76,
+            "name":"甘肃"
+        },
+        {
+            "alwaysamount":20,
+            "todayamount":48,
+            "name":"江西"
+        },
+        {
+            "alwaysamount":10,
+            "todayamount":47,
+            "name":"广西"
+        },
+        {
+            "alwaysamount":3,
+            "todayamount":33,
+            "name":"贵州"
+        },
+        {
+            "alwaysamount":55,
+            "todayamount":30,
+            "name":"陕西"
+        },
+        {
+            "alwaysamount":2,
+            "todayamount":12,
+            "name":"西藏"
+        },
+        {
+            "alwaysamount":10,
+            "todayamount":11,
+            "name":"新疆"
+        },
+        {
+            "alwaysamount":2,
+            "todayamount":7,
+            "name":"海南"
+        },
+        {
+            "alwaysamount":5,
+            "todayamount":5,
+            "name":"青海"
+        },
+        {
+            "alwaysamount":112,
+            "todayamount":0,
+            "name":"天津"
+        },
+        {
+            "alwaysamount":307,
+            "todayamount":0,
+            "name":"上海"
+        },
+        {
+            "alwaysamount":31,
+            "todayamount":0,
+            "name":"重庆"
+        },
+        {
+            "alwaysamount":0,
+            "todayamount":0,
+            "name":"澳门"
+        },
+        {
+            "alwaysamount":0,
+            "todayamount":0,
+            "name":"台湾"
+        },
+        {
+            "alwaysamount":0,
+            "todayamount":0,
+            "name":"香港"
+        },
+        {
+            "alwaysamount":217,
+            "todayamount":0,
+            "name":"北京"
+        }
+    ]
+}
