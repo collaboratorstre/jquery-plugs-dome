@@ -233,22 +233,35 @@ var geoCoordMap = {
           xAxis: [],
           yAxis: [],
           grid: [],
-          series: []
+          series: [],
+          legend: []
         }
 
         $.each(dataShow,function(idx,dataItem){
-          console.log(">>><><><",dataShow)
+          console.log(">>><><><",idx,dataShow)
           if(!(dataItem.name in  geoCoordMap))return;
+          console.log(geoCoordMap);
           var geoCoord = geoCoordMap[dataItem.name];
           var coord = chart.convertToPixel('geo',geoCoord);
           idx += '';
-          console.log(idx);
+          // console.log(idx);
+          
+          options.legend.push({
+            show: true,
+            orient: 'vertical',
+             top: '15%',
+            textStyle:{
+              fontSize: 100,
+              color: 'white'
+            },
+            data: ['违法','事故']
+          })
 
           options.xAxis.push({
             id: idx,
             gridId: idx,
             type: 'category',
-            name: dataItem.name,  //柱状图下面的名字
+            name:   ['违法','事故'],  //柱状图下面的名字
             nameStyle: {
               color: 'white',
               fontSize: 12
@@ -304,7 +317,21 @@ var geoCoordMap = {
           },
           data: [dataItem.value]
          });
-
+        
+        options.series.push( {
+          name: dataItem.name,
+          type: 'bar',
+          stack: 'bar' + (idx+1),
+          xAxisId: idx,
+          yAxisId: idx,
+          barWidth: 12,
+          itemStyle: {
+            normal: {
+              color: 'yellow'
+            }
+          },
+          data: [dataItem.value]
+         });
 
          // options.series.push([
          // {

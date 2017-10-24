@@ -205,13 +205,13 @@ $.get('json/hebei.json', function (heZe) {
             
         };
         chart.setOption(option);
-          chart.on("mouseover", function (params){   
+        //   chart.on("mouseover", function (params){   
                 
-                chart.dispatchAction({  
-                type: 'downplay'  
-                });  
+        //         chart.dispatchAction({  
+        //         type: 'downplay'  
+        //         });  
              
-        });
+        // });
         chart.on('mouseover',function(params){
             $.get("json/tongxingye.json",function(data){
                 for(var i=0;i<data.regionjam.length;i++) {

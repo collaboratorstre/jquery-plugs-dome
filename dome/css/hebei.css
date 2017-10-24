@@ -517,3 +517,8 @@ body,html {
   #hour_content tr:last-of-type td:first-of-type,#hour_content tr:last-of-type td:nth-of-type(2){
   border-right:  .1px solid #056ca6;
  }
+
+ .amap-icon img{
+      width: 20px;
+    height: 20px;
+ }
