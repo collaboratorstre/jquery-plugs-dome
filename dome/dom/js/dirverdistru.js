@@ -145,7 +145,7 @@
   }
 }
 //本市各辖区机动车驾驶人分布情况
-$.get('json/hezeshi.json', function (heZe) {
+$.get('json/hebei.json', function (heZe) {
         echarts.registerMap('菏泽', heZe);
         var chart = echarts.init(document.getElementById('dirve_distra'));
         
@@ -183,11 +183,11 @@ $.get('json/hezeshi.json', function (heZe) {
                 itemStyle: {
                   normal:{
                     areaColor: '#0b0c45',
-                    borderColor: '#2b6cc0'
+                    borderColor: '#00ff00'
                   },
                   emphasis:{
-                    color: 'blue',
-                    areaColor: '#00a2ff'
+                    color: '#00ff00',
+                    areaColor: '#00ff00'
                   }
                 },
                 label:{
@@ -205,13 +205,13 @@ $.get('json/hezeshi.json', function (heZe) {
             
         };
         chart.setOption(option);
-          chart.on("mouseover", function (params){   
+        //   chart.on("mouseover", function (params){   
                 
-                chart.dispatchAction({  
-                type: 'downplay'  
-                });  
+        //         chart.dispatchAction({  
+        //         type: 'downplay'  
+        //         });  
              
-        });
+        // });
         chart.on('mouseover',function(params){
             $.get("json/tongxingye.json",function(data){
                 for(var i=0;i<data.regionjam.length;i++) {

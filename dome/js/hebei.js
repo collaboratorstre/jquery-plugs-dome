@@ -164,7 +164,8 @@
                               if(n == '分流点'){
                               	     $.each(data.fenliudian,function(i,n){
 							              markers.push([n.lon,n.lat]);
-							             })
+
+							              						             })
                               	      for(var i = 0,len=markers.length; i<len;  i++){
 										               var marker;
 
@@ -206,15 +207,17 @@
                               }
                     	}
                     })
-
+                  console.log(AMap)
 		    	}else { 
 		    		for(var i=0;i<selectArr.length;i++) {
 		　　　　　　　　　　if(selectArr[i]==spanText) {
 		                        selectArr.splice(i,1);
 		                        console.log(selectArr)
-		                        console.log(map);
-		                        
-		                    }
+		                       
+		                        console.log(AMap)
+		                      
+                                 
+		                    }	
 		    		}
 		    	}
 

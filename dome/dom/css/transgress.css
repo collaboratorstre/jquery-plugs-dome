@@ -214,3 +214,21 @@ body,html {
   position: relative;
 }
 
+.weifa,.shigu{
+  position: absolute;
+  color: white;
+}
+.weifa{
+     left: 28%;
+    top: 6%;
+}
+.shigu{
+    top: 6%;
+    left: 54%;
+}
+.weifa #weifa_total,.shigu #shigu_total{
+     color: #ffb400;
+    font-size: 21px;
+    display: inline-block;
+    font-weight: bold;
+}

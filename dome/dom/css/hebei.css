@@ -15,7 +15,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video,option,select {
   margin: 0;
   padding: 0;
   border: 0;
@@ -516,4 +516,9 @@ body,html {
  }
   #hour_content tr:last-of-type td:first-of-type,#hour_content tr:last-of-type td:nth-of-type(2){
   border-right:  .1px solid #056ca6;
+ }
+
+ .amap-icon img{
+      width: 20px;
+    height: 20px;
  }

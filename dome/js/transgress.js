@@ -221,17 +221,17 @@
         echarts.registerMap('河北', heZe);
         var chart = echarts.init(document.getElementById('hebei_map'));
           var dataShow = [
-                      {value:8335, name:'石家庄市'},
-                      {value:7310, name:'唐山市'},
-                      {value:8310, name:'张家口市'},
-                      {value:6234, name:'秦皇岛市'},
-                      {value:5135, name:'邯郸市'},
-                      {value:7335, name:'邢台市'},
-                      {value:4310, name:'保定市'},
-                      {value:3234, name:'承德市'},
-                      {value:6135, name:'沧州市'},
-                      {value:4310, name:'廊坊市'},
-                      {value:3335, name:'衡水市'}
+                      {value1:8335, name:'石家庄市', value2: 10535},
+                      {value1:7310, name:'唐山市',value2: 10535},
+                      {value1:8310, name:'张家口市',value2: 10535},
+                      {value1:6234, name:'秦皇岛市',value2: 10535},
+                      {value1:5135, name:'邯郸市',value2: 10535},
+                      {value1:7335, name:'邢台市',value2: 10535},
+                      {value1:4310, name:'保定市',value2: 10535},
+                      {value1:3234, name:'承德市',value2: 10535},
+                      {value1:6135, name:'沧州市',value2: 10535},
+                      {value1:4310, name:'廊坊市',value2: 10535},
+                      {value1:3335, name:'衡水市',value2: 10535}
                       // {value1:10535, name:'石家庄市'},
                       // {value1:3510, name:'唐山市'},
                       // {value1:2310, name:'张家口市'},
@@ -338,7 +338,8 @@
           yAxis: [],
           grid: [],
           series: [],
-          legend: []
+          legend: [],
+          tooltip: []
         }
         
          
@@ -351,6 +352,16 @@
           var coord = chart.convertToPixel('geo',geoCoord);
           idx += '';
           // console.log(idx);
+          
+          options.tooltip.push({
+                   show: true,
+                    position: ['40%','50%'],
+                    trigger: 'item',
+                    // formatter: function(){
+                    //     return '每年小型车车辆总数<br><span>'+234523+'</span>辆';
+                    formatter: '<div style="font-size: 18px;">{b0}{a0}总量<br/><span style="color: yellow; font-size: 20px;">{c0}</span>起</div>'
+                    // }
+          })
           
           options.legend.push({
             show: true,
@@ -423,7 +434,7 @@
               color: '#b16a65'
             }
           },
-          data: [dataItem.value]
+          data: [dataItem.value1]
          });
         
         options.series.push( {
@@ -438,7 +449,7 @@
               color: '#c15f16'
             }
           },
-          data: [dataItem.value]
+          data: [dataItem.value2]
           // data: [10000,9000,8000,7000,6000,5000,4000,3000,2000,1000]
          });
         })

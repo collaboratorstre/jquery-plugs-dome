@@ -183,11 +183,11 @@ $.get('json/hebei.json', function (heZe) {
                 itemStyle: {
                   normal:{
                     areaColor: '#0b0c45',
-                    borderColor: '#2b6cc0'
+                    borderColor: '#00ff00'
                   },
                   emphasis:{
-                    color: 'blue',
-                    areaColor: '#00a2ff'
+                    color: '#00ff00',
+                    areaColor: '#00ff00'
                   }
                 },
                 label:{

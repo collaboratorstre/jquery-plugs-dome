@@ -116,12 +116,170 @@
 			    mapStyle: 'amap://styles/b7060f3c169f3bbd73b5deccdc9942bf'
 			    // mapStyle: 'amap://styles/dark'
 			});
-            // var icon = new AMap.Icon({
-            // 	image: 'dian1.png',
-            // 	size: new AMap.Size(15,15)
-            // });
-            // var markers = [];
+            var icon = new AMap.Icon({
+            	image: '../img/fenliu.png',
+            	size: new AMap.Size(20,20)
+            });
+            console.log(icon);
+           
+            var icon1 = new AMap.Icon({
+            	image: '../img/yidu.png',
+            	size: new AMap.Size(20,20)
+            });
 
+            var icon2 = new AMap.Icon({
+            	image: '../img/wuqu.png',
+            	size: new AMap.Size(20,20)
+            });
+            
+             var markers = [];
+            var markers1 = [];
+            var markers2 = [];
+
+    
+            
+              // 
+         $.get('../json/hebeishuju.json',function(data){
+
+		    //地图中的单选和多选
+		    $('.select_head').click(function() {
+		    	if($("#more_select").css("display")=="none"){
+		    		$("#more_select").css("display","block")
+		    	}else {
+		    		$("#more_select").css("display","none")
+		    	}
+		    })
+
+		    var  selectArr = [];
+		    $(".select_conent").click(function() {
+		    	console.log($(this).siblings("span").text())
+		    	var spanText = $(this).siblings("span").text();
+		    	console.log($(this).prop("checked"));
+		    	var check = $(this).prop("checked");
+		    	if(check == true) {
+		    		selectArr.push(spanText);
+		    		console.log(selectArr);
+                    $.each(selectArr,function(i,n){
+                    	if(n == '分流点' || n == '易堵点' || n == '雾区'){
+                              if(n == '分流点'){
+                              	     $.each(data.fenliudian,function(i,n){
+							              markers.push([n.lon,n.lat]);
+
+							              						             })
+                              	      for(var i = 0,len=markers.length; i<len;  i++){
+										               var marker;
+
+										               marker = new AMap.Marker({
+										                icon: icon,
+										                position: markers[i],
+										                offset: new AMap.Pixel(-12,-12),
+										                zIndex: 101,
+										                map: map
+										               })
+										             
+										           }
+                              }else if(n == '易堵点'){
+                              	 $.each(data.yidudian,function(i,n){
+						                  markers1.push([n.lon,n.lat]);
+						             })
+                              	   for(var i = 0,len=markers1.length; i<len; i++){
+						           	    marker = new AMap.Marker({
+						                icon: icon1,
+						                position: markers1[i],
+						                offset: new AMap.Pixel(-12,-12),
+						                zIndex: 101,
+						                map: map
+						               })
+						           }
+                              }else if(n == '雾区'){
+                              	$.each(data.wuqu,function(i,n){
+					                  markers2.push([n.lon,n.lat]);
+					             })
+                              	 for(var i = 0,len=markers2.length; i<len; i++){
+						           	    marker = new AMap.Marker({
+						                icon: icon2,
+						                position: markers2[i],
+						                offset: new AMap.Pixel(-12,-12),
+						                zIndex: 101,
+						                map: map
+						               })
+						           }
+                              }
+                    	}
+                    })
+                  console.log(AMap)
+		    	}else { 
+		    		for(var i=0;i<selectArr.length;i++) {
+		　　　　　　　　　　if(selectArr[i]==spanText) {
+		                        selectArr.splice(i,1);
+		                        console.log(selectArr)
+		                       
+		                        console.log(AMap)
+		                      
+                                 
+		                    }	
+		    		}
+		    	}
+
+		    })
+
+           
+           //   $.each(data.fenliudian,function(i,n){
+           //    markers.push([n.lon,n.lat]);
+           //   })
+           //    $.each(data.yidudian,function(i,n){
+           //        markers1.push([n.lon,n.lat]);
+           //   })
+           //    $.each(data.wuqu,function(i,n){
+           //        markers2.push([n.lon,n.lat]);
+           //   })
+
+             
+           //  for(var i = 0,len=markers.length; i<len;  i++){
+           //     var marker;
+
+           //     marker = new AMap.Marker({
+           //      icon: icon,
+           //      position: markers[i],
+           //      offset: new AMap.Pixel(-12,-12),
+           //      zIndex: 101,
+           //      map: map
+           //     })
+             
+           // }
+           // for(var i = 0,len=markers1.length; i<len; i++){
+           // 	    marker = new AMap.Marker({
+           //      icon: icon1,
+           //      position: markers1[i],
+           //      offset: new AMap.Pixel(-12,-12),
+           //      zIndex: 101,
+           //      map: map
+           //     })
+           // }
+           //  for(var i = 0,len=markers2.length; i<len; i++){
+           // 	    marker = new AMap.Marker({
+           //      icon: icon2,
+           //      position: markers2[i],
+           //      offset: new AMap.Pixel(-12,-12),
+           //      zIndex: 101,
+           //      map: map
+           //     })
+           // }
+          
+          $("#sle").change(function(){
+          	var options = $(this).val();
+          	console.log(options);
+          	if (options == '全省高速路网') {
+          		map.setZoomAndCenter(9, [114.48,38.03]);
+          	}else if(options == '环京高速路网'){
+          		map.setZoomAndCenter(9, [116.3,39.9]);
+          	}else if(options == '涉署高速路网'){
+          		map.setZoomAndCenter(9,[115.464589,38.874434]);
+          	}
+          })
+
+       })
+    
             // var infoWindow = new AMap.InfoWindow();
 
             // $.get('json/execute.json',function(data){
@@ -402,7 +560,38 @@ var traveltime = function(containerId,data){
      //外省外埠车辆来源排名
         traveltime('hour_content',data.wswbclpm);
     	    });
-};
+ 
+}; 
+    
+     //地图中的单选和多选
+//     $('.select_head').click(function() {
+//     	if($("#more_select").css("display")=="none"){
+//     		$("#more_select").css("display","block")
+//     	}else {
+//     		$("#more_select").css("display","none")
+//     	}
+//     })
+
+//     var  selectArr = [];
+//     $(".select_conent").click(function() {
+//     	console.log($(this).siblings("span").text())
+//     	var spanText = $(this).siblings("span").text();
+//     	console.log($(this).prop("checked"));
+//     	var check = $(this).prop("checked");
+//     	if(check == true) {
+//     		selectArr.push(spanText);
+//     		console.log(selectArr);
+
+//     	}else { 
+//     		for(var i=0;i<selectArr.length;i++) {
+// 　　　　　　　　　　if(selectArr[i]==spanText) {
+//                         selectArr.splice(i,1);
+//                         console.log(selectArr)
+//                     }
+//     		}
+//     	}
+
+//     })
 
     $(document).ready(function(){
     	          refreshData();
