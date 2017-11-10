@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>仪表盘</title>
+
+	<script type="text/javascript" src="../js/echarts.min.js"></script>
+</head>
+<body>
+	<div id="yibiaopai" style="width: 500px; height: 500px;">
+          
+	</div>
+     
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+             
+   echarts.init(document.getElementById("yibiaopai")).setOption({
+                     tooltip : {
+               	            show: false,
+					        formatter: "{a} <br/>{b} : {c}"
+					    },
+					    title:{
+					        show: true,
+					        text: '拥堵指数',
+					        bottom: '40%',
+					        left: '10%',
+					        textStyle: {
+					            color: 'red',
+					            fontSize: 25
+					        }
+					    },
+					    series: [
+					       {
+					           name: '拥堵指数',
+					           type: 'gauge',
+					            max: 3.5,
+					            startAngle: 150,
+					            endAngle: -155,
+					            axisLabel:{
+					                 show: false
+					            
+					               },
+					            itemStyle: {
+					             	normal: {
+					             		 color: '#70C1B3'
+					             	}
+					            },
+					                axisLine: {            // 坐标轴线  
+						                     lineStyle: {       // 属性lineStyle控制线条样式  
+						                         color: [[0.2, '#7ffe00'], [0.8, '#00aefd'], [1, '#ff0080']]
+						                                }  
+						                            },   
+					           detail: {
+					           	formatter:'{value}',
+					           	padding: [4,300,200,4]
+                 
+					          },
+					           data: [{value: 2.75, name: ''}]
+					       }
+
+
+					    ]
+
+    })
+
+  </script>
+</body>
+</html>

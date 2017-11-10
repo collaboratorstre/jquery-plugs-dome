@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+ 
+    <script type="text/javascript">
+        function turndu (value){
+            var num = Number(value).toFixed(2); 
+            var num1 = String(num);
+             num1 =  num1.replace(/\./,"\°");
+            // return num1;
+            return num1+'′';
+        }
+        console.log(turndu('40.22234'))
+    </script>
+</body>
+</html>

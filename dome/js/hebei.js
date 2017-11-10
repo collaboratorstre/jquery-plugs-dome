@@ -120,7 +120,7 @@
             	image: '../img/fenliu.png',
             	size: new AMap.Size(20,20)
             });
-            console.log(icon);
+            // console.log(icon);
            
             var icon1 = new AMap.Icon({
             	image: '../img/yidu.png',
@@ -162,64 +162,74 @@
                     $.each(selectArr,function(i,n){
                     	if(n == '分流点' || n == '易堵点' || n == '雾区'){
                               if(n == '分流点'){
-                              	     $.each(data.fenliudian,function(i,n){
-							              markers.push([n.lon,n.lat]);
+                     //          	     $.each(data.fenliudian,function(i,n){
+							              // markers.push([n.lon,n.lat]);
 
-							              						             })
-                              	      for(var i = 0,len=markers.length; i<len;  i++){
+							              // 						             })
+                              	      for(var i = 0,len=data.fenliudian.length; i<len;  i++){
 										               var marker;
 
 										               marker = new AMap.Marker({
 										                icon: icon,
-										                position: markers[i],
+										                position: [data.fenliudian[i].lon,data.fenliudian[i].lat],
 										                offset: new AMap.Pixel(-12,-12),
 										                zIndex: 101,
 										                map: map
 										               })
+										               markers.push(marker);
+										               console.log(markers);
 										             
 										           }
                               }else if(n == '易堵点'){
-                              	 $.each(data.yidudian,function(i,n){
-						                  markers1.push([n.lon,n.lat]);
-						             })
-                              	   for(var i = 0,len=markers1.length; i<len; i++){
+                   //            	 $.each(data.yidudian,function(i,n){
+						             //      markers1.push([n.lon,n.lat]);
+						             // })
+                              	   for(var i = 0,len=data.yidudian.length; i<len; i++){
 						           	    marker = new AMap.Marker({
 						                icon: icon1,
-						                position: markers1[i],
+						                position: [data.yidudian[i].lon,data.yidudian[i].lat],
 						                offset: new AMap.Pixel(-12,-12),
 						                zIndex: 101,
 						                map: map
 						               })
+						           	    markers1.push(marker);
+						           	    console.log(markers1);
 						           }
                               }else if(n == '雾区'){
-                              	$.each(data.wuqu,function(i,n){
-					                  markers2.push([n.lon,n.lat]);
-					             })
-                              	 for(var i = 0,len=markers2.length; i<len; i++){
+                  //             	$.each(data.wuqu,function(i,n){
+					             //      markers2.push([n.lon,n.lat]);
+					             // })
+                              	 for(var i = 0,len=data.wuqu.length; i<len; i++){
 						           	    marker = new AMap.Marker({
 						                icon: icon2,
-						                position: markers2[i],
+						                position: [data.wuqu[i].lon,data.wuqu[i].lat],
 						                offset: new AMap.Pixel(-12,-12),
 						                zIndex: 101,
 						                map: map
 						               })
+						           	    markers2.push(marker);
+						           	    console.log(markers2);
 						           }
                               }
                     	}
                     })
-                  console.log(AMap)
+                  // console.log(AMap)
 		    	}else { 
-		    		for(var i=0;i<selectArr.length;i++) {
-		　　　　　　　　　　if(selectArr[i]==spanText) {
-		                        selectArr.splice(i,1);
-		                        console.log(selectArr)
+		//     		for(var i=0;i<selectArr.length;i++) {
+		// 　　　　　　　　　　if(selectArr[i]==spanText) {
+		//                         selectArr.splice(i,1);
+		//                         console.log(selectArr)
 		                       
-		                        console.log(AMap)
+		//                         console.log(AMap)
 		                      
                                  
-		                    }	
-		    		}
-		    	}
+		//                     }	
+		//     		}
+		       
+		               for(var i =0; i<markers.length;i++){
+					           markers[i].setMap(null);
+					       }
+					}
 
 		    })
 
@@ -442,13 +452,13 @@
    //车辆类型排名top10
     var cllxpm = function(containerId,data){
 	    $("#"+containerId).empty();
-	    console.log(data);
+	    // console.log(data);
 	     var chart_type = echarts.init(document.getElementById(containerId));
 	     var arr1 = [];
 	    $.each(data,function(i,n){
 	        arr1.push(n.name);
 	    })
-	    console.log(arr1);
+	    // console.log(arr1);
 	     option = {
 	                 color:["#f7ca43","#fd6354","#79a5c7","#46d3be","#70cf28","#c78127","#d27d6b","#bf3037","#2a3f5a"],
 
@@ -545,7 +555,7 @@ var traveltime = function(containerId,data){
   //数据的统一处理
   var refreshData = function(){
     $.get("../json/hebeishuju.json",function(data){
-      console.log(data);
+      // console.log(data);
         //top 实时流量 外埠机动车 重点车辆流量 今日违法
     $('#ssll_Total').html(data.ssll + '<span>辆</span>');
     $('#wbjdc_Total').html(data.wbjdc + '<span>辆</span>');

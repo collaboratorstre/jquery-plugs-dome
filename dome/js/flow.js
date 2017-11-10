@@ -68,13 +68,13 @@
 		//重点车辆类型分布
 		 var zdcllxfb = function(containerId,data){
 			    $("#"+containerId).empty();
-			    console.log(data);
+			    // console.log(data);
 			     var chart_type = echarts.init(document.getElementById(containerId));
 			     var arr1 = [];
 			    $.each(data,function(i,n){
 			        arr1.push(n.name);
 			    })
-			    console.log(arr1);
+			    // console.log(arr1);
 			     option = {
 			                 color:["#f7ca43","#fd6354","#79a5c7","#46d3be","#70cf28","#c78127","#d27d6b","#bf3037","#2a3f5a","#b99d9f"],
 
@@ -153,13 +153,13 @@
  //重点车辆违法类型分布
           var zdclwflxfb = function(containerId,data){
 			    $("#"+containerId).empty();
-			    console.log(data);
+			    // console.log(data);
 			     var chart_type = echarts.init(document.getElementById(containerId));
 			     var arr1 = [];
 			    $.each(data,function(i,n){
 			        arr1.push(n.name);
 			    })
-			    console.log(arr1);
+			    // console.log(arr1);
 			     option = {
 			                 color:["#91c7ae","#c23531","#2f4554","#61a0a8","#d48265","#c78127","#d27d6b","#bf3037","#2a3f5a","#b99d9f"],
 
@@ -238,7 +238,7 @@
 //重点流量时间变化趋势
  var zdclsjbhqs = function(containerId,data){
 			    $("#"+containerId).empty();
-			    console.log(data);
+			    // console.log(data);
 			     var chart_type = echarts.init(document.getElementById(containerId));
 			     var arr1 = [];
 			     var arr2 = [];
@@ -359,6 +359,7 @@
 //外省来源迁徙图
 var otherProvMigration_in = function(containerId,data) {
     var otherProvMigrationIn_chart = echarts.init(document.getElementById(containerId), 'dark');
+    // console.log(data);
     var geoCoordMap = {
         '石家庄': [114.48,38.03],
         '山东': [117.1582,36.8701],
@@ -433,6 +434,7 @@ var otherProvMigration_in = function(containerId,data) {
     console.log(HZData);
 
     var x = HZData[0][1].todayamount;
+    console.log(x);
     var convertData = function (data) {
         var res = [];
         for (var i = 0; i < data.length; i++) {
@@ -448,10 +450,14 @@ var otherProvMigration_in = function(containerId,data) {
             }
         }
         return res;
-    };
 
+    };
+    
+    
     var series = [];
     [['石家庄', HZData]].forEach(function (item, i) {
+    	// console.log(item)
+    	console.log(item[1])
         series.push({
                 name: item[0] + ' Top10',
                 type: 'lines',
@@ -543,7 +549,7 @@ var otherProvMigration_in = function(containerId,data) {
                 })
             });
     });
-
+    console.log(series);
     var otherProvMigrationIn_option = {
         backgroundColor: '#0b0c45',
         tooltip : {
