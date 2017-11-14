@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>gonepie</title>
+	<script type="text/javascript" src="../js/echarts.js"></script>
+</head>
+<body>
+		<div style="background: #000c60;">
+		    <div id="scenicNumber" style="width: 500px;height: 500px;"></div>
+		</div>
+   <script type="text/javascript" src="../js/jquery.min.js"></script>
+   <script type="text/javascript">
+    
+    var scenicNumber = function (data) {
+		    if(data.length < 5) return;
+
+		    // 转换数据格式
+		    var maxValue = 0;
+		    var dataArray = [];
+		    for(var i = 0; i < 5; i++){
+		        dataArray[i] = data[data.length - 5 + i].amount;
+
+		        // 获取最大值
+		        if(dataArray[i] > maxValue) maxValue = dataArray[i];
+		    }
+	maxValue = maxValue + 5;
+
+	  // 构造图表
+    var scenicNumber_chart = echarts.init(document.getElementById("scenicNumber"));
+    var placeHolderStyle = {
+        normal: {
+            label: {
+                show: false
+            },
+            labelLine: {
+                show: false
+            },
+            color: "#dedede",
+            opacity: 0.1
+        },
+        emphasis: {
+            label: {
+                show: false
+            },
+            labelLine: {
+                show: false
+            },
+            color: "#dedede",
+            opacity: 0.1
+        }
+    };
+    var option = {
+        // backgroundColor: '#fff',
+        color: ['#ff3235', '#fe6634', '#fd9a34', '#ffcd26', '#feea5a'],
+        series: [
+            {
+                name: 'A级景区',
+                type: 'pie',
+                center:['40%', '50%'],
+                clockWise: true, //顺时加载
+                hoverAnimation: false, //鼠标移入变大
+                radius: [85, 90],
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true,
+                            color:'#88b7ed',
+                            fontSize: 14,
+                            fontWeight: 'bold',
+                            formatter:'{a} {c}'
+                        },
+                        labelLine: {
+                            show: true,
+                            length: 10,
+                            lineStyle:{
+                                color:'#cccddf'
+                            }
+                        },
+                        borderWidth: 0
+                    }
+                },
+                data: [{
+                    value: dataArray[0]
+                }, {
+                    value: maxValue - dataArray[0],
+                    itemStyle: placeHolderStyle
+                }]
+            },
+            {
+                name: '2A级景区',
+                type: 'pie',
+                center:['40%', '50%'],
+                clockWise: true,
+                hoverAnimation: false,
+                radius: [75, 80],
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true,
+                            color:'#88b7ed',
+                            fontSize: 14,
+                            fontWeight: 'bold',
+                            formatter:'{a} {c}'
+                        },
+                        labelLine: {
+                            show: true,
+                            length: 27,
+                            lineStyle:{
+                                color:'#cccddf'
+                            }
+                        },
+                        borderWidth: 0
+                    }
+                },
+                data: [{
+                    value: dataArray[1]
+                }, {
+                    value: maxValue - dataArray[1],
+                    itemStyle: placeHolderStyle
+                }]
+            },
+            {
+                name: '3A级景区',
+                type: 'pie',
+                center:['40%', '50%'],
+                clockWise: true,
+                hoverAnimation: false,
+                radius: [65, 70],
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true,
+                            color:'#88b7ed',
+                            fontSize: 14,
+                            fontWeight: 'bold',
+                            formatter:'{a} {c}'
+                        },
+                        labelLine: {
+                            show: true,
+                            length: 35,
+                            lineStyle:{
+                                color:'#cccddf'
+                            }
+                        },
+                        borderWidth: 0
+                    }
+                },
+                data: [{
+                    value: dataArray[2]
+                }, {
+                    value: maxValue - dataArray[2],
+                    itemStyle: placeHolderStyle
+                }]
+            },
+            {
+                name: '4A级景区',
+                type: 'pie',
+                center:['40%', '50%'],
+                clockWise: true,
+                hoverAnimation: false,
+                radius: [55, 60],
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true,
+                            color:'#88b7ed',
+                            fontSize: 14,
+                            fontWeight: 'bold',
+                            formatter:'{a} {c}'
+                        },
+                        labelLine: {
+                            show: true,
+                            length: 43,
+                            lineStyle:{
+                                color:'#cccddf'
+                            }
+                        },
+                        borderWidth: 0
+                    }
+                },
+                data: [{
+                    value: dataArray[3]
+                }, {
+                    value: maxValue - dataArray[3],
+                    itemStyle: placeHolderStyle
+                }]
+            },
+            {
+                name: '5A级景区',
+                type: 'pie',
+                center:['40%', '50%'],
+                clockWise: true,
+                hoverAnimation: false,
+                radius: [45, 50],
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true,
+                            color:'#88b7ed',
+                            fontSize: 14,
+                            fontWeight: 'bold',
+                            formatter:'{a} {c}'
+                        },
+                        labelLine: {
+                            show: true,
+                            length: 47,
+                            lineStyle:{
+                                color:'#cccddf'
+                            }
+                        },
+                        borderWidth: 0
+                    }
+                },
+                data: [{
+                    value: dataArray[4]
+                }, {
+                    value: maxValue - dataArray[4],
+                    itemStyle: placeHolderStyle
+                }]
+            }
+        ]
+    };
+    scenicNumber_chart.setOption(option);
+};
+
+
+   //数据的统一请求
+     var refreshData = function(){
+          $.get("../json/changping.json",function(data){
+          	// console.log(data.jqjb);
+             scenicNumber(data.jqjb);
+          })
+      }
+
+        $(document).ready(function(){
+    	          refreshData();
+		       })  
+   </script>
+</body>
+</html>

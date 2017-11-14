@@ -160,7 +160,7 @@
 		    		selectArr.push(spanText);
 		    		console.log(selectArr);
                     $.each(selectArr,function(i,n){
-                    	if(n == '分流点' || n == '易堵点' || n == '雾区'){
+                    	// if(n == '分流点' || n == '易堵点' || n == '雾区'){
                               if(n == '分流点'){
                      //          	     $.each(data.fenliudian,function(i,n){
 							              // markers.push([n.lon,n.lat]);
@@ -211,24 +211,36 @@
 						           	    console.log(markers2);
 						           }
                               }
-                    	}
+                    	// }
                     })
                   // console.log(AMap)
 		    	}else { 
-		//     		for(var i=0;i<selectArr.length;i++) {
-		// 　　　　　　　　　　if(selectArr[i]==spanText) {
-		//                         selectArr.splice(i,1);
-		//                         console.log(selectArr)
-		                       
-		//                         console.log(AMap)
+		    		for(var i=0;i<selectArr.length;i++) {
+		　　　　　　　　　　if(selectArr[i]==spanText) {
+		                        selectArr.splice(i,1);
+		                       if (spanText == '分流点') {
+		                       	       for(var i =0; i<markers.length;i++){
+										           markers[i].setMap(null);
+										       }
+		                       	
+		                       }else if(spanText == '易堵点'){
+		                       	 for(var i =0; i<markers1.length;i++){
+										           markers1[i].setMap(null);
+										       }
+		                       }else{
+		                       	 for(var i =0; i<markers2.length;i++){
+										           markers2[i].setMap(null);
+										       }
+		                       }
+		                      
 		                      
                                  
-		//                     }	
-		//     		}
+		                    }	
+		    		}
 		       
-		               for(var i =0; i<markers.length;i++){
-					           markers[i].setMap(null);
-					       }
+		          //      for(var i =0; i<markers.length;i++){
+					       //     markers[i].setMap(null);
+					       // }
 					}
 
 		    })
