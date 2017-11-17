@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>calendar</title>
+	<script type="text/javascript" src="../js/echarts.min.js"></script>
+</head>
+<body>
+  <div style="background: #000c60;">
+	<div id="touristSat_content" style="width: 800px;height: 800px"></div>
+</div>
+
+   
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript">
+
+	     var touristSat = function(containerId,data){
+	     	console.log(data);
+		    var touristSat_chart = echarts.init(document.getElementById(containerId));
+
+		    var thisTime = new Date();
+		    var thisYear = thisTime.getYear();
+		    if (thisYear < 1900) thisYear = thisYear + 1900;
+		    var thisMonth = thisTime.getMonth();
+		    // if (thisMonth < 10) thisMonth = '0' + thisMonth;
+		    var thisDate = thisTime.getDate();
+		    // if (thisDate < 10) thisDate = '0' + thisDate;
+		    var timeConcat = thisYear+"-"+thisMonth+"-"+thisDate;
+		    var monthLength;
+		    function thisMonthLength(thisMonth){
+		        var monthStartDate = new Date(thisYear, thisMonth-1, 1);
+		        var monthEndDate = new Date(thisYear, thisMonth, 1);
+		        monthLength = (monthEndDate - monthStartDate)/(1000 * 60 * 60 * 24);
+		    }
+		    thisMonthLength(thisMonth);//获取该月天数
+
+		    var dateList = [];
+		    for(var i=1;i<monthLength+1;i++){
+		        if(i<10){
+		            i='0'+i;
+		        }
+		        dateList.push(thisYear+"-"+(thisMonth)+"-"+i);
+		    }
+
+		    var lunarData = [];
+		    for (var i = 0; i < dateList.length; i++) {
+		        lunarData.push([
+		            dateList[i],
+		            1
+		        ]);
+		    }
+
+		    var touristSat_option = {
+		        tooltip : {},
+		        visualMap: {
+		            min: 0,
+		            max: 1,
+		            // show:false,
+		            bottom:210,
+		            type: 'piecewise',
+		            splitNumber:5,//均分五段
+		            pieces:[
+		                {min:0,max:0.2,label:'0～20%'},
+		                {min:0.2,max:0.4,label:'20～40%'},
+		                {min:0.4,max:0.6,label:'40～60%'},
+		                {min:0.6,max:0.8,label:'60～80%'},
+		                {min:0.8,max:1,label:'80%以上'}
+		            ],
+		            align:'left',//图形在左，文字在右
+		            itemWidth:15,
+		            itemHeight:10,
+		            orient: 'horizontal',
+		            textStyle: {
+		                color: 'white'
+		            },
+		            inRange: {
+		                color: ['#469e6c','#207f45','#997f46','#992345','#5a0526']
+		            }
+		        },
+		        calendar: {
+		            top: 60,
+		            left: 'center',
+		            cellSize: [60,30],
+		            range: thisYear+"-"+(thisMonth),
+		            orient: 'vertical',
+		            dayLabel: {
+		                firstDay: 0,
+		                nameMap: 'cn',
+		                color:'#99cbfe'
+		            },
+		            monthLabel: {
+		                show: false
+		            },
+		            yearLabel:{
+		                show:false
+		            },
+		            splitLine:{
+		                lineStyle:{
+		                    color:'#0b308b'//外边框颜色
+		                }
+		            },
+		            itemStyle: {
+		                normal: {
+		                    color:'#000c60',//块状底色
+		                    borderWidth: 2,
+		                    borderColor:'#0b308b'//内部分割线颜色
+		                }
+		            }
+		        },
+		        series: [
+		            {
+		                type: 'scatter',
+		                coordinateSystem: 'calendar',
+		                symbolSize: 1,
+		                label: {
+		                    normal: {
+		                        show: true,
+		                        formatter: function (params) {
+		                            var d = echarts.number.parseDate(params.value[0]);
+		                            return d.getDate();
+		                        },
+		                        textStyle: {
+		                            color: 'white'
+		                        }
+		                    }
+		                },
+		                data: lunarData
+		            },
+		            {
+		                // name:'0-20%',
+		                name:'饱和度',
+		                type: 'heatmap',
+		                coordinateSystem: 'calendar',
+		                data: data[0]
+		                // data:[
+		                //     ['2017-10-6', 0.11],
+		                //     ['2017-10-12', 0.13],
+		                //     ['2017-10-15', 0.16],
+		                //     ['2017-10-24', 0.19],
+		                //     ['2017-10-29', 0.02],
+		                //     ['2017-10-31', 0.02]
+		                // ]
+		            },
+		            {
+		                // name:'20-40%',
+		                name:'饱和度',
+		                type: 'heatmap',
+		                coordinateSystem: 'calendar',
+		                data: data[1]
+		                // data:[
+		                //     ['2017-10-2', 0.22],
+		                //     ['2017-10-5', 0.24],
+		                //     ['2017-10-7', 0.2],
+		                //     ['2017-10-16', 0.38],
+		                //     ['2017-10-17', 0.33],
+		                //     ['2017-10-19', 0.37],
+		                //     ['2017-10-25', 0.28],
+		                //     ['2017-10-28', 0.22],
+		                //     ['2017-10-30', 0.36]
+		                // ]
+		            },
+		            {
+		                // name:'40-60%',
+		                name:'饱和度',
+		                type: 'heatmap',
+		                coordinateSystem: 'calendar',
+		                data: data[2]
+		                // data:[
+		                //     ['2017-10-9', 0.44],
+		                //     ['2017-10-10', 0.46],
+		                //     ['2017-10-11', 0.5],
+		                //     ['2017-10-13', 0.54],
+		                //     ['2017-10-26', 0.50],
+		                //     ['2017-10-27', 0.42]
+		                // ]
+		            },
+		            {
+		                // name:'60-80%',
+		                name:'饱和度',
+		                type: 'heatmap',
+		                coordinateSystem: 'calendar',
+		                data: data[3]
+		                // data:[
+		                //     ['2017-10-3', 0.66],
+		                //     ['2017-10-8', 0.6],
+		                //     ['2017-10-18', 0.68],
+		                //     ['2017-10-21', 0.77],
+		                //     ['2017-10-23', 0.76]
+		                // ]
+		            },
+		            {
+		                // name:'80%以上',
+		                name:'饱和度',
+		                type: 'heatmap',
+		                coordinateSystem: 'calendar',
+		                data: data[4]
+		                // data:[
+		                //     ['2017-10-1', 0.88],
+		                //     ['2017-10-4', 0.87],
+		                //     ['2017-10-14', 0.9],
+		                //     ['2017-10-20', 0.97],
+		                //     ['2017-10-22', 0.94]
+		                // ]
+		            }
+
+		        ]
+		    };
+		    touristSat_chart.setOption(touristSat_option);
+		}
+        
+
+         //数据的统一请求
+     var refreshData = function(){
+          $.get("../json/changping.json",function(data){
+          	 touristSat("touristSat_content",data.saturability);
+          })
+      }
+
+        $(document).ready(function(){
+    	          refreshData();
+		       })  
+	</script>
+</body>
+</html>

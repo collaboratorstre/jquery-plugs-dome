@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>map_dian2</title>
+	<script type="text/javascript" src="../js/echarts.js"></script>
+</head>
+<body>
+	<div style="background: #000c60;">
+
+	   <div id="travelState_content" style="width: 800px; height: 800px"></div>
+
+    </div>
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript">
+      
+      var travelState = function(containerId,data1,data2,data3){
+		    $.get('changping.json', function (changPing) {
+
+		        echarts.registerMap('昌平区', changPing);
+		        var travelState_chart = echarts.init(document.getElementById(containerId), 'dark');
+		        // var geoCoordMap = {
+		        //     '蟒山国家森林公园1': [116.151198,40.2463530790],
+		        //     '明十三陵1': [116.2678908734,40.3029168029],
+		        //     '蟒山国家森林公园2': [116.3655200070,40.3655200070],
+		        //     '蟒山国家森林公园3': [116.3132301704,40.2544133039],
+		        //     '明十三陵2': [116.2819000701,40.3573261667],
+		        //     '明十三陵3': [116.1937752482,40.2158956072],
+		        //     '明十三陵4':[116.1272676906,40.1681323956],
+		        //     '明十三陵5': [116.0840087143,40.1393991640],
+		        //     '明十三陵6': [116.0265686463,40.1351407181],
+		        //     '明十三陵7': [116.0484884569,40.1007313963],
+		        //     '明十三陵8': [116.1190855161,40.1459991381],
+		        //     '明十三陵9': [116.4613448609,40.2014131428],
+		        //     '明十三陵10': [116.3874122266,40.1130925807],
+		        //     '咨询中心1': [115.9026229927,40.2353282543],
+		        //     '咨询中心2': [115.9892555188,40.2610645878],
+		        //     '咨询中心3': [116.0811985428,40.2437023319],
+		        //     '咨询中心4': [116.0303449147,40.2542127510],
+		        //     '咨询中心5': [116.3532212254,40.3658281367],
+		        //     '咨询中心6': [116.4175663867,40.3288365917],
+		        //     '咨询中心7': [116.2843004169,40.3340374908],
+		        //     '咨询中心8': [116.2939336290,40.2166809199],
+		        //     '咨询中心9': [116.4740495647,40.1981843326],
+		        //     '咨询中心10': [116.4299227907,40.2690008888],
+		        //     '咨询中心11': [116.1238274845,40.1867526943],
+		        //     '警戒区域1': [115.3026229927,40.2353282543],
+		        //     '警戒区域2': [115.2892555188,40.2610645878],
+		        //     '警戒区域3': [116.0411985428,40.2437023319],
+		        //     '警戒区域4': [116.0103449147,40.2542127510],
+		        //     '警戒区域5': [116.3032212254,40.3658281367],
+		        //     '警戒区域6': [116.2175663867,40.3288365917],
+		        //     '警戒区域7': [116.3843004169,40.3340374908],
+		        //     '警戒区域8': [116.3939336290,40.2166809199],
+		        //     '警戒区域9': [116.3740495647,40.1981843326],
+		        //     '警戒区域10': [116.2299227907,40.2690008888],
+		        //     '警戒区域11': [116.3238274845,40.1867526943]
+		        // };
+		        var geoCoordMap1 = data1.geoCoordMap;
+		        var geoCoordMap2 = data2.geoCoordMap;
+		        var geoCoordMap3 = data3.geoCoordMap;
+
+		        var convertData = function(data,x){
+		            var res = [];
+		            if(x=="景区分布"){
+		                for (var i = 0; i < data.length; i++) {
+		                    var geoCoord = geoCoordMap1[data[i].name];
+		                    if (geoCoord) {
+		                        res.push({
+		                            name: data[i].name,
+		                            // value: geoCoord.concat(data[i].value),
+		                            value:geoCoord.concat(1),
+		                            tooltip:{
+		                                // position: ['40%','50%'],
+		                                trigger: 'item',
+		                                // formatter: '景点：{b0}<br/><span style="color: yellow;">{c}</span>',
+		                                formatter: '景区：{b0}',
+		                                textStyle: {
+		                                    fontFamily: 'Microsoft YaHei'
+		                                }
+		                            }
+		                        });
+		                    }
+		                }
+		                return res;
+		            }else if(x=="旅游咨询中心"){
+		                for (var i = 0; i < data.length; i++) {
+		                    var geoCoord = geoCoordMap2[data[i].name];
+		                    if (geoCoord) {
+		                        res.push({
+		                            name: data[i].name,
+		                            // value: geoCoord.concat(data[i].value),
+		                            value:geoCoord.concat(1),
+		                            tooltip:{
+		                                // position: ['40%','50%'],
+		                                trigger: 'item',
+		                                // formatter: '景点：{b0}<br/><span style="color: yellow;">{c}</span>',
+		                                formatter: '旅游咨询中心：{b0}',
+		                                textStyle: {
+		                                    fontFamily: 'Microsoft YaHei'
+		                                }
+		                            }
+		                        });
+		                    }
+		                }
+		                return res;
+		            }else{
+		                for (var i = 0; i < data.length; i++) {
+		                    var geoCoord = geoCoordMap3[data[i].name];
+		                    if (geoCoord) {
+		                        res.push({
+		                            name: data[i].name,
+		                            // value: geoCoord.concat(data[i].value),
+		                            value: geoCoord.concat(data[i].value),
+		                            tooltip:{
+		                                // position: ['40%','50%'],
+		                                trigger: 'item',
+		                                // formatter: '景点：{b0}<br/><span style="color: yellow;">{c}</span>',
+		                                formatter: '客流警戒区域：{b0}',
+		                                textStyle: {
+		                                    fontFamily: 'Microsoft YaHei'
+		                                }
+		                            }
+		                        });
+		                    }
+		                }
+		                return res;
+		            }
+		        }
+
+		        var travelState_option = {
+		            tooltip: {
+		                // position: ['40%','50%'],
+		                trigger: 'item',
+		                // formatter: '景点：{b0}<br/><span style="color: yellow;">{c}</span>',
+		                formatter: '景点：{b0}',
+		                textStyle: {
+		                    fontFamily: 'Microsoft YaHei'
+		                }
+		            },
+		            legend: {
+		                orient: 'horizontal',
+		                top:'93%',
+		                left: 'left',
+		                // bottom:'90%',
+		                itemWidth:10,//图例宽度
+		                itemHeight:10,//图例高度
+		                // itemGap:50,//图例间隔
+		                // data:['景区分布','旅游咨询中心','厕所分布','客流警戒区域']
+		                data:[
+		                    {
+		                        name:'景区分布',
+		                        textStyle:{
+		                            color:'white'
+		                        }
+		                    },
+		                    {
+		                        name:'旅游咨询中心',
+		                        textStyle:{
+		                            color:'white'
+		                        }
+		                    },
+		                    {
+		                        name:'客流警戒区域',
+		                        textStyle:{
+		                            color:'white'
+		                        },
+		                        icon:'image://./heatlegend.png'
+		                    }
+		                ]
+		            },
+		            // visualMap: {
+		            //     type: 'continuous',
+		            //     min: 0,
+		            //     max: 200,
+		            //     top: 400,
+		            //     left: 150,
+		            //     // text:['多','少'],
+		            //     textStyle: {
+		            //         color: '#ffffff',
+		            //     },
+		            //     show:false,//不展示visualMap-continuous组件，但数据映射的功能还存在。即不展示热力图图例
+		            //     color: ['orangered','yellow','lightskyblue'],
+		            //     seriesIndex:2//指定选取哪个系列的数据。这里仅选取series最后一组数据展示热力图
+		            // },
+		            geo: [
+		                {
+		                    map: '昌平区',
+		                    label: {
+		                        emphasis: {
+		                            show: false
+		                        }
+		                    },
+		                    roam: false,//是否开启鼠标缩放和平移漫游
+		                    itemStyle: {
+		                        normal: {
+		                            areaColor: '#000c60',
+		                            borderColor: '#2b6cbe',
+		                            borderWidth:7,
+		                            shadowColor: 'rgba(45,110,192,2)',
+		                            shadowBlur: 40
+		                        },
+		                        emphasis: {
+		                            areaColor: '#000c60'
+		                        }
+		                    }
+		                },
+		                {
+		                    map: '昌平区',
+		                    label: {
+		                        emphasis: {
+		                            show: false
+		                        }
+		                    },
+		                    roam: false,
+		                    itemStyle: {
+		                        normal: {
+		                            areaColor: '#000c60',
+		                            borderColor: '#2b6cbe',
+		                            borderWidth:1,
+		                            // shadowColor: 'rgba(45,110,192,2)',
+		                            // shadowBlur: 30,
+		                        },
+		                        emphasis: {
+		                            areaColor: '#000c60'
+		                        }
+		                    }
+		                }
+		            ],
+		            series:[
+		                {
+		                    name:'景区分布',
+		                    type: 'scatter',
+		                    map:'昌平区',
+		                    coordinateSystem: 'geo',
+		                    symbolSize: 8,
+		                    label: {
+		                        normal:{
+		                            fontFamily: 'Microsoft YaHei'
+		                        },
+		                        emphasis:{
+		                            color: 'white',
+		                            fontFamily: 'Microsoft YaHei'
+		                        }
+		                    },
+		                    itemStyle: {
+		                        normal:{
+		                            color:'#dcc714'//图形颜色
+		                        }
+		                    },
+		                    mapLocation:{
+		                        y:60
+		                    },
+		                    // data:convertData([
+		                    //     {name: "蟒山国家森林公园1", value: 3},
+		                    //     {name: "明十三陵1", value: 0},
+		                    //     {name: "蟒山国家森林公园2", value: 0},
+		                    //     {name: "蟒山国家森林公园3", value: 0},
+		                    //     {name: "明十三陵2", value: 270},
+		                    //     {name: "明十三陵3", value: 0},
+		                    //     {name: "明十三陵4", value: 0},
+		                    //     {name: "明十三陵5", value: 0},
+		                    //     {name: "明十三陵6", value: 0},
+		                    //     {name: "明十三陵7", value: 0},
+		                    //     {name: "明十三陵8", value: 0},
+		                    //     {name: "明十三陵9", value: 0},
+		                    //     {name: "明十三陵10", value: 0}
+		                    // ],"景区分布")
+		                    data: convertData(data1.data,"景区分布")
+		                },
+		                {
+		                    name:'旅游咨询中心',
+		                    type: 'scatter',
+		                    map:'昌平区',
+		                    coordinateSystem: 'geo',
+		                    symbol:'triangle',
+		                    symbolSize: 8,
+		                    label: {
+		                        normal:{
+		                            fontFamily: 'Microsoft YaHei'
+		                        },
+		                        emphasis:{
+		                            color: 'white',
+		                            fontFamily: 'Microsoft YaHei'
+		                        }
+		                    },
+		                    itemStyle: {
+		                        normal:{
+		                            color: '#01ffff'
+		                        }
+		                    },
+		                    mapLocation:{
+		                        y:60
+		                    },
+		                    // data:convertData([
+		                    //     {name: "咨询中心1", value: 50},
+		                    //     {name: "咨询中心2", value: 10},
+		                    //     {name: "咨询中心3", value: 5},
+		                    //     {name: "咨询中心4", value: 2},
+		                    //     {name: "咨询中心5", value: 5},
+		                    //     {name: "咨询中心6", value: 3},
+		                    //     {name: "咨询中心7", value: 3},
+		                    //     {name: "咨询中心8", value: 70},
+		                    //     {name: "咨询中心9", value: 50},
+		                    //     {name: "咨询中心10", value: 80},
+		                    //     {name: "咨询中心11", value: 90}
+		                    // ],"旅游咨询中心")
+		                    data:convertData(data2.data,"旅游咨询中心")
+		                },
+		                {
+		                    name:'客流警戒区域',
+		                    type: 'scatter',
+		                    map:'昌平区',
+		                    coordinateSystem: 'geo',
+		                    symbol: 'image://./heatlegend.png',
+		                    symbolSize: 12,
+		                    label: {
+		                        normal:{
+		                            show:true,//默认为false
+		                            fontFamily: 'Microsoft YaHei',
+		                            position:'top',//标签的位置，默认为inside。这里不能使用默认inside，否则看不到MarkPoint
+		                            formatter:function(params){
+		                                // return '{a|客流饱和度：'+params.data.value[2]/100+'%}{abg|}';
+		                                return '客流饱和度：'+params.data.value[2]+'%';
+		                            },
+		                            backgroundColor:'#000a6c',
+		                            borderColor:'#676d9f',
+		                            borderWidth:2,
+		                            borderRadius:3,
+		                            rich:{
+		                                a:{
+		                                    color:'#fc403f',
+		                                    lineHeight:42,
+		                                    fontWeight:'bold',
+		                                    fontSize:16,
+		                                    align:'center'
+		                                },
+		                                abg: {
+		                                    width:'20%',
+		                                    height:20,
+		                                    backgroundColor:{
+		                                        image:'webpage/dashboardA/heatlegend.png'
+		                                    }
+		                                }
+		                            }
+
+		                        },
+		                        emphasis:{
+		                            color: 'white',
+		                            fontFamily: 'Microsoft YaHei'
+		                        }
+		                    },
+		                    mapLocation:{
+		                        y:60
+		                    },
+		                    // data:convertData([
+		                    //     // {name: "警戒区域1", value: 279},
+		                    //     // {name: "警戒区域2", value: 9},
+		                    //     // {name: "警戒区域3", value: 12},
+		                    //     // {name: "警戒区域4", value: 12},
+		                    //     // {name: "警戒区域5", value: 14},
+		                    //     // {name: "警戒区域6", value: 14},
+		                    //     // {name: "警戒区域7", value: 279},
+		                    //     {name: "警戒区域8", value: 0.88},
+		                    //     {name: "警戒区域9", value: 0.93},
+		                    //     {name: "警戒区域10", value: 0.89},
+		                    //     {name: "警戒区域11", value: 0.85}
+		                    // ],"客流警戒区域")
+		                    data:convertData(data3.data,"客流警戒区域")
+		                }
+		            ]
+		        };
+
+		        travelState_chart.setOption(travelState_option);
+
+		    })
+		};
+
+
+     //数据的统一请求
+     var refreshData = function(){
+          $.get("../json/changping.json",function(data){
+          	travelState("travelState_content",data.scenicDistributionInfo,data.consultancyCentreInfo,data.scenicSaturability);
+          })
+      }
+
+        $(document).ready(function(){
+    	          refreshData();
+		       })  
+
+    </script>
+</body>
+</html>
