@@ -1,0 +1,180 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+<title>jQuery拖拽放大缩小插件idrag</title>
+
+<script type="text/javascript" src="jquery-1.11.0.min.js"></script>
+
+<script type="text/javascript" src="drag.js"></script>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<style type="text/css">
+
+/*.wrap_box{
+	width: 200px; height: 100px; position: relative;
+}*/
+.box,#coor,div,body,html{
+  margin: 0;
+  padding: 0;
+}
+html{
+  width: 1920px;
+  height: 1080px;
+}
+body{
+  width: 1920px;
+  height: 1080px;
+  overflow: auto;
+  background: pink;
+}
+
+.box {
+	width: 200px; height: 100px; 
+	/*width: 100%; height: 100%;*/
+	cursor: move; position: absolute; top: 30px; left: 30px;
+	/* background: url(../LeftUP_bg_img.png) no-repeat;*/
+    background-color: #FFF; 
+	border: 1px solid #CCCCCC;  -webkit-box-shadow: 10px 10px 25px #ccc;-moz-box-shadow: 10px 10px 25px #ccc;box-shadow: 10px 10px 25px #ccc;}
+
+
+
+#coor { width: 10px; height: 10px; overflow: hidden; cursor: se-resize; position: absolute; right: 0; bottom: 0;
+    background-color: #09C;
+
+ }
+
+/*body { background-color: #F3F3F3; }*/
+
+</style>
+
+</head>
+
+
+
+<body>
+     <button class="addBtn">添加</button>
+     <button class="delBtn">删除</button>
+     <button class="holdBtn">保存</button>
+     <button class="clearBtn">清除</button>
+</body>
+<script type="text/javascript" src="echarts.js"></script>
+<script type="text/javascript">
+var index=0;
+   $(".addBtn").click(function() {
+   	  var str = $("<div id='box"+index+"' class='box'"+index+"><svg style='width:100%;height:100%;'></svg><div id='coor'></div></div>")
+   	  $("body").append(str);	  
+   	  moveBox("#box"+index);
+      if(index == 0) {
+        echarts11();
+      }
+      index++;
+   });
+   $(".delBtn").click(function() {
+   	  if($("body").children("div").hasClass("box")) {
+   	  	var divLength = $("body").children("div").length;
+   	  	$("body").children("div").eq(divLength-1).remove();
+   	  }
+   })
+   $(".holdBtn").click(function(){
+        localStorage.setItem('width','200px');
+
+   });
+  $(".clearBtn").click(function(){
+        localStorage.clear()
+
+   });
+   function echarts11() {
+    echarts.init(document.getElementById("box0")).setOption({
+      title: {
+                text: '本市机动车和驾驶人最近5年变化趋势',
+                x:'center',
+                textStyle: {
+                  color: "#2c83e0",
+                  fontSize: 13 
+                          }
+               },
+      color: ['#febe14', '#287cdc'],
+      tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+              type: 'shadow'
+          }
+      },
+       grid: {
+              left: '3%',
+              right: '4%',
+              bottom: '3%',
+              containLabel: true
+          },
+      legend: {
+        top: '15%',
+          data: ['机动车(辆)', '驾驶人(人)'],
+          textStyle: {
+            color: '#9bcafe'
+          }
+      },
+      calculable: true,
+      xAxis: [
+          {
+              type: 'category',
+              axisTick: {show: false},
+              data: [ '2013年', '2014年', '2015年', '2016年','2017年'],
+              axisLabel: {
+                show: true,
+                textStyle: {
+                  color:  '#7ea7db'
+                }
+                
+              }
+          }
+      ],
+      yAxis: [
+          {
+              type: 'value',
+              splitLine: {
+                lineStyle: {
+                  color: '#0e1654'
+                }
+              },
+              axisLine: {
+                lineStyle: {
+                  color: '#0b0c45'
+                }
+              }
+
+          }
+      ],
+      series: [
+          {
+              name: '机动车(辆)',
+              type: 'bar',
+               barWidth: '20%',
+              barGap: 0,
+              data: [98, 77, 101, 99, 40]
+          },
+        
+          {
+              name: '驾驶人(人)',
+              type: 'bar',
+               barWidth: '20%',
+              data:   [320, 332, 301, 334, 390]
+            
+          }
+      ]
+})
+   }
+ // $(document).ready(function(){
+   
+ // })
+</script>
+
+
+</html> 

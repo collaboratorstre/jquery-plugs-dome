@@ -1,0 +1,130 @@
+ body,td,tr,table,tbody,div,input,span{
+			margin: 0;
+			padding:0;
+		}
+ a{
+ 		margin: 0;
+	    padding:0;
+	    display: inline-block;
+	    text-decoration: none;
+	    font-size: 15px;
+	    color: #00fffe;
+	    font-weight: bold;
+	    text-align: center;
+	     width: 95px;
+          height: 110px;
+ }
+  img {
+			margin: 0;
+			padding:0;
+			/*vertical-align: middle;*/
+		}
+ html,body{
+			width: 1920px;
+			height: 1080px;
+			box-sizing: border-box;
+			
+		 }
+#zhu_page{
+		width: 1920px;
+	    height: 1080px;
+	    box-sizing: border-box;
+	    background: url(../img/home_bg_1.png) no-repeat;
+	    position: relative;
+  }
+
+.tour_safe,.tour_manage,.data_visual,.multiple_analyse,.tour_work,.system_manage{
+	position: absolute;
+	color:#ffa801;
+    font-size: 26px;
+    font-weight: bold;
+}
+.tour_safe{
+    top: 50px;
+    left: 405px;
+    
+}
+.tour_manage{
+	top: 50px;
+	left: 1362px;
+}
+.data_visual{
+    top: 359px;
+    left: 266px;
+}
+.multiple_analyse{
+	top: 359px;
+    left: 1541px;
+}
+.tour_work{
+	top: 806px;
+    left: 405px;
+}
+.system_manage{
+    top: 809px;
+    left: 1362px;
+}
+.safe_wrap{
+	position: absolute;
+	top: 132px;
+    left: 166px;
+    width: 425px;
+}
+.manage_wrap{
+	position: absolute;
+	top: 132px;
+    left: 1311px;
+    width: 487px;
+}
+.visual_wrap_one{
+	position: absolute;
+    top: 450px;
+    left: 65px;
+    width: 487px;
+}
+.visual_wrap_two{
+    position: absolute;
+    top: 597px;
+    left: 98px;
+    width: 407px;
+}
+.analyse_wrap{
+    position: absolute;
+    top: 501px;
+    left: 1381px;
+    width: 487px;
+}
+.work_wrap{
+   position: absolute;
+    top: 882px;
+    left: 289px;
+    width: 268px;
+}
+.system_wrap{
+	position: absolute;
+    top: 882px;
+    left: 1309px;
+    width: 487px;
+}
+
+.safe_wrap a{
+	margin-left: 27px;
+}
+.manage_wrap a{
+	margin-left: 15px;
+}
+.visual_wrap_one a{
+	margin-left: 19px;
+}
+.visual_wrap_two a{
+	margin-left: 27px;
+}
+.analyse_wrap a{
+	margin-left: 16px;
+}
+.work_wrap a{
+	margin-left: 27px;
+}
+.system_wrap a{
+	margin-left: 16px;
+}
