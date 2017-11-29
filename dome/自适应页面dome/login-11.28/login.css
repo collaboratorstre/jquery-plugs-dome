@@ -1,0 +1,273 @@
+@charset "utf-8";
+*{
+	margin:0;
+	padding: 0;
+}
+input:-webkit-autofill {  
+    -webkit-box-shadow: 0 0 0px 1000px rgba(255,255,255,0.3) inset !important;  
+}  
+html {
+	height: 100%;
+	width: 100%;
+}
+body {
+	font-size:12px; 
+	font-family:"微软雅黑"; 
+	color: #666;
+	list-style: none;
+	height: 100%;
+	width: 100%;
+}
+/*整体的div模块*/
+#login-main {
+	width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+/*登录界面的logo模块*/
+.login-logo {
+	width: 100%;
+	height: 23.7%;
+	padding-top: .1px;
+	position: relative;
+
+}
+.login-logo .logo_img {
+	width: 100%;
+	height: 67.4%;
+	position: relative;
+}
+.login-logo .logo_img img {
+	width: 80px;
+	height: 80px;
+    position: absolute; 
+	left: 0; 
+	top: 0; 
+	right: 0; 
+	bottom: 0;
+	margin: auto;
+}
+.login-logo .logo_title {
+	width: 100%;
+	height: 22.1%;
+	position: relative;
+}
+.login-logo .line_left {
+	float: left;
+	height: 100%;
+	width: 23.8%;
+	position: relative;
+}
+.login-logo .line_right {
+	float: right;
+	height: 100%;
+	width: 23.8%;
+	position: relative;
+}
+.login-logo .line_right span,
+.login-logo .line_left span{
+	display: inline-block;
+	width: 100%;
+	height: 3px;
+    position: absolute; 
+	left: 0; 
+	top: 0; 
+	right: 0; 
+	bottom: 0;
+	margin: auto;
+	background: #85d6dd;
+}
+.login-logo .line_right span {
+	margin-right: 0;
+	background: -webkit-linear-gradient(left, #97C0E4 , #19A0B0); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #97C0E4 , #19A0B0); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #97C0E4 , #19A0B0); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #97C0E4 , #19A0B0); /* 标准的语法 */
+}
+.login-logo .line_left span {
+	margin-left: 0;
+	background: -webkit-linear-gradient(left, #19A0B0 , #97C0E4); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #19A0B0 , #97C0E4); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #19A0B0 , #97C0E4); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #19A0B0 , #97C0E4); /* 标准的语法 */
+}
+.login-logo .title_text {
+	height: 100%;
+	width: 52.4%;
+	position: absolute; 
+	left: 0; 
+	top: 0; 
+	right: 0; 
+	bottom: 0;
+	margin: auto;
+}
+.title_text span {
+	position: absolute; 
+	left: 0; 
+	top: 0; 
+	right: 0; 
+	bottom: 0;
+	margin: auto; 
+	font-size: 18px;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	color: #000000;
+}
+/*登录页面的图片和登录模块*/
+.login-bg {
+	width: 100%;
+	height: 51.6%;
+	position: relative;
+}
+.bg-slide { 
+	width:100%; 
+	height:100%; 
+	position: absolute; 
+	left: 0; 
+	top: 0; 
+	right: 0; 
+	bottom: 0;
+    margin: auto;
+    background: url(./bg-slide.png) no-repeat;
+    -webkit-background-size:100% 100%;
+    -moz-background-size:100% 100%;  
+    -o-background-size:100% 100%; 
+    background-size:100% 100%; 
+    /*兼容ie8的写法,切记这里到达服务器需要写图片的绝对路径*/
+    background-size:cover;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='file:///C:/Users/Administrator/Desktop/login-11.28/bg-slide.png',sizingMethod='scale');
+}
+/*登录模块*/
+.login-usercontainer {
+	width: 270px;
+	height: 235px;
+	position: absolute;
+	left: 0; 
+	top: 0; 
+	right: 0; 
+	bottom: 0;
+    margin: auto;
+    margin-right: 23%;
+	border: 1px solid #55baff;
+	-moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.login-user {
+	width: 270px;
+	height: 235px;
+    position: absolute;
+	left: 0; 
+	top: 0; 
+	right: 0; 
+	bottom: 0;
+    margin: auto;
+	background: white;
+	padding: 27px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background:rgba(255, 255, 255, .35);
+}
+.login-user p.user_name span,
+.login-user p.user_pwd span {
+	display: inline-block;
+	width: 60px;
+	height: 100%;
+	float: left;
+    line-height: 33px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.login-user p input {
+	float: left;
+	width: 156px;
+	height: 100%;
+	padding-left: 5px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #999;
+    background: rgba(255,255,255,0.3);
+    border: 0;
+    border:1px solid #1E7BE2;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.user_name {
+	height:33px;
+	margin-top: 8.5%;
+	position: relative;
+}
+.user_pwd {
+	height:33px;
+	margin-top: 6.5%;
+	position: relative;
+}
+.user_lgi {
+	width: 100%;
+	height: 33px;
+	color: white;
+	margin-top:30px;
+    position: relative;
+	 
+}
+.user_lgi span {
+	display: inline-block;
+	font-size: 16px;
+	width: 140px;
+	height: 32px;
+	text-align: center;
+	position: absolute; 
+	left: 0; 
+	top: 0; 
+	right: 0; 
+	bottom: 0;
+    margin: auto;
+    background: #127AED;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    line-height: 32px;
+    background: -webkit-linear-gradient(#127AED, #1E92E2); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(#127AED, #1E92E2); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(#127AED, #1E92E2); /* Firefox 3.6 - 15 */
+	background: linear-gradient(#127AED, #1E92E2); /* 标准的语法 */
+}
+.user_lgi:hover {
+	cursor: pointer;
+}
+/*登录页面的footer模块*/
+.login-footer {
+    width: 100%;
+    height: 24.7%;
+    position: relative;
+}
+.login-footer p {
+	width: 69%;
+	height: 27.8%;
+	font-size: 14px;
+	text-align:center;
+	position: absolute; 
+	left: 0; 
+	top: 0; 
+}
+.login-footer p span {
+	display: inline-block;
+	width: 100%;
+	height: 3px;
+	background: #85d6dd;
+	position: absolute; 
+	left: 0; 
+	top: 0; 
+	bottom: 0;
+	right: 0;
+	margin:auto;
+	background: -webkit-linear-gradient(left, #19A0B0 , #97C0E4); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #19A0B0 , #97C0E4); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #19A0B0 , #97C0E4); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #19A0B0 , #97C0E4); /* 标准的语法 */
+}

@@ -248,6 +248,70 @@
        
         
         option = {
+
+                  bmap: {
+                        center: [116.307698, 40.056975],
+                          zoom: 5,
+
+                          roam: true, // 允许缩放
+
+                          mapStyle: {  // 百度地图自定义样式
+                            styleJson: [
+                              // 陆地
+                                  {
+                          "featureType": "land",
+                                        "elementType": "all",
+                                        "stylers": {
+                                            "color": "#073763"
+                                        }
+                                    },
+                                    // 水系
+                                    {
+                                        "featureType": "water",
+                                        "elementType": "all",
+                                        "stylers": {
+                                            "color": "#073763",
+                                            "lightness": -54
+                                        }
+                                    },
+                                    // 国道与高速
+                                    {
+                                        "featureType": "highway",
+                                        "elementType": "all",
+                                        "stylers": {
+                                            "color": "#45818e"
+                                        }
+                                    },
+                                    // 边界线
+                                    {
+                                        "featureType": "boundary",
+                                        "elementType": "all",
+                                        "stylers": {
+                                            "color": "#ffffff",
+                                            "lightness": -62,
+                                            "visibility": "on"
+                                        }
+                                    },
+                                    // 行政标注
+                                    {
+                                        "featureType": "label",
+                                        "elementType": "labels.text.fill",
+                                        "stylers": {
+                                            "color": "#ffffff",
+                                            "visibility": "on"
+                                        }
+                                    },
+                                    {
+                                        "featureType": "label",
+                                        "elementType": "labels.text.stroke",
+                                        "stylers": {
+                                            "color": "#444444",
+                                            "visibility": "on"
+                                        }
+                                    }
+                            ]
+                          }
+                    },
           
             tooltip: {
                     show: true,

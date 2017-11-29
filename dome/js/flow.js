@@ -356,7 +356,7 @@
 
 }
 
-//外省来源迁徙图
+//外省车辆来源迁徙图
 var otherProvMigration_in = function(containerId,data) {
     var otherProvMigrationIn_chart = echarts.init(document.getElementById(containerId), 'dark');
     // console.log(data);
@@ -431,10 +431,10 @@ var otherProvMigration_in = function(containerId,data) {
         HZData[i][0]= centerCity;
         HZData[i][1]= data[i];
     }
-    console.log(HZData);
+    // console.log(HZData);
 
     var x = HZData[0][1].todayamount;
-    console.log(x);
+    // console.log(x);
     var convertData = function (data) {
         var res = [];
         for (var i = 0; i < data.length; i++) {
@@ -457,7 +457,7 @@ var otherProvMigration_in = function(containerId,data) {
     var series = [];
     [['石家庄', HZData]].forEach(function (item, i) {
     	// console.log(item)
-    	console.log(item[1])
+    	// console.log(item[1])
         series.push({
                 name: item[0] + ' Top10',
                 type: 'lines',
@@ -549,7 +549,7 @@ var otherProvMigration_in = function(containerId,data) {
                 })
             });
     });
-    console.log(series);
+    // console.log(series);
     var otherProvMigrationIn_option = {
         backgroundColor: '#0b0c45',
         tooltip : {
@@ -604,6 +604,9 @@ var otherProvMigration_in = function(containerId,data) {
     };
 
     otherProvMigrationIn_chart.setOption(otherProvMigrationIn_option);
+    otherProvMigrationIn_chart.on('click',function(params){
+             window.location.href = "http://20.0.51.73:8888/queryPasscar?regionname="+ params.name +"®iontype=1&date1=2017-11-27 00:00:00&date2=2017-11-28 00:00:00";
+    })
 }
 
  //外省外埠车辆来源排名
@@ -627,7 +630,7 @@ var traveltime = function(containerId,data){
  //数据的统一处理
   var refreshData = function(){
     $.get("../json/hebeishuju.json",function(data){
-      console.log(data);
+      // console.log(data);
 
      // 卡口排名
         zdcllpm("zdcllpm",data.kkllpm); 

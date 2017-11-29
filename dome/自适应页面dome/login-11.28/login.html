@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" /> 
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<title>登录页面</title>
+	<link rel="stylesheet" type="text/css" href="./login.css">
+	<!-- <link rel="stylesheet" type="text/css" href="../layer/theme/default/layer.css"> -->
+</head>
+<body>
+  <div id="login-main">
+    <div class="login-logo">
+    	<div class="logo_img">
+    		<!-- <img src="../images/landing_logo.png"> -->
+    	</div>
+      <div class="logo_title">
+        <div class="line_left">
+          <span></span>
+        </div>
+        <div class="title_text">
+          <span>中 国 石 化 领 导 人 员 年 度 素 质 能 力 测 评 管 理 系 统</span>
+        </div>
+        <div class="line_right">
+          <span></span>
+        </div>
+      </div>
+    </div>
+  	<div class="login-bg">
+      <div class="bg-slide">
+      </div>
+      <div class="login-usercontainer">
+        <div class="login-user">
+          <p class="user_name">
+            <span>用户名：</span>
+            <input id="username" type="text" placeholder="请输入用户名" value="" onkeydown=KeyDown()>
+          </p>
+          <p class="user_pwd">
+            <span>密&nbsp;&nbsp;&nbsp;码：</span>
+            <input id="password" type="password" placeholder="*****" onkeydown=KeyDown() value="" >
+          </p>
+          <!-- <p class="user_auto">
+            <span>
+              <i></i>
+            </span>
+            <a>忘记密码</a>
+          </p> -->
+          <p id="submit" class="user_lgi">
+            <span>登 录</span>
+          </p>
+        </div>
+      </div>
+	  </div>
+	  <div class="login-footer">
+	    <p>
+       <span></span> 
+      </p>
+	  </div>
+  </div>
+</body>
+<script type="text/javascript" src=" ./jquery.min.js"></script>
+<!-- <script type="text/javascript" src = "../js/ConfigUrl.js"></script> -->
+<script type="text/javascript" src = "./login.js"></script>
+<!-- <script type="text/javascript" src = "../layer/layer.js"></script> -->
+</html>
