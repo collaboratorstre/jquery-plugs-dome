@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>河北</title>
+   <!-- <link rel="stylesheet" href="../css/font-awesome.css"> -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    
+	<link rel="stylesheet" href="../css/hebei.css">
+
+
+
+	 <style type="text/css">
+        /* --------------覆盖样式表文件里的样式，请勿移动   begin ----------------*/
+        table tr:nth-child(2n) {
+            background: none;
+        }
+
+        table td {
+            border: none;
+            padding: 0;
+            color:#FFFFFF;
+        }
+
+        table td:last-child {
+            border: none;
+        }
+
+        .amap-logo,.amap-copyright {
+            z-index: -1;
+        }
+
+        /* --------------覆盖样式表文件里的样式，请勿移动   end ----------------*/
+    </style>
+</head>
+<body>
+	<div class="body-content">
+        <div class="layout-top">
+            <div class="panel">
+                <div class="top">
+                    <div id="timeWeather">
+                        <div id="time" style="width:58%; text-align:center;"></div>
+                        <div id="weather" style="width:23%;">
+                            <div id="img" style="width:59px;margin:auto;">
+                            </div>
+                            <div id="msg" style="text-align:center;font-weight:bold; font-size:14px;line-height:23px;">
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="total-content">
+                        <div id="vehicleTotal" class="content-el">
+                            <div class="icons">
+                                <img src="../img/totalVeh50.png" width="50px"/>
+                            </div>
+                            <div class="content-panel"  id="zdjdc">
+                                  <div class="tb-row">
+                                    <div class="tb-col" id="zdj_name">实时流量:</div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="tb-col total-normal" style="text-align:center;" id="ssll_Total"><span >0</span>辆</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="outTotal" class="content-el">
+                            <div class="icons">
+                                <img src="../img/outVehicle50.png" width="50px"/>
+                            </div>
+                            <div class="content-panel" id="zdjsr">
+                                <div class="tb-row">
+                                    <div class="tb-col" id="dri_name">外埠机动车(周):</div>
+                                </div>
+
+                                <div class="tb-row">
+                                    <div class="tb-col total-normal" style="text-align:center;" id="wbjdc_Total"><span>0</span>辆</div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="realtimeFlow" class="content-el">
+                            <div class="icons">
+                                <img src="../img/totalDrive50.png" width="50px"/>
+                            </div>
+                            <div class="content-panel" id="txzdcls"  style="position: relative;">
+                                <div class="tb-row">
+                                    <div class="tb-col" id="total_name">重点车辆流量:</div>
+                                </div>
+                                 <div id="zdclxq">详情</div>
+                                <div class="tb-row">
+                                    <div class="tb-col" style="text-align:center;" id="zdc_Total"><span class="total-normal">0</span>辆</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="controlAlarm" class="content-el">
+                            <div class="icons">
+                                <img src="../img/alarmLamp50.png" width="50px"/>
+                            </div>
+                            <div class="content-panel"  style="position: relative;">
+                                 <div class="tb-row">
+                                    <div class="tb-col" id="total_name">今日违法:</div>
+                                </div>
+                                <div id="jrwfxq">详情</div>
+                                <div class="tb-row">
+                                    <div class="tb-col" style="text-align:center;" id="jrwf_Total"><span class="total-normal">0</span>起</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="layout_middle">
+              <div class="column_left">
+                   <div class="top">
+                       <!--  <p>通行机动车卡口排名<em>TOP10</em><span>(单位: 次)</span></p> -->
+                       <p>卡口流量排名<span>(单位: 辆)</span></p>
+                        <div class="bot_top">
+                            <span style="margin-left: 5%">卡口名称</span><span style="margin-left: 17%">今日本卡口通行动车总数</span><span style="margin-left: 24%">排名变化</span>
+                        </div>
+                        <div id="bay_rank" >
+
+                        </div>
+                        
+                   </div>
+                   <div class="bottom">
+                       <p>车辆类型排名top10<span>(单位: 辆)</span></p>
+                       <div id="cllxpm" style="width: 100%; height: 86%; margin-top: 8%;"></div>
+                   </div>
+              </div>
+               <div class="column_center" style="margin-bottom: 0px; position: relative;">
+                   <p style="position: absolute;top:1%;left: 1%;color: #3299fe;height: 3%;width: 99%;">路况信息</p>
+                   <div class="select_more" style="position: absolute; top: 5%;left: 3%; z-index: 100;">
+                       <select name="" id="sle" style="width: 130px; height: 41px;border-radius: 10px 0px 0px 10px;float: left;">
+                           <option value="全省高速路网">全省高速路网</option>
+                           <option value="环京高速路网">环京高速路网</option>
+                           <option value="涉署高速路网">涉署高速路网</option>
+                       </select>
+                       
+                       <div style="float: left;">
+                           <div class="select_head">
+                               <span style="width: 130px; height: 41px;border-radius: 0px 10px 10px 0px; display: inline-block; text-align: center;line-height: 41px;background: white;">重点道路点段</span>
+                           </div>
+                           <div id="more_select" style="background: white;padding: 5px; display: none">
+                               <p>
+                                  <input type="checkbox" class="select_conent">
+                                  <span>分流点</span>
+                               </p>
+                               <p>
+                                  <input type="checkbox"  class="select_conent"><span>易堵点</span>
+                               </p>
+                               <p>
+                                  <input type="checkbox" class="select_conent">
+                                  <span>雾区</span>
+                               </p>
+                           </div>
+                       </div>
+                   </div>
+                   <div id="hebei_map" style="width: 98%; height: 95%;margin-top: 4%;margin-left: 1%;"></div>
+               </div>
+               <div class="column_right">
+                    <div class="top">
+                         <p>收费站流量排名<em>TOP10</em><span>(单位: 辆)</span></p>
+                          <div class="bot_top">
+                            <span style="margin-left: 5%">卡口名称</span><span style="margin-left: 17%">今日本卡口通行动车总数</span><span style="margin-left: 24%">排名变化</span>
+                        </div>
+                         <div id="totel_pm" >
+
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <p>外省外埠车辆来源排名<span>(单位: 辆)</span></p>
+                        <div id="wswbcl" style="margin-top: 6%">
+                            <table style="width: 100%">
+                              <tbody id="hour_up" style="width: 100%">
+                                   <tr><td>排名</td><td>来源省份</td><td>数量</td></tr>
+                               </tbody>
+                            </table>
+                            <table style="width: 100%; height: 100%">
+                               <tbody id="hour_content" style="color:#7094c6"></tbody>
+                           </table>              
+                        </div>
+                    </div>
+               </div>
+         </div>
+    </div>
+     
+
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="../js/bootstrap.min.js"></script> -->
+ <!--  <script type="text/javascript"
+            src="http://webapi.amap.com/maps?v=1.3&key=7825ba25fa5bb7414db78418b7a0a0b2"></script> -->
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=p1RA6kXNPWZn2cb3Q8wKzBqgOI50txoX">
+    <!-- //v2.0版本的引用方式：src="http://api.map.baidu.com/api?v=2.0&ak=您的密钥"
+    </script>
+    
+
+    <script type="text/javascript" src="../js/echarts.js"></script>
+    <script type="text/javascript" src="../src/bmap.min.js"></script>
+
+    <script type="text/javascript" src="../js/hebei.js"></script>
+</body>
+</html>

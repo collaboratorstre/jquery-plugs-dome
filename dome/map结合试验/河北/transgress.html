@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>违法与事故</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+	<link rel="stylesheet" href="../css/transgress.css">
+ 
+   <!--  <script type="text/javascript" src="http://api.map.baidu.com/getscript?type=quick&file=api&ak=o9B4Ol99j9NcBXSu5nFTR7uI&t=20140109092002"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/getscript?type=quick&file=feature&ak=o9B4Ol99j9NcBXSu5nFTR7uI&t=20140109092002"></script> -->
+  <!--   <script type="text/javascript" src="../src/bmap_one.js"></script> -->
+  
+
+	 <style type="text/css">
+        /* --------------覆盖样式表文件里的样式，请勿移动   begin ----------------*/
+        table tr:nth-child(2n) {
+            background: none;
+        }
+
+        table td {
+            border: none;
+            padding: 0;
+            color:#FFFFFF;
+        }
+
+        table td:last-child {
+            border: none;
+        }
+
+        .amap-logo,.amap-copyright {
+            z-index: -1;
+        }
+
+        /* --------------覆盖样式表文件里的样式，请勿移动   end ----------------*/
+    </style>
+</head>
+<body>
+	<div class="body-content">
+        <div class="layout-top">
+              <div id="head-nav" class="navbar navbar-default navbar-fixed-top" style="background-color:#0d043d;border-bottom:1px solid #013c82; width: 100%;height: 8%">
+                <input type="hidden" name="contextPath" value="">
+               
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle">
+                            <span class="fa fa-gear"></span>
+                        </button>
+                        <a href="#" class="navbar-brand" style="margin-top:6px;    width: 324px;"><img style="display: inline-block; vertical-align: middle;width: 48px"  alt="Avatar" src="../img/logo.png"><span style="display: inline-block; font-size: 24px; vertical-align: middle; margin-left: 11px; color: white;">交通安全态势专题</span></a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        
+                        <ul class="nav navbar-nav navbar-right user-nav">
+                            <li class="dropdown profile_menu"><a href="#" data-toggle="dropdown" class="dropdown-toggle" style="margin-top:15px;"><img alt="Avatar" src="../img/avatar2.png"><span><c:out value="${user.userName}"/></span><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="<%= request.getContextPath()%>/downloadAlarmClient">下载报警客户端</a></li>
+                                    <li><a href="<%= request.getContextPath()%>/updatePwd">修改密码</a></li>
+                                    <li><a href="logout">退出</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul id="main-category-list" class="nav navbar-nav navbar-right not-nav" >
+                            <li class="active"><a href="http://localhost/dome/%E6%B2%B3%E5%8C%97/hebei.html" style="padding: 0px"><img src="../img/ksh_selected.png"></a></li>
+
+                            <li><a href="<%=basePath %>/web-dap"  style="padding: 0px"><img src="../img/gnqd_normal.png"></a></li>
+                        </ul>
+
+
+                      </div>
+                  </div>
+               </div>
+        </div>
+
+        <div class="layout_middle">
+              <div class="column_left">
+                   <div class="top">
+                        <p>违法类型排名top10<span>(单位:辆)</span></p>
+                        <div id="wflxpm" style="width: 100%; height: 93%;"></div>
+                   </div>
+                   <div class="bottom">
+                        <p>违法路段排名top10<span>(单位:起)</span></p>
+                        <div id="wfldpm"></div>
+                   </div>
+              </div>
+               <div class="column_center" style="margin-bottom: 0px; position: relative;">
+                   <p style="position: absolute;top:1%;left: 1%;color: #3299fe;height: 3%;width: 99%;">违法/事故分布情况</p>
+                   <div class="weifa">违法总量:<span id="weifa_total">0</span>起</div>
+                   <div class="shigu">事故总量:<span id="shigu_total">0</span>起</div>
+                   <div id="hebei_map" style="width: 98%; height: 95%;margin-top: 4%;margin-left: 1%;"></div>
+                   
+               </div>
+               <div class="column_right">
+                    <div class="top">
+                        <p>事故类型排名top10<span>(单位:辆)</span></p>
+                        <div id="sglxpm" style="width: 100%; height: 93%;"></div>
+                    </div>
+                    <div class="bottom">
+                        <p>事故路段排名top10<span>(单位:辆)</span></p>
+                        <div id="sgldpm"></div>
+                    </div>
+               </div>
+         </div>
+	</div>
+  
+   <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=p1RA6kXNPWZn2cb3Q8wKzBqgOI50txoX">
+    <!-- //v2.0版本的引用方式：src="http://api.map.baidu.com/api?v=2.0&ak=您的密钥"
+    </script> -->
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="../js/bootstrap.min.js"></script> -->
+   <script type="text/javascript" src="../js/echarts.js"></script>
+   <script type="text/javascript" src="../src/bmap.min.js"></script>
+  
+    <script type="text/javascript" src="../js/transgress.js"></script>
+</body>
+</html>
