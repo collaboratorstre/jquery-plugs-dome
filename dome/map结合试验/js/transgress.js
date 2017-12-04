@@ -255,25 +255,25 @@
       var option = {
 
                   bmap: {
-                        center: [116.307698, 40.056975],
-                          zoom: 7,
+                        center: [116.20, 40.22],
+                          zoom: 11,
 
                           roam: true, // 允许缩放
 
                           mapStyle: {  // 百度地图自定义样式
                             styleJson: [
                                {
-                        "featureType": "water",
+                        "featureType": "water", //水系
                         "elementType": "all",
                         "stylers": {
                             "color": "#044161"
                         }
                     },
                     {
-                        "featureType": "land",
+                        "featureType": "land", //陆地
                         "elementType": "all",
                         "stylers": {
-                            "color": "#004981"
+                            "color": "#002256"
                         }
                     },
                     {
@@ -291,7 +291,7 @@
                         }
                     },
                     {
-                        "featureType": "highway",
+                        "featureType": "highway", // 国道与高速
                         "elementType": "geometry",
                         "stylers": {
                             "color": "#004981"
@@ -301,7 +301,7 @@
                         "featureType": "highway",
                         "elementType": "geometry.fill",
                         "stylers": {
-                            "color": "#005b96",
+                            "color": "#2b827f",
                             "lightness": 1
                         }
                     },
@@ -370,21 +370,21 @@
                         }
                     },
                     {
-                        "featureType": "boundary",
+                        "featureType": "boundary", //边界线
                         "elementType": "geometry.fill",
                         "stylers": {
-                            "color": "#029fd4"
+                            "color": "#f91024"
                         }
                     },
                     {
-                        "featureType": "building",
+                        "featureType": "building", //调整建筑物颜色
                         "elementType": "all",
                         "stylers": {
                             "color": "#1a5787"
                         }
                     },
                     {
-                        "featureType": "label",
+                        "featureType": "label",  //行政标注
                         "elementType": "all",
                         "stylers": {
                             "visibility": "off"
