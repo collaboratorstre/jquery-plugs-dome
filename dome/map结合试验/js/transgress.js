@@ -225,6 +225,8 @@
 	$.get('../json/hebei.json', function (heZe) {
         echarts.registerMap('河北', heZe);
         var chart = echarts.init(document.getElementById('hebei_map'));
+        // console.log(chart)
+        // var bmap = chart._api.getModel('bmap').getBMap();
           var dataShow = [
                       {value1:8335, name:'石家庄市', value2: 10535},
                       {value1:7310, name:'唐山市',value2: 10535},
@@ -258,7 +260,7 @@
                         center: [116.20, 40.22],
                           zoom: 11,
 
-                          roam: true, // 允许缩放
+                          roam: false, // 允许缩放
 
                           mapStyle: {  // 百度地图自定义样式
                             styleJson: [
@@ -414,14 +416,16 @@
                 roam: false,
                 itemStyle: {
                     normal: {
-                        areaColor: '#0b0c45',
+                        // areaColor: '#0b0c45',
+                        areaColor: 'transparent',
                         borderColor: '#2b6cbe',
                         borderWidth:3,
                         shadowColor: 'rgba(45,110,192,2)',
                         shadowBlur: 40
                     },
                     emphasis: {
-                        areaColor: '#0b0c45'
+                        // areaColor: '#0b0c45'
+                        areaColor: 'transparent'
                     }
                 }
             },
@@ -435,14 +439,16 @@
                 roam: false,
                 itemStyle: {
                     normal: {
-                        areaColor: '#0b0c45',
+                        // areaColor: '#0b0c45',
+                        areaColor: 'transparent',
                         borderColor: '#2b6cbe',
                         borderWidth:1,
                         // shadowColor: 'rgba(45,110,192,2)',
                         // shadowBlur: 30,
                     },
                     emphasis: {
-                        areaColor: '#0b0c45'
+                        // areaColor: '#0b0c45'
+                        areaColor: 'transparent'
                     }
                 }
             }
@@ -476,6 +482,55 @@
             ]
             
         };
+
+// var bmap = chart.getModel().getComponent('bmap').getBMap();
+// function getBoundary(){       
+//     var bdary = new BMap.Boundary();
+//     bdary.get("北京市海淀区", function(rs){       //获取行政区域
+//       bmap.clearOverlays();        //清除地图覆盖物       
+//       var count = rs.boundaries.length; //行政区域的点有多少个
+//       if (count === 0) {
+//         alert('未能获取当前输入行政区域');
+//         return ;
+//       }
+//             var pointArray = [];
+//       for (var i = 0; i < count; i++) {
+//         var ply = new BMap.Polygon(rs.boundaries[i], {strokeWeight: 2, strokeColor: "#ff0000"}); //建立多边形覆盖物
+//         bmap.addOverlay(ply);  //添加覆盖物
+//         pointArray = pointArray.concat(ply.getPath());
+//       }    
+//       bmap.setViewport(pointArray);    //调整视野  
+//       addlabel();               
+//     });   
+//   }
+
+//   setTimeout(function(){
+//     getBoundary();
+//   }, 2000);
+
+//   function addlabel() {
+//       var pointArray = [
+//         new BMap.Point(121.716076,23.703799),
+//         new BMap.Point(112.121885,14.570616),
+//         new BMap.Point(123.776573,25.695422)];
+//       var optsArray = [{},{},{}];
+//       var labelArray = [];
+  
+//       for(var i = 0;i < pointArray.length; i++) {
+//         optsArray[i].position = pointArray[i];
+//         labelArray[i] = new BMap.Label(contentArray[i],optsArray[i]);
+//         labelArray[i].setStyle({
+//       color : "red",
+//       fontSize : "12px",
+//          height : "20px",
+//          lineHeight : "20px",
+//          fontFamily:"微软雅黑"
+//        });
+//         bmap.addOverlay(labelArray[i]);
+//       }   
+//   }
+
+
         chart.setOption(option);
 
           var options = {

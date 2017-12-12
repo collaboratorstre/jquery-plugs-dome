@@ -146,5 +146,27 @@
             "name":"校车",
             "value":820
         }
+    ],
+     "impCarStatus":[
+        {
+            "name":"正常",
+            "value":2606
+        },
+        {
+            "name":"违法未处理",
+            "value":537
+        },
+        {
+            "name":"事故未处理",
+            "value":2
+        },
+        {
+            "name":"查封",
+            "value":78
+        },
+        {
+            "name":"锁定",
+            "value":274
+        }
     ]
 }
