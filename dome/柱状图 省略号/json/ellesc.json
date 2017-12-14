@@ -40,5 +40,39 @@
             "name":"卡口_X513大甘路展旗村路段(四期)",
             "value":1
         }
+    ],
+     "impComapnyRegion":[
+        {
+            "regionid":"371702",
+            "regionname":"牡丹区",
+            "caramount":247,
+            "companyid":"a6e97b4717d6479bb4b622ddd0053d88",
+            "companyname":"菏泽盛源危险化学品运输有限公司",
+            "rwn":1
+        },
+        {
+            "regionid":"371702",
+            "regionname":"牡丹区",
+            "caramount":84,
+            "companyid":"b28d6e771adb48e1aedaab19d65ccc00",
+            "companyname":"中国石油天然气运输公司菏泽分公司",
+            "rwn":2
+        },
+        {
+            "regionid":"371702",
+            "regionname":"牡丹区",
+            "caramount":35,
+            "companyid":"61e7f7956d3342d0a3491c01f089642d",
+            "companyname":"菏泽华通运输有限公司",
+            "rwn":3
+        },
+        {
+            "regionid":"371702",
+            "regionname":"牡丹区",
+            "caramount":23,
+            "companyid":"8cbd896c2a1241478cbb6d961e636b83",
+            "companyname":"菏泽紫东达物流运输有限公司",
+            "rwn":4
+        }
     ]
 }

@@ -16,10 +16,12 @@
    }
  </style>
 <body>
-     <div style="height: 550px"></div>
+     <div style="height: 100px"></div>
 	 <div id="bottom_left" style="width: 100%;height: 70px;">
          
 	 </div>
+
+     <div id="bottom_right" style="width: 50%;height: 240px;"></div>
 
      <script type="text/javascript" src="../js/jquery.min.js"></script>
 	<script type="text/javascript">
@@ -149,8 +151,141 @@
     
    distribution_top.setOption(distribution_option);
 }
+
+
+var distribution_rank_one = function(containerId,data){
+    $("#"+containerId).empty();
+    // console.log(data);
+    var arr_o = [];
+    var arr_t = [];
+    var distribution_top = echarts.init(document.getElementById(containerId), 'dark');
+    var distribution_option ={
+
+                    color:['#00b8d3'],
+                    tooltip : {
+                        trigger: 'axis',
+                        formatter:  function(params){
+                              console.log(params);
+                              console.log(data);
+                              return data[params[0].dataIndex].companyname + '<br>机动车数量 : <br>'+params[0].data + '辆';
+                              // return '机动车数量 : <br>'+params[0].data + '辆';
+                        
+                    },
+                        // formatter: function(){
+                          
+                        // },
+                        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                        }
+                    },
+                    grid: {
+                        left: '-2%',
+                        right: '0%',
+                        bottom: '11%',
+                        top: '5%',
+                        containLabel: true
+                    },
+                    xAxis : [
+                        {
+                            type : 'category',
+                            data : [],
+                            inverse: true,
+                            axisTick: {
+                                show: false
+                            },
+                            axisLabel : {
+                                // rotate: -10,
+                                // color:['#00b8d3'],
+                                interval:0,
+                                // formatter : function(params){
+                                //     var newParamsName = "";
+                                //     var paramsNameNumber = params.length;
+                                //     var provideNumber = 6;
+                                //     var rowNumber = Math.ceil(paramsNameNumber / provideNumber);
+                                //     if (paramsNameNumber > provideNumber) {
+                                //         for (var p = 0; p < rowNumber; p++) {
+                                //             var tempStr = "";
+                                //             var start = p * provideNumber;
+                                //             var end = start + provideNumber;
+                                //             if (p == rowNumber - 1) {
+                                //                 tempStr = params.substring(start, paramsNameNumber);
+                                //             } else {
+                                //                 tempStr = params.substring(start, end) + "\n";
+                                //             }
+                                //             newParamsName += tempStr;
+                                //         }
+
+                                //     } else {
+                                //         newParamsName = params;
+                                //     }
+                                //     return newParamsName
+                                // }
+
+                            },
+                            
+                            nameTestStyle: {
+                                fontSize: 3
+                            }
+                            // boundaryGap: ['50%', '30%']
+                        }
+                    ],
+                    // visualMap: {
+                    //         padding: [100, 0, 100, 0]       // 上右下左
+                    //     },
+                    yAxis : [
+                       {
+                        show : true
+                       }
+                    ],
+                    series : [
+                        {
+                            name:'直接访问',
+                            type:'bar',
+                            // barWidth: '60%',
+                            data:[]
+                        }
+                    ]
+    };
+
+    $.each(data,function(i,n) {
+        // console.log(data);
+        // console.log(n);
+           arr_o.push((n.companyname).substr(0,4)+'...') ;
+           // arr_o.push(n.name);
+           arr_t.push (n.caramount);
+
+    });
+    // console.log(arr_t);
+    // console.log(arr_o);
+     if(data){
+         var x = {
+             value: '',
+             textStyle: {
+                 fontSize: '',
+                 color: ''
+             }
+         }
+        distribution_option.xAxis[0].data=arr_o;
+        distribution_option.series[0].data=arr_t;
+        // distribution_option.series[1].data=data.coreAreaSpeedList;
+         for(var i=0;i<data.length;i++){
+             distribution_option.xAxis[0].data.push(x);
+             distribution_option.xAxis[0].data[i].value = data[i].companyname;
+             // distribution_option.xAxis[0].data[i].textStyle.color = 'white';
+             // distribution_option.xAxis[0].data[i].textStyle.fontSize = '10';
+         }
+    }
+      
+    
+   distribution_top.setOption(distribution_option);
+}
+
+
  $.get('json/ellesc.json',function(data){
   distribution_rank('bottom_left',data.impBayoneTop10);
+
+  distribution_rank_one('bottom_right',data.impComapnyRegion);
+
 })
 	</script>
 
