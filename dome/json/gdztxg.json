@@ -1,0 +1,24 @@
+{
+    "impCurGpsTypeAmount":[
+        {
+            "dmsm":"公路客运",
+            "count(1)":74
+        },
+        {
+            "dmsm":"旅游客运",
+            "count(1)":0
+        },
+        {
+            "dmsm":"危化品车",
+            "count(1)":111
+        },
+        {
+            "dmsm":"校车",
+            "count(1)":0
+        },
+        {
+            "dmsm":"渣土车",
+            "count(1)":0
+        }
+    ]
+}

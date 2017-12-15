@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滚动效果</title>
+
+	<style type="text/css">
+       .title-gradient{
+
+       }
+	</style>
+</head>
+<body>
+	
+	<!-- <div class="title-gradient">路况信息</div> -->
+
+	<div class="bottom" style="height: 30px;width: 95%;display: flex;line-height: 30px;margin-top: 10px;padding-top: 5px;background:linear-gradient(to right, #2c8af1 35%, #112d70);">
+                    <div class="bottom-title" style="color: white;font-weight: bold;font-size: 16px;">路况信息</div>
+                    <div class="bottom-content" id="curPoliceInfo" style="width: 80%;line-height: 30px;display: flex;">
+                        <div class="content-col" style="width: 100%;">
+                            <marquee direction="left" behavior="scroll" scrollamount="2" scrolldelay="0"
+                                     loop="-1" hspace="0" vspace="0" width="90%" onmouseout="this.start()"
+                                     onmouseover="this.stop()" style="margin: 0px; width: 100%; color: white;" id="carousel_six">2017年09月22日 鲁AY2564 大型旅游车因疲劳驾驶被拦截， 18：00：23</marquee>
+                        </div>
+                    </div>
+    </div>
+    
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+
+	   var carousel_six = function(containerId,data){
+	   	$("#"+containerId).empty();
+         console.log(data);
+           var infoStr = "";
+          $.each(data,function(i,n){
+          	      console.log(n);
+          	      console.log(i);
+		         infoStr += n.dmsm+'&nbsp;:&nbsp;'+n["count(1)"]+"&nbsp;辆&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+		         console.log(infoStr);
+		         $("#"+containerId).html(infoStr);
+		     })
+
+	   }
+       
+       var refreshData = function(){
+
+       	 $.get("json/gdztxg.json",function(data){
+           console.log(data);
+           carousel_six("carousel_six",data.impCurGpsTypeAmount)
+             
+
+       	 })
+       }
+
+       $(document).ready(function(){
+
+           refreshData();
+
+       })
+	</script>
+</body>
+</html>
