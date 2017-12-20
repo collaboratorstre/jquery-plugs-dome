@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>map_dian</title>
+	<script type="text/javascript" src="../js/echarts.js"></script>
+</head>
+<body>
+ <div style="background: #000c60;">
+	<div id="touristDistribution" style="width: 800px;height: 800px"></div>
+</div>
+
+<!-- <script type="text/javascript" src="../js/jquery.min.js"></script> -->
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+ <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+<script type="text/javascript">
+
+    var touristDistribution = function(geoInfo, data){
+        console.log(geoInfo,data);
+    $.get('changping.json', function (changPing) {
+        echarts.registerMap('昌平区', changPing);
+        var tourist_chart = echarts.init(document.getElementById("touristDistribution"), 'dark');
+
+        var convertData = function(data){
+            var res = [];
+
+            for (var i = 0; i < data.length; i++) {
+                var geoCoord = geoInfo[data[i].name];
+                if (geoCoord) {
+                    res.push({
+                        name: data[i].name,
+                        value: geoCoord.concat(data[i].value)
+                    });
+                }
+            }
+            return res;
+        }
+
+        // 转换数据格式
+        var maxValue = 1;
+        var dataArray = [];
+        for(var i = 0; i < data.length; i++){
+            // 构造显示数据格式
+            var item = {name: data[i].jqmc, value: data[i].ydzhanbi};
+            dataArray.push(item);
+
+            // 取占比的最大值
+            if(data[i].ydzhanbi > maxValue) maxValue = data[i].ydzhanbi;
+        }
+         console.log(dataArray);
+         console.log(convertData(dataArray));
+        var option = {
+            
+
+                bmap: {
+                        center: [116.20, 40.22],
+                          zoom: 11,
+
+                          roam: false, // 允许缩放
+
+                          mapStyle: {  // 百度地图自定义样式
+                            styleJson: [
+                               {
+                        "featureType": "water", //水系
+                        "elementType": "all",
+                        "stylers": {
+                            "color": "#044161"
+                        }
+                    },
+                    {
+                        "featureType": "land", //陆地
+                        "elementType": "all",
+                        "stylers": {
+                            "color": "#002256"
+                        }
+                    },
+                    {
+                        "featureType": "boundary",
+                        "elementType": "geometry",
+                        "stylers": {
+                            "color": "#064f85"
+                        }
+                    },
+                    {
+                        "featureType": "railway",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "highway", // 国道与高速
+                        "elementType": "geometry",
+                        "stylers": {
+                            "color": "#004981"
+                        }
+                    },
+                    {
+                        "featureType": "highway",
+                        "elementType": "geometry.fill",
+                        "stylers": {
+                            "color": "#2b827f",
+                            "lightness": 1
+                        }
+                    },
+                    {
+                        "featureType": "highway",
+                        "elementType": "labels",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "arterial",
+                        "elementType": "geometry",
+                        "stylers": {
+                            "color": "#004981"
+                        }
+                    },
+                    {
+                        "featureType": "arterial",
+                        "elementType": "geometry.fill",
+                        "stylers": {
+                            "color": "#00508b"
+                        }
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "green",
+                        "elementType": "all",
+                        "stylers": {
+                            "color": "#056197",
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "subway",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "manmade",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "local",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "arterial",
+                        "elementType": "labels",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "boundary", //边界线
+                        "elementType": "geometry.fill",
+                        "stylers": {
+                            "color": "#f91024"
+                        }
+                    },
+                    {
+                        "featureType": "building", //调整建筑物颜色
+                        "elementType": "all",
+                        "stylers": {
+                            "color": "#1a5787"
+                        }
+                    },
+                    {
+                        "featureType": "label",  //行政标注
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    }
+                            ]
+                          }
+                    },
+
+            visualMap: {
+                type: 'continuous',
+                min: 0,
+                max: maxValue,
+                show:false,//不展示visualMap-continuous组件，但数据映射的功能还存在。即不展示热力图图例
+                color: ['red','yellow','green']
+                // seriesIndex:2//指定选取哪个系列的数据。这里仅选取series最后一组数据展示热力图
+            },
+            geo: [
+                {
+                    map: '昌平区',
+                    silent: true,
+                    label: {
+                        emphasis: {
+                            show: false
+                        }
+                    },
+                    roam: false,//是否开启鼠标缩放和平移漫游
+                    itemStyle: {
+                        normal: {
+                            areaColor: 'transparent',
+                            borderColor: '#2b6cbe',
+                            // borderColor: 'transparent',
+                            borderWidth:7,
+                            shadowColor: 'rgba(45,110,192,2)',
+                            shadowBlur: 40
+                        },
+                        emphasis: {
+                            areaColor: 'transparent'
+                        }
+                    }
+                },
+                {
+                    map: '昌平区',
+                    silent: true,
+                    label: {
+                        emphasis: {
+                            show: false
+                        }
+                    },
+                    roam: false,
+                    itemStyle: {
+                        normal: {
+                            areaColor: 'transparent',
+                            borderColor: '#2b6cbe',
+                            // borderColor: 'transparent',
+                            borderWidth:1,
+                            // shadowColor: 'rgba(45,110,192,2)',
+                            // shadowBlur: 30,
+                        },
+                        emphasis: {
+                            areaColor: '#000c60'
+                        }
+                    }
+                }
+            ],
+            series:[
+                {
+                    name:'游客分布热力图',
+                    type: 'heatmap',//热力图必须和visualMap配置项一起使用
+                    map:'昌平区',
+                    coordinateSystem: 'bmap',
+                    silent: false,
+                    symbolSize: 20,
+                    label: {
+                        normal:{
+                            fontFamily: 'Microsoft YaHei'
+                        },
+                        emphasis:{
+                            color: 'white',
+                            fontFamily: 'Microsoft YaHei'
+                        }
+                    },
+                    data: convertData(dataArray)
+                },
+                {
+                    name:'游客分布',
+                    type: 'scatter',
+                    map:'昌平区',
+                    coordinateSystem: 'bmap',
+                    symbolSize: 8,
+                    itemStyle: {
+                        normal:{
+                            color:'#fff'//图形颜色
+                        }
+                    },
+                    markPoint:{
+                        symbol:'circle'
+                    },
+                    label: {
+                        normal:{
+                            show: true,//默认为false
+                            color: '#00ff00',
+                            fontWeight: 'bold',
+                            fontSize: 16,
+                            fontFamily: 'Microsoft YaHei',
+                            position: 'top',//标签的位置，默认为inside。这里不能使用默认inside，否则看不到MarkPoint
+                            distance: 25,
+                            formatter: '{b}',
+                            backgroundColor:'#000a6c',
+                            borderColor:'#676d9f',
+                            borderWidth:2,
+                            borderRadius:3,
+                            padding: 15
+                        },
+                        emphasis:{
+                            color: '#00ff00',
+                            fontFamily: 'Microsoft YaHei'
+                        }
+                    },
+                    data: convertData(dataArray)
+                }
+            ]
+        };
+
+        tourist_chart.setOption(option);
+
+    })
+};
+    
+
+     //数据的统一请求
+     var refreshData = function(){
+          $.get("../json/changping.json",function(data){
+          	touristDistribution(data.scenicGeoInfo, data.rdjq);
+          })
+      }
+
+        $(document).ready(function(){
+    	          refreshData();
+		       })  
+</script>
+</body>
+</html>

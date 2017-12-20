@@ -54,6 +54,12 @@
 			                    pie: {
 			                        allowPointSelect: true,
 			                        cursor: 'pointer',
+			                        events:{
+			                        	click: function(e){
+			                        		console.log(e.point.name);
+			                        		window.open('http://www.baidu.com')
+			                        	}
+			                        },
 			                        depth: 35,
 			                        dataLabels: {
 			                            enabled: true,

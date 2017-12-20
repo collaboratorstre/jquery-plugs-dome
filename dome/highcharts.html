@@ -73,6 +73,13 @@
                         }
                     }
                 },
+                // plotOptions:{
+                //   pie:{
+                //     events:{
+                //       click: window.open('http://www.baidu.com')
+                //     }
+                //   }
+                // },
                 series: [{
                     type: 'pie',
                     data: arr
@@ -82,6 +89,10 @@
                 }
             });
         });
+      $("#"+containerId).on('click',function(params){
+          console.log(params.originalEvent.point.name);
+         window.open("http://www.baidu.com");
+      })
 }
 
 var refreshData = function(){
