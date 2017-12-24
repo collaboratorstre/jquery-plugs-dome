@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<title>大屏看板编辑界面</title>
+<link rel="stylesheet" type="text/css" href="../../../themes/default/css/board.css">
+<script src="../../../themes/default/js/jquery.min.js"></script>
+
+</head>
+<body>
+
+
+ <div id="app" class="app">
+   <div data-reactroot="" class="app-editor">
+    <div class="app-editor-top">
+     <div class="ant-row">
+      <div class="ant-col-8">
+       <a href="#"><i class="anticon anticon-left-circle-o"></i>
+        <!-- react-text: 21 --> 返回列表
+        <!-- /react-text --></a>
+      </div>
+      <div class="ant-col-8" style="text-align: center;">
+       <span>111</span>
+      </div>
+      <div class="ant-col-8 app-editor-top-toolbar" style="text-align: right;"></div>
+     </div>
+    </div>
+    <div class="app-editor-main">
+     <div class="app-editor-screen-tab"><li class="app-editor-screen-tab-item active">城市交通实时监测</li><li class="app-editor-screen-tab-item ">城市交通实时监测</li><li class="app-editor-screen-tab-add"><i class="anticon anticon-plus"></i></li></div>
+     <div class="app-editor-render">
+      <div class="app-editor-render-container">
+       <div class="app-editor-render-content">
+        <div class="app-editor-render-wrapper" >
+         <div class="app-editor-render-scale-wrapper" style="width:2400px;height:1700px; transform: scale(1); transition: all 0.2s linear; transform-origin: 0px 0px 0px;">
+
+
+            <svg xmlns="" width="100%" height="100%" version="1.1">
+
+<rect width="300" height="100" style="fill:rgb(0,0,255);stroke-width:1; stroke:rgb(0,0,0)"/>
+
+</svg>
+
+        <!--画布内容区域-->
+        <div id="operatePanel" style="position:absolute;">
+          <div style="left:30px; top:60px; width:60px;height:40px;background-color: #020e64;" class="react-draggable"></div>
+          <div style="left:130px; top:60px; width:60px;height:40px;background-color: #020e64;" class="react-draggable"></div>
+          <div style="left:230px; top:60px; width:60px;height:40px;background-color: #020e64;" class="react-draggable"></div>
+          <div style="left:330px; top:60px; width:60px;height:40px;background-color: #020e64;" class="react-draggable"></div> <!-- -->
+        </div>
+
+
+
+
+         </div>
+        </div>
+       </div>
+       <div class="app-editor-render-toolbar">
+        <div class="ant-row">
+         <div class="ant-col-1">
+          缩放：
+         </div>
+         <div class="ant-col-4">
+          <div class="ant-slider">
+           <div class="ant-slider-rail"></div>
+           <div class="ant-slider-track" style="visibility: hidden; left: 0%; width: 5.55556%;"></div>
+           <div class="ant-slider-step"></div>
+           <div class="ant-slider-handle" style="left: 5.55556%;"></div>
+           <div class="ant-slider-mark"></div>
+          </div>
+         </div>
+         <div class="ant-col-4 ant-col-4-em"><em>15%</em>
+          <span class="app-editor-render-adaptation"><button type="button" class="ant-btn ant-btn-circle ant-btn-sm ant-btn-icon-only"><i class="anticon anticon-scan"></i></button></span>
+         </div>
+         <div class="ant-col-15" style="text-align: right;">
+          <button title="复制当前屏幕" type="button" class="ant-btn"><i class="anticon anticon-copy"></i><span>复 制</span></button>
+          <button title="删除当前屏幕" type="button" class="ant-btn"><i class="anticon anticon-delete"></i><span>删 除</span></button>
+          <a class="ant-btn" target="_blank" href="./index.html?styleId=596c7d978989dabdf4216ea2"><i class="anticon anticon-chrome"></i><span style="margin-left: 5px;">打 开</span></a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="app-editor-sider">
+      <div class="app-editor-editor-panels">
+        <div class="ant-tabs ant-tabs-top ant-tabs-mini ant-tabs-line">
+              <div role="tablist" class="ant-tabs-bar" tabindex="0">
+                 <div class="ant-tabs-nav-container">
+                  <div class="ant-tabs-nav-wrap">
+                   <div class="ant-tabs-nav-scroll">
+                    <div class="ant-tabs-nav ant-tabs-nav-animated">
+                     <div class="ant-tabs-ink-bar ant-tabs-ink-bar-animated" style="display: block; transform: translate3d(0px, 0px, 0px); width: 56px;"></div>
+                     <div  class="ant-tabs-tab-active ant-tabs-tab">
+                      组件
+                     </div>
+                     <div class=" ant-tabs-tab">
+                      背景
+                     </div>
+                     <div  class=" ant-tabs-tab">
+                      页面属性
+                     </div>
+                     <div class=" ant-tabs-tab">
+                      全局属性
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+              </div>
+              <div class="ant-tabs-content ant-tabs-content-animated" style="margin-left: 0%;">
+                  <div class="ant-tabs-tabpane ant-tabs-tabpane-active"><!--选项卡con一显示-->
+                    <div class="app-editor-editor-overlays-pane">
+                        <div class="app-editor-editor-overlays-items"><!--组件列表-->
+                            <div>
+                                  <div class="app-editor-item">
+                                    <div class="ant-row">
+                                      <div class="ant-col-2">
+                                          <div class="app-editor-item-view"><span class="iconfont icon-eye"></span></div>
+                                      </div>
+                                      <div class="ant-col-22 app-editor-item-right">
+
+                                          <div class="ant-row app-editor-item-title"><div class="ant-col-20 app-editor-item-title-text">标题</div><div class="ant-col-4 app-editor-item-title-tools"><i class="anticon anticon-delete">删</i></div></div>
+                                          <div class="ant-row" style="margin-bottom: 5px;">
+                                              <div class="ant-col-24">
+                                                  <div class="ant-row">字段名称区域</div>
+                                                  <div class="ant-row app-editor-item-prop-list">字段值区域</div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="app-editor-editor-overlays-add"><button type="button" class="ant-btn ant-btn-dashed"><i class="anticon anticon-plus"></i><span>添加组件</span></button></div>
+                    </div>
+                  </div>
+                  <div class="ant-tabs-tabpane ant-tabs-tabpane-inactive"><!--选项卡con二隐藏-->选项卡2
+                  </div>
+                  <div class="ant-tabs-tabpane ant-tabs-tabpane-inactive"><!--选项卡con...隐藏-->选项卡3
+                  </div>
+                  <div class="ant-tabs-tabpane ant-tabs-tabpane-inactive"><!--选项卡con...隐藏-->选项卡4
+                  </div>
+              </div>
+        </div>
+      </div>
+      <div class="app-editor-editor-toolbar">
+       <span style="margin-right: 10px;"><span style="margin-right: 10px;">每隔60s自动保存配置</span><span class="ant-switch" tabindex="0"><span class="ant-switch-inner"></span></span></span>
+       <button type="button" class="ant-btn ant-btn-primary"><i class="anticon anticon-cloud"></i><span>保 存</span></button>
+      </div>
+     </div>
+    </div>
+    <!-- react-empty: 68 -->
+   </div>
+  </div>
+
+
+</body>
+<script type="text/javascript">
+$(".ant-tabs-nav-animated .ant-tabs-tab").click(function(){
+        var _index = $(this).index();
+        $(".ant-tabs-nav-animated .ant-tabs-tab").eq($(this).index()-1).addClass("ant-tabs-tab-active").siblings(".ant-tabs-tab").removeClass('ant-tabs-tab-active');
+        $(".ant-tabs-content-animated .ant-tabs-tabpane").hide().removeClass("ant-tabs-tabpane-inactive").eq(_index-1).show().addClass("ant-tabs-tabpane-active");
+});
+
+/****拖动缩放*****/
+$(function(){
+
+		var WEditerBox = $(".app-editor-render").width();
+		var HEditerBox = $(".app-editor-render").height();
+		var WCansorBox =  $(".app-editor-render-scale-wrapper").width();//1400
+		var HCansorBox = $(".app-editor-render-scale-wrapper").height();//700
+		var $div = $(".ant-slider-handle");
+	    
+	    var oM_W = WEditerBox;
+        var oM_H = HEditerBox;
+        var oA_W = $(".app-editor-render-wrapper").width();
+        var oA_H = $(".app-editor-render-wrapper").height();
+        var oB_W = WCansorBox;
+        var oB_H = HCansorBox;
+        /*
+        console.log(oB_H*oM_W/oB_W);//750
+        console.log(oM_H);//450
+        console.log(oB_H*oM_W/oB_W>oM_H);
+        */
+        if(oB_H*oM_W/oB_W>oM_H){
+            var x = ((oM_H-100)/oB_H).toFixed(2);
+            $(".app-editor-render-scale-wrapper").css({
+	            "transform": "scale(" + x +")",
+	       });
+	       $(".ant-col-4-em em").text(x*100 + "%");
+	       var mm = $div.parent(".ant-slider").width();
+	       $div.css({
+	           "left":x*mm+"px",
+	       });
+	       
+	       $(".app-editor-render-wrapper").css({
+             "width":x*oB_W + "px",
+             "height":x*oB_H + "px",
+             "margin-top":"20px"
+            });
+        }else{
+            var x = ((oM_W-100)/oB_W).toFixed(2);
+            $(".app-editor-render-scale-wrapper").css({
+                "transform": "scale(" + x +")",
+           });
+           $(".ant-col-4-em em").text(x*100 + "%");
+           var mm = $div.parent(".ant-slider").width();
+           $div.css({
+               "left":x*mm+"px",
+           });
+           
+           $(".app-editor-render-wrapper").css({
+             "width":x*oB_W + "px",
+             "height":x*oB_H + "px",
+             "margin-top":"20px"
+            });
+        }
+        
+ 
+      $div.bind("mousedown",function(event){
+        var oMaxWidth = $(".ant-slider").width();
+        var oblack = $(".app-editor-render-scale-wrapper");
+        var offset_x = $(this)[0].offsetLeft;
+        var mouse_x = event.pageX;
+        $(document).bind("mousemove",function(ev){
+          var _x = ev.pageX - mouse_x;
+          var now_x = 0;
+          if((offset_x + _x)<0){
+				now_x = 0;
+		  }else if((offset_x + _x)>parseInt(oMaxWidth)){
+		  		now_x = oMaxWidth;
+		  }else{
+		   		now_x = (offset_x + _x ) + "px";
+		  }
+		  
+          $div.css({
+            left:now_x,
+          });
+          $(".ant-slider-track").css({
+            width:now_x,
+          });
+          var decimals = (parseInt(now_x)/parseInt(oMaxWidth));
+          var percentage = parseInt(decimals*100);
+          $(".ant-col-4-em em").text(percentage + "%");
+          
+          oblack.css({
+          	"transform": "scale(" + decimals.toFixed(2) +")",
+          });
+          $(".app-editor-render-wrapper").css({
+           "width":(parseInt(oblack.width()))*decimals.toFixed(2) + "px",
+           "height":(parseInt(oblack.height()))*decimals.toFixed(2)+"px",
+           "margin-top":"20px"
+          });
+        });
+      });
+      /* 当鼠标左键松开，接触事件绑定 */
+      $(document).bind("mouseup",function(){
+        $(this).unbind("mousemove");
+      });
+    });
+/****拖动缩放*****/
+	
+</script>
+</html>

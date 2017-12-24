@@ -1,0 +1,118 @@
+/*功能主界面*/
+body {
+	padding: 0px;
+	margin: 0px;
+}
+.header {
+	width: 100%;
+	padding-top:5px;
+	height: 60px;
+	background: url(../images/head.png);
+}
+.body {
+	width: 100%; 
+	background: #ccc;
+}
+.title{
+	font-size: 28px;
+    font-family: "微软雅黑";
+    color:#fff;
+    float:left;
+    width:300px;
+    padding:10px 0px 10px 20px;
+}
+.menu{
+    float:right;
+    width:300px;
+	padding-right:50px;
+	padding-top:20px;
+	color:#fff;
+}
+
+.menu ul{
+	list-style: none; 
+	width:160px;
+}
+
+.menu li{  
+	width:40%;
+	float: left;
+	display: inline;
+	list-style-type: none;
+	font-size:14px;
+}
+
+#operatePanel{
+	float:left;
+	background-color:#4a4a4a;
+}
+#modulePanel{
+	float:right;
+	background-color:#fff;
+	padding:0px;
+}
+ 
+#settingTop{ 
+	margin-left:-40px; 
+	margin-top:-16px; 
+	width:390px;
+	padding:0px;
+}
+.settingMenu ul{
+	list-style: none;  
+	width:100%;
+}
+.settingMenu li{ 
+	padding-top:5px;
+	padding-bottom:8px;
+	width:25%;
+	float: left;
+	display: inline;
+	list-style-type: none;
+	font-size:14px;
+	font-weight:bold;
+	color:#fff;
+	background-color:rgba(48,78,111,0.8);
+}
+
+.AttrSetting{
+	width:100%; 
+}
+
+.react-draggable{
+	position: absolute;
+}
+
+/**
+组件列表
+*/
+#divModuleList{
+	padding:0px;
+}
+.moduleUl{
+	margin:1px;
+	width:100%;
+	list-style: none; 
+	background-color:#ccc; 
+	padding:0px; 
+}
+
+.moduleUl li{ 
+	font-size:14px;
+	font-weight:bold; 
+	padding:3px 0px 3px 10px;
+	height:20px; 
+	color:rgba(0, 0, 0, 0.65);
+}
+
+.moduleAttr{
+	padding:10px;
+	font-size:12px;
+	background-color:fff;
+}
+
+
+.moduleLi{ 
+	font-size:14px;
+	font-weight:bold;
+}

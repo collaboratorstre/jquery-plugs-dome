@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>大屏看板编辑界面</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<link rel="stylesheet" type="text/css" href="../../../themes/default/css/board.css">
+<script src="../../../themes/default/js/jquery.min.js"></script>
+<script src="../../../board/js/manage/boardEdit.js"></script>
+</head>
+<body onresize="layoutPage();">
+<div id="content">
+
+	<div class="header">
+		<div class="title">大屏看板管理界面</div>
+		<div class="menu">
+			<ul>
+				<li>组件管理</li>
+				<li>大屏配置</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="mainBody" class="exhibition">
+		<!-- 操作工作台 -->
+		<iframe width="100%" height="100%" src="Editor.html" frameborder="0"></iframe>
+	</div>
+
+
+
+
+
+
+
+</div>
+</body>
+<script type="text/javascript">
+	var contextPathJs="<%=basePath%>";
+	/**
+	 * 初始化地图时加载过程
+	 */
+	$(document).ready(function() {
+		layoutPage();
+		boardEdit.getModuleByBoardId();
+	});
+
+	/**
+	 * 布局页面
+	 */
+	function layoutPage() {
+		var pageHeight = $(window).height();//document.documentElement.clientHeight;//
+		$("#mainBody").height((pageHeight - 65) + "px");
+		$("#operatePanel").height((pageHeight - 67) + "px");
+		$("#modulePanel").height((pageHeight - 67) + "px");
+
+		var pageWidth = $(window).width();
+		console.log("pageHeight:" + pageHeight);
+		$("#mainBody").width((pageWidth - 3) + "px");
+		$("#operatePanel").width((pageWidth - 360) + "px");
+		$("#modulePanel").width("350px");
+		//console.log("pageHeight:"+pageHeight);
+		//console.log($("#modulePanel").height());
+		//console.log($("#operatePanel").height());
+		//console.log($("#mainBody").height()); 
+	}
+
+	$(".react-draggable").mousedown(function(e) {
+		//设置移动后的默认位置
+		//var endx = 0;
+		//var endy = 0;
+		$(this).css("cursor","move");
+		//获取div的初始位置，要注意的是需要转整型，因为获取到值带px
+		var left = parseInt($(this).css("left"));
+		var top = parseInt($(this).css("top"));
+
+		//获取鼠标按下时的坐标，区别于下面的es.pageX,es.pageY
+		var downx = e.pageX;
+		var downy = e.pageY; //pageY的y要大写，必须大写！！
+
+		//    鼠标按下时给div挂事件
+		$(this).bind("mousemove", function(es) {
+			//es.pageX,es.pageY:获取鼠标移动后的坐标
+			var endx = es.pageX - downx + left; //计算div的最终位置
+			var endy = es.pageY - downy + top;
+			//带上单位
+			$(this).css("left", endx + "px").css("top", endy + "px");
+		});
+	});
+
+	$(".react-draggable").mouseup(function() {
+		//鼠标弹起时给div取消事件
+		$(this).unbind("mousemove"); 
+		$(this).css("cursor","default");
+	});
+
+	$(".react-draggable").mouseover(function() {
+		//鼠标弹起时给div取消事件 
+		$(this).css("cursor","move");
+	});
+</script>
+</html>

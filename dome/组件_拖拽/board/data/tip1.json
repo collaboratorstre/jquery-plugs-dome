@@ -1,0 +1,86 @@
+{
+    "type": "GeometryCollection", 
+    "geometries": [  
+        {
+            "type": "LineString", 
+            "coordinates": [[116.55,36.85], [116.55, 36.78]]
+        },        
+        {
+            "type": "LineString", 
+            "coordinates": [ [ 116.55,36.78 ],  [ 116.56,36.77 ]]
+        },   
+          {
+            "type": "LineString", 
+            "coordinates": [ [ 116.56, 36.77 ], [ 116.72,  36.77 ]]
+        },   
+          {
+            "type": "LineString", 
+            "coordinates": [ [ 116.72,  36.77 ],  [ 116.72,  36.84 ] ]
+        },   
+          {
+            "type": "LineString", 
+            "coordinates": [ [ 116.72,  36.84 ],  [ 116.71,  36.85 ] ] 
+        },
+               {
+            "type": "LineString", 
+            "coordinates": [ [ 116.71,  36.85 ], [ 116.55,  36.85 ] ]
+        },    
+        
+        
+        {
+            "comment": "left line", 
+            "type": "LineString", 
+            "coordinates": [[  116.72,  36.81 ], [116.76, 36.81]]
+        }, 
+        {
+            "comment": "left linelong", 
+            "type": "LineString", 
+            "coordinates": [[116.76, 36.81], [116.927, 36.659]]
+        }, 
+        
+        
+        
+            
+       {
+            "type": "LineString", 
+            "coordinates": [ [ 117.48,36.50],  [ 117.48,36.43 ]]
+        },        
+        {
+            "type": "LineString", 
+            "coordinates": [ [ 117.48,36.43],  [ 117.49,36.42 ]]
+        },   
+          {
+            "type": "LineString", 
+            "coordinates": [ [ 117.49,36.42],  [ 117.64,36.42 ]]
+        },   
+          {
+            "type": "LineString", 
+            "coordinates": [ [ 117.64,  36.42 ],  [ 117.64, 36.49 ]]
+        },   
+          {
+            "type": "LineString", 
+            "coordinates": [ [ 117.64, 36.49 ],  [ 117.63,  36.50 ]]
+        },
+          {
+            "type": "LineString", 
+            "coordinates": [ [ 117.63,  36.50 ],  [ 117.48,  36.50 ]]
+        },
+        
+
+        
+        {
+            "comment": "right linelong  116.982470, 36.639298(右侧斜线起点坐标)  117.45(右侧斜线终点水平方向坐标),36.46(右侧斜线终点垂直方向坐标)", 
+            "type": "LineString", 
+            "coordinates": [[116.982470, 36.639298], [ 117.45,36.46]]
+        }  ,
+         {
+            "comment": "right line", 
+            "type": "LineString", 
+            "coordinates": [[ 117.45,36.46], [ 117.48,36.46]]
+        }  
+        
+        
+        
+       
+    ]
+}
