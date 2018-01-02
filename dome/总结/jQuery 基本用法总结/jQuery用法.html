@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery 基本用法</title>
+</head>
+<style type="text/css">
+    html,body,ul,li,div,p,tr,td,th,img,input,table,tbody,b,select,option{
+    	margin: 0;
+    	padding: 0;
+    }
+    ul{
+    	list-style: none;
+    }
+</style>
+<body>
+	
+	<ul>
+		<li>壹</li>
+		<li>贰</li>
+		<li>叁</li>
+		<li>肆</li>
+		<li>伍</li>
+		<li>陆</li>
+	</ul>
+    
+    <ul>
+    	<li>一</li>
+    	<li>二</li>
+    	<li>三</li>
+    	<li>四</li>
+    	<li>五</li>
+    	<li>六</li>
+    	<li>七</li>
+    </ul>
+    
+	<table>
+        <tbody>
+            <tr>
+            	<td>一气道盟</td>
+            	<td>拉的肌肤</td>
+            	<td>大家发酵</td>
+            	<td>垃圾地方</td>
+            	<td>阿了解到</td>
+            </tr>
+            <tr>
+            	<td>二龙戏珠</td>
+            	<td>多发发生</td>
+            	<td>阿萨德发</td>
+            	<td>选的说法</td>
+            	<td>阿萨德发</td>
+            </tr>
+            <tr>
+            	<td>三阳开泰</td>
+            	<td>请问防辐</td>
+            	<td>发斯蒂芬</td>
+            	<td>个人未发</td>
+            	<td>为二手房</td>
+            </tr>
+            <tr>
+            	<td>四羊开泰</td>
+            	<td>发斯蒂芬</td>
+            	<td>天气味儿</td>
+            	<td>执法司法</td>
+            	<td>个人权威</td>
+            </tr>
+            <tr>
+            	<td></td>
+            </tr>
+        </tbody>
+	</table>
+
+	<p>东风街拉科技打扫房间</p>
+
+	<div>上义时代
+       <p>上善若水
+          <span>第一季</span>
+       </p>
+       <p>上上签</p>
+	</div>
+	<div>右暗绿色
+      <p>右护法</p>
+	</div>
+	<div>下赖师傅
+       <p>后起之秀
+         <span>第二季</span>
+       </p>
+       <p>下下签</p>
+	</div>
+	<div>左来角色
+      <p>左护法</p>
+	</div>
+	<div>nice拉科技的司</div>
+    
+    <input type="text">
+	<input type="text">
+	<input type="password"><br/>
+
+	<input type="radio" name="sex" value="boy">男
+	<input type="radio" name="sex" value="girl" checked="checked">女<br/>
+
+	<input type="checkbox" name="hai" value="eat">吃
+	<input type="checkbox" name="hai" value="drink">喝
+	<input type="checkbox" name="hai" value="play">玩
+	<input type="checkbox" name="hai" value="glad" checked="checked">乐
+	<input type="checkbox" name="hai" value="sleep" checked="checked">睡 <br/>
+
+	<button type="submit">提交按钮</button> <br/>
+	<button type="reset">重置按钮</button> <br/>
+	<input type="file"></input>  <br/>
+
+	<select name="" id="sel">
+       <option value="1">1</option>
+       <option value="2" selected="selected">2</option>
+       <option value="3">3</option>
+	</select>
+
+   
+   <script type="text/javascript" src="./jquery.min.js"></script>
+   <script type="text/javascript">
+      //寻找元素以及CSS操作
+
+       $('li:first').css("color","red");
+       $('li:last').css({"fontSize":"18px","color":"blue"});
+       $("tr:even").css("background","orange");
+       console.log($("tr:odd").css("fontSize"));
+       console.log($("tr:eq(1)"));
+       $("tr:eq(1)").css("color","pink");
+       console.log($("tr:gt(0)").text());
+       console.log($("tr:lt(2)").text());
+
+       //内容选择器
+       console.log($("div:contains('nice')").text());
+       console.log($("td:empty").text());
+       console.log($("div:has(p)").text());
+       console.log($("td:parent"))//含有子元素或者文本的元素
+
+       //表单选择器
+       console.log($(":input")); //匹配所有 input textares select和button的元素
+       console.log($(":input:first"));
+       console.log($(":text")); //所有的当行文本框
+       console.log($(":password")); //所有密码框
+       console.log($(":radio")); //所有单选按钮
+       console.log($(":checkbox")); //所有复选框
+
+       console.log($("input:checked")); //所有选中的元素
+       console.log($("select option:selected").text()); //select中所有选中的option元素
+
+       //筛选器
+       console.log($("p").eq(0).text());
+       $('li').first().css("color","green");
+       $('li').last().css("color","purple");
+
+       //查找
+       console.log($("div").children().text()); //div中的每个子元素，第一层
+       console.log($("div").find("span").text()); //div中的包含的所有span元素，子子孙孙
+       $("p").next().css("background","green") //紧邻p元素后的一个同辈元素
+       console.log($("p").next().text())
+
+       console.log($("p").prev().text());//紧邻p元素前的一个同辈元素
+
+      $("p").parent().css("background","red");
+
+
+
+   </script>
+
+</body>
+</html>
