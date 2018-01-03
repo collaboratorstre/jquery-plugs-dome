@@ -12,6 +12,11 @@
     ul{
     	list-style: none;
     }
+    .selected{
+    	font-weight: bold;
+    	font-size: 20px;
+    	color: purple;
+    }
 </style>
 <body>
 	
@@ -115,6 +120,19 @@
        <option value="3">3</option>
 	</select>
 
+    <br/>
+
+	<img src="./jian_top.png" alt="">
+
+    <div>
+      <img src="./jian_bot.png" alt="">
+    </div>
+
+    <p>
+      <img src="./jian_top.png" alt="">
+    </p>
+
+    <p id="one">埃里克剪短发计算的</p>
    
    <script type="text/javascript" src="./jquery.min.js"></script>
    <script type="text/javascript">
@@ -159,9 +177,21 @@
 
        console.log($("p").prev().text());//紧邻p元素前的一个同辈元素
 
-      $("p").parent().css("background","red");
+      $("p").parent().css("background","grey");//每个p元素的父元素
+      console.log($("p").siblings()); //所有的同辈元素，不能包括自己
 
+       //属性操作
+       console.log($("img").attr("src")); //返回文档中所有图像src属性值
+       $("img").attr("src","./jian_bot.png");//设置所有图像的src属性
 
+       $("div img").removeAttr("src"); //将文件中图像的src属性删除
+       $("input[type='checkbox']").prop("checked",true);//选中复选框
+       $("input[type='checkbox']").prop("checked",false);
+
+       $("p img").removeProp("src");  //删除img的src属性
+
+       $("#one").addClass("selected"); //为p元素加上‘selected’类
+ 
 
    </script>
 
