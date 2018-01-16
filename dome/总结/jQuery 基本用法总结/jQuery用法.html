@@ -17,6 +17,11 @@
     	font-size: 20px;
     	color: purple;
     }
+    #ele{
+       width: 200px;
+       height: 200px;
+       background: green;
+    }
 </style>
 <body>
 	
@@ -133,7 +138,42 @@
     </p>
 
     <p id="one">埃里克剪短发计算的</p>
+
+    <div id="wenb">
+        新生心思
+       <p>阿拉基地</p>
+    </div>
+
+    <div id="test">
+       <input type="text" value="请输入关键字">
+    </div>
+
+    <p id="ele"></p>
+
+    <div id="xun">
+        <p>往事不回头，以后不将就</p>
+    </div>
+
+    <p class="xiao">嗨嗨嗨</p>
+    
+    <div id="ele_cha">
+         <p>哦温柔交管局哦</p>
+         <p>nicenicenice</p>
+    </div>
    
+   <div id="wrap_cha">
+        <p>谁金融啊</p>
+        <p>thanks</p>
+   </div>
+
+   <div id="huan_huan">
+      <p>垃圾地方骄傲你</p>
+   </div> 
+
+   <div id="clear_ele">
+      <p>阿拉基地是否将</p>
+   </div>
+
    <script type="text/javascript" src="./jquery.min.js"></script>
    <script type="text/javascript">
       //寻找元素以及CSS操作
@@ -191,6 +231,72 @@
        $("p img").removeProp("src");  //删除img的src属性
 
        $("#one").addClass("selected"); //为p元素加上‘selected’类
+       $("#one").removeClass("selected"); //从p元素中删除‘selected’类
+
+       $("#one").click(function(){
+       	   $("#one").toggleClass("selected"); //如果存在就删除，否则就添加
+       })
+
+       //HTML代码/文本/值
+       console.log($("#wenb").html()); //返回元素的html内容
+       $("#wenb").html("Hello<b>nice</b>!");//设置p元素的html内容
+
+       console.log($("#wenb").text()); //返回元素的文本内容
+       $("#wenb").text("Nice"); //设置元素的文本内容
+
+        console.log($("#test input").val()) //获取文本框的值
+        $("#test input").val("good"); //设置文本框内容
+        
+         //CSS操作  
+         //位置
+        console.log($("#ele").offset());//元素在当前视口的相对偏移,Object {top: 122, left: 260}
+
+        console.log($("#ele").offset().top);
+        console.log($("#ele").offset().left);
+         
+        console.log($("#ele").position());//元素相对父元素的偏移,对可见元素有效，Object {top: 117, left: 250}
+
+       console.log($(window).scrollTop()) // 获取滚滑轮的高度
+        console.log($(window).scrollLeft()) //获取滚滑轮的宽度
+
+        //  有点问题
+        $(window).scrollTop(500) //设置滚滑轮的高度为100
+
+         console.log($(window).scrollTop()) // 获取滚滑轮的高度
+
+         //尺寸
+         console.log($("#ele").height());  //获取元素的高度
+         console.log($("#ele").width());    //获取元素的宽度
+
+         console.log($("#xun p:first").innerHeight());//获取第一个匹配元素内部区域高度(包括补白、不包括边框)
+         console.log($("#xun p:first").innerWidth());
+
+         console.log($("#xun p:first").outerHeight()); //匹配元素高度(默认包括补白和边框)
+         console.log($("#xun p:first").outerWidth()); 
+
+         //文档处理
+         //内部插入
+         $("#ele_cha p").append("<b>God</b>"); //每个p元素内后面追加内容
+         //$(".xiao").appendTo("#ele_cha"); // p元素追加到div内后
+         $("#ele_cha p").prepend("<b>Hello</b>"); // 每个p元素内前面追加内容
+         $(".xiao").prependTo("#ele_cha"); // p元素追加到div内前
+          
+         //外部插入
+         $("#wrap_cha p").after("<b>very much</b>");//每个p元素同级之后插入内容
+         $("#wrap_cha p").before("<b>qian qian</b>")//在每个p元素同级之前插入内容
+
+         //替换
+         $("#huan_huan p").replaceWith("<b>Paragrah.</b>");//将匹配到的元素替换成指定的HTML或DOM元素
+
+         $("#clear_ele").empty(); //删除匹配的元素集合中所有的子节点，不包括本身
+
+
+         $('.func-panel-3 .subFunc-item:lt(5)').css('color','red');
+         
+
+         
+       
+
  
 
    </script>
