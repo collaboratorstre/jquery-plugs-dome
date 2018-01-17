@@ -376,13 +376,13 @@
 		                        shadowOffsetY: 4,
 		                        shadowBlur: 5,
 		                        shadowColor: '#26e7e7',
-		                        fillColor: '#000000',
+		                        fillColor: 'transparent',
 		                        strokeColor: '#26e7e7'
 		                    });
 		                    polygons.push(polygon);
 		                }
 		                map.setFitView();// 地图自适应
-		                map.setZoomAndCenter(9, [114.48,38.03]);
+		                map.setZoomAndCenter(10, [118.363725,39.835419]);
 		            }
 		        });
 		       
