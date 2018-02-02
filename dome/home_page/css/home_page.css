@@ -1,0 +1,239 @@
+/*  页面布局 --start-- */
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+/* line 26, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 30, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 10, ../sass/screen.scss */
+body {
+  background: #00387c;
+  overflow: auto;
+  opacity: 1.0;
+}
+body,html {
+  background: #00387c;
+  opacity: 1.0;
+  width: 100%;
+  height: 100%;
+
+}
+.body-content{
+  height: 100%;
+    font-family: "Microsoft YaHei" !important;
+}
+
+.layout-top {
+  width: 100%;
+ /* height: 88px;*/
+  height: 8%;
+}
+
+.layout_middle{
+    width: 100%;
+    height: 92%;
+    background-color: #0d043d;
+
+}
+.top_content{
+   width: 100%;
+   height: 16%;
+}
+.bottom_content{
+  width: 100%;
+  height: 83%;
+}
+.top_content>div{
+  width: 24%;
+  height: 96%;
+  float: left;
+  background: url(../img/home_top.png) no-repeat;
+  background-size:cover;
+  margin-left: 0.8%;
+  margin-top: 0.5%;
+}
+.bottom_content>div{
+  width: 48.8%;
+  height: 98%;
+  float: left;
+  background: url(../img/home_bottom.png) no-repeat;
+  background-size: 100% 100%;
+  margin-left: 0.8%;
+  margin-top: 0.5%;
+}
+.top_top{
+     font-size: 28px;
+    color: white;
+    margin-left: 6%;
+    margin-top: 6%;
+}
+.top_bottom{
+  width: 100%;
+  height: 60%;
+  padding-top: 6%;
+  padding-left: 6%;
+  box-sizing: border-box;
+}
+.top_bottom div{
+  float: left;
+}
+.flow_total{
+  color: white;
+  font-size: 28px;
+}
+
+.flow_total span{
+  font-size: 33px;
+  font-weight: bold;
+  color: #ffc600;
+  margin-right: 8px;
+} 
+.flow_rate {
+  color: white;
+  font-size: 28px;
+  margin-left: 11%;
+  margin-top: 0.5%;
+}
+.flow_rate span{
+  font-size: 24px;
+  color: #f86252;
+}
+.flow_rate img{
+  width: 10px;
+  margin-left: 10px;
+}
+
+/* 违法类型排名 */
+
+#bottom_left>p,#bootem_right>p{
+   color: #2b7ddc;
+   box-sizing: border-box;
+   margin-top: 3%;
+   padding-left: 4%;
+   font-size: 31px;
+}
+
+#bottom_left>p span:first-of-type{
+   font-weight: bold;
+   font-style: italic;
+}
+#bottom_left>p span:last-of-type{
+   font-size: 24px;
+   color: #7399cf;
+}
+
+
+#illegl_type .progress-container{
+    margin: 8.5% 0;
+    display: flex;
+    height: 46px;
+    line-height: 20px;
+    font-size: 12px
+}
+#illegl_type .progress-container .progress-title{
+    width: 16%;
+    margin: 0 2%;
+    color: #80a8d9;
+    text-align: center;
+    line-height: 81px;
+    font-size: 30px;
+}
+#illegl_type .progress-container .progress-amount{
+    width: 10%;
+    color: #FFFFFF;
+    padding-left: 5px;
+}
+#illegl_type .progress-container .progress-content{
+    width: 58%;
+    display: flex;
+    line-height: 40px;
+    height: 46px;
+    background-color: #00042a;
+    border-radius: 30px;
+    margin-top: 1.5%;
+    position: relative;
+}
+#illegl_type .progress-container .legalRate{
+   border-radius: 30px;
+   background-color: #287cdc;
+ }
+#illegl_type .progress-container .legalRate .shuzi{
+   position: absolute;
+    top: 4px;
+    right: -120px;
+    font-size: 28px;
+  }
+/* 违法类型排名 */
+
+
+#todayButton #monthButton{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn.btnDefault {
+  background-color: #3380FF;
+  color: #ffffff;
+  border-color: #3380FF;
+  border-radius: 6px;
+}
+.btn.btnChecked{
+  background-color: #0b0c45;
+  color: #3380FF;
+  border-color: #3380FF;
+  border-radius: 6px;
+}

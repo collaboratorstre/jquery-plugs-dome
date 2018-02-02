@@ -47,7 +47,7 @@
                         <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle">
                             <span class="fa fa-gear"></span>
                         </button>
-                        <a href="#" class="navbar-brand" style="margin-top:6px;    width: 324px;"><img style="display: inline-block; vertical-align: middle;width: 48px"  alt="Avatar" src="../img/logo.png"><span style="display: inline-block; font-size: 24px; vertical-align: middle; margin-left: 11px; color: white;">重点车辆监管专题</span></a>
+                        <a href="#" class="navbar-brand" style="margin-top:6px;    width: 474px;"><img style="display: inline-block; vertical-align: middle;width: 48px"  alt="Avatar" src="../img/logo.png"><span style="display: inline-block; font-size: 24px; vertical-align: middle; margin-left: 11px; color: white;">河北省高速总队交通大数据分析平台</span></a>
                     </div>
                     <div class="navbar-collapse collapse">
                         
@@ -105,14 +105,22 @@
                    </div> 
              </div>
              <div class="bottom_content">
-                  <div id="bottom_left">
+                  <div id="bottom_left" style="position: relative;">
                        <p>违法类型排名<span>TOP5</span><span>(单位: 次)</span></p>
+                        <div class="btn-group" style="position: absolute; right: 9%; top:4%;" >
+	                        <button id="todayButton" class="btn btnChecked">本周</button>
+	                        <button id="monthButton" class="btn btnDefault">本月</button>
+                        </div>
                        <div id="illegl_type">
                           
                        </div>
                   </div>
-                  <div id="bootem_right">
+                  <div id="bootem_right" style="position: relative;">
                         <p>事故占比</p>
+                         <div class="btn-group" style="position: absolute; right: 9%; top:4%;" >
+	                        <button id="todayButton_one" class="btn btnChecked">本周</button>
+	                        <button id="monthButton_one" class="btn btnDefault">本月</button>
+                        </div>
                         <div id="accident_rate" style="width: 100%; height: 92%;">
                             
                         </div>

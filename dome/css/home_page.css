@@ -219,3 +219,21 @@ body,html {
     font-size: 28px;
   }
 /* 违法类型排名 */
+
+
+#todayButton #monthButton{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn.btnDefault {
+  background-color: #3380FF;
+  color: #ffffff;
+  border-color: #3380FF;
+  border-radius: 6px;
+}
+.btn.btnChecked{
+  background-color: #0b0c45;
+  color: #3380FF;
+  border-color: #3380FF;
+  border-radius: 6px;
+}

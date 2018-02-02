@@ -121,3 +121,46 @@ var refreshData = function(){
     $(document).ready(function(){
     	          refreshData();
 		       })  
+
+ //本日和本月警情的切换
+$("#todayButton").click(function(){
+    $("#todayButton").removeClass('btnDefault').addClass('btnChecked') ;
+    $("#monthButton").removeClass('btnChecked').addClass('btnDefault') ;
+
+    // $("#accidentTodayHour").show();
+    // $("#accidentMonthHour").hide();
+    // $("#total4").show();
+    // $("#total44").hide();
+    // show_num4(x);
+})   
+$("#monthButton").click(function(){
+    $("#todayButton").removeClass('btnChecked').addClass('btnDefault') ;
+    $("#monthButton").removeClass('btnDefault').addClass('btnChecked') ;
+
+    // $("#accidentTodayHour").hide();
+    // $("#accidentMonthHour").show();
+    // $("#total4").hide();
+    // $("#total44").show();
+    // show_num44(y);
+})
+
+$("#todayButton_one").click(function(){
+    $("#todayButton_one").removeClass('btnDefault').addClass('btnChecked') ;
+    $("#monthButton_one").removeClass('btnChecked').addClass('btnDefault') ;
+
+    // $("#accidentTodayHour").show();
+    // $("#accidentMonthHour").hide();
+    // $("#total4").show();
+    // $("#total44").hide();
+    // show_num4(x);
+})   
+$("#monthButton_one").click(function(){
+    $("#todayButton_one").removeClass('btnChecked').addClass('btnDefault') ;
+    $("#monthButton_one").removeClass('btnDefault').addClass('btnChecked') ;
+
+    // $("#accidentTodayHour").hide();
+    // $("#accidentMonthHour").show();
+    // $("#total4").hide();
+    // $("#total44").show();
+    // show_num44(y);
+})
