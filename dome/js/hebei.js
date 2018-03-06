@@ -620,3 +620,5 @@ var traveltime = function(containerId,data){
 		          tick("#time");
 		          getWeather();
 		       })  
+
+    
