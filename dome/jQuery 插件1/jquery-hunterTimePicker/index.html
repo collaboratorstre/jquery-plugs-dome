@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>时间选择插件demo</title>
+    <link rel="stylesheet" type="text/css" href="css/timePicker.css">
+	
+</head>
+<body>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="js/jquery-timepicker.js"></script>
+<script>
+	$().ready(function(e) {
+//		var timePicker = new HunterTimePicker({
+//			target: '#timeChoice1'
+//		});
+//		timePicker.init();
+
+//		$(".time-picker").show(function () {
+//			var timePicker = new HunterTimePicker({
+//			target: $(this)
+//			});
+//			timePicker.init();
+//		});
+
+		$("#timePicker").hunterTimePicker();
+		$(".time-picker").hunterTimePicker();
+	});
+</script>
+
+<input type="text" id="timePicker" name="1" readonly style="margin: 134px 0 0 357px;">
+<input type="text" class="time-picker" name="2" value="15:30" readonly style="margin: 234px 0 0 357px;">
+<input type="text" class="time-picker" name="3" readonly style="margin: 334px 0 0 357px;">
+</body>
+</html>

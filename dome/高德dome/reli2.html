@@ -60,6 +60,9 @@
         .amap-info div:last-of-type{
           z-index: 101;
         }
+      .amap-simple-marker-icon-img{
+        display: none !important;
+      }
      </style>
 </head>
 <body>
@@ -160,7 +163,7 @@
                  position: markers[i],
                  label: {
                    content: data.impCurGps[i].gpsTime,
-                   offset: new AMap.Pixel(0, 0)
+                   offset: new AMap.Pixel(-57, 41)
                  }
               })
           
