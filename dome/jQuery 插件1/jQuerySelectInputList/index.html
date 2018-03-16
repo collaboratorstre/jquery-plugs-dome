@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>下拉字母多选框</title>
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="./js/bundles.js"></script>
+    <style>
+        .mainselectCity {
+            display: inline-block
+        }
+
+        .mainselectCity > div {
+            position: relative;
+            display: inline-block
+        }
+
+        .mainselectCity #showCityName {
+            border: 1px solid #cccccc;
+            height: 40px;
+            line-height: 40px;
+            display: inline-block;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .mainselectCity #maincontent {
+            position: absolute;
+            width: 120px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            box-shadow: 0 7px 12px #cccccc;
+            text-align: center
+        }
+
+        .mainselectCity .normal {
+            padding: 2px 8px 2px 8px;
+            display: block;
+            text-align: center
+        }
+
+        .mainselectCity .main-content-input {
+            padding: 2px 8px 2px 8px;
+            display: block
+        }
+
+        .mainselectCity .main-content {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            text-align: left;
+            background-color: #ffffff;
+        }
+
+        input[type=checkbox]:hover {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        var data = [
+            {
+                "name": "常用",
+                "city": [
+                    {"cityName": "南京", "cityNumber": "001", "selected": true},
+                    {"cityName": "上海", "cityNumber": "002"},
+                    {"cityName": "苏州", "cityNumber": "003", "selected": true}
+                ]
+            },
+
+            {
+                "name": "全部",
+                "city": [
+                    {"cityName": "南京", "cityNumber": "001"},
+                    {"cityName": "杭州", "cityNumber": "004"},
+                    {"cityName": "无锡", "cityNumber": "005"},
+                    {"cityName": "上海", "cityNumber": "002"},
+                    {"cityName": "苏州", "cityNumber": "003"}
+                ]
+            }
+        ];
+        var data2 = [
+            {"cityName": "南京", "cityNumber": "001", "selected": true},
+            {"cityName": "杭州", "cityNumber": "004"},
+            {"cityName": "无锡", "cityNumber": "005", "selected": true},
+            {"cityName": "上海", "cityNumber": "002"},
+            {"cityName": "苏州", "cityNumber": "003"}
+        ]
+
+        var data3 = [
+            {
+                "name": "江苏",
+                "city": [
+                    {"cityName": "南京", "cityNumber": "001", "selected": true},
+                    {"cityName": "无锡", "cityNumber": "002", "selected": true},
+                    {"cityName": "苏州", "cityNumber": "003", "selected": true}
+                ]
+            },
+            {
+                "name": "湖北",
+                "city": [
+                    {"cityName": "武汉", "cityNumber": "004", "selected": true},
+                    {"cityName": "襄阳", "cityNumber": "005"},
+                    {"cityName": "荆州", "cityNumber": "006", "selected": true}
+                ]
+            },
+            {
+                "name": "安徽",
+                "city": [
+                    {"cityName": "合肥", "cityNumber": "007", "selected": true},
+                    {"cityName": "六安", "cityNumber": "008"},
+                    {"cityName": "马鞍山", "cityNumber": "009", "selected": true}
+                ]
+            },
+        ];
+
+        //传入的参数
+        var slidownSelectOptionse1 = {
+            el: 'aaaaaa',//容器名称
+            type: 'double',//插件类型
+            width: '70px',//宽度
+            height: '40px',//高度
+            background: '#ffffff',//默认背景色
+            color: '#000000',//默认字体颜色
+            selectBackground: '#006666',//选中背景色
+            selectColor: '#ffffff',//选中字体颜色
+            show: 'false',//是否展开
+            content: '...请选择...',//默认要显示的内容
+            data: data//数据
+        }
+        var slidownSelectOptionse2 = {
+            el: 'bbbbbb',//容器名称
+            type: 'single',//插件类型
+            width: '70px',//宽度
+            height: '40px',//高度
+            background: '#ffffff',//默认背景色
+            color: '#000000',//默认字体颜色
+            selectBackground: '#6699CC',//选中背景色
+            selectColor: '#ffffff',//选中字体颜色
+            show: 'true',//是否展开
+            content: '...请选择...',//要显示的内容
+            data: data2//数据
+        }
+
+        var slidownSelectOptionse3 = {
+            el: 'cccccc',//容器名称
+            type: 'more',//插件类型
+            width: '70px',//宽度
+            height: '40px',//高度
+            background: '#ffffff',//默认背景色
+            color: '#000000',//默认字体颜色
+            selectBackground: '#66CC99',//选中背景色
+            selectColor: '#ffffff',//选中字体颜色
+            show: 'true',//是否展开
+            content: '...请选择...',//要显示的内容
+            data: data3//数据
+        }
+
+        var slidownSelectOptionse4 = {
+            el: 'dddddd',//容器名称
+            type: 'more',//插件类型
+            width: '70px',//内容显示宽度
+            height: '40px',//内容显示高度
+            background: '#ffffff',//默认背景色
+            color: '#000000',//默认字体颜色
+            selectBackground: '#FF6633',//选中背景色
+            selectColor: '#ffffff',//选中字体颜色
+            show: 'false',//是否展开
+            content: '...请选择...',//要显示的内容
+            data: data3//数据
+        }
+
+        //调用方法
+        $(document).ready(function () {
+            rltTools.slidownSelect(slidownSelectOptionse1)
+            rltTools.slidownSelect(slidownSelectOptionse2)
+            rltTools.slidownSelect(slidownSelectOptionse3)
+            rltTools.slidownSelect(slidownSelectOptionse4)
+        })
+
+    </script>
+</head>
+<body>
+<!--业务代码套两层-->
+<div class="mainselectCity">
+    <div id="aaaaaa"></div>
+</div>
+<div class="mainselectCity">
+    <div id="bbbbbb"></div>
+</div>
+<div class="mainselectCity">
+    <div id="cccccc"></div>
+</div>
+<div class="mainselectCity">
+    <div id="dddddd"></div>
+</div>
+</body>
+</html>
