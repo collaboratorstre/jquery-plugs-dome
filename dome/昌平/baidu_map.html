@@ -341,8 +341,14 @@
                     },
                     label: {
                         normal:{
-                            show: true,//默认为false
-                            color: '#00ff00',
+                            show: false,//默认为false
+                          
+                        },
+                        emphasis:{
+                            // color: '#00ff00',
+                            // fontFamily: 'Microsoft YaHei'
+                            show: true,
+                              color: '#00ff00',
                             fontWeight: 'bold',
                             fontSize: 16,
                             fontFamily: 'Microsoft YaHei',
@@ -354,10 +360,6 @@
                             borderWidth:2,
                             borderRadius:3,
                             padding: 15
-                        },
-                        emphasis:{
-                            color: '#00ff00',
-                            fontFamily: 'Microsoft YaHei'
                         }
                     },
                     data: convertData(dataArray)

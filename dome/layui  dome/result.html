@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>结果列表</title>
+	<link rel="stylesheet" type="text/css" href="css/layui.css">
+	<link rel="stylesheet" type="text/css" href="css/result.css">
+</head>
+<body>
+	<div class="main_content">
+		<div id="heard_common"></div>
+		<div class="title_top">结果列表(同类车辆)</div>
+		<div class="search_same">
+			<div class="record_search">
+				<span class="record_text">搜索档案 : </span> 
+				<input type="text" class="search_case" value="${keyword }" id="info"> 
+				<img src="<%=request.getContextPath()%>/ehlib/img/search1.png" id="file_search" alt="">
+				<p>支持模糊搜索，"%"表示任意位,"?"表示任意一位</p>
+			</div>
+		</div>
+
+		<div class="search_same1">
+			<div class="screen_two1">
+				<div class="shai_top">二次筛选:</div>
+				<div class="shai_con">
+					<div class="shai_one">
+						
+					</div>
+					<div class="shai_two">
+						<span class="inspect_nosele">逾期未年检</span>
+						<span class="inspect_nosele">逾期未年检</span>
+						<span class="inspect_nosele">逾期未年检</span>
+						<span class="inspect_nosele">逾期未年检</span>
+						<span class="inspect_nosele">逾期未年检</span>
+						<span class="inspect_nosele">逾期未年检</span>
+						<span class="inspect_nosele">逾期未年检</span>
+						<span class="inspect_nosele">逾期未年检</span>
+						<span class="inspect_nosele">逾期未年检</span>
+						<span class="inspect_nosele">逾期未年检</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div class="search_same">
+			<div class="screen_two">
+				<span class="screen_text">二次筛选 : </span> 
+				<span class="inspect_sele">逾期未年检</span> 
+				<span class="reject_sele">逾期未报废</span>
+				<span class="handle_sele">多次违法未处理</span>
+				<span class="inspect_nosele">逾期未年检</span> 
+				<span class="reject_nosele">逾期未报废</span> 
+				<span class="handle_nosele">多次违法未处理</span>
+			</div>
+		</div> -->
+
+		<!-- <ul class="info_top">
+			<li class="select_color movetive_car">机动车</li>
+			<li class="dirver_car">驾驶人</li>
+			<li class="company">企业</li>
+			<li class="roads">道路</li>
+			<li class="affair_shi">事件</li>
+		</ul> -->
+
+		<!-- <div class="info_car">
+			<div class="info_tou">
+				<p>共搜到<span id="car_total"></span>条结果 :</p>
+				<p><img src="<%=request.getContextPath()%>/ehlib/img/shuju.png" alt=""></p>
+			</div>
+			<div id="carInfoModel">
+				<div class="info_content">
+					<p class="car_type"><span id="hphm"></span>&nbsp;&nbsp;&nbsp;<span id="hpzl"></span></p>
+					<p><a href="#">查看详细 >></a></p>
+				</div>
+				<div class="car_information">
+					<div class="car_totals">
+						<div class="car_img">
+							<img src="<%=request.getContextPath()%>/ehlib/img/small_car.png" alt="">
+						</div>
+						<div class="car_one">
+							<p><span class="number1">号牌号码&nbsp;&nbsp;:&nbsp;&nbsp;</span><span id="hphm"></span></p>
+							<p><span class="number1">号牌种类&nbsp;&nbsp;:&nbsp;&nbsp;</span><span id="hpzl"></span></p>
+							<p><span class="number1">车辆类型&nbsp;&nbsp;:&nbsp;&nbsp;</span><span id="cllx"></span></p>
+							<p><span class="number1">使用性质&nbsp;&nbsp;:&nbsp;&nbsp;</span><span id="syxz"></span></p>
+						</div>
+						<div class="car_one1">
+							<p><span class="number1">机动车辆状态&nbsp;&nbsp;:&nbsp;&nbsp;</span><span id="zt"></span></p>
+							<p><span class="number1">机动车所有人&nbsp;&nbsp;:&nbsp;&nbsp;</span><span id="syr"></span></p>
+							<p><span class="number1">联系方式&nbsp;&nbsp;:&nbsp;&nbsp;</span><span id="lxdh"></span></p>
+						</div>
+					</div>
+					<div class="weifa"></div>
+				</div>
+				<div class="result_car"></div>
+			</div>
+			<div id="carinfo"></div>
+			<div id="pagination_3"></div>
+		</div> -->
+
+		<!-- <div class="dirvers_pep" style="display: none">
+			<div class="info_tou">
+				<p>
+					共搜到<span id="car_total1">14</span>条结果 :
+				</p>
+				<p>
+					<img src="<%=request.getContextPath()%>/ehlib/img/shuju.png" alt="">
+				</p>
+			</div>
+			<div class="info_content">
+				<p class="car_type">123456789101112131&nbsp;&nbsp;&nbsp;张三</p>
+				<p>
+					<a href="#">查看详细> ></a>
+				</p>
+
+			</div>
+			<div class="car_information">
+				<div class="car_totals">
+					<div class="car_img">
+						<img src="<%=request.getContextPath()%>/ehlib/img/girl.png" alt="">
+					</div>
+					<div class="car_one">
+						<p>
+							<span class="number1">证件号码&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>12345678910112131</span>
+						</p>
+						<p>
+							<span class="number1">证件类型&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>居民身份证</span>
+						</p>
+						<p>
+							<span class="number1">准驾车型&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>小型轿车</span>
+						</p>
+						<p>
+							<span class="number1">联系地址&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>河北省保定市涿州西关</span>
+						</p>
+					</div>
+					<div class="car_one1">
+						<p>
+							<span class="number1">姓名&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>张三</span>
+						</p>
+						<p>
+							<span class="number1">性别&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>女</span>
+						</p>
+						<p>
+							<span class="number1">初次领证日期&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>20101101</span>
+						</p>
+						<p>
+							<span class="number1">联系方式&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>1333333333</span>
+						</p>
+					</div>
+				</div>
+				<div class="weifa">
+
+					<div class="car_wei">
+						<p>逾期未换证</p>
+						<p>逾期未换证</p>
+						<p>逾期未换证</p>
+					</div>
+
+				</div>
+
+
+			</div>
+			<div class="result_car">
+				2017年9月1日扣6分 ; 超速违法 ; <span>张三</span> ; 扣6分 ; 2017年9月1日扣6分 ; 超速违法 ; <span>张三</span> ; 扣6分 ; 2017年9月1日扣6分 ; 超速违法 ; <span>张三</span>
+				; 扣6分 ;
+			</div>
+
+			<div class="info_content">
+				<p class="car_type">101112131123456789&nbsp;&nbsp;&nbsp;张三栋</p>
+				<p>
+					<a href="#">查看详细> ></a>
+				</p>
+
+			</div>
+			<div class="car_information">
+				<div class="car_totals">
+					<div class="car_img">
+						<img src="<%=request.getContextPath()%>/ehlib/img/boy.png" alt="">
+					</div>
+					<div class="car_one">
+						<p>
+							<span class="number1">证件号码&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>101112131123456789</span>
+						</p>
+						<p>
+							<span class="number1">证件类型&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>居民身份证</span>
+						</p>
+						<p>
+							<span class="number1">准驾车型&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>小型轿车</span>
+						</p>
+						<p>
+							<span class="number1">联系地址&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>北京市石景山区阜石路</span>
+						</p>
+					</div>
+					<div class="car_one1">
+						<p>
+							<span class="number1">姓名&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>张三栋</span>
+						</p>
+						<p>
+							<span class="number1">性别&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>男</span>
+						</p>
+						<p>
+							<span class="number1">初次领证日期&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>20131101</span>
+						</p>
+						<p>
+							<span class="number1">联系方式&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>1813333333</span>
+						</p>
+					</div>
+				</div>
+				<div class="weifa"></div>
+			</div>
+			<div class="result_car">
+				2017年9月1日扣6分 ; 超速违法 ; <span>张三</span>栋 ; 扣6分 ; 2017年9月1日扣6分 ; 超速违法 ; <span>张三</span>栋 ; 扣6分 ; 2017年9月1日扣6分 ; 超速违法 ;
+				<span>张三</span>栋 ; 扣6分 ;
+			</div>
+			<div id="pagination_2"></div>
+		</div> -->
+
+		<!-- <div class="info_company" style="display: none">
+			<div class="info_tou">
+				<p>
+					共搜到<span id="car_total2">1</span>条结果 :
+				</p>
+				<p>
+					<img src="<%=request.getContextPath()%>/ehlib/img/shuju.png" alt="">
+				</p>
+			</div>
+			<div class="info_content">
+				<p class="car_type">12345678910111213&nbsp;&nbsp;&nbsp;AAA危险品运输公司</p>
+				<p>
+					<a href="#">查看详细> ></a>
+				</p>
+
+			</div>
+			<div class="company_information">
+				<div class="car_totals">
+					<div class="car_img">
+						<img src="<%=request.getContextPath()%>/ehlib/img/company.png" alt="">
+					</div>
+					<div class="car_one">
+						<p>
+							<span class="number1">企业社会信用代码&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>12345678910111213</span>
+						</p>
+						<p>
+							<span class="number1">企业名称&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>AAA危险品运输公司</span>
+						</p>
+						<p>
+							<span class="number1">企业类型&nbsp;&nbsp;:&nbsp;&nbsp;</span><span></span>
+						</p>
+						<p>
+							<span class="number1">法人代表&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>张三</span>
+						</p>
+						<p>
+							<span class="number1">联系地址&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>河北省保定市涿州西关</span>
+						</p>
+						<p>
+							<span class="number1">联系人&nbsp;&nbsp;:&nbsp;&nbsp;</span><span>张三</span>
+						</p>
+					</div>
+					<div class="car_one1"></div>
+				</div>
+				<div class="weifa_com">
+					<div class="car_wei">
+						<p>违法行为突出企业</p>
+						<p>违法行为突出企业</p>
+						<p>违法行为突出企业</p>
+						<p>违法行为突出企业</p>
+					</div>
+
+				</div>
+
+
+			</div>
+			<div class="result_car">
+				2017年9月1日扣6分 ; 超速违法 ; <span>张三</span> ; 扣6分 ;
+			</div>
+			<div id="pagination_4"></div>
+		</div> -->
+
+	</div>
+	
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="layer/layer.js"></script>
+	<script type="text/javascript" src="js/result.js"></script>
+</body>
+</html>

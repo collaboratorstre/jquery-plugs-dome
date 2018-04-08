@@ -1,0 +1,374 @@
+ul, li, a, p, table, tbody, tr, td {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.main_content {
+	width: 100%;
+	height: 100%;
+	min-width: 1366px;
+	min-height: 768px;
+}
+
+#heard_common {
+	height: 70px;
+	width: 100%;
+	background: #094b91;
+}
+
+.title_top {
+	height: 30px;
+	width: 100%;
+	background: #000000;
+	text-align: center;
+	color: white;
+	line-height: 30px;
+	font-size: 15px;
+}
+
+.search_same {
+	margin: 10px 10px 0px 10px;
+}
+
+.record_search, .screen_two {
+	/*height:132px;*/
+	height: 86px;
+	background: #f2f2f2;
+	border: 1px solid #e4e4e4;
+}
+
+.record_text, .screen_text {
+	/*margin-left: 13%;*/
+	margin-left: 24%;
+	/*font-size: 18px;*/
+	font-size: 16px;
+	margin-right: 5%;
+	/*margin-top: 49px;*/
+	margin-top: 23px;
+	display: inline-block;
+}
+
+.screen_text {
+	float: left;
+}
+
+.search_case {
+	height: 37px;
+	width: 575px;
+	border: 1px solid #a9a9a9;
+	margin-right: 5%;
+}
+
+.record_search p {
+	font-size: 11px;
+	color: #999999;
+	/*margin-left:24.5%;*/
+	margin-left: 33%;
+}
+
+.inspect_sele, .reject_sele, .handle_sele, .inspect_nosele,
+	.reject_nosele, .handle_nosele {
+	display: inline-block;
+	/*width: 234px;*/
+	/*height: 48px;*/
+	width: 156px;
+	height: 31px;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+	/*line-height: 48px;*/
+	line-height: 30px;
+	text-align: center;
+	font-size: 13px;
+}
+
+.inspect_sele, .reject_sele, .handle_sele {
+	visibility: hidden;
+}
+
+.inspect_sele, .reject_sele, .handle_sele {
+	/*margin: 9px 60px 16px 0;*/
+	margin: 12px 60px 1px 0;
+	background: #48b6e6;
+	color: white;
+}
+
+.inspect_sele:hover, .reject_sele:hover, .handle_sele:hover {
+	background: #0a4b92;
+}
+
+.inspect_nosele:hover, .reject_nosele:hover, .handle_nosele:hover {
+	background: #48b6e6;
+	color: white;
+}
+
+.inspect_nosele, .reject_nosele, .handle_nosele {
+	margin-right: 60px;
+	color: #989898;
+	margin: 2px 0px;
+}
+
+.info_top {
+	width: 616px;
+	height: 31px;
+	margin-top: 10px;
+	margin-left: 39%;
+}
+
+.info_top li {
+	list-style: none;
+	float: left;
+	width: 112px;
+	height: 31px;
+	line-height: 31px;
+	text-align: center;
+	margin-right: 10px;
+	border: 1px solid #cccccc;
+	border-bottom: none;
+	border-radius: 3px 3px 0 0;
+	background: -webkit-linear-gradient(top, #d0d0d0, #e8e8e8, #fafafa);
+}
+
+.info_top li:hover {
+	border: 1px solid #11759f;
+	border-bottom: none;
+	border-radius: 3px 3px 0 0;
+	background: #3fb1e2;
+	color: white;
+}
+
+.info_top .select_color {
+	border: 1px solid #11759f;
+	border-bottom: none;
+	border-radius: 3px 3px 0 0;
+	background: #3fb1e2;
+	color: white;
+}
+
+.info_car, .dirvers_pep {
+	/*width:1260px ;
+    height: 558px;*/
+	border: 1px solid #11759f;
+	/*margin-left: 4%;*/
+	margin: 0 10px;
+}
+
+.info_tou {
+	height: 34px;
+}
+
+.info_tou p:first-of-type {
+	float: left;
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+.info_tou p:last-of-type {
+	float: right;
+	margin-right: 16px;
+	margin-top: 16px;
+}
+
+#car_total, #car_total1, #car_total2 {
+	color: #3399ff;
+	font-weight: bold;
+}
+
+.info_content {
+	/*width: 1233px;*/
+	height: 44px;
+	background: #0a4b92;
+	/*margin-left: 10px;*/
+	/*margin-top: 10px;*/
+	margin: 10px 10px 0 10px;
+	border: 1px solid #11759f;
+}
+
+.info_content .car_type {
+	float: left;
+	font-size: 18px;
+	color: white;
+	margin-top: 10px;
+	margin-left: 28px;
+}
+
+.info_content p:last-of-type {
+	float: right;
+	margin-right: 16px;
+	margin-top: 10px;
+}
+
+.info_content p:last-of-type a {
+	display: inline-block;
+	color: white;
+}
+
+.info_content p:last-of-type a:hover {
+	text-decoration: underline;
+	color: #3399ff;
+}
+
+.car_information {
+	height: 128px;
+	/*width:1233px;*/
+	/*margin-left: 10px;*/
+	margin: 0 10px;
+	border: 1px solid #11759f;
+}
+
+.car_information img{
+	width: 199px;
+	height: 117px;
+}
+
+.car_img, .car_one, .weifa, car_wei, .car_one1, .weifa_com {
+	float: left;
+}
+
+.car_img {
+	margin-left: 4px;
+	margin-top: 4px;
+}
+
+.car_one {
+	/*margin-left: 52px;*/
+	margin-left: 10%;
+	margin-top: 8px;
+}
+
+.car_one1 {
+	margin-top: 8px;
+	/*margin-left: 85px;*/
+	/*margin-right: 86px;*/
+	margin-left: 14%;
+}
+
+.weifa {
+	width: 45%;
+	height: 127px;
+	border-left: 1px solid #11759f;
+}
+
+.car_totals {
+	height: 127px;
+	width: 55%;
+	float: left;
+}
+
+.weifa .car_wei {
+	float: left;
+	margin-left: 8%;
+}
+
+.car_wei p {
+	width: 129px;
+	height: 34px;
+	border: 1px solid #f4f4f4;
+	background: #f4f4f4;
+	line-height: 34px;
+	text-align: center;
+	border-radius: 3px;
+	margin-top: 6px;
+	margin-left: 6px;
+}
+
+.result_car {
+	/*height: 49px;*/
+	/*width:1233px;*/
+	/*margin-left: 10px;*/
+	margin: 0 10px;
+	border: 1px solid #11759f;
+	border-top: none;
+	font-size: 13px;
+	/*line-height: 49px;*/
+	padding-left: 20px;
+}
+
+.result_car span, .car_one1 p:nth-of-type(2) span:last-of-type {
+	color: red;
+}
+
+.info_company {
+	height: 361px;
+	/*width:1260px ;*/
+	border: 1px solid #11759f;
+	/*margin-left: 4%;*/
+	margin: 0 10px;
+}
+
+.company_information {
+	height: 173px;
+	/*width:1233px;*/
+	/*margin-left: 10px;*/
+	margin: 0 10px;
+	border: 1px solid #11759f;
+}
+
+.weifa_com {
+	width: 478px;
+	height: 171px;
+	border-left: 1px solid #11759f;
+}
+
+.weifa_com .car_wei {
+	float: left;
+}
+
+#panel_page .panelRight, #panel_page1 .panelRight, #panel_page2 .panelRight
+	{
+	display: none;
+}
+
+#panel_page, #panel_page1, #panel_page2 {
+	margin-left: 347px;
+	margin-top: 20px;
+}
+
+#pagination_2, #pagination_3, #pagination_4 {
+	margin-top: 9px;
+	margin-left: 17%;
+}
+.handle_sele{
+	margin-right: 19% !important;
+}
+@media screen and (min-width: 1370px) {
+	.handle_sele{
+		margin-right: 25% !important;
+	}
+}
+
+.search_same1{
+  margin: 0px 10px 0px 10px;
+}
+.screen_two1{
+	    height: 149px;
+    background: ghostwhite;
+    border: 1px solid #e4e4e4;
+}
+.screen_two1>div{
+	float: left;
+}
+.screen_two1 .shai_top{
+	    height: 100%;
+    background: pink;
+    width: 168px;
+    text-align: center;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 139px;
+    border-right: 1px solid gainsboro;
+}
+.screen_two1 .shai_con{
+	    width: 1175px;
+}
+.screen_two1 .shai_con>div{
+	height: 75px;
+    width: 100%;
+    background: orange;
+    border-bottom: 1px solid gainsboro;
+    box-sizing: border-box;
+        padding: 0px 5px;
+}
