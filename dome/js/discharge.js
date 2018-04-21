@@ -49,7 +49,7 @@ var convertData = function (data) {
             res.push(geoCoord.concat(data[i].value));
         }
     }
-    // console.log(res);
+    console.log(res);
     return res;
 };
 

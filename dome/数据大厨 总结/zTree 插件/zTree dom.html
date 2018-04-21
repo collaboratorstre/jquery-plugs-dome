@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>zTree dome</title>
+</head>
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="ztree/jquery.ztree.all.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="ztree/zTreeStyle/zTreeStyle.css">
+	<script type="text/javascript">
+		 var zTreeObj;
+		   // zTree 的参数配置，深入使用请参考 API 文档（setting 配置详解）
+		 function setRemoveRenameBtn(treeId, treeNode) {
+					    if(treeNode.level == 0) {
+					        return false;
+					    }
+					    else {
+					        return true;
+					    }
+					}
+		   var setting = {
+		   		//注意：check属性放在data属性之后，复选框不起作用
+		   		 data: { //enable:true即表示使用简单数据格式,不配置或配置为false则为标准数据格式.
+				    simpleData: {
+				        enable: false
+				    			}
+  				 		},
+  				   edit: {   //拖拽
+					        enable: true,
+					        showRemoveBtn: setRemoveRenameBtn,
+					        showRenameBtn: setRemoveRenameBtn,
+					        removeTitle: "删除",
+					        renameTitle: "编辑"
+					    }		
+		   };
+		   // zTree 的数据属性，深入使用请参考 API 文档（zTreeNode 节点数据详解）
+		   var zNodes = [
+		   {name:"父节点1-展开", open:true, 
+		       children:[
+		         {name:"父节点11-折叠", children: [{name:"叶子节点111"},{name:"叶子节点112"},{name:"叶子节点113"},{name:"叶子节点114"},{name:"叶子节点115"}]},
+		         {name: "父节点12-折叠",children: [{name:"叶子节点121"},{name:"叶子节点122"},{name:"叶子节点123"},{name:"叶子节点124"}
+		                              ]}, 
+		      {name: "没有子节点的父节点",isParent:true}
+		                                              ]
+		     }
+		    ];     
+		   $(document).ready(function(){
+		      zTreeObj = $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+		   });
+	</script>
+<body>
+	  <ul id="treeDemo" class="ztree"></ul>
+</body>
+</html>

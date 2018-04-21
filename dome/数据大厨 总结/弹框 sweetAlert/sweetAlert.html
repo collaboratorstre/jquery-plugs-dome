@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sweetAlert dome</title>
+	<script  src="./dist/sweet-alert.js"></script>
+	<link rel="stylesheet" type="text/css" href="./dist/sweet-alert.css">
+</head>
+<body>
+	<button onclick="clicks()">尝试</button>
+		
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript">
+			function clicks(){
+				swal({ 
+  title: "确定删除吗？", 
+  text: "你将无法恢复该虚拟文件！", 
+  type: "warning",
+  showCancelButton: true, 
+  confirmButtonColor: "#DD6B55",
+  confirmButtonText: "确定删除！", 
+  closeOnConfirm: false
+},
+function(){
+  swal("删除！", "你的虚拟文件已经被删除。", "success"); 
+});
+			}
+	</script>
+</body>
+</html>
