@@ -1,0 +1,205 @@
+dashboard-new.js
+dashboard-new.jsp
+execute.jsp
+execute.css
+
+
+clarm-new.js
+
+
+监听鼠标当前距离当前的位置（offsetLeft offsetTop）,获取到offsetLeft大于0并且offsetTop大于0
+并且（offsetLeft小于当前div 的宽或者offsetTop小于当前div 的高）改变鼠标样式，小三角定位，判断是否移动到小三角上面了，dbclick,  单击设置间隔几秒，不是双击，改变pagX，pagY,减少它宽和高，svg可是复制打印，
+
+
+   首先定义了两个初始变量（一个是移动的变量，一个是放大缩小的变量，默认都是false），还有其他七个初始变量，（divX,divY表示鼠标点到页面右边和下边的距离，没有给初始值，下面会给赋值好平移用到了；mouseStartX,mouseStartY表示鼠标点在屏幕的x和y处；selectedMoudle表示目标标签；moduleId表示给目标标签增加‘data-id’属性来区分不同的组件；eEarget表示标记是移动还是缩放大小），然后给父级用到了事件冒泡的原理给子级标签绑定点击时间和鼠标按下的事件，移动给mFlag赋值为true,缩放大小时给isResizing赋值为ture,根据不同的className的值来给我eTarget赋不同的值（移动时eTarget = 'move'缩放大小时eTarget = 'resizer'），之后吧之前定义好的只都赋值好，用到了一个自己封装的方法boardEdit.editModuleView(moduleId),这个方法是单击目标组件的时候，右侧对应的目标属性显示，拖动目标组件的时候，用fadeTo方法来使移动的组件透明，从而来区分组件，确定移动或缩放后，通过鼠标事件mousemove来移动或缩放组件，同时通过吧值赋给右边的属性栏里
+
+http://10.2.25.251:8081/web-dap 河北地址
+
+http://10.2.111.238:8080/EHL_Board/ 可视化组件地址
+一，吧屏幕设置成固定的值1920*1080  二，怎么吧页面保存并投入使用。
+
+侠盗联盟 刘德华 舒淇
+http://20.0.51.73:8888/getImageStream?url=http://20.0.51.132:9099/image/fastdfs/group16/M00/D8/F7/FAAzL1ozQGuAeZ3cAAunH9xflG4714.jpg
+
+
+中间w:1240  两边h：326  左中h: 374 左上h:76
+http://localhost:8080/lygz/index 昌平页面地址
+
+min-width
+
+菏泽的基本样式  file:///D:/SVN%20LX/Documents/Tencent%20Files/316238862/FileRecv/%E8%8F%8F%E6%B3%BD%E5%9C%B0%E5%9B%BE%E6%A0%B7%E5%BC%8F20170807.html
+
+
+远程地址 C:\Users\Administrator\AppData\Local\Temp\TeamViewer_V11.0.56083.0
+
+
+http://localhost:8080/webpage/new/index.jsp   河北组件地址
+
+http://10.2.25.251:8088/web-overview/webpage/new/index.jsp 服务器河北组件地址
+
+I've been letting you down,down
+
+Girl I know I've been such a fool 
+
+Giving into temptation
+
+I should have played it cool
+
+The situtation got out of hand 
+
+I hope you understand 
+
+It can happen to anyone of us
+
+Anyone you think of
+
+Anyone can fall
+
+Anyone can hurt someone they love 
+
+Hearts will break
+
+Cos I mode a stuied mistake 
+
+It can happen to anyone of us
+
+Say you will forgive me 
+
+Anyone can fail
+
+Say you will believe me
+
+I can't escape
+
+My heart will break
+
+Cause I made a stupid mistake 
+
+A stupied mistake
+
+She was kind of exciting
+
+A little crazy I should have known
+
+She must have altered my senses
+
+As I offered to walk her home 
+
+The situation got out of hand
+
+I hope you understand
+
+It can happen to anyone of us
+
+Anyone you think of
+
+Anyone can fall
+
+Anyone can hurt someone they love 
+
+Hearts will break
+
+Cos I made a stupid mistake
+
+It can happen to anyone of us
+
+Say you will fogive me 
+
+Anyone can fail
+
+Say you will belive me 
+
+I can't escape
+
+My heart will break
+
+Cause I made a stupid mistake 
+
+A stupid mistake
+
+She means nothing to me
+
+Nothing to me
+
+I swear every word is true
+
+I don't wanna lose you 
+
+The situation got out of hand 
+
+I hope you understand
+
+It can happen to anyone of us
+
+Anyone you think of
+
+Anyone can fall
+
+Anyone can hurt someone they love
+
+Hearts will break
+
+Cos I made a stupid mistake
+
+It can happen to anyone of us
+
+Say you will forgive me 
+
+Anyone call fail
+
+Say you will believe me 
+
+I can't escape
+
+My heart will break
+
+Cause I made a stupid mistake
+
+Anyone can fall
+
+Anyone can hurt someone they love
+
+Hearts will break
+
+Cos I made a stupid mistake
+
+A stupid mistake
+
+Song From A Secret Garden 歌名
+
+当你真的想做好一件事的时候，会遗忘很多，因为对于你来说它就是你的一切。
+
+知乎上有个叫王藴藉的讲乐理讲得很好
+
+http://localhost:8080/web-rsap/   河北省项目地址
+
+
+257  89.2
+
+在页面中输入用户名：test  密码：hualu+88
+
+https://blog.thunf.cn/2017/10/20/20171019-qudian-ipo-h5/  前端文档学习之路
+
+{
+  "tableId" : "bbf0f42259a347e78b4818b7ab8415c2",
+  "fieldType":"1",
+  "fieldName":"SFZMHM",
+  "fieldNameCN":"身份证明号码",
+  "fieldType":"1",
+  "fieldESType":"string",
+  "mappingComments":"[[{"2":"1"},{"2":"2"},{"2":"3"},{"2":"4"}],[{"4":"7"},{"4":"8"},{"4":"9"},{"4":"10"}]]"
+}
+
+用layui 的时候 记得把自己 例子中的 layer文件夹和font文件夹整个移动复制到当前文件夹中
+
+
+
+common文件夹中增加 head-nav-emergency1.jsp touristHoliday.jsp抬头路径改变
+
+PS 叠加颜色：1.选中想要叠加的颜色的区域  2.Ctrl + J  3.右下角出现图层之后点击图层 选中叠加颜色 
+
+http://10.2.111.217:8888/web-dap   yang  ehl1234   车行云地址
+
+
+http://59.110.63.115:98/loginBJTOCC   admin   交通运输
+

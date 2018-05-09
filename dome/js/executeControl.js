@@ -22,7 +22,7 @@
             		console.log(n)
             		markers.push([n.lon,n.lat]);
             	})
-            	console.log(markers.length);
+            	console.log(markers);
             	for(var i = 0,len=markers.length; i<len;  i++){
                var marker;
 
