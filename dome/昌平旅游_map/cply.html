@@ -71,11 +71,11 @@
    
 	  <div id="container"></div>
     <div id="more_select" style="background: transparent;padding: 5px; left: 25%;bottom:4%;position: absolute; ">
-                    <p style="float: left;cursor: pointer;">
+                    <p id="tour_cont" style="float: left;cursor: pointer;">
                         <img src="content_tu.png" alt="">
                         <span style="color: white; font-size: 12px;">旅游咨询中心</span>
                     </p>
-                    <p style="float: left;margin-left: 33px;cursor: pointer;">
+                    <p id="tour_distru" style="float: left;margin-left: 33px;cursor: pointer;">
                         <img src="distru_tu.png" alt="">
                         <span style="color: white; font-size: 12px;">景区分布</span>
                     </p>
@@ -144,8 +144,11 @@
               size: new AMap.Size(20,20)
             }); 
 
-
+          var datas;
+          var markers1 = [];
+          var markers2 = [];
          $.get('json/cply.json',function(data){
+           datas = data;
            console.log(data);
             var res2 = [];
             var res3 = [];
@@ -168,6 +171,8 @@
                 map: map
             })
             marker.content = '<div class="info_box">'+ res2[i] +'</div>'
+
+            markers1.push(marker);
 
             marker.on('click',markerClick);
 
@@ -194,9 +199,11 @@
                 map: map
             })
             marker1.content = '<div class="info_box">'+ res1[i] +'</div>'
-
+            markers2.push(marker1);
             marker1.on('click',markerClick);
        }
+
+
 
 
         function markerClick(e){
@@ -206,6 +213,105 @@
 
          })
       
+      var flag = true; //默认显示地图标示
+      $("#tour_cont").click(function(){
+          console.log(flag);
+          if(flag == true){
+            for(var i =0; i<markers1.length;i++){
+               markers1[i].setMap(null);
+             }
+             markers1 = [];
+            flag = false;
+          }else{
+             var res2 = [];
+            var res3 = [];
+            var infoWindow = new AMap.InfoWindow();
+            for(var i = 0;i<datas.consultancyCentreInfo.data.length;i++){
+              var geoname = datas.consultancyCentreInfo.data[i].name;
+              res2.push(geoname);
+              var geoCoord = datas.consultancyCentreInfo.geoCoordMap[geoname]
+              res3.push(geoCoord);
+            }
+
+
+              for(var i = 0,len=res3.length; i<len;  i++){
+            var marker;
+            marker = new AMap.Marker({
+                icon: icon,
+                position: res3[i],
+                offset: new AMap.Pixel(-12,-12),
+                zIndex: 101,
+                map: map
+            })
+            marker.content = '<div class="info_box">'+ res2[i] +'</div>'
+
+            markers1.push(marker);
+
+            marker.on('click',markerClick);
+        function markerClick(e){
+            infoWindow.setContent(e.target.content);
+            infoWindow.open(map, e.target.getPosition());
+        }
+
+        }
+            console.log(datas);
+            flag = true;
+          }
+       
+         
+
+
+      })
+
+
+       $("#tour_distru").click(function(){
+          console.log(flag);
+          if(flag == true){
+            for(var i =0; i<markers2.length;i++){
+               markers2[i].setMap(null);
+             }
+             markers2 = [];
+            flag = false;
+          }else{
+             var res1 = [];
+            var res4 = [];
+            var infoWindow = new AMap.InfoWindow();
+            for(var i = 0;i<datas.scenicDistributionInfo.data.length;i++){
+              var geoname = datas.scenicDistributionInfo.data[i].name;
+              res1.push(geoname);
+              var geoCoord = datas.scenicDistributionInfo.geoCoordMap[geoname]
+              res4.push(geoCoord);
+            }
+
+
+              for(var i = 0,len=res4.length; i<len;  i++){
+            var marker;
+            marker = new AMap.Marker({
+                icon: icon1,
+                position: res4[i],
+                offset: new AMap.Pixel(-12,-12),
+                zIndex: 101,
+                map: map
+            })
+            marker.content = '<div class="info_box">'+ res1[i] +'</div>'
+
+            markers2.push(marker);
+
+            marker.on('click',markerClick);
+        function markerClick(e){
+            infoWindow.setContent(e.target.content);
+            infoWindow.open(map, e.target.getPosition());
+        }
+
+        }
+            flag = true;
+          }
+       
+         
+
+
+      })
+
       
 	</script>
 
