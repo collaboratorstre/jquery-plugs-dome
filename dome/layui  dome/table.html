@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>layui_dome</title>
+	<link rel="stylesheet" type="text/css" href="css/layui.css">
+</head>
+<body>
+  
+<div class="demoTable">
+  搜索ID：
+  <div class="layui-inline">
+    <input class="layui-input" name="id" id="demoReload" autocomplete="off">
+  </div>
+  <button class="layui-btn" data-type="reload">搜索</button>
+</div>
+
+	<table class="layui-hide" id="LAY_table_user" lay-filter="user"></table>
+ 
+
+	
+	<!-- <script type="text/javascript" src="../js/jquery.min.js"></script> -->
+	<script type="text/javascript" src="layer/layer.js"></script>
+	<script type="text/javascript">
+		 // $('#test1').on('click', function(){
+		 //    layer.msg('hello');
+		 //  }
+    
+    // var data = [
+    //           {"id":10000,"username":"user-0","sex":"女","city":"城市-0","sign":"签名-0","experience":255,"logins":24,"wealth":82830700,"classify":"作家","score":57},
+    //           {"id":10001,"username":"user-1","sex":"男","city":"城市-1","sign":"签名-1","experience":884,"logins":58,"wealth":64928690,"classify":"词人","score":27},
+    //           {"id":10002,"username":"user-2","sex":"女","city":"城市-2","sign":"签名-2","experience":650,"logins":77,"wealth":6298078,"classify":"酱油","score":31},
+    //           {"id":10003,"username":"user-3","sex":"女","city":"城市-3","sign":"签名-3","experience":362,"logins":157,"wealth":37117017,"classify":"诗人","score":68},
+    //           {"id":10004,"username":"user-4","sex":"男","city":"城市-4","sign":"签名-4","experience":807,"logins":51,"wealth":76263262,"classify":"作家","score":6},
+    //           {"id":10005,"username":"user-5","sex":"女","city":"城市-5","sign":"签名-5","experience":173,"logins":68,"wealth":60344147,"classify":"作家","score":87},
+    //           {"id":10006,"username":"user-6","sex":"女","city":"城市-6","sign":"签名-6","experience":982,"logins":37,"wealth":57768166,"classify":"作家","score":34},
+    //           {"id":10007,"username":"user-7","sex":"男","city":"城市-7","sign":"签名-7","experience":727,"logins":150,"wealth":82030578,"classify":"作家","score":28},
+    //           {"id":10008,"username":"user-8","sex":"男","city":"城市-8","sign":"签名-8","experience":951,"logins":133,"wealth":16503371,"classify":"词人","score":14},
+    //           {"id":10009,"username":"user-9","sex":"女","city":"城市-9","sign":"签名-9","experience":484,"logins":25,"wealth":86801934,"classify":"词人","score":75}
+    //           ]
+layui.use('table', function(){
+  var table = layui.table;
+  
+
+
+  //展示已知数据
+  table.render({
+    elem: '#LAY_table_user'
+    , width: 892
+    ,height: 332
+    ,cols: [[ //标题栏
+        {type:'checkbox',fixed:true}
+      ,{field: 'id', title: 'ID', width: 80, sort: true}
+      ,{field: 'username', title: '用户名', width: 100}
+      ,{field: 'wealth', title: '邮箱', minWidth: 100}
+      ,{field: 'sign', title: '签名', minWidth: 100}
+      ,{field: 'sex', title: '性别', width: 80}
+      ,{field: 'city', title: '城市', width: 100}
+      ,{field: 'experience', title: '积分', width: 100, sort: true}
+    ]]
+    ,data: [
+              {"id":10000,"username":"user-0","sex":"女","city":"城市-0","sign":"签名-0","experience":255,"logins":24,"wealth":82830700,"classify":"作家","score":57},
+              {"id":10001,"username":"user-1","sex":"男","city":"城市-1","sign":"签名-1","experience":884,"logins":58,"wealth":64928690,"classify":"词人","score":27},
+              {"id":10002,"username":"user-2","sex":"女","city":"城市-2","sign":"签名-2","experience":650,"logins":77,"wealth":6298078,"classify":"酱油","score":31},
+              {"id":10003,"username":"user-3","sex":"女","city":"城市-3","sign":"签名-3","experience":362,"logins":157,"wealth":37117017,"classify":"诗人","score":68},
+              {"id":10004,"username":"user-4","sex":"男","city":"城市-4","sign":"签名-4","experience":807,"logins":51,"wealth":76263262,"classify":"作家","score":6},
+              {"id":10005,"username":"user-5","sex":"女","city":"城市-5","sign":"签名-5","experience":173,"logins":68,"wealth":60344147,"classify":"作家","score":87},
+              {"id":10006,"username":"user-6","sex":"女","city":"城市-6","sign":"签名-6","experience":982,"logins":37,"wealth":57768166,"classify":"作家","score":34},
+              {"id":10007,"username":"user-7","sex":"男","city":"城市-7","sign":"签名-7","experience":727,"logins":150,"wealth":82030578,"classify":"作家","score":28},
+              {"id":10008,"username":"user-8","sex":"男","city":"城市-8","sign":"签名-8","experience":951,"logins":133,"wealth":16503371,"classify":"词人","score":14},
+              {"id":10009,"username":"user-9","sex":"女","city":"城市-9","sign":"签名-9","experience":484,"logins":25,"wealth":86801934,"classify":"词人","score":75}
+              ]
+    //,skin: 'line' //表格风格
+    // ,even: true
+    ,page: true
+     ,id: 'testReload'
+
+    //,page: true //是否显示分页
+    // ,limits: [5, 7, 10]
+    // ,limit: 5 //每页默认显示的数量
+  });
+   //监听表格复选框选择
+  table.on('checkbox(demo)', function(obj){
+    console.log(obj)
+  });
+   var $ = layui.$, active = {
+    reload: function(){
+      var demoReload = $('#demoReload');
+      
+      //执行重载
+      table.reload('testReload', {
+        page: {
+          curr: 1 //重新从第 1 页开始
+        }
+        ,where: {
+          key: {
+            id: demoReload.val()
+          }
+        }
+      });
+    }
+  };
+  
+  $('.demoTable .layui-btn').on('click', function(){
+    var type = $(this).data('type');
+    active[type] ? active[type].call(this) : '';
+  });
+});
+	</script>
+</body>
+</html>

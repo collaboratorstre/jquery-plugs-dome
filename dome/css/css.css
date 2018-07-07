@@ -1,0 +1,4621 @@
+body{
+    font-family: '微软雅黑';}
+.logo{
+  height: 100%;
+  padding:0 20px;
+  background: -moz-linear-gradient(#040239, #090d51); 
+  background: linear-gradient(#040239, #090d51);
+  border-bottom: 2px solid #3365fd;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+a{color:#2c59bc;}
+a:hover{text-decoration:none;color:#fff;}
+.logo>div{flex: 1;}
+.logo>div:nth-child(1){ font-size: 1.2em;font-weight:900;}
+.logo>div:nth-child(2){
+  text-align: center;
+  display: inline-block;
+  color: #0594ff;
+  font-size: 2em;
+  font-weight:700;
+  background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#0099ff), to(#3366ff));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.logo>div:nth-child(3){ text-align: right;}
+.logo>div:nth-child(3) img{ vertical-align:middle; text-align: right; line-height: 32px; padding-right: 10px }
+
+.weather-title{ 
+  height: 10%;
+  padding:0 20px;
+  display: flex;
+  align-items: center;
+ }
+
+ .weather-title>div{flex: 1 }
+ .weather-title>div:nth-child(2){ text-align: right; cursor: pointer; }
+ .weather-title>div>.span{
+  padding:6px 10px;
+  color: #fff;
+  background: -moz-linear-gradient(right,rgba(51,102,255,.7), rgba(51,102,255,0)); 
+  background: linear-gradient(to right,rgba(51,102,255,.7), rgba(51,102,255,0));
+ }
+ .weather-title>div span:nth-child(2){
+ 	color:#3162c7;
+ 	 padding:3px 12px;
+  	text-align: center;
+  	background: url(../images/btn.png) no-repeat;
+ }
+ .weather-title>div:nth-child(2) span{
+  padding:3px 12px;
+  text-align: center;
+  background: url(../images/btn.png) no-repeat;
+ }
+  .weather-title>div:nth-child(2) span:hover{
+  padding:3px 12px;
+  text-align: center;
+  background: url(../images/btn-active.png) no-repeat;
+ }
+
+ .weather-box{
+  margin-top: 1%;
+  padding:0 10px;
+  display: flex;
+  flex-wrap:nowrap;
+  align-items:stretch;
+
+ }
+ .weather-box>div{flex: 1; text-align: left;font-size:12px;width:30px}
+ .weather-box>div>div:nth-child(1){color: #fff;line-height: 1.5rem;fontSize:16px;width:25.2px}
+ .weather-box>div>div:nth-child(2){color: #fff;line-height: 1.5rem;}
+ .weather-box>div>div:nth-child(3){color: #33ccff;line-height: 1.5rem;}
+ .weather-box>div>div:nth-child(5){color: #3366ff;line-height: 1.5rem;}
+ .weather-box>div>div:nth-child(6){color: #fff;line-height: 1.5rem;}
+ /*.weather-change{
+  height: calc(76vh - 10rem);
+  width: 22%;
+  border-radius: 70px;
+  background: -moz-linear-gradient(#3366ff, #33ccff); 
+  background: linear-gradient(#33ccff, #3366ff);
+  margin: 0 auto;
+ }*/
+  #weatherChart{
+  width:100%; 
+  padding:0 0px;
+  height:calc(100% - 80px);
+ }
+ .weather-text{
+  position:absolute;
+  word-break: break-all;
+  /*bottom: 0;*/
+  width: 90%;
+  margin-top: 15px;
+  padding:10px;
+  color: #ffcc33;
+  line-height: 1rem;
+  box-shadow:inset 0px 0px 18px #fc4646;
+  margin-left:6%
+ }
+
+
+.weather-boxtwo{
+  padding:0 20px;
+  display: flex;
+  flex-wrap:nowrap;
+  align-items:stretch;
+ }
+ .weather-boxtwo>div{flex: 1; margin:0 1rem; text-align: center; line-height: 1.5rem}
+.weather-chart{
+  padding:20px;
+  height: calc(74vh - 10rem); 
+}
+
+.acc-box{ width: calc(100% - 3rem); margin:0 2rem; overflow:hidden;}
+
+.acc-box .tab-content {
+        position: absolute;
+        width: calc(100% - 3rem);
+        height:70%;
+        font-size:1.2em;
+        line-height:1.5em;
+    }
+
+.acc-box-nav a {
+  width:calc(30% - 2rem);
+  text-align: center;
+  color: #3366ff;
+  padding:0 10px;
+  display:inline-block;
+  line-height:30px;
+  text-decoration: none;
+  background: -moz-linear-gradient(rgba(51,102,255,0), rgba(51,102,255,.3)); 
+  background: linear-gradient(rgba(51,102,255,0), rgba(51,102,255,.3));
+}
+.acc-box-nav .hover {
+  color: #ff4c4c;
+  background:rgba(51,102,255,.2); 
+  border:1px solid #3366ff;
+  text-decoration: none;
+  
+}
+.acc-box-nav a:hover{text-decoration: none;}
+.acc-box-nav dt{display: block;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+#tablea {}
+.acc-box .tab-content .box {
+  margin:10px;
+  display:none;
+  height:100%;
+}
+
+
+.road-box{ width: calc(100% - 3rem); margin:0 1rem;  height: 90%;overflow:hidden;}
+.road-box .tabs { float: left; width: 20%;}
+.road-box .tabs li{ 
+  text-align: center; 
+  color: rgba(255,255,255,.5);
+  background: rgba(74,119,255,.3); 
+  margin-bottom: 2px;
+  cursor: pointer;
+}
+
+.road-box .tab_container{ float: right; width:70%; color: #fff;}
+.road-box .tabs a{
+  line-height: 24px;
+  color: rgba(255,255,255,.5);
+  margin-bottom: 2px;
+  text-align: center;
+}
+.road-box .tabs>.active{
+  color: #fff;
+  text-decoration: none;
+  background:rgba(51,102,255,1);
+}
+.road-box .boxa {
+  margin:10px;
+  display:none;
+  color: #fff;
+  height:100%;
+}
+.road-box .road-box-nav .hover {
+  color: #fff;
+  text-decoration: none;
+  background:rgba(51,102,255,1);
+  
+}
+
+.road-box .tab-content {
+        position: absolute;
+        width: 65%;
+        height: 70%; 
+        /* font-size:1.2em; */
+        line-height:1.5em;
+    }
+
+
+.road-box .accnav a {
+  text-align: center;
+  color: rgba(51,102,255,.5);
+  padding:0 10px;
+  display:inline-block;
+  line-height:30px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(51,102,255,.5);
+}
+.road-box .accnav .hover {
+  color: rgba(51,102,255,1);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(51,102,255,1);
+  
+}
+.road-box .accnav a:hover{text-decoration: none;}
+.road-box .box {
+  margin:10px;
+  display:none;
+  color: #fff;
+  height: 100%;
+}
+
+.subyccon>ul>li>dl>dd p{
+  line-height: 19px;
+}
+
+.subyccon>ul>li>dl>dd{
+  position:absolute;
+  bottom: 8;
+  left: 15%
+}
+
+/*18/5/9 京哈高速流量统计环比*/
+.app-high-box{}
+.app-high-box ul{
+  list-style: none;
+  margin-top:0;
+}
+.app-high-box ul li{
+  display: inline-block;
+}
+.app-high-box ul li:nth-child(1){
+  color: #fecc00;
+}
+.app-high-box ul li:nth-child(2){
+  color: #fecc00;
+  font-family: "Arial";
+  font-weight: 600px;
+  font-size: 1.7em;
+  margin-right: 1.6rem
+}
+.app-high-box ul li:nth-child(3){
+  color: #fff;
+  margin-right:0.8rem;
+}
+.app-high-box ul li:nth-child(4){
+  color: #fff;
+}
+.app-date-box{
+  display: flex;
+}
+.app-date-box>div{
+  flex: 1
+}
+.app-up-box ul{
+  list-style: none;
+ 
+  margin-top:1.2rem;
+}
+.app-up-box ul li{
+  display: inline-block;
+}
+.app-up-box ul li:nth-child(1){
+  color: #2e31f6;
+}
+.app-up-box ul li:nth-child(2){
+  color: #2e31f6;
+  font-family: "Arial";
+  font-weight: 600px;
+  font-size: 1.7em;
+  margin-right: 1.3rem
+}
+.app-up-box ul li:nth-child(3){
+  color: #fff;
+  margin-right:0.8rem;
+}
+.app-up-box ul li:nth-child(4){
+  color: #fff;
+}
+
+.app-flux-box{
+  display: flex;
+  align-content
+}
+.app-flux-box>div{
+ flex:1;
+}
+.app-flux-box>div:nth-child(1){
+  border-right: 2px solid #2e31f6;
+ }
+.app-flux-box>div>div:nth-child(1){
+  color: #2e31f6;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.app-flux-box>div>div:nth-child(2){
+  color: #fff;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+.app-flux-box>div>div:nth-child(3){
+  color: #fff;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+.app-flux-box>div>div span{
+  margin-right: 1.6rem
+}
+.app-flux-box>div>div b{
+  font-size: 1.7em;
+}
+.app-flux-box>div>div>div{
+  flex: 1;
+  text-align: center;
+}
+
+/*地图*/
+.app-map-box{
+  position: relative;
+}
+.app-map-back {
+  width: 100%;
+  height: 100vh;
+  z-index: 1
+}
+.app-map-box .app-map-nav{
+  position: absolute;
+  top: 4%;
+  right: 15%;
+  height: 90vh;
+  overflow-y:auto;
+  z-index: 10;
+}
+.app-map-box .app-map-nav ul{
+  list-style: none;
+}
+.app-map-box .app-map-nav ul li{
+  width: 6rem;
+  height: 6rem;
+  line-height: 6rem;
+  border-radius: 6rem;
+  background: -moz-radial-gradient(circle,rgba(0,102,255,.2), rgba(0,102,255,0)); 
+  background: radial-gradient(circle,rgba(0,102,255,.2), rgba(0,102,255,0));
+  border:2px solid rgba(0,153,255,.5);
+  margin-top: 20px;
+  text-align: center;
+  color: #6699cc;
+  letter-spacing: 1px;
+  word-wrap:break-word; 
+  text-overflow:ellipsis;
+  overflow:hidden;
+  cursor: pointer;
+}
+.app-map-box .app-map-nav ul .active{
+ width: 6rem;
+  height: 6rem;
+  line-height: 6rem;
+  border-radius: 6rem;
+  background: -moz-radial-gradient(circle,rgba(0,102,255,.5), rgba(0,102,255,0)); 
+  background: radial-gradient(circle,rgba(0,102,255,.5), rgba(0,102,255,0));
+  border:3px solid #0066ff;
+    margin-top: 20px;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 1px;
+  word-wrap:break-word; 
+  text-overflow:ellipsis;
+  overflow:hidden;
+  box-shadow: 0 0 30px rgba(0,102,255,.5);
+}
+  .reveal-modal {
+    top: 6%; 
+    right: 15%;
+    width: 18%;
+    position: absolute;
+    z-index: 101;
+    background:rgba(0,0,51,.5);
+    border:1px solid rgba(0,102,255,.3);
+    padding: 20px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+    -box-shadow: 0 0 10px rgba(0,0,0,.4);
+    }
+
+.modal-abox{
+  width: 100%;
+  display: flex;
+}
+.modal-abox>div{
+  flex: 1;
+}
+.modal-abox>div:nth-child(1){
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.modal-abox>div:nth-child(2){
+  padding-right: 9px;
+  text-align: right;
+  background: url(../images/btn.png) no-repeat right;
+  height: 22px;
+  line-height: 22px;
+  color: #6699cc
+}
+.modal-a>div:nth-child(2){
+  width: 100%;
+  height: 20vh;
+  margin-top: 1rem;
+}
+.modal-b{
+  margin-top: 1.6rem;
+}
+.modal-b>div:nth-child(1){
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.modal-b>div:nth-child(2){
+  width: 100%;
+  height: 16vh;
+  margin-top: 1.6rem;
+}
+
+/*div右上角关闭样式*/
+.spanCss{
+    display: inline-block;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+    text-shadow: 0 1px 2px rgba(0,0,0,.1);
+   -o-transform: rotate(45deg);
+   -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    float:right; 
+    margin-right:10px;
+    color:#0098C3;
+}
+/*来源地位置样式*/
+.reveal-sourceModal {
+  top: 45%; 
+  right: 45%;
+  width: 18%;
+  position: absolute;
+  z-index: 101;
+  background:rgba(0,0,51,.5);
+  border:1px solid rgba(0,102,255,.3);
+  padding: 20px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+  -box-shadow: 0 0 10px rgba(0,0,0,.4);
+  cursor:pointer
+  }
+.sourceModal-abox{
+  width: 100%;
+  display: flex;
+}
+.sourceModal-abox>div{
+  flex: 1;
+}
+.sourceModal-a>div:nth-child(2){
+  width: 100%;
+  height: 20vh;
+  margin-top: 1rem;
+}
+
+/*标题模块*/
+.app-area-box-title{
+	width: 100%;
+	height: 10%;
+	clear: both;
+
+}
+.app-area-box-title div:first-of-type{
+	width: 100%;
+	line-height:200%;
+	color: #fff;
+	position: relative;
+	background-image: url(../images/board/background.png);
+	background-repeat: repeat-y;
+	float: left;
+	padding-left: 10px;
+	font-size: 12px;
+}
+.app-area-box-title div:first-of-type span{
+	color: #528cff;
+}
+.app-area-box-title>div:first-of-type>span:nth-child(2){
+	float: right;
+	font-size:12px;
+	line-height:200%;
+	padding: 0 5px;
+	color:#528cff;	
+	cursor:pointer;
+	display: inline-block;
+	background-image:url(../images/board/btn.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover 100%;
+}
+.app-area-box-title>div:first-of-type>span:nth-child(2):hover{
+	color:#fff;
+	background-image:url(../images/board/btn-active.png);
+	
+}
+.app-area-box-title>div:nth-child(1)>span:nth-child(3),.app-area-box-title>div:nth-child(1)>span:nth-child(4){
+	float: right;
+	font-size: 1em;
+	line-height: 200%;
+	padding:0 5px;
+	color: #fff;
+	cursor: pointer;
+	margin-right: 2px;
+	background: #001f6f;
+}
+/*事故专题模块*/
+
+
+.Accident-box-inner-left-box-inner{
+	width: 100%;
+	height:100%;
+	clear: both;
+	overflow: hidden;	
+}
+.Accident-box-inner-left-box-inner-Label{
+	width:100%;
+	height: 30%;
+	clear: both;
+}
+.Accident-box-inner-left-box-inner-Label ul{
+	width: 100%;
+	height: auto;	
+	margin: auto 0;
+	
+	
+}
+.Accident-box-inner-left-box-inner-Label ul li{
+	width: 23%;
+	margin:6% 1%;
+	color: #ff4c4c;
+	float: left;
+	background-color: #081750;
+	cursor:pointer; 
+	line-height:200%;
+}
+.Accident-box-inner-left-box-inner-Label ul li:first-of-type{
+	color: #3366ff;
+}
+.Accident-box-inner-left-box-inner-Label ul li .Label-title{
+	width: 100%;
+	text-align: center;
+	font-size: 12px;
+	/*line-height:260%;*/
+}
+.Accident-box-inner-left-box-inner-Label ul li .Label-Number{
+	width: 100%;
+	text-align: center;
+	font-size: 12px;	
+	/*line-height:100%;*/
+}
+.Accident-box-inner-left-box-inner div:last-of-type {
+	clear: both;
+	width:100%;
+	height:85%;
+	overflow: hidden;
+	margin: 10px 0 0 0;
+}
+.Accident-box-inner-left-box-inner div:last-of-type ul{
+	width:100%;
+	height: 100%;
+	clear: both;
+}
+.Accident-box-inner-left-box-inner div:last-of-type ul li{
+	width:100%;
+	height: 100%;
+	line-height: 300%;
+	background-color: rgba(206,0,255,0.2);
+}
+/*事故处理模块*/
+.Accident-box-inner-left-box-inner-Label2{
+	height: 10%;
+	width:100%;
+	clear: both;
+	margin: 2.5% 0;
+}
+.Accident-box-inner-left-box-inner-Label2 ul li{
+	line-height: 150%;
+	width: 30%;
+	float: left;
+	cursor:pointer;
+	
+}
+.Accident-box-inner-left-box-inner-Label2 ul li:nth-of-type(1){
+	color: #c83c46;
+	background-color: rgba(238,71,74,0.2);
+	margin:0 2.5% 0 2.5%;
+}
+.Accident-box-inner-left-box-inner-Label2 ul li:nth-of-type(2){
+	color: #ffcc66;
+	background-color: rgba(255,204,51,0.2);
+}
+.Accident-box-inner-left-box-inner-Label2 ul li:nth-of-type(3){
+	color: #38f066;
+	background-color: rgba(51,255,0,0.2);
+	margin:0 2.5% 0 2.5%;
+}
+.Accident-box-inner-left-box-inner-Label2 ul li .Label-title{
+	width: 100%;
+	text-align: center;
+	font-size: 12px;
+	line-height: 200%;
+}
+.Accident-box-inner-left-box-inner-Label2 ul li .Label-Number{
+	width: 100%;
+	text-align: center;
+	font-size: 1em;
+	line-height: 2em;
+}
+.Accident-Handle{
+	position: relative;
+	clear: both;
+	width: 95%;
+	height: 85%;
+	margin: 0 2.5%;
+}
+.Accident-Handle div:nth-child(1){
+	position: relative;
+	clear: both;
+	width: 100%;
+	height: 90%;
+	
+}
+#Accident-Handle{
+	position: relative;
+	clear: both;
+	width: 100%;
+	height: 100%;
+}
+.Accident-Handle div:nth-child(2){
+	position: absolute;
+	/*bottom: 40px;*/
+	top:270px;
+	width: 100%;
+	height: 10%;
+	background-color: #000a46;
+	cursor:pointer;
+}
+.Accident-Handle div:nth-child(2) div{
+	width: 15px;
+	height: 15px;
+	margin:5px auto 0 auto;
+	text-align: center;
+	line-height: 15px;
+	/*border:1px solid #fff;*/
+	color: #fff;
+	font-size: 2em;
+	transform:rotate(90deg);
+	color: #3264fc;
+	font-family: "微软雅黑";
+}
+
+/*事故处理模块结束*/
+
+/*事故风险评估*/
+.Accident-box-inner-right{
+	height: 100%;
+	width: 100%;
+	/*background-color: #000031;*/
+	overflow: hidden;	
+}
+.Accident-box-inner-right-bar{
+	width: 95%;
+	margin: 5px auto;
+	height: 5%;
+}
+.Accident-box-inner-right-bar-title-1{
+	float: left;
+	color: #fff;
+	font-size: 1em;
+	margin-bottom: 10px;
+}
+.Accident-box-inner-right-bar-title-2{
+	float: right;
+	color: #fff;
+	font-size: 1em;
+	margin-bottom: 10px;
+}
+.Accident-box-inner-right-bar-strip{
+	clear: both;
+	width: 100%;
+	height: 4px;
+	margin-bottom:5px;
+	background-image:url(../images/board/Precision-strip.png);
+	background-repeat: repeat-y;
+	background-size: contain auto;
+}
+.Accident-box-inner{
+	clear: both;
+	width: 95%;
+	height: 80%;
+	margin: 0 auto;
+	font-family: "微软雅黑";
+}
+.Accident-box-inner div:first-of-type{
+	height: 9%;
+	width: 100%;
+	margin-top: 20px;
+}
+.Accident-box-inner div span{
+	color:#808098;
+	font-size: 10px;
+	line-height: 200%;
+}
+input[type="date"]::-webkit-inner-spin-button{
+	-webkit-appearance:none;
+	moz-appearance:none;
+	appearance:none;
+}
+.Accident-box-inner div input{
+	color:#808098;
+	width:35%;
+	vertical-align:middle;
+	background-color: #0f1f6f;
+	border: none;
+	font-size: 12px;
+	line-height: 200%;
+	text-align:center;
+	font-weight: 100;
+}
+.Accident-box-inner div:last-of-type{
+	padding-top: 1%;
+}
+.Accident-box-inner div:last-of-type ul:first-of-type li{
+	width: 32%;
+	float: left;
+	text-align: center;
+	background-color: #16246f;
+	color: #8b92b7;
+	font-size: 1em;
+	line-height: 200%;
+	margin-right: 1%;
+	cursor:pointer;
+}
+
+
+.Accident-box-inner div:last-of-type ul:last-of-type li{
+	width: 100%;
+	float: left;
+	
+}
+
+.Accident-box-inner div:last-of-type ul:last-of-type li table{
+	width: 100%;
+	margin-top: 10px;
+	
+}
+.Accident-box-inner div:last-of-type ul:last-of-type li table tr td{
+	width: 32%;
+	text-align: center;
+/* 	color: #fdec4a; */
+	line-height: 300%;
+	font-size: 12px;
+}
+.Accident-box-inner div:last-of-type ul:last-of-type li table tr:first-of-type td{
+	width: 32%;
+	text-align: center;
+	color: #3366ff;
+	line-height: 200%;
+	font-size: 1em;
+	border-bottom: 1px solid #3366ff;
+}
+/*事故风险评估结束*/
+/*施工占道交通管制模块*/
+.traffic-control{
+	width: 100%;
+	height: 100%;
+}
+.traffic-control ul:first-of-type{
+	width: 100%;
+	height: 90%;
+}
+.traffic-control ul:first-of-type li{
+	width: 100%;
+	height: 100%;
+	float: left;
+	
+}
+.traffic-control ul:first-of-type li table{
+	width: 100%;
+	height: 98%;
+/*	margin: 1%;*/
+	border: 1px solid rgba(51,102,255,0.5);
+}
+.traffic-control ul:first-of-type li div{
+	width: 50%;
+	line-height: 250%;
+	color: #3366ff;
+	margin-left: 1%;
+}
+.traffic-control ul:first-of-type li table tr td{
+	width: 50%;
+	line-height: 200%;
+	color: #fff;
+	border-bottom: 1px solid rgba(51,102,255,0.2);
+	text-indent: 10px;	
+}
+.traffic-control ul:first-of-type li table tr td:last-of-type{
+	text-align: right;
+	padding-right: 20px;
+	
+}
+.traffic-control ul:first-of-type li table tr td:last-of-type span:first-of-type{
+	color: #33ccff;
+}
+.traffic-control ul:first-of-type li table tr td:last-of-type span:last-of-type{
+	color: #ffcc66;
+}
+
+/*施工占道交通管制模块结束*/
+/*交通流量*/
+#traffic{
+	width: 100%;
+	height: 95%;
+	margin-top: 5%;
+	
+}
+/*交通流量结束*/
+/*警力分布*/
+.distribution-title{
+	width: 100%;
+	height: 10%;
+	
+}
+.distribution-title ul{
+	width: 80%;
+	margin: 0 auto;
+}
+.distribution-title ul li{
+	float: left;
+	font-size: 10px;
+	width: 30%;
+	list-style-type: square;
+	list-style-position: inside;
+}
+.distribution-title ul li:nth-child(1){
+	color: #6699ff;
+	margin-right: 5%;
+}
+.distribution-title ul li:nth-child(2){
+	color: #00deff;
+	margin-right:  5%;
+}
+.distribution-title ul li:nth-child(3){
+	color: #ffcc66;
+}
+#policeDistribution{
+	width: 100%;
+	height: 80%;
+}
+/*警力分布结束*/
+/*************************流量专题**************************/
+/*环京车辆流量*/
+.RingBeijing-title{
+	width: 100%;
+	height: 10%;
+	margin-top:10px
+}
+.RingBeijing-title div{
+	position: relative;
+	margin-right:5%;
+	float: right;
+	font-size: 10px;
+	line-height: 200%;
+	list-style-type: square;
+	list-style-position: inside;
+	background: -webkit-linear-gradient(rgba(10,10,69,1),rgba(24,24,97,0.9)); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(rgba(10,10,69,1),rgba(24,24,97,0.9)); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(rgba(10,10,69,1),rgba(24,24,97,0.9)); /* Firefox 3.6 - 15 */
+	background: linear-gradient(rgba(10,10,69,1),rgba(24,24,97,0.9)); /* 标准的语法 */
+	display:table-cell;      /*按照单元格的样式显示元素*/
+	vertical-align:bottom;   /*底对齐*/
+}
+.RingBeijing-title div:nth-child(1){
+	color: #6666ff;
+	text-align: left;
+	letter-spacing:1px;
+}
+.RingBeijing-title div:nth-child(1) span:nth-child(1){
+	font-size: 12px;
+		
+}
+.RingBeijing-title div:nth-child(1) span:nth-child(2){
+	color: #fff;
+	
+}
+.RingBeijing-title div:nth-child(1) span:nth-child(3){
+	color: #fd4747;
+}
+.RingBeijing-title div:nth-child(2){
+	color: #29adeb;
+	text-align: left;
+	letter-spacing:2px;
+	float:left;
+	margin-left:5%;
+}
+.RingBeijing-title div:nth-child(2) span:nth-child(1){
+	font-size: 12px;
+		
+}
+.RingBeijing-title div:nth-child(2) span:nth-child(2){
+	color: #fff;
+	
+}
+.RingBeijing-title div:nth-child(2) span:nth-child(3){
+	color: #fd4747;
+}
+#RingBeijing{
+	width: 100%;
+	height: 90%;
+	overflow: hidden;
+}
+/*环京车辆流量结束*/
+
+
+/*环省车辆流量结束*/
+#RingProvince{
+	width: 100%;
+	height: 90%;
+	overflow: hidden;
+}
+/*环省车辆流量结束*/
+
+/*实时通行车辆类型*/
+#RealTimeVehicle{
+	width: 100%;
+	height: 100%;
+}
+/*实时通行车辆类型结束*/
+
+
+
+/*重点车辆模块*/
+.DangerousVehicle{
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+.DangerousVehicle div:nth-child(1){
+	width: 100%;
+	line-height:200%;
+	text-align: center;
+	font-size: 1em;
+	color: #ffcc33;
+	margin-top: 5%;
+}
+#DangerousVehicle{
+	height:40%;
+	width: 100%;
+}
+#PassengerVehicles{
+	height:40%;
+	width: 100%;
+}
+.DangerousVehicle div:nth-child(3) div:nth-child(1){
+	line-height: 100%;
+	text-align: center;
+	font-size: 1em;
+	color: #fff;
+}
+.DangerousVehicle div:nth-child(3) div:nth-child(2){
+	line-height: 200%;
+	text-align: center;
+	font-size: 1em;
+	color: #305ff1;
+}
+.DangerousVehicle div:nth-child(3) div:nth-child(2) span{
+	font-size: 1.2em;
+	padding-left: 5px;
+}
+.DangerousVehicle div:nth-child(3) div:nth-child(3){
+	line-height: 200%;
+	text-align: center;
+	font-size: 1em;
+	color: #305ff1;
+}
+.DangerousVehicle div:nth-child(3) div:nth-child(3) span{
+	font-size: 1.2em;
+	padding-left: 5px;
+}
+
+#Illegality{
+	height: 100%;
+	width: 100%;
+}
+
+
+/*重点车事故*/
+.KeyCarAccident{
+	width: 100%;
+	height: 10%;
+
+}
+.KeyCarAccident form{
+	width: 100%;
+}
+.KeyCarAccident form select{
+	background-color: #16256f;
+	height: 2em;
+	color: #fff;
+	font-size: 12px;
+	line-height: 2em;
+	border: 1px solid #3366ff;
+	width: 90%;
+	margin-left: 5%;
+}
+.KeyCarAccident ul{
+	width: 90%;
+	clear: both;
+	margin-left: 5%;
+	
+}
+.KeyCarAccident ul li{
+	float: left;
+	font-size: 10px;
+	color: #8b92b7;
+	line-height: 2em;
+	margin-right: 2px;
+	background-color: #16256f;
+	margin-top: 1em;
+	padding: 0 0.5em;
+	cursor: pointer;
+}
+.KeyCarAccident ul li:hover{
+	color: #fff;
+	background-color: #4a77ff;
+}
+#KeyCarAccident-chart{
+	width: 100%;
+	height: 80%;
+	
+}
+#incidentrStatisticsChart{
+	width: 100%;
+	height: 80%;
+	
+}
+/*重点车事故结束*/
+
+/*重点车违法*/
+#KeyCarIllegality-chart{
+	height:70%;
+	width: 100%;
+}
+/*重点车违法结束*/
+
+
+
+/*重点车流量*/
+.KeyCarFlow-title{
+	width: 100%;
+	clear: both;
+}
+.KeyCarFlow-title div{
+	width: 98%;
+	margin: 0 auto;
+	clear: both;
+}
+.KeyCarFlow-title div ul li:nth-child(1){
+	color: #ffcc33;
+	font-size: 10px;
+	line-height: 200%;
+	width: 49%;
+	float: left;
+	padding-left: 5%;
+	background: -webkit-linear-gradient(rgba(51,102,255,0), rgba(51,102,255,0.2)); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(rgba(51,102,255,0), rgba(51,102,255,0.2)); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(rgba(51,102,255,0), rgba(51,102,255,0.2)); /* Firefox 3.6 - 15 */
+	background: linear-gradient(rgba(51,102,255,0), rgba(51,102,255,0.2)); /* 标准的语法 */
+}
+.KeyCarFlow-title div ul li:nth-child(1) span{
+	font-size: 12px;
+}
+.KeyCarFlow-title div ul li:nth-child(2){
+	width: 49%;
+	padding-right: 5%;
+	color: #fff;
+	font-size: 10px;
+	line-height: 200%;
+	float: right;
+	text-align: right;
+	background: -webkit-linear-gradient(rgba(51,102,255,0), rgba(51,102,255,0.2)); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(rgba(51,102,255,0), rgba(51,102,255,0.2)); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(rgba(51,102,255,0), rgba(51,102,255,0.2)); /* Firefox 3.6 - 15 */
+	background: linear-gradient(rgba(51,102,255,0), rgba(51,102,255,0.2)); /* 标准的语法 */
+}
+.KeyCarFlow-title div ul li:nth-child(2) span{
+	font-size: 12px;
+	color: #fd4747;
+	font-weight: 900;
+}
+.KeyCarFlow-inner{
+	width: 90%;
+	margin: 0 auto;
+	clear: both;
+
+}
+.KeyCarFlow-inner div{
+	width: 100%;
+	
+}
+.KeyCarFlow-inner-title{
+	width: 100%;
+	height: 3em;
+	clear: both;
+	padding-top: 1em;
+	border-bottom: 1px solid rgba(51,153,255,0.3);
+	cursor:pointer
+}
+.KeyCarFlow-inner-title div:nth-child(1){
+	width:25%;
+	font-size: 10px;
+	line-height: 100%;
+	color: #fff;
+	float: left;
+}
+.KeyCarFlow-inner-title div:nth-child(2){
+	float: left;
+	width: 60%;
+	height: 10px;
+	background: #00CEFF;
+	margin-right: 10px;
+	border-radius: 5px;
+	margin-top:0.25em;
+}
+.KeyCarFlow-inner-title div:nth-child(3){
+	width:10%;
+	font-size: 10px;
+	line-height: 100%;
+	color: #fff;
+	float: left;
+}
+.KeyCarFlow-inner-box{
+	width: 100%;
+}
+.KeyCarFlow-inner-box-chart{
+	width: 100%;
+}
+.KeyCarFlow-inner-box-chart-bar{
+	width: 100%;
+	height: 1em;
+	margin: 1em 0;
+	padding-bottom: 20px;
+	border-bottom: 1px solid rgba(51,153,255,0.3);
+	clear: both;
+}
+.KeyCarFlow-inner-box-chart-bar div:nth-child(1){
+	width:25%;
+	font-size: 10px;
+	line-height: 100%;
+	color: #5758e2;
+	float: left;
+}
+.KeyCarFlow-inner-box-chart-bar div:nth-child(2){
+	float: left;
+	width: 50%;
+	height: 10px;
+	background-image: url(../images/board/scale.png);
+	background-repeat-x: repeat;
+	background-size:auto;
+	margin-right: 10px;
+}
+.KeyCarFlow-inner-box-chart-bar div:nth-child(3){
+	width:15%;
+	line-height: 100%;
+	font-size: 10px;
+	color: #fff;
+	float: left;
+}
+.KeyCarFlow-inner-box-list{
+	width: 100%;
+}
+.KeyCarFlow-inner-box-list div{
+	width: 40%;
+	float: left;
+	font-size: 0.5em;
+	color: #fff;
+	line-height: 200%;
+	margin: 0 5%;
+	text-align: center;
+}
+.KeyCarFlow-inner-box-list div ul h4{
+	line-height: 100%;
+	font-size:10px;
+}
+.KeyCarFlow-inner-box-list div ul li{
+	list-style-type:decimal;
+	list-style-position: inside;
+	font-size:10px;
+}
+/*重点车流量结束*/
+
+
+
+/*京哈高速沿线执法检查站登记情况*/
+.station-title{
+	width: 100%;
+	height:10%
+}
+.station-title ul{
+	width: 90%;
+	margin: 0 auto;
+}
+.station-title ul li{
+	width: 30%;
+	float: left;
+	font-size: 12px;
+	line-height: 200%;
+	text-align: center;
+	list-style-type: square;
+	list-style-position: inside;
+}
+.station-title ul li:nth-child(1){
+	color: #00ccff;
+	margin-right: 5%;
+}
+.station-title ul li:nth-child(2){
+	color: #0066ff;
+	margin-right: 5%;
+}
+.station-title ul li:nth-child(3){
+	color: #ffcc33;
+}
+#station-chart{
+	height: 90%;
+	width: 100%;
+}
+/*京哈高速沿线执法检查站登记情况结束*/
+/*今日事故新样式*/
+.malfunction{
+	position: relative;
+	width: 100%;
+	height: 70%;
+	margin-top: 30%;
+}
+.malfunction1{
+	position: relative;
+	width: 100%;
+	height: 70%;
+	margin-top: 30%;
+	background-image: url(../images/malfunction1.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size:auto 100%;
+}
+
+
+.malfunction1 div:nth-child(1){
+	position: absolute;
+	top:10%;
+	left: 5%;
+	color: #fff;
+	font-size:12px;
+}
+.malfunction1 div span:nth-child(1){
+	color: #f4c333;
+}
+.malfunction1 div span:nth-child(2){
+	color: #ff4c4c;
+}
+.malfunction1 div:nth-child(2){
+	position: absolute;
+	top:20%;
+	left: 70%;
+	color: #fff;
+}
+.malfunction1 div:nth-child(3){
+	position: absolute;
+	top:35%;
+	left: 5%;
+	color: #fff;
+}
+.malfunction1 div:nth-child(4){
+	position: absolute;
+	top:45%;
+	left: 70%;
+	color: #fff;
+}
+.malfunction1 div:nth-child(5){
+	position: absolute;
+	top:60%;
+	left: 5%;
+	color: #fff;
+}
+.malfunction1 div:nth-child(6){
+	position: absolute;
+	top:62%;
+	left: 70%;
+	color: #fff;
+}
+#sgsl0{
+	color:#E7B933
+}
+#sgsl1{
+	color:#E7B933
+}
+#sgsl2{
+	color:#E7B933
+}
+#sgsl3{
+	color:#E7B933
+}
+#sgsl4{
+	color:#E7B933
+}
+#sgsl5{
+	color:#E7B933
+}
+
+/*今日事故2测试结束*/
+
+
+
+/*进京进省车辆户籍*/
+.register-title{
+	width: 100%;
+	height: 15%;
+}
+.register-title ul{
+	width: 40%;
+	margin: 2.5% auto;
+}
+.register-title ul li{
+	float: left;
+	font-size: 1em;
+	width: 45%;
+	list-style-type: square;
+	list-style-position: inside;
+}
+.register-title ul li:nth-child(1){
+	color: #6699ff;
+	margin-right: 5%;
+}
+.register-title ul li:nth-child(2){
+	color: #00deff;
+	margin-right:  5%;
+}
+.register-title ul li:nth-child(3){
+	color: #ffcc66;
+}
+
+
+#register{
+	height: 80%;
+	width: 100%;
+}
+/*进京进省车辆户籍结束*/
+
+
+/*暑期首页-天气开始*/
+
+.summer-weathe{
+	width: 100%;
+	height: 50%;
+	overflow: hidden;
+}
+.summer-weathe-box{
+	width: 15%;
+	height: 100%;
+	float: left;
+}
+.summer-weathe-box:last-of-type{
+	width: 25%;
+	height: 100%;
+	float: right;
+	background-image: url(../images/board/Rainstorm.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain auto; 
+}
+.summer-weathe-state{
+	height: 40%;
+	width: 50%;
+	margin:10% 25% 0 25%;
+	display:flex;
+	flex-direction:row;
+	position: relative;
+
+}
+.summer-weathe-state div:nth-child(1){
+	width: 16px;
+	height: 16px;
+	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.summer-weathe-state div:nth-child(1) img{
+	float:left
+	
+}
+.summer-weathe-state div:nth-child(2){
+	width: 12px;
+	height: 12px;
+	line-height: 100%;
+	color: #0066ff;
+	position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+	
+}
+.summer-weathe-state div:nth-child(2) div{
+	float: right;
+	text-align: right;
+	width: auto;
+	height: auto;
+}
+.summer-weathe-city{
+	height: 50%;
+	width: 100%;
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+	line-height: 200%;
+	
+}
+.summer-weathe-inner{
+	width: 95%;
+	height: 45%;
+	margin-left: 2.5%;
+	clear: both;
+	box-shadow:inset 0px 0px 18px #fc4646;
+	position: relative;
+	overflow: hidden;
+	text-align:center;
+	color: #fff;
+}
+.summer-weathe-inner ul:nth-child(1){
+	width: 100%;
+	height: 80%;
+	clear: both;
+	overflow: hidden;
+}
+.summer-weathe-inner ul:nth-child(1) li{
+	float: left;
+	width: 90%;
+	height: 95%;
+	line-height: 200%;
+	padding:2.5% 5%;
+	font-size: 12px;
+	color: #fff;
+	position: relative;
+}
+.summer-weathe-inner ul:nth-child(1) li div{
+	position: absolute;
+	width: 90%;
+	top: 50%;
+    transform: translateY(-50%);
+	word-break: break-all;
+}
+.summer-weathe-inner ul:nth-child(2){
+	width: 100%;
+	height: 10%;
+	clear: both;
+	position: absolute;
+	bottom: 10px;
+	right: 5px;
+}
+.summer-weathe-inner ul:nth-child(2) li{
+	float: right;
+	margin-right: 1%;
+	color: #61234d;
+	cursor: pointer;
+}
+/*暑期首页-天气结束*/
+
+
+
+
+
+
+
+/*拥堵指数开始*/
+
+.congestionIndex{
+	width: 100%;
+	height:50%;
+}
+.congestionIndex-box{
+	width: 60px;
+	height:60px;
+	border-radius: 100%;
+	border: 3px dashed #00ff99;
+	margin:0px auto 0 auto;
+	position: relative;
+	
+}
+.congestionIndex-box div:nth-child(1){
+	position: absolute;
+	text-align: center;
+	width:100%;
+	line-height:100%;
+	font-size: 10px;
+	color: #00ff99;
+	top: 30%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.congestionIndex-box div:nth-child(2){
+	position: absolute;
+	text-align: center;
+	line-height:100%;
+	color: #00ff99;
+	top: 55%;
+	font-size: 14px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.congestionIndex-table{
+	width: 90%;
+	height: 40%;
+	margin: 0 5%;
+	color: #fff;
+	overflow: hidden;
+}
+.congestionIndex-table table{
+	width: 80%;
+	margin: 0 auto;
+	font-size:12px;
+	font-weight:100;
+
+}
+.congestionIndex-table table tr{
+	height:20%
+}
+.congestionIndex-table table tr td:nth-child(1){
+	text-align: left;
+	line-height:150%;
+}
+.congestionIndex-table table tr td:nth-child(2){
+	text-align: center;
+	line-height:150%;
+}
+/*拥堵指数结束*/
+
+
+
+
+
+
+/*任务进度*/
+.TaskSchedule{
+	height: 20%;
+	width: 100%;
+	position: relative;
+	
+}
+.TaskSchedule span{
+	margin-right: 20px;
+	color: #fff;
+	font-size: 10px;
+	line-height: 400%;
+}
+.TaskSchedule span:nth-child(1){
+	margin-left: 20px;
+	color: #f4c334;
+}
+.TaskSchedule form{
+	position: absolute;
+	top: 15px;
+	right: 20px;
+}
+.TaskSchedule form select{
+	background-color: #061058;
+	border: 1px solid #101f7d;
+	color: #fff;
+}
+.TaskSchedule-inner{
+	position: relative;
+	width: 100%;
+	height: 80%;
+}
+.TaskSchedule-inner div:nth-child(1){
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	transform: translateY(-50%);
+	width: 80%;
+	height: 4px;
+	background: -webkit-linear-gradient(left, #153e8f , #3399ff); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(right, red, #153e8f , #3399fflue); /* Firefox 3.6 - 15 */
+	background: linear-gradient(to right, #153e8f , #3399ff); /* 标准的语法 */
+}
+/*开始图标*/
+.TaskSchedule-inner div:nth-child(2){
+	width: 10%;
+	height: 25%;
+	background-image: url(../images/board/start.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-100%);
+	left: 6%;
+}
+/*结束图标*/
+.TaskSchedule-inner div:nth-child(3){
+	width: 10%;
+	height: 25%;
+	background-image: url(../images/board/End.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-100%);
+	left: 84%;
+}
+/*进度图标*/
+.TaskSchedule-inner div:nth-child(4){
+	width: 15%;
+	height: 15%;
+	background-image: url(../images/board/Pointer.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left:30%;
+}
+/*收费站名称*/
+.TaskSchedule-inner div:nth-child(5){
+	width: 12%;
+	text-align: center;
+	padding: 0 5px;
+	border: 1px solid #0e2773;
+	border-radius: 3px;
+	background: center;
+	font-size: 10px;
+	line-height: 200%;
+	color: #fff;
+	position: absolute;
+	top: 65%;
+	left: 30%;
+	min-width: 100px;
+}
+/*当前任务进度*/
+.TaskSchedule-inner div:nth-child(6){
+	width: 12%;
+	text-align: center;
+	letter-spacing: 2px;
+	padding: 0 5px;
+	background-color: rgba(51,153,255,0.25);
+	color: #37e163;
+	border-radius: 3px;
+	font-size: 10px;
+	line-height: 200%;
+	position: absolute;
+	top: 20%;
+	left: 30%;
+	min-width: 100px;
+}
+/*任务进度结束*/
+
+
+
+/*警卫任务开始*/
+
+#GuardTask1{
+	width: 50%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+}
+#GuardTask2{
+	width: 50%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+}
+#GuardTask3{
+	width: 30%;
+	height: 100%;
+	float: left;
+	position:relative;
+}
+.GuardTask3-box{
+	width: 55px;
+	height:55px;
+	border-radius: 100%;
+	border: 2px dashed #00d2f3;
+	margin:0 auto 0 auto;
+	position: relative;
+	top: 60%;
+	transform: translateY(-50%);
+	
+	
+}
+
+#GuardTask3 div:nth-child(2){
+	position: absolute;
+	text-align: center;
+	line-height:100%;
+	width:100%;
+	font-size: 10px;
+	color: #00d2f3;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+#GuardTask3 div:nth-child(3){
+	position: absolute;
+	text-align: center;
+	line-height:100%;
+	color: #00d2f3;
+	top: 60%;
+	font-size: 14px;
+	font-weight:700;
+	left: 50%;
+	transform: translateX(-50%);
+}
+/*警卫任务结束*/
+
+
+
+
+
+/*勤务安排*/
+.DutyArrange-box{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.DutyArrange-box ul{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.DutyArrange-box ul li{
+	width: 100%;
+	height:100%;
+	position: absolute;
+	top:0;
+	left:0;
+}
+/*.DutyArrange-box-category{
+	width: 100%;
+	height:100%;
+}
+.DutyArrange-box-category-left{
+	width: 30%;
+	height:100%;
+	float: left;
+}
+.DutyArrange-box-category-left div{
+	width: 100%;
+	height: 50%;
+	position: relative;
+}
+.DutyArrange-box-category-left div div:nth-child(1){
+	position: absolute;
+	width: 10%;
+	height: 10%;
+	text-align: center;
+	left: 40%;
+	color: #00ff99;
+	top: 20%;
+	transform: translateX(-50%);
+}
+.DutyArrange-box-category-left div div:nth-child(2){
+	position: absolute;
+	width: 10%;
+	height: 10%;
+	text-align: center;
+	left: 60%;
+	color: #9933ff;
+	top: 20%;
+	transform: translateX(-50%);
+}
+.DutyArrange-box-category-left div div:nth-child(3){
+	position: absolute;
+	width: 20%;
+	height: 50%;
+	left: 40%;
+	transform: translateX(-50%);
+	top: 25%;
+	background-image: url(../images/Three-dimensional.png);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size: contain auto;
+}
+.DutyArrange-box-category-left div div:nth-child(4){
+	position: absolute;
+	width: 20%;
+	height: 50%;
+	left: 60%;
+	transform: translateX(-50%);
+	top: 25%;
+	background-image: url(../images/Three-dimensional1.png);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size: contain auto;
+}
+.DutyArrange-box-category-left div div:nth-child(5){
+	position: absolute;
+	width: 100%;
+	height: 10%;
+	top: 85%;
+	text-align: center;
+	color: #fff;
+}*/
+/*图表*/
+#DutyArrange-box-category-right{
+	width: 70%;
+	height:100%;
+	float: left;
+	overflow: hidden;
+}
+
+/*表格第二屏幕*/
+.DutyArrange-box>ul>li{
+	width: 100%;
+	height: 100%;
+	overflow: hidden !important;
+}
+.DutyArrange-box>ul>li>table{
+	width: 380px;
+	height: 100%;
+	margin:0 10px;
+	overflow: hidden !important;
+	font-size: 12px;
+}
+.DutyArrange-box>ul>li>table>tbody{
+	width:100%;
+}
+.DutyArrange-box>ul>li>table>tbody>tr {
+	width:100%;
+}
+.DutyArrange-box>ul>li>table>tbody>tr>td{
+	overflow: hidden;
+	text-align: center;
+}
+.DutyArrange-box>ul>li>table>tbody>tr:nth-child(1){
+	border-bottom: 1px solid #1f1fb5;
+	color: #fff;
+}
+.DutyArrange-box>ul>li>table>tbody tr:nth-child(2){
+	color: #00ff99;
+}
+.DutyArrange-box>ul>li>table>tbody>tr:nth-child(3){
+	color: #00dcff;
+	background-color: rgba(51,51,255,0.1);
+}
+.DutyArrange-box>ul>li>table>tbody>tr:nth-child(4){
+	color: #00dcff;
+}
+.DutyArrange-box ul li table tbody tr:nth-child(5){
+	color: #ffcc00;
+	background-color: rgba(51,51,255,0.1);
+}
+.DutyArrange-box ul li table tbody tr:nth-child(6){
+	color: #dd2b60;
+}
+.DutyArrange-box ul li table tbody tr:nth-child(7){
+	color: #dd2b60;
+	background-color: rgba(51,51,255,0.1);
+}
+.DutyArrange-box ul li table tbody tr td:nth-child(1){
+	width:20%;
+}
+.DutyArrange-box>ul>li>table tbody tr td:nth-child(2){
+	width:30%;
+	padding:0 2.5%;
+}
+.DutyArrange-box>ul>li>table>tbody>tr>td:nth-child(3){
+	width:45%;
+	text-align: center;
+	display:block;
+}
+/*轮播小点*/
+
+/*勤务安排结束*/
+
+
+/*安检工作*/
+.SecurityCheck{
+	width: 100%;
+	height: 100%;
+}
+
+
+.SecurityCheck table{
+	width: 90%;
+	margin: 0 auto;
+	height: 100%;
+	color: #fff;
+	text-align: center;
+}
+.SecurityCheck table tr{
+	height:12%;
+}
+
+.SecurityCheck table tr:nth-child(1) td span{
+	padding: 0 7px;
+	line-height: 180%;
+	display: inline-block;
+	border-radius: 5px;
+}
+.SecurityCheck table tr td {
+	width: 16%;
+	overflow: hidden;
+}
+.SecurityCheck table tr td:nth-child(1) {
+	width: 20%;
+}
+.SecurityCheck table tr:nth-child(1) td:nth-child(2) span{
+	background: -webkit-linear-gradient(left, rgba(254,146,20,0.3) ,rgba(255,204,51,0.3)); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(right, rgba(254,146,20,0.3) ,rgba(255,204,51,0.3)); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(right, rgba(254,146,20,0.3) ,rgba(255,204,51,0.3)); /* Firefox 3.6 - 15 */
+	background: linear-gradient(to right, rgba(254,146,20,0.3) ,rgba(255,204,51,0.3)); /* 标准的语法 */
+	color: #ffcc00;
+}
+.SecurityCheck table tr:nth-child(1) td:nth-child(3) span{
+	background: -webkit-linear-gradient(left, rgba(102,0,204,0.3) ,rgba(0,102,255,0.3)); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(right, rgba(102,0,204,0.3) ,rgba(0,102,255,0.3)); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(right, rgba(102,0,204,0.3) ,rgba(0,102,255,0.3)); /* Firefox 3.6 - 15 */
+	background: linear-gradient(to right, rgba(102,0,204,0.3) ,rgba(0,102,255,0.3)); /* 标准的语法 */
+	color: #fe0002;
+}
+.SecurityCheck table tr:nth-child(1) td:nth-child(4) span{
+	background: -webkit-linear-gradient(left, rgba(0,255,153,0.3) ,rgba(0,204,255,0.3)); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(right, rgba(0,255,153,0.3) ,rgba(0,204,255,0.3)); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(right, rgba(0,255,153,0.3) ,rgba(0,204,255,0.3)); /* Firefox 3.6 - 15 */
+	background: linear-gradient(to right, rgba(0,255,153,0.3) ,rgba(0,204,255,0.3)); /* 标准的语法 */
+	color: #00f697;
+}
+.SecurityCheck table tr:nth-child(1) td:nth-child(5) span{
+	background: -webkit-linear-gradient(left, rgba(0,255,153,0.3) ,rgba(0,204,255,0.3)); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(right, rgba(0,255,153,0.3) ,rgba(0,204,255,0.3)); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(right, rgba(0,255,153,0.3) ,rgba(0,204,255,0.3)); /* Firefox 3.6 - 15 */
+	background: linear-gradient(to right, rgba(0,255,153,0.3) ,rgba(0,204,255,0.3)); /* 标准的语法 */
+	color: #00f697;
+}
+.SecurityCheck table tr:nth-child(1) td:nth-child(6) span{
+	background: -webkit-linear-gradient(left, rgba(0,255,153,0.3) ,rgba(0,204,255,0.3)); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(right, rgba(0,255,153,0.3) ,rgba(0,204,255,0.3)); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(right, rgba(0,255,153,0.3) ,rgba(0,204,255,0.3)); /* Firefox 3.6 - 15 */
+	background: linear-gradient(to right, rgba(0,255,153,0.3) ,rgba(0,204,255,0.3)); /* 标准的语法 */
+	color: #00f697;
+}
+.SecurityCheck table tr{
+	border-bottom:1px solid rgba(51,51,255,0.2);
+}
+/*安检工作结束*/
+
+
+
+
+
+
+
+
+/*实时交通开始*/
+.tmc{
+	width: 100%;
+	height: 100%;
+	clear: both;
+	overflow: hidden;
+}
+#tmc-TrafficJam{
+	width: 50%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+}
+#tmc-control{
+	width: 50%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+}
+
+/*实时交通结束*/
+
+
+
+/*暑期安保首页-交通事故*/
+
+.TrafficAccident{
+	width: 100%;
+	height: 10%;
+}
+.TrafficAccident ul{
+	float: right;
+}
+.TrafficAccident ul li{
+	float: left;
+	font-size: 10px;
+	line-height: 150%;
+	color:#8888be;
+	background-color:#10107d ;
+	padding: 0 10px;
+	margin: 0 10px;
+	cursor: pointer;
+}
+.TrafficAccident ul li:hover{
+	color: #fff;
+	background-color:#3333ff ;
+}
+#TrafficAccident{
+	width: 100%;
+	height:90%;
+	overflow: hidden;
+}
+
+/*暑期安保首页-交通事故结束*/
+
+
+
+/*通行车辆-实时5min断面流量演变*/
+.SectionFlowEvolution-title{
+	width: 100%;
+	height: 30%;
+}
+.SectionFlowEvolution-title .SectionFlowEvolution-title-box{
+	width: 50%;
+	height: 100%;
+	float: right;
+	position: relative;
+}
+.SectionFlowEvolution-title-btn{
+	float: right;
+	position: relative;
+	width: auto;
+}
+.SectionFlowEvolution-title-btn ul li{
+	float: left;
+	font-size: 12px;
+	line-height: 22px;
+	height: 22px;
+	width: 54px;
+	text-align: center;
+	color:#8d90b2 ;
+	background-image: url(../images/btn.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 10px;
+	cursor: pointer;
+}
+.SectionFlowEvolution-title-btn ul li:hover{
+	color: #fff;
+	background-image: url(../images/btn-active.png);
+}
+.SectionFlowEvolution-title-box div{
+	position: absolute;
+}
+.SectionFlowEvolution-title-box div:nth-child(1){
+	top: 50%;
+	left: 0%;
+	transform: translateY(-50%);
+	color: #fff;
+	font-size: 12px;
+	line-height: 12px;
+	height: 12px;
+	width: 10%;
+	text-align: center;
+}
+.SectionFlowEvolution-title-box div:nth-child(2){
+	top: 50%;
+	left: 10%;
+	width: 80%;
+	height: 4px;
+	transform: translateY(-2px);
+	background-color: #001053;
+	font-size: 12px;
+}
+.SectionFlowEvolution-title-box div:nth-child(3){
+	top: 50%;
+	left: 10%;
+	width: 30%;
+	height: 4px;
+	transform: translateY(-2px);
+	background-color: #0052d6;
+	font-size: 12px;
+}
+.SectionFlowEvolution-title-box div:nth-child(4){
+	top: 50%;
+	left: 90%;
+	transform: translateY(-50%);
+	color: #fff;
+	font-size: 12px;
+	line-height: 12px;
+	height: 12px;
+	width: 10%;
+	text-align: center;
+}
+.SectionFlowEvolution-title-box div:nth-child(5){
+	color: #0052d6;
+	font-size: 12px;
+	left: 40%;
+	top: -30%;
+	transform: translateX(-12px);
+}
+.SectionFlowEvolution-title-box div:nth-child(6){
+	width: 6px;
+	height: 10px;
+	background-image: url(../images/Ruler.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain auto;
+	left: 40%;
+	top: 50%;
+	transform: translateX(-50%);
+	transform: translatey(-5px);
+	
+}
+.SectionFlowEvolution-chart{
+	height: 70%;
+	width: 100%;
+}
+#SectionFlowEvolution-Beijing , #SectionFlowEvolution-Shenyang{
+	height: 100%;
+	width: 50%;
+	float: left;
+}
+/*通行车辆-实时5min断面流量演变结束*/
+
+
+
+/*通行车辆-通行流量*/
+.TrafficFlow-WaterPolo-top{
+	width: 100%;
+	height: 30%;
+}
+.TrafficFlow-WaterPolo-top ul li {
+	width: 50%;
+	height: 100%;
+	float: left;
+	font-size: 12px;
+	text-align: center;
+	line-height: 300%;
+}
+.TrafficFlow-WaterPolo-top ul li:nth-child(1){
+	color: #00ff99;
+}
+.TrafficFlow-WaterPolo-top ul li:nth-child(2){
+	color: #9933ff;
+}
+.TrafficFlow-WaterPolo-top ul li span{
+	font-size: 16px;
+}
+.TrafficFlow-WaterPolo-box{
+	width: 100%;
+	height: 70%;
+	overflow: hidden;
+}
+.TrafficFlow-WaterPolo-Total ,.TrafficFlow-WaterPolo-KeyVehicles{
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+#TrafficFlow-WaterPolo-Total-Up , #TrafficFlow-WaterPolo-Total-down , #TrafficFlow-WaterPolo-KeyVehicles-Up , #TrafficFlow-WaterPolo-KeyVehicles-down{
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+/*通行车辆-通行流量结束*/
+
+
+
+
+
+/*通行车辆-24小时流量变化趋势*/
+#FlowChange{
+	width: 95%;
+	height: 100%;
+}
+/*通行车辆-24小时流量变化趋势结束*/
+
+
+
+
+/*通行车辆-户籍地分布*/
+#DomicilePlaceDistribution{
+	width: 100%;
+	height: 100%;
+}
+
+
+
+/*通行车辆-车辆类型分布*/
+.vehicleType{
+	width: 100%;
+	height: 10%;
+}
+.vehicleType ul li{
+	float: left;
+	width: 40%;
+	height: 100%;
+	line-height: 300%;
+	font-size: 12px;
+}
+.vehicleType ul li:hover{
+	color: #005ff1;
+}
+.vehicleType ul li span:hover{
+	border-bottom: 1px solid #005ff1;
+}
+.vehicleType ul li:nth-child(1){
+	text-align: right;
+	color: #005ff1;
+	margin-right: 20px;
+}
+.vehicleType ul li:nth-child(1) span{
+	border-bottom: 1px solid #005ff1;
+	cursor: pointer;
+}
+.vehicleType ul li:nth-child(2){
+	text-align: left;
+	color: #003399;
+	margin-right: 20px;
+}
+.vehicleType ul li:nth-child(2) span{
+	border-bottom: 1px solid #003399;
+	cursor: pointer;
+}
+
+#vehicleTypeChart{
+	width: 100%;
+	height: 90%;
+}
+
+/*通行车辆-车辆类型分布结束*/
+
+
+
+/*通行车辆-交通流量*/
+.vehicleTrafficFlow{
+	width: 100%;
+	height: 10%;
+}
+.vehicleTrafficFlow ul li{
+	width: 50%;
+	float: left;
+	line-height: 300%;
+	list-style-type: disc;
+	list-style-position: inside;
+	text-align: center;
+}
+
+.vehicleTrafficFlow ul li:nth-child(1){
+	color: #00ff99;
+	
+}
+.vehicleTrafficFlow ul li:nth-child(2){
+	color: #fe0002;
+}
+#vehicleFromDiv{
+	width: 90%;
+	height: 90%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+
+/*通行车辆-两客一危*/
+#twoKeOneWayDiv{
+	width: 100%;
+	height: 100%;
+}
+/*通行车辆-两客一危结束*/
+/*通行车辆-交通流量结束*/
+
+
+/*暑期安保首页-实时5min断面流量演化*/
+#realTimeFloweVolution-Bingjing{
+	width: 100%;
+	height: 50%;
+}
+#realTimeFloweVolution-Shenyang{
+	width: 100%;
+	height: 50%;
+}
+
+/*暑期安保首页-实时5min断面流量演化结束*/
+
+
+
+/*暑期安保首页-通行车辆*/
+
+.CurrentVehicle-inner{
+	width: 100%;
+	height: 80%;
+	clear: both;
+}
+#CurrentVehicle-jh{
+	width: 100%;
+	height: 100%;
+}
+#CurrentVehicle-hq{
+	float:left;
+	width: 50%;
+	height: 100%;
+}
+.CurrentVehicle-title{
+	width: 100%;
+	height: 20%;
+	float: right;
+}
+.CurrentVehicle-title ul{
+	float: right;
+}
+.CurrentVehicle-title ul li{
+	float:left;
+	font-size: 10px;
+	margin: 5px 10px 0 10px;
+	list-style-type:square;
+	list-style-position: inside;
+}
+.CurrentVehicle-title ul li:nth-child(1){
+	color: #00ff99;
+}
+.CurrentVehicle-title ul li:nth-child(2){
+	color: #fe0002;
+}
+.CurrentVehicle-title ul li:nth-child(3){
+	color: #ffcc00;
+}
+/*暑期安保首页-通行车辆结束*/
+
+
+
+
+/*交通事故-交通事故开始*/
+.TransportationAccident{
+	width: 100%;
+	height: 60%;
+	clear: both;
+}
+
+#TransportationAccident-Chart{
+	width: 40%;
+	height: 100%;
+	float: left;	
+}
+#TransportationAccident-legend{
+	width: 60%;
+	height: 100%;
+	float: left;
+}
+#TransportationAccident-legend div{
+	width:30%;
+	height:100%;
+	float:left;
+	font-size:12px;
+}
+#TransportationAccident-legend>div:nth-child(2){
+		width:40%;
+}
+#TransportationAccident-legend div div{
+	color: #fff;
+	width:100%;
+	height:50%;
+	line-height:100%;
+	position: relative;
+}
+#TransportationAccident-legend div div:nth-child(1) span{
+	position: absolute;
+	display: block;
+	line-height:100%;
+	width:100%;
+	top:50%;
+	text-align: center;
+}
+#TransportationAccident-legend div div:nth-child(2) span{
+	position: absolute;
+	display: block;
+	line-height:100%;
+	width:100%;
+	top:20%;
+	font-size:1.5em;
+	font-weight:bold;
+	text-align: center;
+}
+.TransportationAccident-Handle{
+	width: 100%;
+	height: 40%;
+	overflow: hidden;
+}
+.TransportationAccident-Handle div{
+	width: 90%;
+	height: 50%;
+	margin: 0 5%;
+}
+.TransportationAccident-Handle div li{
+	width: 30%;
+	line-height: 200%;
+	float: right;
+	margin:0 1%;
+	text-align: center;
+}
+.TransportationAccident-Handle div:nth-child(1) li:nth-child(3){
+	color: #00ff99;font-size:1.5em;font-weight:bold;
+}
+
+.TransportationAccident-Handle div:nth-child(1) li:nth-child(2){
+	color: #fe0002;font-size:1.5em;font-weight:bold;
+}
+.TransportationAccident-Handle div:nth-child(1) li:nth-child(1){
+	color: #f6c402;font-size:1.5em;font-weight:bold;
+}
+
+.TransportationAccident-Handle div:nth-child(2) li:nth-child(3){
+	border-radius: 20px;
+	color: #00ff99;
+	background: -webkit-linear-gradient(left, rgba(0,255,153,0.3) , rgba(0,204,255,0.3)); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(right, rgba(0,255,153,0.3) , rgba(0,204,255,0.3)); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(right, rgba(0,255,153,0.3) , rgba(0,204,255,0.3)); /* Firefox 3.6 - 15 */
+	background: linear-gradient(to right, rgba(0,255,153,0.3) , rgba(0,204,255,0.3)); /* 标准的语法 */
+}
+.TransportationAccident-Handle div:nth-child(2) li:nth-child(2){
+	border-radius: 20px;
+	font-weight:bold;
+	color: #fe0002;
+	background: -webkit-linear-gradient(left, rgba(102,0,204,0.3) , rgba(0,102,255,0.3)); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(right, rgba(102,0,204,0.3) , rgba(0,102,255,0.3)); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(right, rgba(102,0,204,0.3) , rgba(0,102,255,0.3)); /* Firefox 3.6 - 15 */
+	background: linear-gradient(to right, rgba(102,0,204,0.3) , rgba(0,102,255,0.3)); /* 标准的语法 */
+}
+.TransportationAccident-Handle div:nth-child(2) li:nth-child(1){
+	border-radius: 20px;
+	color: #ffcc00;
+	background: -webkit-linear-gradient(left, rgba(254,146,20,0.3) , rgba(255,204,51,0.3)); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(right, rgba(254,146,20,0.3) , rgba(255,204,51,0.3)); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(right, rgba(254,146,20,0.3) , rgba(255,204,51,0.3)); /* Firefox 3.6 - 15 */
+	background: linear-gradient(to right, rgba(254,146,20,0.3) , rgba(255,204,51,0.3)); /* 标准的语法 */
+}
+.TransportationAccident-table{
+	width: 95%;
+	height: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.TransportationAccident-table table{
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	font-size: 12px;
+	line-height:100%;
+	font-weight: 100;
+	text-align: center;
+	overflow: hidden;
+	table-layout:fixed
+}
+.TransportationAccident-table table tr{
+	border-bottom: 1px solid rgba(51,153,255,0.14);
+}
+.TransportationAccident-table table tr td{
+	word-wrap:break-word;
+	overflow: hidden;
+}
+
+.TransportationAccident-table table tr td:nth-child(1){
+	width: 18%;
+	margin:0 1%;
+}
+.TransportationAccident-table table tr td:nth-child(2){
+	width: 40%;
+	word-wrap:break-word;
+	overflow: hidden;
+}
+.TransportationAccident-table table tr td:nth-child(3){
+	width: 20%;
+}
+.TransportationAccident-table table tr td:nth-child(4){
+	width: 20%;
+}
+#TransportationAccident-Stacking{
+	width: 100%;
+	height: 100%;
+}
+.TransportationAccident-table table tr:nth-child(1){
+	line-height:150%
+	color: #3399ff;
+}
+/*交通事故-交通事故结束*/
+
+
+
+
+/*交通事故-事故统计*/
+.AccidentStatistics{
+	width:100%;
+	height: 100%;
+	clear: both;
+	overflow: hidden;
+}
+.AccidentStatistics ul{
+	width: 100%;
+	height: auto;	
+	margin: auto 0;
+	
+	
+}
+.AccidentStatistics ul li{
+	width: 23%;
+	margin:20px 1% 0 1%;
+	color: #ff4c4c;
+	float: left;
+	background-color: #050a46;
+	cursor:pointer;
+	line-height:200%;
+	background-color: rgba(239,72,76,0.1);
+	
+}
+.AccidentStatistics ul li:first-of-type{
+	color: #00ccff;
+	background: -webkit-linear-gradient(rgba(51,102,255,0.05),rgba(51,102,255,0.3)); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(rgba(51,102,255,0.05),rgba(51,102,255,0.3)); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(rgba(51,102,255,0.05),rgba(51,102,255,0.3)); /* Firefox 3.6 - 15 */
+	background: linear-gradient(rgba(51,102,255,0.05),rgba(51,102,255,0.3)); /* 标准的语法 */
+}
+.AccidentStatistics ul li .Label-title{
+	width: 100%;
+	text-align: center;
+	font-size: 12px;
+	/*line-height:260%;*/
+}
+.AccidentStatistics ul li .Label-Number{
+	width: 100%;
+	text-align: center;
+	font-size: 12px;	
+	/*line-height:100%;*/
+}
+
+
+/*交通事故-事故统计结束*/
+
+
+
+/*通行车辆-24小时流量变化趋势*/
+#FlowChange{
+	width: 100%;
+	height: 100%;
+}
+/*通行车辆-24小时流量变化趋势结束*/
+
+/*通行车辆-流量路径*/
+#flow-path{
+	width: 100%;
+	height: 100%;
+}
+/*通行车辆-流量路径结束*/
+
+/*通行车辆-断面流量*/
+
+
+/*通行车辆-断面流量结束*/
+
+
+/*交通事故-事故高发类型*/
+
+.AccidentTypeTop{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-image: url(../images/malfunction1.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size:auto 100%;
+}
+
+.AccidentTypeTop div:nth-child(1){
+	position: absolute;
+	top:10%;
+	left: 15%;
+	color: #fff;
+}
+.AccidentTypeTop div span:nth-child(1){
+	color: #f4c333;
+}
+.AccidentTypeTop div span:nth-child(2){
+	color: #ff4c4c;
+}
+.AccidentTypeTop div:nth-child(2){
+	position: absolute;
+	top:20%;
+	left: 70%;
+	color: #fff;
+}
+.AccidentTypeTop div:nth-child(3){
+	position: absolute;
+	top:35%;
+	left: 15%;
+	color: #fff;
+}
+.AccidentTypeTop div:nth-child(4){
+	position: absolute;
+	top:45%;
+	left: 70%;
+	color: #fff;
+}
+.AccidentTypeTop div:nth-child(5){
+	position: absolute;
+	top:55%;
+	left: 15%;
+	color: #fff;
+}
+.AccidentTypeTop div:nth-child(6){
+	position: absolute;
+	top:70%;
+	left: 70%;
+	color: #fff;
+}
+
+
+
+
+/*交通事故-事故常发路段top*/
+
+.AccidentOftenRoad-top{
+	width: 90%;
+	height: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.AccidentOftenRoad-top table{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: #fff;
+	font-size:12px;
+}
+.AccidentOftenRoad-top table tr{
+	border-bottom: 1px solid rgba(51,153,255,0.14);
+}
+.AccidentOftenRoad-top table tr:nth-child(1) td {
+
+	line-height:150%;
+}
+.AccidentOftenRoad-top table tr td:nth-child(3){
+	color: #ffcc00;
+}
+.AccidentOftenRoad-top table tr:nth-child(1) td:nth-child(3){
+	color: #fff;
+}
+/*交通事故-事故常发路段top*/
+
+
+
+
+
+/*勤务执法-勤务安排*/
+.ServiceArrangement{
+	width: 100%;
+	height: 100%;
+}
+#ServiceArrangement-chart{
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+.ServiceArrangement-table{
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+.ServiceArrangement-table table{
+	width: 100%;
+	height: 70%;
+	margin-top:15%;
+	text-align: left;
+	color: #00ff99;
+}
+.ServiceArrangement-table table tr:nth-child(2){
+	color: #00ccff;
+}
+.ServiceArrangement-table table tr:nth-child(3){
+	color: #ffcc00;
+}
+.ServiceArrangement-table table tr td:nth-child(2){
+	font-size:1.3em;
+}
+/*勤务执法-勤务安排结束*/
+
+
+
+/*勤务执法-执法战果*/
+.LawEnforcement-Fruit-Statistics{
+	width: 100%;
+	height: 100%;
+}
+.LawEnforcement-Fruit-Statistics-box{
+	width: 30%;
+	height: 100%;
+	float: left;
+	position: relative;
+}
+.LawEnforcement-Fruit-Statistics-box-border{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 2px dashed #ffcc00;
+	border-radius: 50%;
+}
+
+.LawEnforcement-Fruit-Statistics-box-title{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 30%;
+	color: #ffcc00;
+	font-size: 12px;
+}
+.LawEnforcement-Fruit-Statistics-box-value{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 50%;
+	color: #ffcc00;
+	font-size: 14px;
+	font-weight: bold
+}
+.LawEnforcement-Fruit-Detailed{
+	width: 100%;
+	height: 70%;
+}
+.LawEnforcement-Fruit-Detailed-title{
+	width: 90%;
+	height: 20%;
+	margin: 0 auto;
+}
+.LawEnforcement-Fruit-Detailed-title table{
+	width: 100%;
+	height: 100%;
+}
+.LawEnforcement-Fruit-Detailed-title table tr td{
+	width: 50%;
+	color: #a6a6c0;
+	text-align: right;
+}
+.LawEnforcement-Fruit-Detailed-title table tr td:nth-child(2){
+	text-align: left;
+}
+.LawEnforcement-Fruit-Detailed-title table tr td span{
+	display: inline-block;
+	padding:0 20px;
+	line-height: 180%;
+	background-color: rgba(52,52,255,0.3);
+	cursor: pointer;
+	margin-top:15px;
+}
+.LawEnforcement-Fruit-Detailed-title table tr td span:nth-child(1){
+	margin-right: 5px;
+}
+.LawEnforcement-Fruit-Detailed-title table tr td span:nth-child(1){
+	margin-left: 5px;
+}
+.LawEnforcement-Fruit-Detailed-title table tr td span:hover{
+	color: #fff;
+	background-color: rgba(52,52,255,1);
+}
+
+.LawEnforcement-Fruit-inner{
+	width: 100%;
+	height: 100%;
+}
+#LawEnforcement-Fruit-inner-chart{
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+#LawEnforcement-Fruit-inner-chart-ren{
+	width: 100%;
+	height: 100%;
+	overflow:hidden;
+}
+.LawEnforcement-Fruit-inner-table{
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+.LawEnforcement-Fruit-inner-table table{
+	width: 100%;
+	height: 80%;
+	margin-top:10%;
+	text-align:left;
+	color: #9900ff;
+	
+	
+}
+.LawEnforcement-Fruit-inner-table table tr:nth-child(2){
+	color:#00ff99;
+	}
+.LawEnforcement-Fruit-inner-table table tr:nth-child(3){
+	color:#ffcc33;
+	}
+.LawEnforcement-Fruit-inner-table table tr:nth-child(4){
+	color:#ff3366;
+	}
+.LawEnforcement-Fruit-inner-table table tr td:nth-child(2){
+	font-size:1.3em;
+	}
+.LawEnforcement-Fruit-Statistics-box-margin{
+	margin-right: 5%;
+}
+.border-color-cyan{
+	border-color: #00d2f3;
+}
+.color-cyan{
+	color: #00d2f3;
+}
+
+.border-color-green{
+	border-color: #00ff99;
+}
+.color-green{
+	color: #00ff99;
+}
+#LawEnforcement-Fruit-bar{
+	width: 100%;
+	height: 100%;
+}
+#LawEnforcement-Fruit-Statistics{
+	width: 100%;
+	height: 20%;
+	position: relative;
+}
+
+#LawEnforcement-Fruit-Statistics ul{
+	width: 90%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 5%;
+	text-align: center;
+	color: #fff;
+}
+#LawEnforcement-Fruit-Statistics ul li{
+	width: 30%;
+	float: left;
+	margin-top: ;
+}
+
+#LawEnforcement-Fruit-Statistics ul li p{
+	width: 100%;
+	display: block;
+	font-size: 12px;
+	font-weight:normal;
+	line-height: 200%;
+	background-color:rgba(51,153,255,0.14);
+}
+#LawEnforcement-Fruit-Statistics ul li p:nth-child(2){
+	font-size: 14px;
+}
+#LawEnforcement-Fruit-Statistics ul li:nth-child(1){
+	margin-right: 5%;
+}
+#LawEnforcement-Fruit-Statistics ul li:nth-child(2){
+	margin-right: 5%;
+}
+.LawEnforcement-Fruit-table{
+	width: 90%;
+	height: 80%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.LawEnforcement-Fruit-table table{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 100;
+}
+.LawEnforcement-Fruit-table table tr{
+	border-bottom: 1px solid rgba(51,153,255,0.14);
+}
+.LawEnforcement-Fruit-table table tr td:nth-child(2){
+	color: #ffcc33;
+}
+.LawEnforcement-Fruit-table table tr:nth-child(1) td span{
+	display: block;
+	line-height: 200%;
+	background-color: rgba(51,153,255,0.14);
+	margin-right: 1%;
+	color: #3399ff;
+	
+}
+
+
+
+
+
+/*勤务执法-执法战果结束*/
+
+/*勤务执法-勤务到岗*/
+#serviceOnPosition{
+	width: 100%;
+	height: 100%;
+}
+#serviceOnPosition-list{
+	width: 100%;
+	height: 100%;
+}
+/*勤务执法-勤务到岗结束*/
+
+
+
+
+
+
+/*执勤执法-今日违法*/
+.todayIllegality{
+	width: 95%;
+	height: 10%;
+	margin: 0 auto;
+}
+.todayIllegality table{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(51,51,255,0.1);
+	text-align: center;
+	color: #fff;
+	font-size: 12px;
+}
+.todayIllegality table tr td:nth-child(1) span:nth-child(1){
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffcc33;
+}
+.todayIllegality table tr td:nth-child(2) span:nth-child(2){
+	color: #fd4747;
+	font-size: 14px;
+	font-weight: bold;
+}
+#todayIllegality{
+	width: 100%;
+	height: 90%;
+	overflow: hidden;
+}
+
+
+
+
+/*执勤执法-今日违法结束*/
+
+
+
+/*执勤执法-违法类型*/
+.IllegalType{
+	width: 80%;
+	height: 10%;
+	margin: 0 auto;
+}
+.IllegalType table{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 100;
+}
+.IllegalType table tr td:nth-child(1){
+	color: #ffcc33;
+	width: 50%;
+}
+.IllegalType table tr td:nth-child(2){
+	color: #ffcc33;
+	width: 50%;
+}
+.IllegalType table tr td span{
+	display: block;
+	line-height: 200%;
+	background-color: rgba(51,153,255,0.14);
+	margin:0 1%;
+	color: #3399ff;
+	cursor: pointer;
+	margin-top:10px;
+}
+
+.IllegalType table tr td span:hover{
+	
+	background-color: rgba(51,102,255,0.9);
+	color: #fff;
+}
+#IllegalType{
+	width: 100%;
+	height: 90%;
+}
+
+/*执勤执法-违法类型结束*/
+
+/*执勤执法-执法工作站*/
+
+.LawEnforcementWorkstation{
+	width: 90%;
+	height: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.LawEnforcementWorkstation table{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 100;
+}
+.LawEnforcementWorkstation table tr{
+	border-bottom: 1px solid rgba(51,153,255,0.14);
+}
+.LawEnforcementWorkstation table tr td:nth-child(2){
+	color: #ffcc33;
+}
+.LawEnforcementWorkstation table tr:nth-child(1) td span{
+	display: block;
+	margin-top:10px;
+	line-height: 200%;
+	background-color: rgba(51,153,255,0.14);
+	margin-right: 1%;
+	color: #3399ff;
+	
+}
+
+/*执勤执法-执法工作站结束*/
+
+
+/*执勤执法-违法设备*/
+.IllegalityEquipment{
+	width: 95%;
+	height: 10%;
+	margin: 0 auto;
+}
+.IllegalityEquipment table{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(51,51,255,0.1);
+	text-align: center;
+	font-size: 12px;
+}
+.IllegalityEquipment table tr td:nth-child(1){
+	font-size: 12px;
+	font-weight: bold;
+	color: #6666ff;
+	margin-right: 10px;
+}
+.IllegalityEquipment table tr td:nth-child(1) span{
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 10px;
+}
+
+.IllegalityEquipment table tr td:nth-child(2){
+	font-size: 12px;
+	font-weight: bold;
+	color: #29adeb;
+}
+.IllegalityEquipment table tr td:nth-child(2) span{
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 10px;
+}
+#IllegalityEquipment{
+	width: 100%;
+	height: 90%;
+}
+/*执勤执法-违法设备结束*/
+
+
+
+
+/*执勤执法-勤务到岗*/
+
+#DutyPosition{
+	width: 100%;
+	height: 100%;
+}
+
+
+/*执勤执法-勤务到岗结束*/
+
+
+
+/*实时路况-24小时拥堵变化趋势*/
+
+#TrafficJamChange{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+
+
+
+/*实时路况-24小时拥堵变化趋势结束*/
+
+
+
+
+/*实时路况-交通管制*/
+
+#trafficControl{
+	width: 100%;
+	height: 30%;
+}
+.trafficControl-table{
+	width: 90%;
+	height: 70%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.trafficControl-table table{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 100;
+}
+.trafficControl-table table tr{
+	border-bottom: 1px solid rgba(51,153,255,0.14);
+}
+.trafficControl-table table tr td:nth-child(2){
+	color: #ffcc33;
+}
+.trafficControl-table table tr:nth-child(1) td span{
+	display: block;
+	line-height: 200%;
+	background-color: rgba(51,153,255,0.14);
+	margin-right: 1%;
+	color: #3399ff;
+	
+}
+/*实时路况-交通管制结束*/
+
+/*实时路况-交通管制统计*/
+#trafficControlStatistics-bar{
+	width: 100%;
+	height: 40%;
+}
+#trafficControlStatistics-line{
+	width: 100%;
+	height: 60%;
+}
+
+/*实时路况-交通管制统计结束*/
+
+
+
+/*实时路况-拥堵统计*/
+
+#CongestionStatistics-bar{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.CongestionStatistics-gauge{
+	width: 100%;
+	height: 100%;
+}
+.CongestionStatistics-gauge-box{
+	width: 100%;
+	height: 80%;
+}
+#CongestionStatistics-gauge{
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+.CongestionStatistics-gauge-legend{
+	width: 50%;
+	height: 100%;
+	float: left;
+	text-align: left;
+}
+.CongestionStatistics-gauge-legend table{
+	width: 100%;
+	height: 70%;
+	text-align: left;
+	margin-top: 10%;
+}
+.CongestionStatistics-gauge-legend table tr:nth-child(1){
+	color: #8f30f1;
+}
+.CongestionStatistics-gauge-legend table tr:nth-child(2){
+	color: #6633ff;
+}
+.CongestionStatistics-gauge-legend table tr:nth-child(3){
+	color: #00b4f3;
+}
+.CongestionStatistics-gauge-legend table tr:nth-child(4){
+	color: #25fbdf;
+}
+.CongestionStatistics-gauge-legend table tr:nth-child(5){
+	color: #c4ff11;
+}
+.CongestionStatistics-gauge div:nth-child(1){
+	width: 90%;
+	height: 20%;
+	margin: 0 auto;
+}
+.CongestionStatistics-gauge div:nth-child(1) ul li{
+	float: left;
+	width: 30%;
+	line-height: 200%;
+	font-size: 12px;
+	color: #a6a6b2;
+	text-align: center;
+	background-color: rgba(51,51,255,0.3);
+	cursor: pointer;
+}
+.CongestionStatistics-gauge div:nth-child(1) ul li:nth-child(1){
+	margin:0 2.5%;
+}
+.CongestionStatistics-gauge div:nth-child(1) ul li:nth-child(3){
+	margin:0 2.5%;
+}
+.CongestionStatistics-gauge div:nth-child(1) ul li:hover{
+	background-color:#3333ff;
+	color: #fff;
+}
+#CongestionStatistics-line{
+	height: 100%;
+	width: 100%;
+}
+
+
+/*实时路况-拥堵统计*/
+
+
+/*勤务统计*/
+.IndustryStatistics{
+	width: 100%;
+	height: 100%;
+	
+}
+.IndustryStatistics-title div{
+	width: 90%;
+	margin: 0 5%;
+	color: #fff;
+	font-size: 12px;
+	line-height: 300%;
+	
+}
+.IndustryStatistics-title div:nth-child(1) span{
+	font-weight: normal;
+}
+.IndustryStatistics-title div:nth-child(1) span:nth-child(2) , .IndustryStatistics-title div:nth-child(1) span:nth-child(4) , .IndustryStatistics-title div:nth-child(1) span:nth-child(6) , .IndustryStatistics-title div:nth-child(1) span:nth-child(8){
+	margin-right: 20px;
+}
+.IndustryStatistics-title div:nth-child(2){
+	position: relative;
+}
+.IndustryStatistics-title div:nth-child(2) span:nth-child(2){
+	position: absolute;
+	top: -10px;
+	right: 0;
+	line-height: 200%;
+	padding: 0 10px;
+	background-color: #3399ff;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.IndustryStatistics table{
+	width: 90%;
+	height: 70%;
+	margin: 0 5%;
+	color: #fff;
+	font-size:10px;
+	text-align: center;
+	overflow:hidden;
+}
+.IndustryStatistics table tr{
+	border: 1px solid #0a1f5a;
+}
+.IndustryStatistics table tr:nth-child(1){
+	background-color: rgba(51,153,255,0.15);
+}
+.IndustryStatistics table tr td{
+	border: 1px solid #051046;
+}
+
+.IndustryStatistics-bottom{
+	width: 90%;
+	margin: 0 5%;
+	color: #fff;
+	font-size: 12px;
+	line-height: 300%;
+}
+.IndustryStatistics-bottom ul li{
+	float: left;
+}
+.IndustryStatistics-bottom ul li:nth-child(2){
+	float: right;
+}
+.IndustryStatistics-bottom ul li:nth-child(2) form{
+	display: inline;
+	border: none;
+	
+}
+.IndustryStatistics-bottom ul li:nth-child(2) form select{
+	display: inline;
+	border-radius: 3px;
+	border: none;
+	color: #3399ff;
+	line-height: 2em;
+	height: 2em;
+	margin: 0 5px;
+}
+.IndustryStatistics-bottom ul li:nth-child(2) form input{
+	display: inline;
+	border-radius: 3px;
+	border: none;
+	text-align: center;
+	background-color: #0a1f5a;
+	color: #fff;
+	width: 2em;
+	line-height: 2em;
+	height: 2em;
+}
+.IndustryStatistics-bottom ul li:nth-child(2) form span:nth-child(2){
+	
+	margin-right: 10px;
+}
+.IndustryStatistics-bottom ul li:nth-child(2) form span:nth-child(5){
+	margin: 0 10px;
+}
+.IndustryStatistics-bottom ul li:nth-child(2) form span:nth-child(6){
+	margin: 0 10px 0 0;
+}
+.IndustryStatistics-bottom ul li:nth-child(2) form span:nth-child(8){
+	margin: 0 10px 0 0;
+}
+.IndustryStatistics-btn{
+	width: 90%;
+	text-align: center;
+	clear: both;
+	
+}
+.IndustryStatistics-btn span{
+	line-height: 400%;
+	text-align: center;
+	padding: 5px 10px;
+	border-radius: 5px ;
+	background-color: #3399ff;
+	color: #fff;
+	cursor: pointer;
+}
+/*勤务统计结束*/
+
+
+
+/*路线警卫-警力部署*/
+.PoliceForceDeployment-title{
+	color: #ff9900 !important;
+}
+.PoliceForceDeployment-title-img{
+	position: absolute;
+	top: 0px;
+	right: 2%;
+
+	cursor: pointer;
+}
+.PoliceForceDeployment-title-img span{
+	line-height: 150%;
+	padding: 0 5px;
+	margin-right: 10px;
+	background-color: rgba(51,153,255,0.15);
+}
+.PoliceForceDeployment-title-img span:nth-child(1){
+	border: 1px solid #3366ff;
+	color: #fff;
+	background-color: rgba(51,153,255,0.5);
+}
+.PoliceForceDeployment-title-img span:hover{
+	border: 1px solid #3366ff;
+	color: #fff;
+	background-color: rgba(51,153,255,0.5);
+}
+.video-box{
+	width: 100%;
+	height: 100%;
+	background-image: url(../images/video.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+.PoliceForceDeployment{
+	width: 100%;
+	height: 20%;
+}
+.PoliceForceDeployment .LawEnforcementWorkstation table tr{
+	border-bottom: none;
+}
+.PoliceForceDeployment .LawEnforcementWorkstation table tr td span{
+	cursor: pointer;
+}
+.PoliceForceDeployment .LawEnforcementWorkstation table tr td span:hover{
+	color: #fff;
+	background-color: #3333ff;
+}
+
+#PoliceForceDeployment{
+	width: 100%;
+	height: 80%;
+}
+.PoliceForcesDeploy-top{
+	width:100%;
+	height: 10%;	
+}
+.PoliceForcesDeploy-top div{
+	margin-top: 10px;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 200%;
+	display: inline-block;
+	color: #fff;
+}
+.PoliceForcesDeploy-top div:nth-child(1){
+	margin-left: 5%;
+	color:#6666ff;
+	padding: 5px 10px;
+	width: 30%;
+	background-image: url(../images/board/bg-1.png);
+	background-repeat: repeat-x;
+	background-size: auto cover; 
+	position: relative;
+}
+.PoliceForcesDeploy-top div:nth-child(1) span{
+	font-size: 16px;
+	line-height: 100%;
+	font-weight: bold;
+	display: inline-block;
+	margin-left: 10px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	
+	
+}
+.PoliceForcesDeploy-top div:nth-child(2){
+	width: 30%;
+	color:#2eb8eb;
+	margin-left: 5%;
+	padding: 5px 10px;
+	background-image: url(../images/board/bg-2.png);
+	background-repeat: repeat-x;
+	background-size: auto cover; 
+	position: relative;
+}
+.PoliceForcesDeploy-top div:nth-child(2) span{
+	font-size: 16px;
+	line-height: 100%;
+	font-weight: bold;
+	display: inline-block;
+	margin-left: 10px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.PoliceForcesDeploy-top div:nth-child(3){
+	padding: 5px 10px;
+	background-image: url(../images/board/btn-active.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size:cover auto;
+	cursor: pointer;
+	float: right;
+	margin-right: 5%;
+}
+.PoliceForcesDeploy-top div:nth-child(3):hover{
+	background-image: url(../images/board/btn.png);
+}
+.PoliceForcesDeploy{
+	width: 100%;
+	height: 90%;
+	min-height: 450px;
+}
+.PoliceForcesDeploy{
+	width: 100%;
+	height: 90%;
+}
+.PoliceForcesDeploy-title{
+	width: 90%;
+	margin: 0 5%;
+	color: #005ff1;
+	font-size: 12px;
+	line-height: 300%;
+	background-color: rgba(51,153,255,0.15);
+	cursor: pointer;
+	border-bottom: 1px solid #000031;
+}
+.PoliceForcesDeploy-title span:nth-child(1){
+	padding:5px 10px;
+	border-radius: 50%;
+	margin: 0 10px;
+	background-color: rgba(51,153,255,0.15);
+}
+.PoliceForcesDeploy-title span:nth-child(3){
+	float: right;
+	margin-right: 20px;
+}
+.PoliceForcesDeploy-inner{
+	width:80%;
+	height:auto;
+	
+}
+.PoliceForcesDeploy-inner table{
+	width: 100%;
+	text-align: center;
+	line-height: 300%;
+	color: #fff;
+}
+.PoliceForcesDeploy-inner table tr td:nth-child(1){
+	text-align: right;
+	width: 50%;
+}
+.rotate-img{
+	transform: rotate(30deg);
+	-ms-transform: rotate(30deg);		/* IE 9 */
+	-webkit-transform: rotate(30deg);	/* Safari and Chrome */
+	-o-transform: rotate(30deg);		/* Opera */
+	-moz-transform: rotate(30deg);		/* Firefox */
+}
+
+.line-Details-title{
+	width: 90%;
+	margin: 0 5%;
+	font-size: 12px;
+}
+
+.line-Details-title div span{
+	line-height: 300%;
+	color: #fff;
+}
+.line-Details-title div:nth-child(1) span:nth-child(1){
+	padding: 5px 10px;
+	background-color: #feb144;
+}
+.line-Details-title div:nth-child(1) span:nth-child(2){
+	margin-left: 10px;
+	
+}
+.line-Details-title div:nth-child(2) span{
+	margin:0 10px;
+}
+.line-Details-title div:nth-child(2) span:nth-child(3) , .line-Details-title div:nth-child(2) span:nth-child(4){
+	padding-right: 10px;
+	margin: 0 0 0 10px;
+	border-right: 1px solid #fff;
+}
+
+.line-Details-box{
+	width: 100%;
+	height: 50%;
+	position: relative;
+	/*border: 1px solid red;*/
+}
+.line-Details-box-line{
+	width: 90%;
+	height: 3px;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	background-color: #0a1f5a;
+}
+.line-Details-box-progress{
+	width: 70%;
+	height: 3px;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	background-color: #3399ff;
+}
+/*路线警卫-警力部署结束*/
+
+/*home图标*/
+
+.homeGage-box{
+	width: auto;
+	min-width: 16px;
+	height: auto;
+	min-height: 34px;
+	float:right;
+}
+.homeGage{
+	width: 16px;
+	height: 16px;
+	background-image: url(../images/board/home.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin: 0 auto;
+}
+.homeGage-title{
+	text-align: center;
+	font-size: 10px;
+	font-weight: bold;
+	color: #fff;
+	line-height: 150%;
+}
+
+
+/*home图标结束*/
+
+
+/*路线警卫情况-details*/
+.line-Details-title{
+	width: 90%;
+	margin: 0 5%;
+	font-size: 12px;
+	overflow: hidden;
+}
+
+.line-Details-title div span{
+	line-height: 300%;
+	color: #fff;
+}
+.line-Details-title div:nth-child(1) span:nth-child(1){
+	padding: 5px 10px;
+	background-color: #feb144;
+}
+.line-Details-title div:nth-child(1) span:nth-child(2){
+	margin-left: 10px;
+	
+}
+.line-Details-title div:nth-child(2) span{
+	margin:0 10px;
+}
+.line-Details-title div:nth-child(2) span:nth-child(3) , .line-Details-title div:nth-child(2) span:nth-child(4){
+	padding-right: 10px;
+	margin: 0 0 0 10px;
+	border-right: 1px solid #fff;
+}
+
+.line-Details-box{
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	/*border: 1px solid red;*/
+}
+.line-Details-box-line{
+	width: 90%;
+	height: 3px;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	background-color: #0a1f5a;
+}
+.line-Details-box-progress{
+	width: 70%;
+	height: 3px;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	background-color: #3399ff;
+}
+.circular{
+	width: 15px;
+	height: 15px;
+	background-image: url(../images/board/circular.png);
+	background-position: center;
+	background-size: contain;
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	transform: translateY(-50%);
+}
+.circular-1{
+	width: 15px;
+	height: 15px;
+	background-image: url(../images/board/circular.png);
+	background-position: center;
+	background-size: contain;
+	position: absolute;
+	top: 50%;
+	left: 20%;
+	transform: translateY(-50%);
+}
+.Green-label{
+	width: 30px;
+	height: 30px;
+	background-image: url(../images/board/Green-label.png);
+	background-position: center;
+	background-size: contain;
+	position: absolute;
+	top: 50%;
+	left: 30%;
+	transform: translateY(-50%);
+}
+.Police-ico{
+	width: 30px;
+	height: 30px;
+	background-image: url(../images/board/Police.png);
+	background-position: center;
+	background-size: contain;
+	position: absolute;
+	top: 50%;
+	left: 40%;
+	transform: translateY(-50%);
+}
+.Police-ico1{
+	left: 50%;
+}
+.Police-ico2{
+	left: 60%;
+}
+.Police-ico3{
+	left: 70%;
+}
+.Police-ico4{
+	left: 80%;
+}
+.SiteDistance{;
+	color: #fff;
+	position: absolute;
+	top: 25%;
+	left: 15%;
+	transform: translateX(-50%);
+}
+.SiteDistance1{
+	left: 25%;
+	transform: translateX(-50%);
+}
+.SiteDistance2{
+	left: 35%;
+	transform: translateX(-50%);
+}
+.SiteDistance3{
+	left: 45%;
+	transform: translateX(-50%);
+}
+.SiteDistance4{
+	left: 55%;
+	transform: translateX(-50%);
+}
+.SiteDistance5{
+	left: 65%;
+	transform: translateX(-50%);
+}
+.SiteDistance6{
+	left: 75%;
+	transform: translateX(-50%);
+}
+.PersonInCharge{
+	width: auto;
+	color: #3399ff;
+	line-height: 120%;
+	display: inline-block;
+	padding: 5px 10px;
+	background-color: rgba(51,153,255,0.2);
+	position: absolute;
+	top: 0%;
+	left: 40%;
+	transform: translateX(-40%);
+}
+.PersonInCharge1{
+	left: 50%;
+}
+.PersonInCharge2{
+	left: 60%;
+}
+.PersonInCharge3{
+	left: 70%;
+}
+.PersonInCharge4{
+	left: 80%;
+}
+
+.HighSpeedTollStation{
+	width: auto;
+	color: #3399ff;
+	line-height: 120%;
+	display: inline-block;
+	padding: 5px 10px;
+	border:1px solid rgba(51,153,255,0.2);
+	position: absolute;
+	top: 65%;
+	left: 10%;
+	transform: translateX(-40%);
+}
+.HighSpeedTollStation1{
+	left: 20%;
+}
+.HighSpeedTollStation2{
+	left: 30%;
+}
+.HighSpeedTollStation3{
+	left: 40%;
+}
+.HighSpeedTollStation4{
+	left: 50%;
+}
+.HighSpeedTollStation5{
+	left: 60%;
+}
+.HighSpeedTollStation6{
+	left: 70%;
+}
+.HighSpeedTollStation7{
+	left: 80%;
+}
+
+.SwitchIcon{
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	font-size: 12px;
+	color: #3399ff;
+	background-color: #0f2e6f;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	right: -5px;
+	cursor: pointer;
+}
+.PoliceCarIco{
+	width: 20px;
+	height: 20px;
+	background-image: url(../images/board/car.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	position: absolute;
+	top: 30%;
+	left: 30%;
+	transform: translateY(-50%);
+	
+}
+
+.SwitchIcon:hover{
+	color: #fff;
+}
+
+
+
+.SecurityNode{
+	clear: both;
+	width: 100%;
+	height: 80%;
+}
+.SecurityNode ul{
+	height: 100%;
+	width: 100%;
+	clear: both;
+}
+.SecurityNode ul li{
+	
+	width: 20%;
+	height: 100%;
+	float: left !important;
+}
+.SecurityNode-box{
+	width: 80%;
+	height: 80%;
+	position: relative;
+	border: 1px solid rgba(51,153,255,0.15);
+	transform: translateY(25%);
+	left: 10%;
+}
+.SecurityNode-box-title{
+	text-align: center;
+	color: #2c86e4;
+	line-height: 150%;
+	font-size: 12px;
+	display: inline-block;
+	padding: 5px 10px;
+	background-color: #0a1f5a;
+	position: absolute;
+	top: 0;
+	width: 50%;
+	left: 25%;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-o-transform: translateYS(-50%);
+}
+.SecurityNode-box table{
+	width: 100%;
+	
+	position: absolute;
+	left: 20%;
+	top: 20%;
+	font-size: 12px;
+	font-weight: normal;
+	text-align: left;
+	color: #fff;
+	line-height: 150%;
+	
+}
+
+.Line-police-force{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.Line-police-force ul{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.Line-police-force>ul>li{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+/*路线警卫情况-details*/
+
+
+		/* 高速--执勤执法--切换 */
+.btnDefault{
+	    
+	    background-color: rgb(51, 102, 255) !important;
+	}
+.btnChecked{
+	   background-color: rgba(51,153,255,0.14) !important; 
+	}
+/* 高速--执勤执法--切换 */
+
+
+/*暑期--同行车辆--水球图*/
+
+.datas_total{
+	height: 70px;
+}
+.flow_nums,.danger_nums{
+	height: 70px;
+	width: 49%;
+	float: left;
+}
+.flow_nums{
+	margin-right: 1.5%;
+}
+.throght_shu{
+    width: 50%;
+}
+#flow_up,#flow_down,#danger_up,#danger_down{
+	width: 25%;
+}
+.throght_shu,#flow_up,#flow_down,#danger_up,#danger_down{
+	float: left;
+	height: 70px;
+}
+.throght_wen,#throght_nums{
+  text-align: center;
+  color:#00ff99;
+}
+#danger_nums,.danger_wen{
+  text-align: center;
+  color:#ff23f1;
+}
+.throght_wen,.danger_wen{
+	margin-top: 2px;
+}
+#throght_nums,#danger_nums{
+	font-weight: bold;
+	font-size: 20px;
+}
+
+
+/*暑期--同行车辆--水球图*/
+
+
+/*通行车辆-点击隐藏显示table样式*/
+.DomicilePlaceDistribution-table{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color:#000031
+}
+.DomicilePlaceDistribution-table-title{
+	width: 100%;
+	height: 10%;
+	position: relative;
+}
+.DomicilePlaceDistribution-table-title div:nth-child(1){
+	width: 100%;
+	line-height:200%;
+	color: #fff;
+	position: relative;
+	left:0;
+	float: left;
+	padding-left: 5px;
+	font-size: 12px;
+	background: #00145a;
+	
+}
+.DomicilePlaceDistribution-table-title div:nth-child(1) div{
+	display: inline-block;
+	float: right;
+	padding:0 5px;
+	color: #0066ff;
+	background: #001f6f;
+}
+.DomicilePlaceDistribution-table-title>div:first-of-type>div>span:nth-child(1){
+	color: #0061f4;
+}
+.DomicilePlaceDistribution-table-title>div:first-of-type>div>span:nth-child(2){
+	color: #ffcc00;
+}
+.DomicilePlaceDistribution-table-title div:nth-child(1){
+	display: inline-block;
+	padding: 0 10px;
+	line-height: 200%;
+	font-size: 1em;
+	color: #fff;
+	margin-left: 5px;
+	cursor: pointer;
+}
+.DomicilePlaceDistribution-table-title div:nth-child(1) span:nth-child(1):hover{
+	
+	color: #0056df;
+	
+}
+.DomicilePlaceDistribution-table-title>div:nth-child(1)>span:nth-child(2){
+	margin-right: 10px !important;
+}
+.DomicilePlaceDistribution-table-box{
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+	scrollbar-face-color: #000031; 
+	scrollbar-highlight-color: rgba(0,0,0,0); 
+	scrollbar-shadow-color: #4d4d6f; 
+	scrollbar-3dlight-color: #000031; 
+	scrollbar-arrow-color:  #4d4d6f; 
+	scrollbar-track-color:  #4d4d6f; 
+	scrollbar-darkshadow-color:  rgba(0,0,0,0); 
+	scrollbar-base-color:  #4d4d6f; 
+}
+.DomicilePlaceDistribution-table-box table{
+	font-size: 1em;
+	line-height: 400%;
+	text-align: center;
+	width: 100%;
+	color: #fff;
+	width: 80%;
+	margin: 0 auto;
+}
+.DomicilePlaceDistribution-table-box table tr td:nth-child(1){
+	text-align: left;
+}
+.DomicilePlaceDistribution-table-box table thead{
+	border-bottom: 1px solid #1f295a;
+}
+.DomicilePlaceDistribution-table-box table tbody tr{
+	line-height: 200%;
+	font-size: 1em;
+}
+
+
+/*通行车辆-点击隐藏显示table样式结束*/
+
+
+/*通行车辆-导航*/
+.traffic-vehicle-navigation{
+	width:100%;
+	height: 100%;
+}
+.traffic-vehicle-navigation>span{
+	display: inline-block;
+	line-height: 200%;
+	font-size: 1em;
+	padding:0 15px;
+	color:#d3d8ec ;
+	background-color:#001f6f;
+	margin: 0 5px;
+	cursor: pointer;
+}
+.traffic-vehicle-navigation>span:hover{
+	color:#fff ;
+	background-color:#0066ff;
+}
+.traffic-vehicle-navigation>form{
+	display: inline-block;
+	line-height: 200%;
+	font-size: 1em;
+	color:#d3d8ec ;
+}
+
+.traffic-vehicle-navigation>form>input{
+	background-color:#000038;
+	border: 1px solid #1a3398;
+	font-size: 1em;
+	line-height: 200%;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;  
+    margin: 0 10px;
+}
+
+.app-area-box-title>div:nth-child(1)>span:nth-child(2){
+	float: right;
+	font-size: 1em;
+	line-height: 200%;
+	padding:0 5px;
+	color: #fff;
+	cursor: pointer;
+	background-color: rgba(51,153,255,0.5);
+	margin-right: 10px;
+}
+.app-area-box-title>div:nth-child(1)>span:nth-child(2):hover{
+	border: 1px solid #3366ff;
+	background-color: rgba(51,153,255,0.9);
+}
+/*.app-area-box-title div:nth-child(1) span:nth-child(3){
+	float: right;
+	font-size: 1em;
+	line-height: 200%;
+	padding:0 5px;
+	color: #fff;
+	cursor: pointer;
+	margin-right: 0px;
+	background: #051e6d;
+}*/
+/*通行车辆-导航开始*/
+
+/*通行车辆-站点流量*/
+.site-traffic-box{
+	width: 100%;
+	height: 100%;
+}
+#site-traffic-box-chart{
+	width: 100%;
+	height: 80%;
+	font-weight: bold;
+}
+
+
+/*通行车辆-站点流量结束*/
+
+
+/*通行车辆-断面流量*/
+
+.section-flow-chart{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.section-flow-chart-bar{
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+}
+.section-flow-chart-bar-legend{
+	width: 100%;
+	height: 25%;
+}
+.section-flow-chart-bar-legend>table{
+	width: 60%;
+	height: 100%;
+	margin: 0 auto;
+	color: #fff;
+}
+.section-flow-chart-bar-legend table tr td{
+	width: 20%;
+}
+.section-flow-chart-bar-legend table tr td span{
+	display: block;
+	padding: 5px 10px;
+}
+.section-flow-chart-bar-legend table tr td span{
+	position: relative;
+	display: block;
+}
+.section-flow-chart-bar-legend table tr td span span:nth-child(1){
+	display: inline-block;
+	width: 5px;
+	height: 2px;
+	margin: auto 5px;
+	border-radius: 3px;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	background-color: #cc3333;
+}
+.section-flow-chart-bar-legend table tr td span span:nth-child(2){
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 25px;
+}
+.section-flow-chart-bar-legend table tr td:nth-child(2) span span:nth-child(1){
+	background-color: #f08109;
+}
+.section-flow-chart-bar-legend table tr td:nth-child(3) span span:nth-child(1){
+	background-color: #f6ae2f;
+}
+.section-flow-chart-bar-legend table tr td:nth-child(4) span span:nth-child(1){
+	background-color: #33cc66;
+}
+.section-flow-chart-bar-legend table tr td:nth-child(5) span span:nth-child(1){
+	background-color: #003398;
+}
+.section-flow-chart-bar-lable{
+	width: 100%;
+	height: 25%;
+}
+.section-flow-chart-bar-lable>ul{
+	width: 100%;
+	height: 90%;
+	margin-bottom: 10%;
+}
+.section-flow-chart-bar-lable>ul>li{
+	width: 12%;
+	height: 100%;
+	float: left;
+	margin: 0 0.25%;
+	position: relative;
+}
+.section-flow-chart-bar-lable>ul>li>span{
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #99ccff;
+	text-align: center;
+	padding: 5px 10px;
+	border-radius: 5px;
+	background-color: rgba(0,102,255,0.2);
+}
+.section-flow-chart-bar>ul{
+	width: 100%;
+	height: 15%;
+}
+.section-flow-chart-bar>ul>li{
+	
+	height: 100%;
+	float: left;
+	margin: 0 0.25%;
+	cursor: pointer;
+}
+.section-flow-chart-bar>ul>li:nth-child(1){
+	background-color: #003398;
+	width: 14%;
+}
+.section-flow-chart-bar>ul>li:nth-child(2){
+	background-color: #f6ae2f;
+	width: 14%;
+}
+.section-flow-chart-bar>ul>li:nth-child(3){
+	background-color: #f08109;
+	width: 9%;
+}
+.section-flow-chart-bar>ul>li:nth-child(4){
+	background-color: #cc3333;
+	width: 14%;
+}
+.section-flow-chart-bar>ul>li:nth-child(5){
+	background-color: #33cc66;
+	width: 14%;
+}
+.section-flow-chart-bar>ul>li:nth-child(6){
+	background-color: #f08109;
+	width: 8%;
+}
+.section-flow-chart-bar>ul>li:nth-child(7){
+	background-color: #33cc66;
+	width: 9%;
+}
+.section-flow-chart-bar>ul>li:nth-child(8){
+	background-color: #f6ae2f;
+	width: 14%;
+}
+.section-flow-chart-bar-x{
+	width: 100%;
+	height: 25%;
+	position: relative;
+}
+.section-flow-chart-bar-x>div{
+	display: inline-block;
+	position: absolute;
+	color: #fff;
+	font-size: 1em;
+	font-weight: bold;
+	line-height: 400%;
+}
+.section-flow-chart-bar-x>div:nth-child(1){
+	left: 14.5%;
+	transform: translateX(-50%);
+}
+.section-flow-chart-bar-x>div:nth-child(2){
+	left: 29%;
+	transform: translateX(-50%);
+}
+.section-flow-chart-bar-x>div:nth-child(3){
+	left: 38%;
+	transform: translateX(-50%);
+}
+.section-flow-chart-bar-x>div:nth-child(4){
+	left: 53%;
+	transform: translateX(-50%);
+}
+.section-flow-chart-bar-x>div:nth-child(5){
+	left: 67.5%;
+	transform: translateX(-50%);
+}
+.section-flow-chart-bar-x>div:nth-child(6){
+	left: 76%;
+	transform: translateX(-50%);
+}
+.section-flow-chart-bar-x>div:nth-child(7){
+	left: 85.5%;
+	transform: translateX(-50%);
+}
+#cross-section-flow-2{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+/*通行车辆-断面流量结束*/
+.huanshu-btn-active{
+	color:#fff;
+	background-image: url(../images/board/btn-active.png);
+}
+/*勤务安排*/
+#pavement-service , #checkpoint-service{
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+/*勤务安排结束*/	
+
+
+
+*天气和概况*/
+
+.wet_fact{
+ /* width: 450px;*/
+  height: 200px;
+ 
+}
+.qie_title{
+  width: 100%;
+}
+.qie_title,#qie_wet,#qie_fact{
+ height: 20px; 
+}
+#qie_wet,#qie_fact{
+  width: 49.5%;
+  float: left;
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+  cursor: pointer;
+}
+#qie_wet{
+  margin-right: 1%;
+}
+#fact_content{
+  display: none;
+}
+#wet_content,#fact_content{
+  width: 100%;
+  height: 180px;
+  /*background: orange;*/
+}
+.congest_shu,.congets_pie,.congets_control{
+  height: 180px;
+  width: 33%;
+  float: left;
+}
+.btnDefault1{
+  background: #3333ff;
+  color: white;
+}
+.btnChecked1{
+  background: #101073;
+  color: #8888b9;
+}
+
+/*天气和概况*/
+
+
+/* 多个柱状图 */
+
+.out_inner{
+  position: relative;
+}
+.beijing_dir,.shenyang_dir{
+  color:#0066ff;
+  font-size:14px;
+  width: 60px;
+  position: absolute;
+}
+.beijing_dir{
+  left: 50px;
+    top: 27px;
+}
+.shenyang_dir{
+    top: 66px;
+    left: 50px;
+}
+
+/*图例*/
+.legends{
+  width: 500px;
+  height: 17px;
+  margin-left: 130px;
+}
+.legends>li{
+  float: left;
+  margin-left: 18px;
+}
+.legends>li>.len_tu{
+  display: inline-block;
+  height: 8px;
+  width: 21px;
+} 
+.legends>li:nth-of-type(1)>.len_tu{
+   background: #cc3333;
+}
+.legends>li:nth-of-type(2)>.len_tu{
+  background: #f08109;
+}
+.legends>li:nth-of-type(3)>.len_tu{
+  background: #f6ae2f;
+}
+.legends>li:nth-of-type(4)>.len_tu{
+  background: #33cc66;
+}
+.legends>li:nth-of-type(5)>.len_tu{
+  background: #00339b;
+}
+.legends>li span:last-of-type{
+  color: white;
+  font-size: 12px;
+}
+
+/* 多个柱状图 
+
+/* 高速列表 */
+.name_high,.search_road,.search_content{
+  margin-left: 9px; 
+}
+.high_speed{
+  width: 480px;
+}
+.name_high{
+  height: 44px;
+  width: 100%;
+}
+#hight_name,.high_nums{
+  float: left;
+  color: white;
+}
+#hight_name{
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 44px;
+}
+.high_nums{
+  line-height: 44px;
+  font-size: 13px;
+  margin-left: 20px;
+}
+#high_nums{
+  margin-left: 10px;
+  color: #00ffff;
+  font-weight: bold;
+}
+.search_road>input{
+  /*width: 335px;*/
+  width: 451px;
+  height: 31px;
+}
+.search_inner{
+  padding: 0px;
+  margin: 0px;
+}
+.search_inner>li{
+  /*width: 350px;*/
+  width: 460px;
+  height: 78px;
+  border-bottom: 1px solid #0f0f73;
+  box-sizing: border-box;
+  padding-left: 8px;
+  cursor:pointer;
+}
+.name_ser{
+  height: 45px;
+  line-height: 45px;
+}
+.name_cons{
+  font-weight:bold;
+ /* margin-right: 150px;*/
+ margin-right: 230px;
+  width: 155px;
+}
+.ser_status,.name_cons{
+  float: left;
+  color: white;
+}
+.infer_dir{
+  font-size: 14px;
+  color: white;
+}
+/* 高速列表 */
+
+/*列表视频*/
+.serial_number{
+ /* width: 346px;*/
+ width: 473px;
+}
+.number_top,.video_cont{
+   margin-left: 9px; 
+}
+.number_top{
+  height: 54px;
+  border-bottom: 1px solid #0f0f73;
+}
+.out_page,.number_num{
+     font-size: 12px;
+    margin-top: 25px;
+}
+.out_page{
+  float: left;
+  color:#0066ff;
+  cursor:pointer;
+}
+.number_num{
+  float: right;
+  color:white;
+}
+.road_cont{
+   width: 462px;
+  height: 78px;
+  box-sizing: border-box;
+  padding-left: 8px;
+}
+.video_cont{
+  width: 339px;
+  height: 280px;
+  line-height: 280px;
+  text-align: center;
+  color: red;
+  border:2px solid #cad3df;
+}
+.video_cont img{
+	    width: 335px;
+    height: 274px;
+    margin: 0px;
+    margin-bottom: 7px;
+	}
+
+/*概况拥堵*/
+
+.congest_nums{
+  height: 50px;
+  width: 100%;
+}
+.congest_nums>div{
+  width: 33%;
+  float: left;
+  text-align: center;
+}
+.con_zd,#con_zd{
+  color:#9900ff;
+}
+#con_zd{
+  font-weight: bold;
+}
+.con_fwq,#con_fwq{
+  color:#00ee92;
+}
+#con_fwq{
+  font-weight: bold;
+}
+.con_ld,#con_ld{
+  color:#ffcc33;
+}
+#con_ld{
+  font-weight: bold;
+}
+/*概况拥堵*/
+
+.ser_status img{
+	    width: 27px;
+    height: 14px;
+	}

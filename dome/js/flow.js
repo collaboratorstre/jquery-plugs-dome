@@ -549,7 +549,7 @@ var otherProvMigration_in = function(containerId,data) {
                 })
             });
     });
-    // console.log(series);
+    console.log(series);
     var otherProvMigrationIn_option = {
         backgroundColor: '#0b0c45',
         tooltip : {

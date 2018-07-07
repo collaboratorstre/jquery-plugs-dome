@@ -1,0 +1,199 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video,option,select {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+/* line 26, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 30, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 10, ../sass/screen.scss */
+body {
+  background: #00041d;
+  overflow: auto;
+  opacity: 1.0;
+}
+body,html {
+  background: #00041d;
+  opacity: 1.0;
+  width: 100%;
+  height: 100%;
+
+}
+.all_page{
+   width: 100%;
+  height: 100%;
+  background: #00041d;
+  position: relative;
+}
+.top_title{
+  position: absolute;
+  height: 6.5%;
+  width: 100%;
+  border-bottom: 1px solid #2445be;
+}
+.left_top{
+  position: absolute;
+ /* margin: 5.5% 0.6% 1% 0.6%;*/
+     top: 7.5%;
+    left: 0.6%;
+  width: 25%;
+  height: 19.7%;
+  background: pink;
+}
+.left_bottom{
+  position: absolute;
+  /*margin: 18% 0 0 0.6%;*/
+      top: 28.3%;
+    left: 0.6%;
+  width: 25%;
+  height: 69%;
+  background: orange;
+}
+.center_top{
+  position: absolute;
+ /* margin: 5.5% 0.6% 0 0.6%;*/
+     top: 7.5%;
+   left: 26.3%;
+    width: 53%;
+  height: 15%;
+  background: orange;
+}
+.right_car{
+  position: absolute;
+  width: 19.6%;
+  height: 18.8%;
+  top: 7.5%;
+  left: 80%;
+  background: pink;
+}
+.right_task{
+  position: absolute;
+  width: 19.6%;
+  height: 14.7%;
+  top: 27.3%;
+  left: 80%;
+  background: orange;
+}
+.right_duty{
+  position: absolute;
+  width: 19.6%;
+  height: 19%;
+  top: 43%;
+  left: 80%;
+  background: pink;
+}
+.right_job{
+  position: absolute;
+  width: 19.6%;
+  height: 16.7%;
+  top: 63%;
+  left: 80%;
+  background: orange;
+}
+.right_traffic{
+  position: absolute;
+  width: 19.6%;
+  height: 17.1%;
+  top: 81%;
+  left: 80%;
+  background: pink;
+}
+.SecurityCheck-title ul li{
+  float: left;
+}
+.SecurityCheck-title ul li:first-of-type{
+      margin: 0% 2% 2% 34%;
+}
+.SecurityCheck-title ul li:nth-of-type(2){
+        margin: 0% 2% 2% 0%;
+}
+
+@media screen and (max-width: 1900px) {
+  .logo>div:nth-child(2){
+    font-size: 1em;
+  }
+  .SecurityCheck-title ul li{
+    font-size: 13px;
+}
+  .SecurityCheck table tr{
+    font-size: 13px;
+  }
+  .SecurityCheck-title ul li:first-of-type{
+        margin: 0% 2% 2% 30%;
+  }
+  .high_speed{
+        width: 337px;
+  }
+  .search_road>input{
+        width: 97%;
+    height: 20px;
+  }
+  .search_inner>li{
+    width: 97%;
+        height: 62.5px;
+  }
+  .name_cons{
+    margin-right: 37%;
+    font-size: 14px;
+  }
+  .serial_number{
+        width: 336px;
+  }
+  .road_cont{
+    width: 97%;
+  }
+  .video_cont{
+        width: 310px;
+  }
+  .video_cont img{
+        width: 309px;
+  }
+}

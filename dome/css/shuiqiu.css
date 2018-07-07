@@ -1,0 +1,353 @@
+ Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video,option,select {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+/* line 26, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 30, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 10, ../sass/screen.scss */
+body {
+  background: #00041d;
+  overflow: auto;
+  opacity: 1.0;
+}
+body,html {
+  background: #00041d;
+  opacity: 1.0;
+  width: 100%;
+  height: 100%;
+
+}
+.datas_total{
+	height: 97px;
+	width: 70%;
+	background: #000032;
+}
+.flow_nums,.danger_nums{
+	height: 97px;
+	width: 49%;
+	float: left;
+    background: #000032;
+}
+.flow_nums{
+	margin-right: 1.5%;
+}
+.throght_shu{
+    width: 50%;
+}
+#flow_up,#flow_down,#danger_up,#danger_down{
+	width: 25%;
+	
+}
+.throght_shu,#flow_up,#flow_down,#danger_up,#danger_down{
+	float: left;
+	height: 97px;
+}
+.throght_wen,#throght_nums{
+  text-align: center;
+  color:#00ff99;
+}
+#danger_nums,.danger_wen{
+  text-align: center;
+  color:#ff23f1;
+}
+.throght_wen,.danger_wen{
+	margin-top: 18%;
+}
+#throght_nums,#danger_nums{
+	font-weight: bold;
+	font-size: 20px;
+}
+
+/*天气和概况*/
+
+.wet_fact{
+  width: 450px;
+  height: 200px;
+  background: pink;
+}
+.qie_title{
+  width: 100%;
+}
+.qie_title,#qie_wet,#qie_fact{
+ height: 20px; 
+}
+#qie_wet,#qie_fact{
+  width: 49.5%;
+  float: left;
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+  cursor: pointer;
+}
+#qie_wet{
+  margin-right: 1%;
+}
+#fact_content{
+  display: none;
+}
+#wet_content,#fact_content{
+  width: 100%;
+  height: 180px;
+  background: orange;
+}
+.congest_shu,.congets_pie,.congets_control{
+  height: 180px;
+  width: 33%;
+  float: left;
+}
+.btnDefault1{
+  background: #3333ff;
+  color: white;
+}
+.btnChecked1{
+  background: #101073;
+  color: #8888b9;
+}
+
+/*天气和概况*/
+
+/* 多个柱状图 */
+
+.out_inner{
+  position: relative;
+}
+.beijing_dir,.shenyang_dir{
+  color:#0066ff;
+  font-size:14px;
+  width: 60px;
+  position: absolute;
+}
+.beijing_dir{
+  left: 50px;
+}
+.shenyang_dir{
+      top: 84px;
+      left: 50px;
+}
+
+/*图例*/
+.legends{
+  width: 500px;
+  height: 17px;
+  margin-left: 130px;
+}
+.legends>li{
+  float: left;
+  margin-left: 18px;
+}
+.legends>li>.len_tu{
+  display: inline-block;
+  height: 8px;
+  width: 21px;
+} 
+.legends>li:nth-of-type(1)>.len_tu{
+   background: #cc3333;
+}
+.legends>li:nth-of-type(2)>.len_tu{
+  background: #f08109;
+}
+.legends>li:nth-of-type(3)>.len_tu{
+  background: #f6ae2f;
+}
+.legends>li:nth-of-type(4)>.len_tu{
+  background: #33cc66;
+}
+.legends>li:nth-of-type(5)>.len_tu{
+  background: #00339b;
+}
+.legends>li span:last-of-type{
+  color: white;
+  font-size: 12px;
+}
+
+/* 多个柱状图 
+
+/* 高速列表 */
+.name_high,.search_road,.search_content{
+  margin-left: 9px; 
+}
+.high_speed{
+  width: 480px;
+}
+.name_high{
+  height: 44px;
+  width: 100%;
+}
+#hight_name,.high_nums{
+  float: left;
+  color: white;
+}
+#hight_name{
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 44px;
+}
+.high_nums{
+  line-height: 44px;
+  font-size: 13px;
+  margin-left: 20px;
+}
+#high_nums{
+  margin-left: 10px;
+  color: #00ffff;
+  font-weight: bold;
+}
+.search_road>input{
+  width: 460px;
+  height: 31px;
+}
+.search_inner{
+  padding: 0px;
+  margin: 0px;
+}
+.search_inner>li{
+  width: 462px;
+  height: 78px;
+  border-bottom: 1px solid #0f0f73;
+  box-sizing: border-box;
+  padding-left: 8px;
+  cursor:pointer;
+}
+.name_ser{
+  height: 45px;
+  line-height: 45px;
+}
+.name_cons{
+  font-weight:bold;
+  margin-right: 180px;
+  width: 200px;
+}
+.ser_status,.name_cons{
+  float: left;
+  color: white;
+}
+.infer_dir{
+  font-size: 14px;
+  color: white;
+}
+/* 高速列表 */
+
+/*列表视频*/
+.serial_number{
+  width: 480px;
+}
+.number_top,.video_cont{
+   margin-left: 9px; 
+}
+.number_top{
+  height: 54px;
+  border-bottom: 1px solid #0f0f73;
+}
+.out_page,.number_num{
+  font-size: 12px;
+  margin-top: 38px;
+}
+.out_page{
+  float: left;
+  color:#0066ff;
+  cursor:pointer;
+}
+.number_num{
+  float: right;
+  color:white;
+}
+.road_cont{
+   width: 462px;
+  height: 78px;
+  box-sizing: border-box;
+  padding-left: 8px;
+}
+.video_cont{
+  width: 437px;
+  height: 280px;
+  line-height: 280px;
+  text-align: center;
+  color: red;
+  border:2px solid #cad3df;
+}
+
+/*概况拥堵*/
+
+.congest_nums{
+  height: 50px;
+  width: 100%;
+}
+.congest_nums>div{
+  width: 33%;
+  float: left;
+  text-align: center;
+}
+.con_zd,#con_zd{
+  color:#9900ff;
+}
+#con_zd{
+  font-weight: bold;
+}
+.con_fwq,#con_fwq{
+  color:#00ee92;
+}
+#con_fwq{
+  font-weight: bold;
+}
+.con_ld,#con_ld{
+  color:#ffcc33;
+}
+#con_ld{
+  font-weight: bold;
+}
+/*概况拥堵*/

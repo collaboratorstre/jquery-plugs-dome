@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>table</title>
+</head>
+ <style type= "text/css">
+	/*id为customers 的标签的样式*/
+	#customers,#customers_ji,#customers_u
+	{
+	  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	  width:100%;
+	  border-collapse:collapse;
+	}
+	/*id为customers 的标签里面的td标签和th标签的样式*/
+	#customers td, #customers th,#customers_ji td, #customers_ji th,#customers_u td, #customers_u th
+	{
+	  font-size:1em;
+	  /*border:1px solid #98BF21;*/
+	  border:1px solid;
+	  padding:3px 7px 2px 7px;
+	  text-align: center;
+	}
+	/*id为customers 的标签里面的th标签的样式*/
+	#customers th,#customers_ji th,#customers_u th
+	{
+	  font-size:1.1em;
+	  text-align:center;
+	  padding-top:5px;
+	  padding-bottom:4px;
+
+	/*  background-color:#A7C942;
+	  color:#FFF;*/
+	}
+	#customers_u,#customers_ji{
+		margin-top: 100px;
+	}
+	#customers_u tbody{
+		 display: block;
+         height: 300px;
+         overflow: hidden;
+         overflow-y: scroll;
+	}
+ #customers_u thead,#customers_u tbody tr {
+                 display: table;
+                 width: 100%;
+                 table-layout: fixed;
+             }
+	/*id为customers的标签里面的class名为alt的tr标签里面的td标签的样式*/
+/*	#customers tr.alt td
+	{
+	  color:#000;
+	  background-color:#EAF2D3;
+	}*/
+
+	/* 滚动条样式 */
+	/*谷歌滚动条*/
+.column_left_congest{
+    overflow: hidden;
+}
+::-webkit-scrollbar{
+    width:3px !important;
+}
+
+::-webkit-scrollbar-button {
+}
+::-webkit-scrollbar-track{
+    /*background-color:#f3f3f3;*/
+    background-color: #0b0c45;
+}
+::-webkit-scrollbar-track-piece{
+    /*background-color:#f3f3f3;*/
+    background-color: #0b0c45;
+    -webkit-border-radius:4px;
+}
+::-webkit-scrollbar-thumb{
+    /*background-color:#999999; */
+    background-color:rgba(255,255,255,0.75);
+    border:solid 1px #0b0c45;
+    border-radius:4px;
+}
+::-webkit-scrollbar-corner {
+    /* background-color: #999999;*/
+    background-color: #0b0c45;
+}
+::-webkit-resizer {
+    background: no-repeat bottom right;
+}
+
+
+
+	</style>
+</head>
+
+<body>
+	<table id= "customers">
+	 <tbody id= "customers_two">
+		<tr>
+			<th colspan="8">环秦高速站口入秦流量户籍地分布表</th>	
+		</tr>
+		<tr>
+		  <th >序号 </th>
+		  <th >环秦站口 </th>
+		  <th >京 </th>
+		  <th>津</th>
+		  <th>冀</th>
+		  <th>辽</th>
+		  <th>鲁</th>
+		  <th>总合计</th>
+		</tr>
+		<tr>
+		  <td >1 </td>
+		  <td >秦皇岛东收费站 </td>
+		  <td >23</td>
+		  <td>54</td>
+		  <td>66</td>
+		  <td>77</td>
+		  <td>88</td>
+		  <td>88</td>
+		</tr>
+		<tr class= "alt">
+		 <td >2 </td>
+		  <td >秦皇岛北收费站 </td>
+		  <td >88 </td>
+		  <td>88</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		</tr>
+		<tr>
+		   <td >3 </td>
+		  <td >秦皇岛开发区收费站 </td>
+		  <td >66</td>
+		  <td>44</td>
+		  <td>22</td>
+		  <td>11</td>
+		  <td>44</td>
+		  <td>88</td>
+		</tr>
+		<tr class= "alt">
+		  <td >4 </td>
+		  <td >北戴河收费站 </td>
+		  <td >66 </td>
+		  <td>22</td>
+		  <td>11</td>
+		  <td>31</td>
+		  <td>43</td>
+		  <td>88</td>
+		</tr>
+		<tr>
+		 <td >5 </td>
+		  <td >昌黎东收费站 </td>
+		  <td >66 </td>
+		  <td>22</td>
+		  <td>11</td>
+		  <td>31</td>
+		  <td>43</td>
+		  <td>88</td>
+		</tr>
+		<tr class= "alt">
+		  <td >6 </td>
+		  <td >南戴河收费站 </td>
+		 <td >66</td>
+		  <td>22</td>
+		  <td>11</td>
+		  <td>31</td>
+		  <td>43</td>
+		 <td>88</td>
+		</tr>
+		<tr class= "alt">
+		  <td colspan="2">合计</td>
+		  <td>66</td>
+		  <td>22</td>
+		  <td>11</td>
+		  <td>31</td>
+		  <td>43</td>
+		  <td>88</td>
+		</tr>
+		<tr class= "alt">
+		  <td colspan="2">合计百分比</td>
+		  <td>66</td>
+		  <td>22</td>
+		  <td>11</td>
+		  <td>31</td>
+		  <td>43</td>
+		  <td>88</td>
+		</tr>
+		</tbody>
+	</table>
+
+        
+   <table id= "customers_u">
+   	  <thead>
+		<tr>
+			<th colspan="9">环秦高速站口入秦流量车型分布表</th>	
+		</tr>
+		<tr>
+		  <th rowspan="2">序号 </th>
+		  <th rowspan="2">环秦站口 </th>
+		  <th colspan="3">客车</th>
+		  <th colspan="3">货车</th>
+		  <th rowspan="2">总合计</th>  
+		</tr>
+		<tr>
+		  <th >两客</th>
+		  <th>普客</th>
+		  <th>客车合计</th>
+		  <th>危化品</th>
+		  <th>普货</td>
+		  <th>货车合计</th>		  
+		</tr>
+	  </thead>
+
+	 <tbody>
+		<tr class= "alt">
+		  <td >2</td>
+		  <td >秦皇岛北收费站</td>
+		  <td >88</td>
+		  <td>88</td>
+		  <td class="ke_he">55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td class="huo_he">88</td>
+		  <td>88</td>
+		</tr>
+		<tr>
+		  <td >3 </td>
+		  <td >秦皇岛开发区收费站 </td>
+		  <td >66</td>
+		  <td>44</td>
+		  <td class="ke_he">22</td>
+		  <td>11</td>
+		  <td>44</td>
+		  <td class="huo_he">44</td>
+		  <td>44</td>
+		</tr>
+		<tr class= "alt">
+		  <td >4 </td>
+		  <td >北戴河收费站 </td>
+		  <td>66 </td>
+		  <td>22</td>
+		  <td class="ke_he">11</td>
+		  <td>31</td>
+		  <td>43</td>
+		  <td class="huo_he">43</td>
+		  <td>43</td>
+		</tr>
+		<tr>
+		 <td >5 </td>
+		  <td >昌黎东收费站 </td>
+		  <td >66 </td>
+		  <td>22</td>
+		  <td class="ke_he">11</td>
+		  <td>31</td>
+		  <td>43</td>
+		  <td class="huo_he">43</td>
+		  <td>43</td>
+		</tr>
+		<tr class= "alt">
+		  <td >6 </td>
+		  <td >南戴河收费站 </td>
+		 <td>43</td>
+		  <td>22</td>
+		  <td class="ke_he">11</td>
+		  <td>31</td>
+		  <td>43</td>
+		  <td class="huo_he">43</td>
+		  <td>43</td>
+		</tr>
+		<tr class= "alt">
+		  <td colspan="2">合计</td>
+		  <td>66</td>
+		  <td>22</td>
+		  <td>11</td>
+		  <td>31</td>
+		  <td>43</td>
+		  <td>88</td>
+		  <td>88</td>
+		</tr>
+		<tr class= "alt">
+		  <td colspan="2">合计百分比</td>
+		  <td>66</td>
+		  <td>22</td>
+		  <td>11</td>
+		  <td>31</td>
+		  <td>43</td>
+		  <td>88</td>
+		  <td>88</td>
+		</tr>
+	  </tbody>
+    </table>
+		
+	<table id="customers_ji">
+		<tbody id="customers_jih">
+				<tr>
+					<th colspan="59">环秦高速站口入秦流量户籍地分布表</th>	
+				</tr>
+				<tr>
+				  <th rowspan="2">序号 </th>
+				  <th rowspan="2">环秦站口 </th>
+				  <th colspan="12">冀</th>
+				  <th rowspan="2">辽</th>
+				  <th rowspan="2">京</th>
+				  <th rowspan="2">黑</th>
+				  <th rowspan="2">津</th>
+				  <th rowspan="2">吉</th>
+				  <th rowspan="2">鲁</th>
+				  <th rowspan="2">蒙</th>  
+				  <th rowspan="2">豫</th>
+				  <th rowspan="2">苏</th>
+				  <th rowspan="2">晋</th>
+				  <th rowspan="2">皖</th>
+				  <th rowspan="2">浙</th>
+				  <th rowspan="2">沪</th>
+				  <th rowspan="2">闽</th>
+				  <th rowspan="2">川</th>
+				  <th rowspan="2">鄂</th>
+				  <th rowspan="2">粤</th>
+				  <th rowspan="2">陕</th>
+				  <th rowspan="2">甘</th>
+				  <th rowspan="2">湘</th>
+				  <th rowspan="2">WJ</th>
+				  <th rowspan="2">K</th>
+				  <th rowspan="2">琼</th>
+				  <th rowspan="2">渝</th>
+				  <th rowspan="2">新</th>
+				  <th rowspan="2">赣</th>
+				  <th rowspan="2">B</th>
+				  <th rowspan="2">云</th>
+				  <th rowspan="2">青</th>
+				  <th rowspan="2">E</th>
+				  <th rowspan="2">青</th>
+				  <th rowspan="2">E</th>
+				  <th rowspan="2">N</th>
+				  <th rowspan="2">宁</th>
+				  <th rowspan="2">H</th>
+				  <th rowspan="2">桂</th>
+				  <th rowspan="2">V</th>
+				  <th rowspan="2">Z</th>
+				  <th rowspan="2">贵</th>
+				  <th rowspan="2">L(兰州军)</th>
+				  <th rowspan="2">N(南京军区)</th>
+				  <th rowspan="2">E(第二炮兵)</th>
+				  <th rowspan="2">Z(中央军委及四总部直属单位)</th>
+				  <th rowspan="2">未识别</th>
+				  <th rowspan="2">总合计</th>
+				  
+				</tr>
+				<tr>
+				  <th>秦皇岛</th>
+				  <th>唐山</th>
+				  <th>廊坊</th>
+				  <th>石家庄</th>
+				  <th>承德</td>
+				  <th>保定</th>
+				  <th>沧州</th>
+				  <th>邢台</th>
+				  <th>邯郸</th>
+				  <th>张家口</th>
+				  <th>衡水</th>
+				  <th>合计</th>		  
+				</tr>
+				<tr>
+				  <td>1</td>
+				  <td>秦皇岛东收费站</td>
+				  <td>2209</td>
+				  <td>585</td>
+				  <td>121</td>
+				  <td>96</td>
+				  <td>74</td>
+				  <td>68</td>
+				  <td>60</td>
+				  <td>39</td>
+				  <td>38</td>
+				  <td>38</td>
+				  <td>12</td>
+				  <td>3304</td>
+				  <td>859</td>
+				  <td>474</td>
+				  <td>377</td>
+				  <td>275</td>
+				  <td>194</td>
+				  <td>98</td>
+				  <td>65</td>
+				  <td>62</td>
+				  <td>36</td>
+				  <td>30</td>
+				  <td>20</td>
+				  <td>19</td>
+				  <td>15</td>
+				  <td>9</td>
+				  <td>8</td>
+				  <td>7</td>
+				  <td>5</td>
+				  <td>4</td>
+				  <td>3</td>
+				  <td>3</td>
+				  <td>3</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>1</td>
+				  <td>1</td>
+				  <td>1</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>5918</td>
+				</tr>
+				<tr>
+				  <td>2</td>
+				  <td>秦皇岛北收费站</td>
+				  <td>2208</td>
+				  <td>585</td>
+				  <td>121</td>
+				  <td>96</td>
+				  <td>74</td>
+				  <td>68</td>
+				  <td>60</td>
+				  <td>39</td>
+				  <td>38</td>
+				  <td>38</td>
+				  <td>12</td>
+				  <td>3304</td>
+				  <td>859</td>
+				  <td>474</td>
+				  <td>377</td>
+				  <td>275</td>
+				  <td>194</td>
+				  <td>98</td>
+				  <td>65</td>
+				  <td>62</td>
+				  <td>36</td>
+				  <td>30</td>
+				  <td>20</td>
+				  <td>19</td>
+				  <td>15</td>
+				  <td>9</td>
+				  <td>8</td>
+				  <td>7</td>
+				  <td>5</td>
+				  <td>4</td>
+				  <td>3</td>
+				  <td>3</td>
+				  <td>3</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>1</td>
+				  <td>1</td>
+				  <td>1</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>5918</td>
+				</tr>
+				<tr>
+					 <td>3</td>
+				  <td>秦皇岛开发区收费站</td>
+				  <td>2207</td>
+				  <td>585</td>
+				  <td>121</td>
+				  <td>96</td>
+				  <td>74</td>
+				  <td>68</td>
+				  <td>60</td>
+				  <td>39</td>
+				  <td>38</td>
+				  <td>38</td>
+				  <td>12</td>
+				  <td>3304</td>
+				  <td>859</td>
+				  <td>474</td>
+				  <td>377</td>
+				  <td>275</td>
+				  <td>194</td>
+				  <td>98</td>
+				  <td>65</td>
+				  <td>62</td>
+				  <td>36</td>
+				  <td>30</td>
+				  <td>20</td>
+				  <td>19</td>
+				  <td>15</td>
+				  <td>9</td>
+				  <td>8</td>
+				  <td>7</td>
+				  <td>5</td>
+				  <td>4</td>
+				  <td>3</td>
+				  <td>3</td>
+				  <td>3</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>1</td>
+				  <td>1</td>
+				  <td>1</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>5918</td>
+				</tr>
+				<tr>
+					 <td>4</td>
+				  <td>北戴河收费站</td>
+				  <td>2206</td>
+				  <td>585</td>
+				  <td>121</td>
+				  <td>96</td>
+				  <td>74</td>
+				  <td>68</td>
+				  <td>60</td>
+				  <td>39</td>
+				  <td>38</td>
+				  <td>38</td>
+				  <td>12</td>
+				  <td>3304</td>
+				  <td>859</td>
+				  <td>474</td>
+				  <td>377</td>
+				  <td>275</td>
+				  <td>194</td>
+				  <td>98</td>
+				  <td>65</td>
+				  <td>62</td>
+				  <td>36</td>
+				  <td>30</td>
+				  <td>20</td>
+				  <td>19</td>
+				  <td>15</td>
+				  <td>9</td>
+				  <td>8</td>
+				  <td>7</td>
+				  <td>5</td>
+				  <td>4</td>
+				  <td>3</td>
+				  <td>3</td>
+				  <td>3</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>1</td>
+				  <td>1</td>
+				  <td>1</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>5918</td>
+				</tr>
+				<tr>
+					 <td>5</td>
+				  <td>昌黎收费站</td>
+				  <td>2205</td>
+				  <td>585</td>
+				  <td>121</td>
+				  <td>96</td>
+				  <td>74</td>
+				  <td>68</td>
+				  <td>60</td>
+				  <td>39</td>
+				  <td>38</td>
+				  <td>38</td>
+				  <td>12</td>
+				  <td>3304</td>
+				  <td>859</td>
+				  <td>474</td>
+				  <td>377</td>
+				  <td>275</td>
+				  <td>194</td>
+				  <td>98</td>
+				  <td>65</td>
+				  <td>62</td>
+				  <td>36</td>
+				  <td>30</td>
+				  <td>20</td>
+				  <td>19</td>
+				  <td>15</td>
+				  <td>9</td>
+				  <td>8</td>
+				  <td>7</td>
+				  <td>5</td>
+				  <td>4</td>
+				  <td>3</td>
+				  <td>3</td>
+				  <td>3</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>1</td>
+				  <td>1</td>
+				  <td>1</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>5918</td>
+				</tr>
+				<tr>
+					 <td>6</td>
+				  <td>南戴河收费站</td>
+				  <td>2204</td>
+				  <td>585</td>
+				  <td>121</td>
+				  <td>96</td>
+				  <td>74</td>
+				  <td>68</td>
+				  <td>60</td>
+				  <td>39</td>
+				  <td>38</td>
+				  <td>38</td>
+				  <td>12</td>
+				  <td>3304</td>
+				  <td>859</td>
+				  <td>474</td>
+				  <td>377</td>
+				  <td>275</td>
+				  <td>194</td>
+				  <td>98</td>
+				  <td>65</td>
+				  <td>62</td>
+				  <td>36</td>
+				  <td>30</td>
+				  <td>20</td>
+				  <td>19</td>
+				  <td>15</td>
+				  <td>9</td>
+				  <td>8</td>
+				  <td>7</td>
+				  <td>5</td>
+				  <td>4</td>
+				  <td>3</td>
+				  <td>3</td>
+				  <td>3</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>1</td>
+				  <td>1</td>
+				  <td>1</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>5918</td>
+				</tr>
+				<tr>
+				  <td colspan="2">合计</td>
+				  <td>2203</td>
+				  <td>585</td>
+				  <td>121</td>
+				  <td>96</td>
+				  <td>74</td>
+				  <td>68</td>
+				  <td>60</td>
+				  <td>39</td>
+				  <td>38</td>
+				  <td>38</td>
+				  <td>12</td>
+				  <td>3304</td>
+				  <td>859</td>
+				  <td>474</td>
+				  <td>377</td>
+				  <td>275</td>
+				  <td>194</td>
+				  <td>98</td>
+				  <td>65</td>
+				  <td>62</td>
+				  <td>36</td>
+				  <td>30</td>
+				  <td>20</td>
+				  <td>19</td>
+				  <td>15</td>
+				  <td>9</td>
+				  <td>8</td>
+				  <td>7</td>
+				  <td>5</td>
+				  <td>4</td>
+				  <td>3</td>
+				  <td>3</td>
+				  <td>3</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>1</td>
+				  <td>1</td>
+				  <td>1</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>5918</td>
+				</tr>
+				<tr>
+				  <td colspan="2">合计百分比</td>
+				  <td>2203</td>
+				  <td>585</td>
+				  <td>121</td>
+				  <td>96</td>
+				  <td>74</td>
+				  <td>68</td>
+				  <td>60</td>
+				  <td>39</td>
+				  <td>38</td>
+				  <td>38</td>
+				  <td>12</td>
+				  <td>3304</td>
+				  <td>859</td>
+				  <td>474</td>
+				  <td>377</td>
+				  <td>275</td>
+				  <td>194</td>
+				  <td>98</td>
+				  <td>65</td>
+				  <td>62</td>
+				  <td>36</td>
+				  <td>30</td>
+				  <td>20</td>
+				  <td>19</td>
+				  <td>15</td>
+				  <td>9</td>
+				  <td>8</td>
+				  <td>7</td>
+				  <td>5</td>
+				  <td>4</td>
+				  <td>3</td>
+				  <td>3</td>
+				  <td>3</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>1</td>
+				  <td>1</td>
+				  <td>1</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>0</td>
+				  <td>5918</td>
+				</tr>
+		</tbody>
+	</table>
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript">
+	//户籍地 横合计
+		var trList = $("#customers_two").children("tr");
+		var tdList = $("#customers_two").children("tr").eq(2).children("td");
+		 for (var i=2;i<trList.length-1;i++) {
+		  	var num_o = 0;
+		  	for(var j=2;j<tdList.length-1;j++){ 		
+		  		num_o += parseFloat(trList.eq(i).find("td").eq(j).text());
+		  		if(j == tdList.length-2) {
+		  			trList.eq(i).find("td").eq(j+1).text(num_o);			
+		  		}
+		  	}
+		  }
+	//户籍地 纵向和
+	 for (var i=2;i<tdList.length;i++) {
+		  	var num_p = 0;
+		  	for(var j=2;j<trList.length-2;j++){
+		  		// console.log(trList.eq(j).find("td").eq(i));
+		  		num_p += parseFloat(trList.eq(j).find("td").eq(i).text());
+		  		// console.info(trList.eq(j+1).find("td").eq(i-1))
+		  		if(j == trList.length-3) {
+		  			trList.eq(j+1).find("td").eq(i-1).text(num_p);
+		  		}
+		  	}
+		  }	 
+		  
+	//户籍地 百分比
+	  for (var i=2;i<tdList.length;i++) {
+		  	var num_s = 0;
+		  	for(var j=2;j<trList.length-1;j++){
+		  		
+		  		num_s += parseFloat(trList.eq(j).find("td").eq(i).text());
+		  		
+		  		if(j == trList.length-3) {
+		  			var num4_bh = ((num_s/num_p)*100).toFixed(2)+'%';
+		  			// console.log(num_s);
+		  			// console.info(trList.eq(j+1).find("td").eq(i-1))
+		  			trList.eq(j+2).find("td").eq(i-1).text(num4_bh);
+		  		
+		  		}
+		  	}
+		  }
+
+	
+		
+ 
+		  // 客车 和 货车 合计
+ 		var trList1 = $("#customers_u tbody").children("tr");
+		var tdList1 = $("#customers_u tbody").children("tr").eq(2).children("td");
+		 for (var i=0;i<trList1.length-2;i++) {
+		 	
+		 		var tdArr1 = trList1.eq(i).find("td").eq(2).text();
+		 		
+		 		var tdArr2 = trList1.eq(i).find("td").eq(3).text();
+              
+		 		var tdArr3 = trList1.eq(i).find("td").eq(5).text();
+		 		var tdArr4 = trList1.eq(i).find("td").eq(6).text();
+		 		
+		 		
+		 	 	$(".ke_he")[i].innerHTML = Number(tdArr1)+Number(tdArr2);
+		 	 	$(".huo_he")[i].innerHTML = Number(tdArr3)+Number(tdArr4);
+		 }
+
+
+		 //流量车型分布 横合计
+		  for (var i=0;i<trList1.length-1;i++) {
+		  	var num_o = 0;
+		  	for(var j=2;j<tdList1.length-1;j++){ 		
+		  		num_o += parseFloat(trList1.eq(i).find("td").eq(j).text());
+		  		if(j == tdList1.length-2) {
+		  			trList1.eq(i).find("td").eq(j+1).text(num_o);			
+		  		}
+		  	}
+		  }
+		  //流量车型分布 纵合计
+		    for (var i=2;i<tdList1.length;i++) {
+		  	var num_t = 0;
+		  	for(var j=0;j<trList1.length-2;j++){
+		  		// console.log(trList1.eq(j).find("td").eq(i));
+		  		num_t += parseFloat(trList1.eq(j).find("td").eq(i).text());
+		  		// console.info(trList1.eq(j+1).find("td").eq(i-1))
+		  		if(j == trList1.length-3) {
+		  			trList1.eq(j+1).find("td").eq(i-1).text(num_t)
+		  			
+		  		}
+		  	}
+		  }
+		 
+		  //流量车型分布 百分比
+		  for (var i=2;i<tdList1.length;i++) {
+		  	var num_q = 0;
+		  	for(var j=0;j<trList1.length-1;j++){
+		  		
+		  		num_q += parseFloat(trList1.eq(j).find("td").eq(i).text());
+		  		
+		  		if(j == trList1.length-3) {
+
+		  			var num4_bh = ((num_q/num_t)*100).toFixed(2)+'%';
+		  			console.log(num_q);
+		  			console.log(num_t)
+		  			
+		  			trList1.eq(j+2).find("td").eq(i-1).text(num4_bh);
+		  		
+		  		}
+		  	}
+		  }
+		 
+	
+		  
+		  
+		  //纵向 和
+  //  function zonghe(conid){
+  //  		var trList3 = $("#"+ conid).children("tr");
+		// var tdList = $("#"+ conid).children("tr").eq(2).children("td");
+		// // var allNum = 0;
+		//   for (var i=2;i<tdList1.length;i++) {
+		//   	var num = 0;
+		//   	for(var j=2;j<trList3.length-1;j++){
+		//   		// console.log(trList3.eq(j).find("td").eq(i));
+		//   		num += parseFloat(trList3.eq(j).find("td").eq(i).text());
+		//   		// console.info(trList3.eq(j+1).find("td").eq(i-1))
+		//   		if(j == trList3.length-2) {
+		//   			trList3.eq(j+1).find("td").eq(i-1).text(num)
+		//   			// allNum += num;
+		//   		}
+		//   	}
+		//   }
+		//   // $("#"+ conid +"").find("th").eq($("#"+ conid).find("th").length-1).text(allNum);
+  //  }
+   
+   
+		
+		  //流量户籍 河北省合计
+		var trList5 = $("#customers_jih").children("tr");
+		var tdList5 = $("#customers_jih").children("tr").eq(3).children("td");
+		
+		  for (var i=3;i<trList5.length-1;i++) {
+		  	var num1 = 0;
+		  	for(var j=2;j<tdList5.length-46;j++){
+		  		num1 += parseFloat(trList5.eq(i).find("td").eq(j).text());
+		 
+		  		
+		  		if(j == tdList5.length-47) {
+		  			
+		  			trList5.eq(i).find("td").eq(j+1).text(num1)
+		  			
+		  		}
+		  	}
+		  }
+		  //横向总和
+		    for (var i=3;i<trList5.length-1;i++) {
+		  	var num2 = 0;
+		  	for(var j=2;j<tdList5.length-1;j++){ 		
+		  		num2 += parseFloat(trList5.eq(i).find("td").eq(j).text());
+		  		if(j == tdList5.length-2) {
+		  			trList5.eq(i).find("td").eq(j+1).text(num2)
+		  			
+		  		}
+		  	}
+		  }
+		  //流量户籍 纵向合计
+		  
+		  for (var i=2;i<tdList5.length;i++) {
+		  	var num3 = 0;
+		  	for(var j=3;j<trList5.length-2;j++){
+		  		
+		  		num3 += parseFloat(trList5.eq(j).find("td").eq(i).text());
+		  		
+		  		if(j == trList5.length-3) {
+		  			trList5.eq(j+1).find("td").eq(i-1).text(num3)
+		  		
+		  		}
+		  	}
+		  }
+		
+		  //流量户籍 百分比
+		    
+		  for (var i=2;i<tdList5.length;i++) {
+		  	var num4 = 0;
+		  	for(var j=3;j<trList5.length-1;j++){
+		  		
+		  		num4 += parseFloat(trList5.eq(j).find("td").eq(i).text());
+		  		
+		  		if(j == trList5.length-3) {
+		  			var num4_b = ((num4/num3)*100).toFixed(2)+'%';
+		  			trList5.eq(j+2).find("td").eq(i-1).text(num4_b);
+		  		
+		  		}
+		  	}
+		  }
+		 
+
+
+	</script>
+</body>
+</html>

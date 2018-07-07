@@ -1,0 +1,693 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video,option,select {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+/* line 26, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 30, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 10, ../sass/screen.scss */
+body {
+  background: #00041d;
+  overflow: auto;
+  opacity: 1.0;
+}
+body,html {
+  background: #00041d;
+  opacity: 1.0;
+  width: 100%;
+  height: 100%;
+
+}
+.all_page{
+   width: 100%;
+  height: 100%;
+  background: #00041d;
+  position: relative;
+}
+.top_title{
+  position: absolute;
+  height: 6.5%;
+  width: 100%;
+  /*border-bottom: 1px solid #2445be;*/
+}
+.left_top{
+  position: absolute;
+ /* margin: 5.5% 0.6% 1% 0.6%;*/
+     top: 7.5%;
+    left: 0.6%;
+  width: 25%;
+  height: 19.7%;
+/*  background: pink;*/
+    background: #000036;
+    opacity: 0.9;
+}
+.left_bottom{
+  position: absolute;
+  /*margin: 18% 0 0 0.6%;*/
+    top: 28.3%;
+    left: 0.6%;
+    width: 25%;
+    height: 69%;
+ /* background: orange;*/
+    background: #000036;
+    opacity: 0.9;
+    overflow:hidden;
+    overflow-y: scroll;
+}
+.center_top{
+  position: absolute;
+ /* margin: 5.5% 0.6% 0 0.6%;*/
+     top: 7.5%;
+   left: 26.3%;
+    width: 53%;
+  height: 15%;
+  /*background: orange;*/
+      background: #000036;
+    opacity: 0.9;
+}
+.right_car{
+  position: absolute;
+  width: 19.6%;
+  height: 18.8%;
+  top: 7.5%;
+  left: 80%;
+  /*background: pink;*/
+      background: #000036;
+    opacity: 0.9;
+}
+.right_task{
+  position: absolute;
+  width: 19.6%;
+  height: 14.7%;
+  top: 27.3%;
+  left: 80%;
+ /* background: orange;*/
+     background: #000036;
+    opacity: 0.9;
+}
+.right_duty{
+  position: absolute;
+  width: 19.6%;
+  height: 19%;
+  top: 43%;
+  left: 80%;
+  /*background: pink;*/
+      background: #000036;
+    opacity: 0.9;
+}
+.right_job{
+  position: absolute;
+  width: 19.6%;
+  height: 16.7%;
+  top: 63%;
+  left: 80%;
+ /* background: orange;*/
+     background: #000036;
+    opacity: 0.9;
+}
+.right_traffic{
+  position: absolute;
+  width: 19.6%;
+  height: 17.1%;
+  top: 81%;
+  left: 80%;
+ /* background: pink;*/
+     background: #000036;
+    opacity: 0.9;
+}
+.SecurityCheck-title ul li{
+  float: left;
+}
+.SecurityCheck-title ul li:first-of-type{
+      margin: 0% 2% 2% 34%;
+}
+.SecurityCheck-title ul li:nth-of-type(2){
+        margin: 0% 2% 2% 0%;
+}
+
+
+
+@media screen and (max-width: 1900px) {
+  .logo>div:nth-child(2){
+    font-size: 1em;
+  }
+  .SecurityCheck-title ul li{
+    /*font-size: 13px;*/
+    font-size: .7em;
+}
+  .SecurityCheck table tr{
+    /*font-size: 13px;*/
+     font-size: .7em;
+  }
+  .SecurityCheck-title ul li:first-of-type{
+        margin: 0% 2% 2% 30%;
+  }
+  .high_speed{
+        /*width: 337px;*/
+          /*  width: 333px;*/
+      width: 100%;
+  }
+  .search_road>input{
+        width: 93%;
+    height: 20px;
+  }
+  .search_inner>li,.hq_kakou li,.hs_kakou li,.shipin_kou li{
+    width: 97%;
+        height: 62.5px;
+  }
+  .name_cons{
+    /*margin-right: 37%;*/
+    font-size: 14px;
+  }
+  .serial_number{
+        width: 336px;
+  }
+  .road_cont{
+    width: 97%;
+  }
+  .video_cont{
+        width: 310px;
+  }
+  .video_cont img{
+        width: 309px;
+  }
+
+  /*天气*/
+  .congestionIndex{
+    margin-top: 5% !important;
+    height: 30%;
+  }
+  .congestionIndex-box{
+        width: 54px;
+    height: 53px;
+  }
+  .congestionIndex-table table{
+        width: 69%;
+  }
+/*  #congest_pie{
+    height: 70px;
+  }*/
+
+  .beijing_dir{
+      left: 8%;
+    top: 26%;
+}
+.shenyang_dir{
+      left: 8%;
+    top: 64%;
+}
+/*#congestone{
+  height: 70px !important;
+}*/
+.congest_nums>div{
+  font-size: 12px;
+}
+#congest_pie{
+ /* height: 70px !important;*/
+     height: 54% !important;
+     width: 171px !important; 
+}
+#congestone{
+    height: 78% !important;
+     width: 171px !important; 
+}
+.congest_wen{
+  color: white;
+  margin-top: 0 !important;
+}
+.congest_wen{
+    margin-left: 37px;
+  }
+}
+
+/*新增*/
+.congest_wen,.congest_wen{
+  color: white;
+}
+.name_high{
+  position: relative;
+}
+.name_high .launch,.name_high .retract{
+  position: absolute;
+  font-size: 12px;
+  color:white;
+      top: 41%;
+    right: 7%;
+    cursor: pointer;
+}
+#high_numsj,#high_numst,#high_numsy{
+  margin-left: 10px;
+    color: #00ffff;
+    font-weight: bold;
+}
+#jing_ha{
+  height: 60%;
+/*  background: pink;*/
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.control{
+    font-size: 12px;
+    height: 21px;
+    width: 40px;
+    /*margin-left: 47px;*/
+    color: #fff;
+    text-shadow: 1px 1px 0.5px #22629B;
+    border: 1px solid #2576A8;
+    background: #50A5D9;
+}
+#jhg_bord input,#tjg_bord input,#yhg_bord input{
+      border-color: #002986;
+    margin: 0 auto;
+    padding: 0 10px;
+    /* width: 536px; */
+    height: 27px;
+    border: 1px solid rgba(255,255,255,.8);
+    border-radius: 2px;
+    color: #fff;
+    background: rgba(0,0,0,.15);
+}
+#jhg_bord input::-webkit-input-placeholder,#tjg_bord input::-webkit-input-placeholder,#yhg_bord input::-webkit-input-placeholder{
+         /* placeholder颜色  */
+         color: #fff;
+         /* placeholder字体大小  */
+         font-size: 12px;
+         /* placeholder位置  */
+         text-align: left;
+     }
+#jhg_search,#tjg_search,#yhg_search{
+    position: absolute;
+    top: 19%;
+    right: 3%;
+}   
+.TrafficAccident{
+ position: relative;
+}
+.TrafficAccident ul,.secur_work{
+      top: -7px;
+    position: absolute;
+    right: 2%;
+}
+.TrafficAccident ul li,.secur_work li{
+      margin: 0 4px;
+}
+.app-area-box-title{
+  position: relative;
+}
+.qinwu,.secur_work,.car_tab{
+    top: 18%;
+    position: absolute;
+    right: 2%;
+}
+.qinwu li,.secur_work li,.car_tab li{
+  float: left;
+      float: left;
+    font-size: 10px;
+    /*font-size: 1em;*/
+    line-height: 150%;
+  /*  color: #8888be;*/
+   /* background-color: #10107d;*/
+    padding: 0 10px;
+  /*  margin: 0 10px;*/
+    cursor: pointer;
+}
+.app-con-box{
+  margin-top: 3px;
+  height: 88%;
+}
+
+/*应到 到港*/
+.duty_checked{
+  color: #fff;
+  background: #3333ff;
+}
+.duty_def{
+  color: #7f7fb2;
+  background: #0f0f6f;
+}
+/*应到 到港*/
+
+/*天气样式*/
+.wet_fact{
+      height: 93%;
+}
+#wet_content{
+  height: 100%;
+}
+/* 天气和概况 */
+#wet_content,#fact_content{
+  width: 100%;
+ /* height: 180px;*/
+ height: 99%;
+  /*background: orange;*/
+}
+.congest_shu,.congets_pie,.congets_control{
+  /*height: 180px;
+  width: 33%;*/
+  height: 100%;
+  width: 50%;
+  float: left;
+}
+.congest_nums>div{
+  width: 33%;
+  float: left;
+  text-align: center;
+      margin-left: 5%;
+}
+.congest_nums .con_fwq,.congest_nums .con_ld{
+  width: 22%;
+}
+
+.congest_nums {
+    margin-top: 3%;
+    height: 21%;
+    width: 100%;
+}
+.con_zd,#con_zd{
+  color:#C72626;
+}
+.con_fwq,#con_fwq{
+  color:#FF6666;
+}
+.con_ld,#con_ld{
+  color:#F9B000;
+}
+#congestone>div canvas{
+  top: 7px !important;
+}
+
+.summer-weathe-inner{
+    width: 72%;
+    height: 71%;
+    /* margin-left: 2.5%; */
+    /* clear: both; */
+    box-shadow: inset 0px 0px 18px #fc4646;
+    position: relative;
+    /* overflow: hidden; */
+    text-align: center;
+    color: #fff;
+    /* float: left; */
+    position: absolute;
+    left: 26%;
+    top: 10%;
+}
+
+.summer-weathe{
+    width: 24%;
+    height: 50%;
+    /* overflow: hidden; */
+    margin: 0px;
+    /* float: left; */
+    position: absolute;
+    top: 10%;
+    left: 1%;
+}
+.wea_sele select{
+   background: transparent;
+   width: 84%;
+   /*padding: 5px;*/
+   font-size: 0.8em;
+   border: 1px solid #ccc;
+   height: 34px;
+   color: white;
+  /* -webkit-appearance: none;*/ /*for chrome*/
+}
+.wea_sele select option{
+  color: black;
+  background: #A6E1EC;
+  width: 50% !important;
+  /*line-height: 20px;*/
+}
+#wea_cond,#wea_temp{
+      color: white;
+    font-size: .9em;
+    margin-top: 13%;
+}
+
+/* 流量饱和度 */
+.out_inner{
+  height: 100%;
+}
+.beijing_dir{
+       left: 8%;
+    top: 33%;
+
+}
+.shenyang_dir{
+       left: 8%;
+    top: 66%;
+}
+
+
+
+
+/*安保工作*/
+
+.SecurityCheck table{
+      height: 71%;
+}
+.SecurityCheck-title>ul{
+      margin-top: 9px;
+    color: white;
+}
+/* 滚动条样式 */
+.column_left_congest{
+    overflow: hidden;
+}
+::-webkit-scrollbar{
+    width:3px !important;
+}
+::-webkit-scrollbar-button {
+}
+::-webkit-scrollbar-track{
+    /*background-color:#f3f3f3;*/
+    background-color: #0b0c45;
+}
+::-webkit-scrollbar-track-piece{
+    /*background-color:#f3f3f3;*/
+    background-color: #0b0c45;
+    -webkit-border-radius:4px;
+}
+::-webkit-scrollbar-thumb{
+    /*background-color:#999999; */
+    background-color:rgba(255,255,255,0.75);
+    border:solid 1px #0b0c45;
+    border-radius:4px;
+}
+::-webkit-scrollbar-corner {
+    /* background-color: #999999;*/
+    background-color: #0b0c45;
+}
+::-webkit-resizer {
+    background: no-repeat bottom right;
+}
+
+  /*新增开口与视频*/
+.bay_vid{
+    height: 20px;
+    width: 100%;
+}
+.bay_vid>div{
+    width: 49.5%;
+    float: left;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+  }
+.bayonet_conts>div{
+    width: 33%;
+    float: left;
+    font-size: 12px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+  }
+  .bayonet_conts,.videos_conts{
+    height: 30px;
+    width: 100%;
+    background: #0061F5;
+  }
+  .bayonet_conts>div,.videos_conts>div{
+    width: 33%;
+    float: left;
+    font-size: 12px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+   /* color: #8FBFFC;*/
+  }
+  .bay_vid_def{
+    color: #8FBFFC
+  }
+  .bay_vid_checked{
+    background: #8FBFFC;
+    color: white;
+  }
+  .video_box{
+       background: pink;
+    width: 700px;
+    height: 450px;
+    position: absolute;
+    left: 50%;
+    top: 64%;
+    margin-left: -250px;
+    margin-top: -250px;
+    line-height: 500px;
+    color: red;
+    text-align: center;
+    /* display: none; */
+    z-index: 100;
+    } 
+    .video_close{
+              display: inline-block;
+            background: orange;
+            color: red;
+            border-radius: 12px;
+            height: 20px;
+            width: 20px;
+            font-size: 18px;
+            padding: 1px;
+            float: right;
+            border: none;
+            position: absolute;
+            right: 0px;
+            z-index: 1000;
+    }
+    .hide_vid{
+     position: absolute;
+     top: -9999px;
+     left: -9999px;
+  }
+    .search_inner>li,.hq_kakou li,.hs_kakou li,.shipin_kou li{
+      /*width: 460px;*/
+      width: 100%;
+      height: 78px;
+      border-bottom: 1px solid #0f0f73;
+      box-sizing: border-box;
+      padding-left: 8px;
+      cursor:pointer;
+    }  
+   #hq_kakou>li,#hs_kakou>li,#shipin_kou>li{
+    color: white;
+    font-weight: bold;
+    line-height: 78px;
+    box-sizing: border-box;
+    padding-left: 14%;
+    /*font-size:14px;*/
+    font-size: .8em;
+   }
+   .name_cons{
+  font-weight:bold;
+ /* margin-right: 150px;*/
+/* margin-right: 230px;*/
+  /*width: 155px;*/
+  /* css.css 4528*/
+  width: 86%;
+}
+.infer_dir{
+   /* css.css 4539*/
+  /*font-size: 14px;*/
+  font-size: .8em;
+  color: white;
+  float: left;
+  width: 84%;
+}
+.name_ser{
+  height: 45px;
+  line-height: 45px;
+  width: 100%;
+}
+
+/*统计报表*/
+#che_tables{
+     width: 88px;
+    height: 24px;
+    line-height: 24px;
+    background: #66CC33;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 5px;
+}
+/*表格页面*/
+#table_page{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: #010135;
+  opacity: 0.9;
+}
+.page_close{
+      background: #B45262;
+    border: none;
+    font-size: 21px;
+    position: absolute;
+    right: 0px;
+    color: white;
+}
+.page_title{
+   height: 8%;
+    text-align: center;
+    line-height: 308%;
+    font-size: 1.4em;
+    border-bottom: 2px solid #081358;
+    color: white;
+}
+.page_time{
+    text-align: center;
+    font-size: .9em;
+    color: white;
+}
+
+    

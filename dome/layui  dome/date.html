@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>date</title>
+	<link rel="stylesheet" type="text/css" href="css/layui.css">
+</head>
+<body>
+	
+<div class="layui-form">
+  	<div class="layui-form-item">
+  		 <div class="layui-inline">
+	      <label class="layui-form-label">请选择范围</label>
+	      <div class="layui-input-inline">
+	        <input type="text" class="layui-input" id="test16" placeholder="开始 到 结束">
+	      </div>
+    	</div>
+	</div>
+</div>	  
+
+<script type="text/javascript" src="layer/layer.js"></script>
+<script type="text/javascript">
+
+	layui.use('laydate', function(){
+  			var laydate = layui.laydate;
+  			laydate.render({
+			    elem: '#test16'
+			    ,type: 'datetime'
+			    ,range: '到'
+			    ,format: 'yyyy年M月d日H时m分s秒'
+			  });
+  	})		
+
+</script>
+</body>
+</html>

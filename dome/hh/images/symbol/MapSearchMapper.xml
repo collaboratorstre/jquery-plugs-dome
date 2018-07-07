@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ehl.board.module.mapper.MapSearchMapper">
+	<resultMap id="BigMilitaryBaseInfoMap" type="com.ehl.board.module.bean.BigMilitaryBaseInfo">
+  		<result property="dm" column="DM"/>
+  		<result property="name" column="MC"/>
+  		<result property="qx" column="QX"/>
+  		<result property="centerPoint" column="CENTER_POINT"/>
+  		<result property="bestLevel" column="BEST_LEVEL"/>
+  		<result property="showStatus" column="XSZT"/>
+  		<result property="originalDwbl" column="Y_DWBH"/>
+  		<result property="longitude" column="LONGITUDE"/>
+  		<result property="latitude" column="LATITUDE"/>
+  		<result property="address" column="ADDRESS"/>
+  		<result property="phoneNo" column="PHONE"/>
+  		<result property="faxNo" column="FAX"/>
+  		<result property="picPath" column="PATH"/>
+  		<result property="colorValue" column="COLOR"/>
+	</resultMap>
+	
+	<!-- 大队基本信息 -->
+	<select id="getBigMilitaryBaseInfo" resultMap="BigMilitaryBaseInfoMap">
+		SELECT DM,MC,QX,CENTER_POINT,BEST_LEVEL,XSZT,Y_DWBH,LONGITUDE,LATITUDE,ADDRESS,
+		PHONE,FAX,PATH,COLOR from D_AREA_DD_BASE t 
+		<if test="roadList!=null">
+			 TSFROADNAME in
+			<foreach collection="roadList" item="item" index="index" 
+			open="(" separator="," close=")">#{item}</foreach>
+			and
+		</if>
+	</select>
+	
+	<resultMap id="BigMilitaryAreaMap" type="com.ehl.board.module.bean.BigMilitaryArea">
+  		<result property="name" column="NAME"/>
+  		<result property="branchBigMilitary" column="ZD"/>
+  		<result property="bigMilitary" column="DD"/>
+  		<result property="jq" column="JQ"/>
+  		<result property="geometry" column="GEOMETRY"/>
+  		<result property="points" column="POINTS"/>
+  		
+	</resultMap>
+	
+	<!-- 大队辖区信息 -->
+	<select id="getBigMilitaryAreaInfo" resultMap="BigMilitaryAreaMap">
+		SELECT NAME,ZD,DD,JQ,GEOMETRY,POINTS from D_AREA_DD_XQ t 
+		<if test="roadList!=null">
+			 TSFROADNAME in
+			<foreach collection="roadList" item="item" index="index" 
+			open="(" separator="," close=")">#{item}</foreach>
+			and
+		</if>
+	</select>
+	
+	
+	<resultMap id="PoliceAreaBaseInfoMap" type="com.ehl.board.module.bean.PoliceAreaBaseInfo">
+  		<result property="policeAreaNo" column="CODE"/>
+  		<result property="policeAreaName" column="NAME"/>
+  		<result property="bigMilitaryNo" column="DDDM"/>
+  		<result property="centerPoint" column="CENTER_POINT"/>
+  		<result property="bestLevel" column="BEST_LEVEL"/>
+  		<result property="jc" column="JC"/>
+  		<result property="zddm" column="ZDDM"/>
+  		<result property="colorValue" column="COLOR"/>
+  		
+	</resultMap>
+	
+	<!-- 大队辖区信息 -->
+	<select id="getPoliceAreaInfo" resultMap="PoliceAreaBaseInfoMap">
+		SELECT CODE,NAME,DDDM,CENTER_POINT,BEST_LEVEL,JC,ZDDM,COLOR from D_AREA_JQ_BASE t 
+		<if test="roadList!=null">
+			 TSFROADNAME in
+			<foreach collection="roadList" item="item" index="index" 
+			open="(" separator="," close=")">#{item}</foreach>
+			and
+		</if>
+	</select>
+	
+	
+	<resultMap id="BranchBaseInfoMap" type="com.ehl.board.module.bean.BranchBaseInfo">
+  		<result property="dm" column="DM"/>
+  		<result property="name" column="MC"/>
+  		<result property="gl" column="GL"/>
+  		<result property="xh" column="XH"/>
+  		<result property="centerPoint" column="CENTER_POINT"/>
+  		<result property="bestLevel" column="BEST_LEVEL"/>
+  		<result property="originalDwbh" column="Y_DWBH"/>
+  		<result property="address" column="ADDRESS"/>
+  		<result property="phoneNo" column="PHONE"/>
+  		<result property="faxNo" column="FAX"/>
+  		<result property="path" column="PATH"/>
+  		<result property="colorValue" column="COLOR"/>
+	</resultMap>
+	
+	
+	<!-- 大队辖区信息 -->
+	<select id="getBranchBaseInfo" resultMap="BranchBaseInfoMap">
+		SELECT DM,MC,GL,XH,CENTER_POINT,BEST_LEVEL,Y_DWBH,ADDRESS,PHONE,FAX,PATH,COLOR from D_AREA_ZD_BASE t 
+		<if test="roadList!=null">
+			 TSFROADNAME in
+			<foreach collection="roadList" item="item" index="index" 
+			open="(" separator="," close=")">#{item}</foreach>
+			and
+		</if>
+	</select>
+	
+	
+	<resultMap id="PoliceTaskStationMap" type="com.ehl.board.module.bean.PoliceTaskStation">
+  		<result property="id" column="ID"/>
+  		<result property="name" column="MC"/>
+  		<result property="longitude" column="LONGITUDE"/>
+  		<result property="latitude" column="LATITUDE"/>
+  		<result property="dddm" column="DDDM"/>
+  		
+	</resultMap>
+	
+	
+	<!-- 大队辖区信息 -->
+	<select id="getPoliceTaskStation" resultMap="PoliceTaskStationMap">
+		SELECT ID,MC,LONGITUDE,LATITUDE,DDDM from D_SRC_JWQ t 
+		<if test="roadList!=null">
+			 TSFROADNAME in
+			<foreach collection="roadList" item="item" index="index" 
+			open="(" separator="," close=")">#{item}</foreach>
+			and
+		</if>
+	</select>
+		<resultMap id="EquipmentPoliceMap" type="com.ehl.board.module.bean.EquipmentPolice">
+  		<result property="userNo" column="YHDH"/>
+  		<result property="equipmentNo" column="SBBH"/>
+  		<result property="name" column="XM"/>
+  		<result property="manager" column="GLBM"/>
+  		<result property="sim" column="SIM"/>
+  		<result property="equipmentType" column="SBLX"/>
+  		<result property="managerName" column="MANAGERNAME"/>
+  		<result property="longitude" column="LONGITUDE"/>
+  		<result property="latitude" column="LATITUDE"/>
+  		
+	</resultMap>
+	
+	
+	<!-- 大队辖区信息 -->
+	<select id="getEquipment" resultMap="EquipmentPoliceMap">
+		SELECT A.YHDH,A.SBBH,A.XM,A.GLBM,A.SIM,A.SBLX,B.DWMC as MANAGERNAME,
+		c.xl_x as LONGITUDE,xl_y as LATITUDE  from BUSI_FUZZ_INFO A inner  JOIN 
+		CODE_DEPT B on A.GLBM = B.DWDM left join BUSI_POLICE_GPS_NOW c on a.sbbh = c.imei
+		<if test="roadList!=null">
+			 TSFROADNAME in
+			<foreach collection="roadList" item="item" index="index" 
+			open="(" separator="," close=")">#{item}</foreach>
+			and
+		</if>
+	</select>
+	
+	<resultMap id="PoliceCarMap" type="com.ehl.board.module.bean.PoliceCar">
+  		<result property="carNo" column="SBBH"/>
+  		<result property="gpsTime" column="GPSSJ"/>
+  		<result property="longitude" column="JD"/>
+  		<result property="latitude" column="WD"/>
+  		<result property="speed" column="SD"/>
+  		<result property="direction" column="FX"/>
+  		<result property="status" column="ZT"/>
+  		<result property="upLoadDire" column="SJSCSJ"/>
+  		<result property="simNo" column="ZDSIM"/>
+  		<result property="statusDesc" column="ZTMS"/>
+  		<result property="name" column="NAME"/>
+  		<result property="departmentName" column="MANAGERNAME"/>
+  		
+	</resultMap>
+	
+	
+	<!-- 警车信息 -->
+	<select id="getPoliceCar" resultMap="PoliceCarMap">
+		SELECT A.SBBH,A.GPSSJ,A.WD,A.JD,A.SD,A.FX,A.ZT,A.SJSCSJ,A.ZDSIM,A.ZTMS,B.HPHM AS NAME,
+		B.DWMC AS MANAGERNAME from BUSI_POLICE_VEH_GPS_NOW A LEFT JOIN BUSI_POLICE_VEH_INFO B 
+		on A.SBBH = B.SBBH
+		<if test="roadList!=null">
+			 TSFROADNAME in
+			<foreach collection="roadList" item="item" index="index" 
+			open="(" separator="," close=")">#{item}</foreach>
+			and
+		</if>
+	</select> 
+</mapper>

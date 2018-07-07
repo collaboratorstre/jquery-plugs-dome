@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页暑期安保</title>
+	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/css.css">
+	<link rel="stylesheet" href="./css/summer_security.css">
+	<style type="text/css">
+			/*id为customers 的标签的样式*/
+	#customers,#customers_ji,#customers_u,#customers_jih
+	{
+	  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	  width:100%;
+	  border-collapse:collapse;
+	  color: white;
+	}
+
+	#customers thead,#customers_ji thead,#customers_u thead,#customers_jih thead
+	{
+	  background: #3366FF;
+	}
+	/*id为customers 的标签里面的td标签和th标签的样式*/
+	#customers td, #customers th,#customers_ji td, #customers_ji th,#customers_u td, #customers_u th,#customers_jih td, #customers_jih th
+	{
+	  font-size:1em;
+	  /*border:1px solid #98BF21;*/
+	  border:1px solid;
+	  padding:3px 7px 2px 7px;
+	  text-align: center;
+	}
+	/*id为customers 的标签里面的th标签的样式*/
+	#customers th,#customers_ji th,#customers_u th,#customers_jih th
+	{
+	  font-size:1.1em;
+	  text-align:center;
+	  padding-top:5px;
+	  padding-bottom:4px;
+
+	/*  background-color:#A7C942;
+	  color:#FFF;*/
+	}
+	#customers_u,#customers_ji,#customers{
+		margin-top: 50px;
+	}
+	#customers_ji tbody{
+		 display: block;
+         height: 300px;
+         overflow: hidden;
+         overflow-y: scroll;
+	}
+ #customers_ji thead,#customers_ji tbody tr {
+                 display: table;
+                 width: 100%;
+                 table-layout: fixed;
+             }
+	/*id为customers的标签里面的class名为alt的tr标签里面的td标签的样式*/
+/*	#customers tr.alt td
+	{
+	  color:#000;
+	  background-color:#EAF2D3;
+	}*/
+
+	/* 滚动条样式 */
+	/*谷歌滚动条*/
+.column_left_congest{
+    overflow: hidden;
+}
+::-webkit-scrollbar{
+    width:1px !important;
+}
+
+::-webkit-scrollbar-button {
+}
+::-webkit-scrollbar-track{
+    /*background-color:#f3f3f3;*/
+    background-color: #0b0c45;
+}
+::-webkit-scrollbar-track-piece{
+    /*background-color:#f3f3f3;*/
+    background-color: #0b0c45;
+    -webkit-border-radius:4px;
+}
+::-webkit-scrollbar-thumb{
+    /*background-color:#999999; */
+    background-color:rgba(255,255,255,0.75);
+    border:solid 1px #0b0c45;
+    border-radius:4px;
+}
+::-webkit-scrollbar-corner {
+    /* background-color: #999999;*/
+    background-color: #0b0c45;
+}
+::-webkit-resizer {
+    background: no-repeat bottom right;
+}
+
+
+	</style>
+</head>
+<body>
+
+	<div class="all_page">
+		<div id="baidu_map"></div>
+		<div class="top_title">
+			<div class="app-area-box">
+				        
+				        <div class="app-con-box">
+						     <div class="logo">
+		  						<div style='width:30%' id='clock'></div>
+		  						<div style='width:40%'>河北省高速交警总队大数据分析研判平台</div>
+		  						<div style='width:30%'></div>
+		  						<p id="che_tables">统计报表</p>
+							</div>
+				     	</div>
+				     </div>
+		</div>
+		<div class="left_top">
+			
+			<div class="wet_fact">
+		<div class="qie_title">
+			<div id="qie_wet" class="btnDefault1">天气</div>
+			<div id="qie_fact" class="btnChecked1">概况</div>
+		</div>
+		<div id="wet_content">
+		    <div class="app-area-box" style="display: block;">
+		
+			<div class="summer-weathe">
+				<div class="wea_sele">
+					<select>
+					  <option value ="秦皇岛">秦皇岛</option>
+					  <option value ="天津">天津</option>
+					  <option value="唐山">唐山</option>
+					  <option value="香河">香河</option>
+					</select>
+				</div>
+				<div id="wea_cond">
+					晴转多云
+				</div>
+				<div id="wea_temp">
+					18~24℃
+				</div>	
+				<!-- <div class="summer-weathe-box">
+					<div class="summer-weathe-state">
+						<div><img id="beijingWeatherImg" src="./images/board/Clear.png" /></div>
+						<div>
+							<div id="beijingWeather">
+								晴
+							</div>
+						</div>
+					</div>
+					<div class="summer-weathe-city">北京</div>
+				</div>
+				<div class="summer-weathe-box">
+					<div class="summer-weathe-state">
+						<div><img id="tianjinWeather" src="./images/board/Clear.png" /></div>
+						<div>
+							<div  id="tianjinWeather">
+								晴
+							</div>
+						</div>
+					</div>
+					<div class="summer-weathe-city">天津</div>
+				</div>
+				<div class="summer-weathe-box">
+					<div class="summer-weathe-state">
+						<div><img id="xiangheWeatherImg" src="./images/board/Clear.png" /></div>
+						<div>
+							<div id="xiangheWeather">
+								晴
+							</div>
+						</div>
+					</div>
+					<div class="summer-weathe-city">香河</div>
+				</div>
+				<div class="summer-weathe-box">
+					<div class="summer-weathe-state">
+						<div><img id="tangshanWeatherImg" src="./images/board/Clear.png" /></div>
+						<div>
+							<div id="tangshanWeather">
+								
+							</div>
+						</div>
+					</div>
+					<div class="summer-weathe-city">唐山</div>
+				</div>
+				<div class="summer-weathe-box">
+					<div class="summer-weathe-state">
+						<div><img id="qinhuangdaoWeatherImg" src="./images/board/Clear.png" /></div>
+						<div>
+							<div id="qinhuangdaoWeather">
+								
+							</div>
+						</div>
+					</div>
+					<div class="summer-weathe-city">秦皇岛</div>
+				</div>
+				<div class="summer-weathe-box">
+					
+				</div> -->
+			</div>
+			
+			<div class="summer-weathe-inner">
+				<ul>
+					<li style="display: block;">
+						<div>
+							
+						</div>
+						</li>
+					<li style="display: none;">
+						<div>
+							河北省高管  十多个发送到收到十大歌手
+
+高速大概收到公司的公司的广东省广东省威锋网事故的时代广东省广东省公司的广东省广东省广东省个
+						</div>
+					</li>
+					<li style="display: none;">
+						<div>
+							河北省高管  十多个发送到收到十大歌手
+
+高速大概收到公司的公司的广东省广东省威锋网事故的时代广东省广东省公司的广东省广东省广东省个
+						</div>
+					</li>
+				</ul>
+				<ul>
+					<li>●</li>
+					<li>●</li>
+					<li>●</li>
+				</ul>
+			</div>
+		</div>
+
+		</div>
+		<div id="fact_content">
+			<!-- <div class="congest_shu">
+                  
+
+                      
+				<div class="congestionIndex" style="    margin-top: 36px;">
+					<div class="congestionIndex-box">
+						<div>拥堵指数</div>
+						<div id="wholeProvinceCrowded"></div>
+					</div>
+					
+					
+				</div>
+				
+				<div class="congestionIndex-table">
+						<table>
+							<tr>
+								<td><a id='jhHighWayTd' href="javascript:void(0)" onclick="showHighWay('00001')" style="text-decoration:none;color:white">京哈高速</a></td>
+								<td id='jhHighWay'>1.5</td>
+							</tr>
+							<tr>
+								<td><a id='tjHighWayTd' href="javascript:void(0)" onclick="showHighWay('21300')" style="text-decoration:none;color:white">唐津高速</a></td>
+								<td id='tjHighWay'>1.5</td>
+							</tr>
+							<tr>
+								<td><a id='yhHighWayTd' href="javascript:void(0)" onclick="showHighWay('21100')" style="text-decoration:none;color:white">沿海高速</a></td>
+								<td id='yhHighWay'>1.5</td>
+							</tr>
+						</table>
+				</div>
+	
+            </div> -->
+           
+			<div class="congets_pie">
+
+					<div class="congest_nums">
+					    <div class="con_zd">严重拥堵<span id="con_zd">79</span></div>
+						<div class="con_fwq">拥堵<span id="con_fwq">31</span></div>
+						<div class="con_ld">缓行<span id="con_ld">12</span></div>
+					</div>
+	               
+					<div id="congest_pie" style="width: 239px;height: 100px;"></div>
+					<!-- <div id="congest_pie" style="width: 180%;height: 100px;"></div> -->
+					
+					 <div class="congest_wen" style="margin-left: 37%;margin-top: 5%;font-size: 0.8em;">拥堵路段</div>
+					
+	            </div>
+				<div class="congets_control">
+	               
+	                <div id="congestone" style="width: 239px;height: 146px;"></div>
+
+	                 <div class="congest_wen" style="margin-left: 37%;margin-top: 4%;font-size: 0.8em;">交通管制</div>
+	               <!--  <div class="congest_nums">
+						<div class="con_zd" style="color:#00ff99">站点<span id="con_zd" style="color:#00ff99">12</span> </div>
+						<div class="con_fwq" style="color:#5228e0">服务区<span id="con_fwq" style="color:#5228e0">31</span></div>
+						<div class="con_ld" style="color:#00ff99">路段<span id="con_ld" style="color:#00ff99">79</span></div>
+					</div> -->
+	            </div>
+	          
+		</div>
+	</div>
+
+		</div>
+		<div class="left_bottom">
+			<div class="high_speed">
+				
+							
+					<div class="bay_vid">
+						<div id="bayonet" class="btnChecked1" style="margin-right: 1%;">卡口</div>
+						<div id="videos" class="btnChecked1">视频</div>
+					</div>
+					<div class="bayonet_conts">
+						<div class="bay_vid_def">环秦</div>
+						<div class="bay_vid_def">环暑</div>
+						<div class="bay_vid_checked">高速公路</div>
+					</div>
+					<div class="videos_conts">
+						<div class="bay_vid_checked">高速公路</div>
+					</div>
+
+				
+				
+				<div class="gaosu_load">
+					<div class="name_high">
+						<div class="hight_name">京哈高速</div>
+						<div class="high_nums">卡口数量<span id="high_numsj">6</span></div>
+						<div class="launch">收起</div>
+						
+					</div>
+					
+					
+						
+					<div class="search_content" id="jh_bord">
+						<div class="search_road" id="jhg_bord">
+								<input type="text" placeholder="卡口名称" style="background: #05054a;border-color:#002986">
+								<div id="jhg_search" onclick="search(jhg_search)">
+									<img src="./images/searchs.png" alt="">
+								</div>
+						</div>
+						<ul id="jing_ha" class="search_inner">
+							
+						</ul>
+					</div>
+					
+					<div class="name_high">
+						<div class="hight_name">唐津高速</div>
+						<div class="high_nums">卡口数量<span id="high_numst">6</span></div>
+						<div class="launch">展开</div>
+					
+					</div>
+					
+					<div class="search_content" id="tj_bord">
+						<div class="search_road" id="tjg_bord">
+							<input type="text" placeholder="卡口名称" style="background: #05054a;border-color:#002986">
+							<div id="tjg_search" onclick="search(tjg_search)">
+									<img src="./images/searchs.png" alt="">
+							</div>
+					   </div>
+						<ul id="tang_jin" class="search_inner">
+								
+						</ul>
+					</div>
+					
+					<div class="name_high">
+						<div class="hight_name">沿海高速</div>
+						<div class="high_nums">卡口数量<span id="high_numsy">6</span></div>
+						<div class="launch">展开</div>
+					
+					</div>
+					
+					<div class="search_content" id="yh_bord">
+						<div class="search_road" id="yhg_bord">
+								<input type="text" placeholder="卡口名称" style="background: #05054a;border-color:#002986">
+								<div id="yhg_search" onclick="search(yhg_search)">
+									<img src="./images/searchs.png" alt="">
+								</div>
+						</div>
+						<ul id="yan_hai" class="search_inner">
+								
+						</ul>
+					</div>
+				</div>
+				<div class="hq_kakou">
+					<ul id="hq_kakou">
+						<li>秦皇岛东开放式卡口</li>
+					</ul>
+				</div>
+				<div class="hs_kakou">
+					<ul id="hs_kakou">
+
+					</ul>
+				</div>
+				<div class="shipin_kou">
+					<ul id="shipin_kou">
+						
+					</ul>
+				</div>
+			</div>
+			
+			<div class="serial_number">
+		<div class="number_top">
+			<div class="out_page">
+				<< 返回列表
+			</div>
+			<div class="number_num">
+				编号： <span id="serial_cont">3927673</span>
+			</div>
+		</div>
+		<div class="road_cont">
+				        <div class="name_ser">
+							<div class="name_cons">秦皇岛收费站-- 出口</div>
+							<div class="ser_status"><img src="./images/nor.png" alt="" style="vertical-align: middle;"></div>
+					</div>	
+					<div class="infer_dir">固定测速  京哈高速150km+900 秦皇岛大队管辖</div>	
+							
+		</div>
+		<div class="video_cont">
+			<img src="./images/chesu.png" alt="">
+		</div>
+		</div>
+		</div>
+		<!-- <div class="video_box"> -->
+		<div class="hide_vid" id="video_box">
+			<button class="video_close">×</button>
+			<div id="jh_videos">
+				
+			</div>
+		</div>	
+		<div class="center_top">
+			<div class="out_inner">
+				<ul class="legends">
+					<li>
+						<span class="len_tu"></span>
+						<span> >400 </span>
+					</li>
+					<li>
+						<span class="len_tu"></span>
+						<span> 300-400 </span>
+					</li>
+					<li>
+						<span class="len_tu"></span>
+						<span> 200-300 </span>
+					</li>
+					<li>
+						<span class="len_tu"></span>
+						<span> < 200 </span>
+					</li>
+					<li>
+						<span class="len_tu"></span>
+						<span>无流量</span>
+					</li>
+				</ul>
+				<div class="beijing_dir">
+					北京方向
+				</div>
+				<div class="shenyang_dir">
+					沈阳方向
+				</div>
+				<div id="yinyue" style="height: 45%;width: 100%">
+				
+			   </div>
+			   <div id="yinyue1" style="height: 45%;width: 100%">
+				
+			   </div>
+			</div>
+		</div>
+
+		<div class="right_car">
+			<div class="app-area-box" style="display: block;">
+		
+				<div class="app-area-box-title">
+					<div style="position: relative;">通行车辆<span>（辆）</span><span></span><span></span>
+						<ul class="car_tab">
+							<li id="car_shu" class="duty_def">环暑</li>
+							<li id="car_qin" class="duty_def">环秦</li>
+							<li id="car_ha" class="duty_checked">京哈</li>
+							<li id="car_yan" class="duty_def">沿海</li>
+						</ul>
+					</div>
+				</div>
+				
+				<div class="app-con-box">
+					
+					
+						<div id="CurrentVehicle-jh">
+						
+						</div>
+						<div id="CurrentVehicle-hs">
+                            环暑
+						</div>
+						<div id="CurrentVehicle-hq">
+							环秦
+						</div>
+						<div id="CurrentVehicle-yh">
+							沿海
+						</div>
+						
+					
+				</div>
+			</div>
+		</div>
+		<div class="right_task">
+			<div class="app-area-box" style="display: block;">
+
+				<div class="app-area-box-title">
+					<div>警卫任务<span>（项）</span></div>
+				</div>
+
+				<div class="app-con-box">
+
+					<div id="GuardTask2">
+
+					</div>
+
+					<div id="GuardTask1">
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="right_duty">
+				<div class="app-area-box" style="display: block;">
+		
+					<div class="app-area-box-title">
+						<div>勤务安排<span>（人）</span></div>
+						<ul class="qinwu">
+							<li id="duty_tod" class="duty_checked">应到</li>
+							<li id="duty_all" class="duty_def">到岗</li>
+						</ul>
+					</div>
+					
+					<div class="app-con-box" id="dao_chart">
+						<div id="pavement-service">
+							
+						</div>
+						<div id="checkpoint-service">
+							
+						</div>
+					</div>
+					<div class="app-con-box" id="all_chart">
+						
+					</div>
+				</div>
+		</div>
+		<div class="right_job">
+			<div class="app-area-box" style="display: block;">
+		
+			<div class="app-area-box-title">
+				<div>安保工作</div>
+				<ul class="secur_work">
+					<li id="secur_tody" class="duty_checked">今日</li>
+					<li id="secur_all" class="duty_def">累计</li>
+				</ul>
+			</div>
+			
+			<div class="app-con-box">
+					<div class="SecurityCheck" id="todys_secur">
+						<div class="SecurityCheck-title">
+							<ul>
+								<li>检查战果</li>
+								<li>检查 车辆</li>
+								<li>检查人员</li>
+							</ul>
+						</div>
+						<table>
+							<tr>
+								<td>总量</td>
+								<td>12000</td>
+								<td>12000</td>
+								<td>12000</td>
+							</tr>
+							<tr>
+								<td>检查站一</td>
+								<td>12000</td>
+								<td>12000</td>
+								<td>12000</td>
+							</tr>
+							<tr>
+								<td>检查站一</td>
+								<td>12000</td>
+								<td>12000</td>
+								<td>12000</td>
+							</tr>
+						</table>
+					</div>
+					<div id="all_secur">
+
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="right_traffic">
+			<div class="app-area-box" style="display: block;">
+		
+				<div class="app-area-box-title">
+					<div>交通事故<span>（起）</span></div>
+				</div>
+				
+				<div class="app-con-box">
+					<div class="TrafficAccident">
+						<ul>
+							<li id="traf_tody" class="duty_checked">今日</li>
+							<li id="traf_all" class="duty_def">累计</li>
+						</ul>
+					</div>
+					<div id="TrafficAccident">
+						
+					</div>
+					<div id="all_traffic">
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div id="table_page" hidden>
+			<button class="page_close">×</button>
+			<div class="page_title">环秦站口流量统计报表</div>
+			<div class="page_time">2018年7月1日 —— 2018年7月3日</div>
+			<table id= "customers">
+	 <thead>
+		<tr>
+			<th colspan="11">环秦高速站口入秦流量溯源地分布表</th>	
+		</tr>
+		<tr>
+		  <th rowspan="2">序号</th>
+		  <th rowspan="2" colspan="2">来源地</th>
+		  <th colspan="6">环秦站口</th>
+		  <th rowspan="2">合计</th>
+		  <th rowspan="2">占比</th>
+		</tr>
+		<tr>
+		 	<th>秦皇岛东收费站</th>
+		 	<th>秦皇岛北收费站</th>
+		 	<th>秦皇岛开发区收费站</th>
+		 	<th>北戴河收费站</th>
+		 	<th>昌黎东收费站</th>
+		 	<th>南戴河收费站</th>
+		</tr>
+	</thead>		
+	<tbody>	
+		<tr class= "alt">
+		  <th>1</th>
+		  <th rowspan="6">环暑圈外</th>
+		  <th>北京</th>
+		  <td>88</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td></td>
+		  <td>88</td>
+		</tr>
+		<tr>
+		  <th>2</th>
+		  <th>天津</th>
+		  <td>87</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td></td>
+		  <td>88</td>
+		</tr>
+		<tr class= "alt">
+		  <th>3</th>
+		  <th>承德（唐）</th>
+		  <td>86</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td></td>
+		  <td>88</td>
+		</tr>
+		<tr>
+		   <th>4</th>
+		  <th>承德（秦）</th>
+		  <td>88</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td></td>
+		  <td>88</td>
+		</tr>
+		<tr class= "alt">
+		   <th>5</th>
+		  <th>辽宁</th>
+		  <td>85</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td></td>
+		  <td>88</td>
+		</tr>
+		<tr class= "alt">
+		   <th>6</th>
+		  <th>环暑合计</th>
+		  <td>84</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td></td>
+		  <td>88</td>
+		</tr>
+		<tr class= "alt">
+		  <th>7</th>
+		  <th colspan="2">路网内</th>
+		  <td>83</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td></td>
+		  <td>88</td>
+		</tr>
+		<tr class= "alt">
+		  <th>8</th>
+		  <th colspan="2">未识别</th>
+		  <td>88</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td></td>
+		  <td>88</td>
+		</tr>
+		<tr class= "alt">
+		  <th>9</th>
+		  <th colspan="2">合计</th>
+		  <td>88</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td></td>
+		  <td>88</td>
+		</tr>
+		<tr class= "alt">
+		  <th>10</th>
+		  <th colspan="2">占比</th>
+		  <td>88</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td></td>
+		  <td>88</td>
+		</tr>
+		</tbody>
+	</table>
+
+        
+   <table id= "customers_u">
+   	 <thead>
+		<tr>
+			<th colspan="11">环秦高速站口入秦流量车型分布表</th>	
+		</tr>
+		<tr>
+		  <th rowspan="2">序号</th>
+		  <th rowspan="2" colspan="2">车型</th>
+		  <th colspan="6">环秦站口</th>
+		  <th rowspan="2">合计</th>
+		  <th rowspan="2">占比</th>  
+		</tr>
+		<tr>
+		   <th>秦皇岛东收费站</th>
+		 	<th>秦皇岛北收费站</th>
+		 	<th>秦皇岛开发区收费站</th>
+		 	<th>北戴河收费站</th>
+		 	<th>昌黎东收费站</th>
+		 	<th>南戴河收费站</th>	  
+		</tr>
+	</thead>	
+	<tbody>	
+		<tr class= "alt">
+		  <th>1</th>
+		  <th rowspan="3">客车</th>
+		  <th>普通客车</th>
+		  <td class="pu_ke">87</td>
+		  <td class="pu_ke">54</td>
+		  <td class="pu_ke">43</td>
+		  <td class="pu_ke">32</td>
+		  <td class="pu_ke">82</td>
+		  <td class="pu_ke">81</td>
+		  <td class="pu_ke">45</td>
+		  <td class="pu_ke">32</td>
+		</tr>
+		<tr>
+		  <th>2</th>
+		  <th>两客</th>
+		  <td class="lia_ke">81</td>
+		  <td class="lia_ke">54</td>
+		  <td class="lia_ke">45</td>
+		  <td class="lia_ke">33</td>
+		  <td class="lia_ke">83</td>
+		  <td class="lia_ke">81</td>
+		  <td class="lia_ke">43</td>
+		  <td class="lia_ke">31</td>
+		</tr>
+		<tr class= "alt">
+		  <th>3</th>
+		  <th>客车合计</th>
+		  <td class="ke_he">88</td>
+		  <td class="ke_he">55</td>
+		  <td class="ke_he">44</td>
+		  <td class="ke_he">33</td>
+		  <td class="ke_he">88</td>
+		  <td class="ke_he">88</td>
+		  <td class="ke_he">44</td>
+		  <td class="ke_he">33</td>
+		</tr>
+		<tr>
+		 <th>4</th>
+		  <th rowspan="3">货车</th>
+		  <th>危化品货车</th>
+		  <td class="wei_huo">88</td>
+		  <td class="wei_huo">55</td>
+		  <td class="wei_huo">44</td>
+		  <td class="wei_huo">33</td>
+		  <td class="wei_huo">88</td>
+		  <td class="wei_huo">88</td>
+		  <td class="wei_huo">44</td>
+		  <td class="wei_huo">33</td>
+		</tr>
+		<tr class= "alt">
+		  <th>5</th>
+		  <th>普通货车</th>
+		  <td class="pu_huo">88</td>
+		  <td class="pu_huo">55</td>
+		  <td class="pu_huo">44</td>
+		  <td class="pu_huo">33</td>
+		  <td class="pu_huo">88</td>
+		  <td class="pu_huo">88</td>
+		  <td class="pu_huo">44</td>
+		  <td class="pu_huo">33</td>
+		</tr>
+		<tr class= "alt">
+		 <th>6</th>
+		  <th>货车合计</th>
+		  <td class="huo_he">88</td>
+		  <td class="huo_he">55</td>
+		  <td class="huo_he">44</td>
+		  <td class="huo_he">33</td>
+		  <td class="huo_he">88</td>
+		  <td class="huo_he">88</td>
+		  <td class="huo_he">44</td>
+		  <td class="huo_he">33</td>
+		</tr>
+		<tr class= "alt">
+		  <th>7</th>
+		  <th colspan="2">合计</th>
+		  <td>88</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td>33</td>
+		</tr>
+		<tr class= "alt">
+		  <th>8</th>
+		  <th colspan="2">占比</th>
+		  <td>88</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td>33</td>
+		</tr>
+	  </tbody>
+    </table>
+		
+	<table id="customers_ji">
+		
+		<thead>
+				<tr>
+					<th colspan="10">环秦高速站口入秦流量户籍地分布表</th>	
+				</tr>
+				<tr>
+				  <th rowspan="2">序号</th>
+				  <th rowspan="2">车籍地</th>
+				  <th colspan="6">环秦站口</th>
+				  <th rowspan="2">合计</th>
+				  <th rowspan="2">占比</th>
+				</tr>
+				<tr>
+				 	<th>秦皇岛东收费站</th>
+				 	<th>秦皇岛北收费站</th>
+				 	<th>秦皇岛开发区收费站</th>
+				 	<th>北戴河收费站</th>
+				 	<th>昌黎东收费站</th>
+				 	<th>南戴河收费站</th>
+				</tr>
+		</thead>
+		<tbody>
+				<tr>
+				  <td>1</td>
+				  <td>京</td>
+				  <td>830</td>
+				  <td>540</td>
+				  <td>430</td>
+				  <td>320</td>
+				  <td>840</td>
+				  <td>850</td>
+				  <td></td>
+				  <td>330</td>
+				</tr>
+				<tr>
+				  <td>2</td>
+				  <td>津</td>
+				  <td>881</td>
+				  <td>550</td>
+				  <td>440</td>
+				  <td>330</td>
+				  <td>880</td>
+				  <td>880</td>
+				  <td></td>
+				  <td>330</td>
+				</tr>
+				<tr>
+				  <td>3</td>
+				  <td>冀</td>
+				  <td>882</td>
+				  <td>550</td>
+				  <td>440</td>
+				  <td>330</td>
+				  <td>880</td>
+				  <td>880</td>
+				  <td></td>
+				  <td>330</td>
+				</tr>
+				<tr>
+				  <td>4</td>
+				  <td>辽</td>
+				  <td>880</td>
+				  <td>550</td>
+				  <td>440</td>
+				  <td>330</td>
+				  <td>880</td>
+				  <td>880</td>
+				  <td></td>
+				  <td>330</td>
+				</tr>
+				<tr>
+				  <td>5</td>
+				  <td>吉</td>
+				  <td>886</td>
+				  <td>550</td>
+				  <td>440</td>
+				  <td>330</td>
+				  <td>880</td>
+				  <td>880</td>
+				  <td></td>
+				  <td>330</td>
+				</tr>
+				<tr>
+				  <td>6</td>
+				  <td>鲁</td>
+				  <td>880</td>
+				  <td>554</td>
+				  <td>440</td>
+				  <td>330</td>
+				  <td>880</td>
+				  <td>880</td>
+				  <td></td>
+				  <td>330</td>
+				</tr>
+				<tr>
+				  <td>7</td>
+				  <td>晋</td>
+				  <td>885</td>
+				  <td>550</td>
+				  <td>440</td>
+				  <td>330</td>
+				  <td>880</td>
+				  <td>880</td>
+				  <td></td>
+				  <td>330</td>
+				</tr>
+				<tr>
+				  <td>8</td>
+				  <td>合计</td>
+				  <td>887</td>
+				  <td>550</td>
+				  <td>440</td>
+				  <td>330</td>
+				  <td>880</td>
+				  <td>880</td>
+				  <td></td>
+				  <td>330</td>
+				</tr>
+				<tr>
+				  <td>9</td>
+				  <td>占比</td>
+				  <td>888</td>
+				  <td>550</td>
+				  <td>440</td>
+				  <td>330</td>
+				  <td>880</td>
+				  <td></td>
+				  <td>440</td>
+				  <td></td>
+				</tr>
+				
+		</tbody>
+	</table>
+		</div>
+	</div>
+		
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/weather.js"></script>
+<script type="text/javascript" src="./js/echarts_3x.js"></script>
+<script type="text/javascript" src="./js/summer_security.js"></script>
+ 
+
+</body>
+</html>

@@ -66,6 +66,9 @@ layui.use('element', function(){
   
   $('.site-demo-active').on('click', function(){
     var othis = $(this), type = othis.data('type');
+    console.log(othis+'____'+type+'____'+active+'___'+active[type]);
+    console.log(othis);
+    console.log(active);
     active[type] ? active[type].call(this, othis) : '';
   });
   

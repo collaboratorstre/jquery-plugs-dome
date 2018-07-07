@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>table</title>
+</head>
+ <style type= "text/css">
+	/*id为customers 的标签的样式*/
+	#customers,#customers_ji,#customers_u,#customers_jih
+	{
+	  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	  width:100%;
+	  border-collapse:collapse;
+	}
+	/*id为customers 的标签里面的td标签和th标签的样式*/
+	#customers td, #customers th,#customers_ji td, #customers_ji th,#customers_u td, #customers_u th,#customers_jih td, #customers_jih th
+	{
+	  font-size:1em;
+	  /*border:1px solid #98BF21;*/
+	  border:1px solid;
+	  padding:3px 7px 2px 7px;
+	  text-align: center;
+	}
+	/*id为customers 的标签里面的th标签的样式*/
+	#customers th,#customers_ji th,#customers_u th,#customers_jih th
+	{
+	  font-size:1.1em;
+	  text-align:center;
+	  padding-top:5px;
+	  padding-bottom:4px;
+
+	/*  background-color:#A7C942;
+	  color:#FFF;*/
+	}
+	#customers_u,#customers_ji{
+		margin-top: 100px;
+	}
+	#customers_ji tbody{
+		 display: block;
+         height: 300px;
+         overflow: hidden;
+         overflow-y: scroll;
+	}
+ #customers_ji thead,#customers_ji tbody tr {
+                 display: table;
+                 width: 100%;
+                 table-layout: fixed;
+             }
+	/*id为customers的标签里面的class名为alt的tr标签里面的td标签的样式*/
+/*	#customers tr.alt td
+	{
+	  color:#000;
+	  background-color:#EAF2D3;
+	}*/
+
+	/* 滚动条样式 */
+	/*谷歌滚动条*/
+.column_left_congest{
+    overflow: hidden;
+}
+::-webkit-scrollbar{
+    width:1px !important;
+}
+
+::-webkit-scrollbar-button {
+}
+::-webkit-scrollbar-track{
+    /*background-color:#f3f3f3;*/
+    background-color: #0b0c45;
+}
+::-webkit-scrollbar-track-piece{
+    /*background-color:#f3f3f3;*/
+    background-color: #0b0c45;
+    -webkit-border-radius:4px;
+}
+::-webkit-scrollbar-thumb{
+    /*background-color:#999999; */
+    background-color:rgba(255,255,255,0.75);
+    border:solid 1px #0b0c45;
+    border-radius:4px;
+}
+::-webkit-scrollbar-corner {
+    /* background-color: #999999;*/
+    background-color: #0b0c45;
+}
+::-webkit-resizer {
+    background: no-repeat bottom right;
+}
+
+
+
+	</style>
+</head>
+
+<body>
+	<table id= "customers">
+	 <thead>
+		<tr>
+			<th colspan="11">环秦高速站口入秦流量溯源地分布表</th>	
+		</tr>
+		<tr>
+		  <th rowspan="2">序号</th>
+		  <th rowspan="2" colspan="2">来源地</th>
+		  <th colspan="6">环秦站口</th>
+		  <th rowspan="2">合计</th>
+		  <th rowspan="2">占比</th>
+		</tr>
+		<tr>
+		 	<th>秦皇岛东收费站</th>
+		 	<th>秦皇岛北收费站</th>
+		 	<th>秦皇岛开发区收费站</th>
+		 	<th>北戴河收费站</th>
+		 	<th>昌黎东收费站</th>
+		 	<th>南戴河收费站</th>
+		</tr>
+	</thead>		
+	<tbody>	
+		<tr class= "alt">
+		  <th>1</th>
+		  <th rowspan="6">环暑圈外</th>
+		  <th>北京</th>
+		  <td>88</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td></td>
+		  <td>88</td>
+		</tr>
+		<tr>
+		  <th>2</th>
+		  <th>天津</th>
+		  <td>87</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td></td>
+		  <td>88</td>
+		</tr>
+		<tr class= "alt">
+		  <th>3</th>
+		  <th>承德（唐）</th>
+		  <td>86</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td></td>
+		  <td>88</td>
+		</tr>
+		<tr>
+		   <th>4</th>
+		  <th>承德（秦）</th>
+		  <td>88</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td></td>
+		  <td>88</td>
+		</tr>
+		<tr class= "alt">
+		   <th>5</th>
+		  <th>辽宁</th>
+		  <td>85</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td></td>
+		  <td>88</td>
+		</tr>
+		<tr class= "alt">
+		   <th>6</th>
+		  <th>环暑合计</th>
+		  <td>84</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td></td>
+		  <td>88</td>
+		</tr>
+		<tr class= "alt">
+		  <th>7</th>
+		  <th colspan="2">路网内</th>
+		  <td>83</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td></td>
+		  <td>88</td>
+		</tr>
+		<tr class= "alt">
+		  <th>8</th>
+		  <th colspan="2">未识别</th>
+		  <td>88</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td></td>
+		  <td>88</td>
+		</tr>
+		<tr class= "alt">
+		  <th>9</th>
+		  <th colspan="2">合计</th>
+		  <td>88</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td></td>
+		  <td>88</td>
+		</tr>
+		<tr class= "alt">
+		  <th>10</th>
+		  <th colspan="2">占比</th>
+		  <td>88</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td></td>
+		  <td>88</td>
+		</tr>
+		</tbody>
+	</table>
+
+        
+   <table id= "customers_u">
+   	 <thead>
+		<tr>
+			<th colspan="11">环秦高速站口入秦流量车型分布表</th>	
+		</tr>
+		<tr>
+		  <th rowspan="2">序号</th>
+		  <th rowspan="2" colspan="2">车型</th>
+		  <th colspan="6">环秦站口</th>
+		  <th rowspan="2">合计</th>
+		  <th rowspan="2">占比</th>  
+		</tr>
+		<tr>
+		   <th>秦皇岛东收费站</th>
+		 	<th>秦皇岛北收费站</th>
+		 	<th>秦皇岛开发区收费站</th>
+		 	<th>北戴河收费站</th>
+		 	<th>昌黎东收费站</th>
+		 	<th>南戴河收费站</th>	  
+		</tr>
+	</thead>	
+	<tbody>	
+		<tr class= "alt">
+		  <th>1</th>
+		  <th rowspan="3">客车</th>
+		  <th>普通客车</th>
+		  <td class="pu_ke">87</td>
+		  <td class="pu_ke">54</td>
+		  <td class="pu_ke">43</td>
+		  <td class="pu_ke">32</td>
+		  <td class="pu_ke">82</td>
+		  <td class="pu_ke">81</td>
+		  <td class="pu_ke">45</td>
+		  <td class="pu_ke">32</td>
+		</tr>
+		<tr>
+		  <th>2</th>
+		  <th>两客</th>
+		  <td class="lia_ke">81</td>
+		  <td class="lia_ke">54</td>
+		  <td class="lia_ke">45</td>
+		  <td class="lia_ke">33</td>
+		  <td class="lia_ke">83</td>
+		  <td class="lia_ke">81</td>
+		  <td class="lia_ke">43</td>
+		  <td class="lia_ke">31</td>
+		</tr>
+		<tr class= "alt">
+		  <th>3</th>
+		  <th>客车合计</th>
+		  <td class="ke_he">88</td>
+		  <td class="ke_he">55</td>
+		  <td class="ke_he">44</td>
+		  <td class="ke_he">33</td>
+		  <td class="ke_he">88</td>
+		  <td class="ke_he">88</td>
+		  <td class="ke_he">44</td>
+		  <td class="ke_he">33</td>
+		</tr>
+		<tr>
+		 <th>4</th>
+		  <th rowspan="3">货车</th>
+		  <th>危化品货车</th>
+		  <td class="wei_huo">88</td>
+		  <td class="wei_huo">55</td>
+		  <td class="wei_huo">44</td>
+		  <td class="wei_huo">33</td>
+		  <td class="wei_huo">88</td>
+		  <td class="wei_huo">88</td>
+		  <td class="wei_huo">44</td>
+		  <td class="wei_huo">33</td>
+		</tr>
+		<tr class= "alt">
+		  <th>5</th>
+		  <th>普通货车</th>
+		  <td class="pu_huo">88</td>
+		  <td class="pu_huo">55</td>
+		  <td class="pu_huo">44</td>
+		  <td class="pu_huo">33</td>
+		  <td class="pu_huo">88</td>
+		  <td class="pu_huo">88</td>
+		  <td class="pu_huo">44</td>
+		  <td class="pu_huo">33</td>
+		</tr>
+		<tr class= "alt">
+		 <th>6</th>
+		  <th>货车合计</th>
+		  <td class="huo_he">88</td>
+		  <td class="huo_he">55</td>
+		  <td class="huo_he">44</td>
+		  <td class="huo_he">33</td>
+		  <td class="huo_he">88</td>
+		  <td class="huo_he">88</td>
+		  <td class="huo_he">44</td>
+		  <td class="huo_he">33</td>
+		</tr>
+		<tr class= "alt">
+		  <th>7</th>
+		  <th colspan="2">合计</th>
+		  <td>88</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td>33</td>
+		</tr>
+		<tr class= "alt">
+		  <th>8</th>
+		  <th colspan="2">占比</th>
+		  <td>88</td>
+		  <td>55</td>
+		  <td>44</td>
+		  <td>33</td>
+		  <td>88</td>
+		  <td>88</td>
+		  <td>44</td>
+		  <td>33</td>
+		</tr>
+	  </tbody>
+    </table>
+		
+	<table id="customers_ji">
+		
+		<thead>
+				<tr>
+					<th colspan="10">环秦高速站口入秦流量户籍地分布表</th>	
+				</tr>
+				<tr>
+				  <th rowspan="2">序号</th>
+				  <th rowspan="2">车籍地</th>
+				  <th colspan="6">环秦站口</th>
+				  <th rowspan="2">合计</th>
+				  <th rowspan="2">占比</th>
+				</tr>
+				<tr>
+				 	<th>秦皇岛东收费站</th>
+				 	<th>秦皇岛北收费站</th>
+				 	<th>秦皇岛开发区收费站</th>
+				 	<th>北戴河收费站</th>
+				 	<th>昌黎东收费站</th>
+				 	<th>南戴河收费站</th>
+				</tr>
+		</thead>
+		<tbody>
+				<tr>
+				  <td>1</td>
+				  <td>京</td>
+				  <td>830</td>
+				  <td>540</td>
+				  <td>430</td>
+				  <td>320</td>
+				  <td>840</td>
+				  <td>850</td>
+				  <td></td>
+				  <td>330</td>
+				</tr>
+				<tr>
+				  <td>2</td>
+				  <td>津</td>
+				  <td>881</td>
+				  <td>550</td>
+				  <td>440</td>
+				  <td>330</td>
+				  <td>880</td>
+				  <td>880</td>
+				  <td></td>
+				  <td>330</td>
+				</tr>
+				<tr>
+				  <td>3</td>
+				  <td>冀</td>
+				  <td>882</td>
+				  <td>550</td>
+				  <td>440</td>
+				  <td>330</td>
+				  <td>880</td>
+				  <td>880</td>
+				  <td></td>
+				  <td>330</td>
+				</tr>
+				<tr>
+				  <td>4</td>
+				  <td>辽</td>
+				  <td>880</td>
+				  <td>550</td>
+				  <td>440</td>
+				  <td>330</td>
+				  <td>880</td>
+				  <td>880</td>
+				  <td></td>
+				  <td>330</td>
+				</tr>
+				<tr>
+				  <td>5</td>
+				  <td>吉</td>
+				  <td>886</td>
+				  <td>550</td>
+				  <td>440</td>
+				  <td>330</td>
+				  <td>880</td>
+				  <td>880</td>
+				  <td></td>
+				  <td>330</td>
+				</tr>
+				<tr>
+				  <td>6</td>
+				  <td>鲁</td>
+				  <td>880</td>
+				  <td>554</td>
+				  <td>440</td>
+				  <td>330</td>
+				  <td>880</td>
+				  <td>880</td>
+				  <td></td>
+				  <td>330</td>
+				</tr>
+				<tr>
+				  <td>7</td>
+				  <td>晋</td>
+				  <td>885</td>
+				  <td>550</td>
+				  <td>440</td>
+				  <td>330</td>
+				  <td>880</td>
+				  <td>880</td>
+				  <td></td>
+				  <td>330</td>
+				</tr>
+				<tr>
+				  <td>8</td>
+				  <td>合计</td>
+				  <td>887</td>
+				  <td>550</td>
+				  <td>440</td>
+				  <td>330</td>
+				  <td>880</td>
+				  <td>880</td>
+				  <td></td>
+				  <td>330</td>
+				</tr>
+				<tr>
+				  <td>9</td>
+				  <td>占比</td>
+				  <td>888</td>
+				  <td>550</td>
+				  <td>440</td>
+				  <td>330</td>
+				  <td>880</td>
+				  <td></td>
+				  <td>440</td>
+				  <td></td>
+				</tr>
+				
+		</tbody>
+	</table>
+	
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript">
+	//流量溯源地 横合计
+		var trList = $("#customers tbody").children("tr");
+		var tdList = $("#customers tbody").children("tr").children("td");
+
+    //横向总和
+    for (var i=0;i<trList.length-2;i++) {
+	  	var num3 = 0;
+	  	var nums = trList.eq(i).find("td");	
+	  	for(var j=0;j<nums.length-2;j++){
+	  		// console.log(nums.eq(j))
+	  		num3 += parseFloat(nums.eq(j).text());
+	  		// console.log(num3);
+	  		if(j == nums.length-3) {
+
+	  			nums.eq(j+1).text(num3)
+	  			
+	  		}
+  	}
+  } 
+	//流量溯源地 纵向和
+	 for (var i=0;i<nums.length-1;i++) {
+		  	var num_p = 0;
+		  	for(var j=0;j<trList.length-2;j++){
+		  		
+		  		num_p += parseFloat(trList.eq(j).find("td").eq(i).text());
+		  		// console.info(trList.eq(j+1).find("td").eq(i-1))
+		  		
+		  		if(j == trList.length-3) {
+		  			trList.eq(j+1).find("td").eq(i).text(num_p);
+		  			
+		  		}
+		  	}
+		  }	 
+	//流量溯源地 横向百分比
+	 for (var i=0;i<trList.length-2;i++) {
+		  	var num2 = 0;
+		  	var nums1 = trList.eq(i).find("td");	
+		  	for(var j=0;j<nums1.length-2;j++){
+		  
+		  		num2 += parseFloat(nums1.eq(j).text());
+		  		
+		  		if(j == nums1.length-3) {
+		  			// console.log(num2)
+		  			var num4_bh1 = ((num2/num_p)*100).toFixed(2)+'%';
+		  			nums1.eq(j+2).text(num4_bh1);
+		  			
+		  		}
+		  	}
+		  }	 
+
+	//流量溯源地 纵向百分比
+	  for (var i=0;i<tdList.length;i++) {
+		  	var num_s = 0;
+		  	for(var j=0;j<trList.length-2;j++){
+		  		
+		  		num_s += parseFloat(trList.eq(j).find("td").eq(i).text());
+		  		
+		  		if(j == trList.length-3) {
+		  			var num4_bh = ((num_s/num_p)*100).toFixed(2)+'%';
+		  			
+		  			trList.eq(j+2).find("td").eq(i).text(num4_bh);
+		  		
+		  		}
+		  	}
+		  }
+
+	
+		
+ 
+		  //流量车型 客车 和 货车 合计
+ 		var trList1 = $("#customers_u tbody").children("tr");
+		var tdList1 = $("#customers_u tbody").children("tr").children("td");
+		var puke = $(".pu_ke");
+		for(var i=0;i<puke.length;i++){	
+		 $(".ke_he")[i].innerHTML = parseFloat(puke[i].innerHTML) + parseFloat($(".lia_ke")[i].innerHTML); 
+		 $(".huo_he")[i].innerHTML = parseFloat($(".wei_huo")[i].innerHTML) + parseFloat($(".pu_huo")[i].innerHTML); 
+		}
+
+		//流量车型  横行和
+		 for (var i=0;i<trList1.length-2;i++) {
+		  	var num3 = 0;
+		  	var nums7 = trList1.eq(i).find("td");	
+		  	for(var j=0;j<nums7.length-2;j++){
+		  		// console.info(nums7.eq(j))
+		  		num3 += parseFloat(nums7.eq(j).text());
+		  		// console.log(num3);
+		  		if(j == nums7.length-3) {
+
+		  			nums7.eq(j+1).text(num3)
+		  			
+		  		}
+	  	}
+	  }  
+	  //流量车型  纵行和
+	  	 for (var i=0;i<nums7.length-1;i++) {
+		  	var num_p = 0;
+		  	for(var j=0;j<trList1.length-2;j++){
+		  		
+		  		num_p += parseFloat(trList1.eq(j).find("td").eq(i).text());
+		  		// console.info(trList1.eq(j+1).find("td").eq(i-1))
+		  		
+		  		if(j == trList1.length-3) {
+		  			trList1.eq(j+1).find("td").eq(i).text(num_p);
+		  			
+		  		}
+		  	}
+		  }	 
+
+   //流量车型 横向百分比
+	 for (var i=0;i<trList1.length-2;i++) {
+		  	var num2 = 0;
+		  	var nums1 = trList1.eq(i).find("td");	
+		  	for(var j=0;j<nums1.length-2;j++){
+		  
+		  		num2 += parseFloat(nums1.eq(j).text());
+		  		
+		  		if(j == nums1.length-3) {
+		  			// console.log(num2)
+		  			var num4_bh1 = ((num2/num_p)*100).toFixed(2)+'%';
+		  			nums1.eq(j+2).text(num4_bh1);
+		  			
+		  		}
+		  	}
+		  }	 
+	//流量车型 纵向百分比
+	  for (var i=0;i<tdList1.length;i++) {
+		  	var num_s = 0;
+		  	for(var j=0;j<trList1.length-2;j++){
+		  		
+		  		num_s += parseFloat(trList1.eq(j).find("td").eq(i).text());
+		  		
+		  		if(j == trList1.length-3) {
+		  			var num4_bh = ((num_s/num_p)*100).toFixed(2)+'%';
+		  			
+		  			trList1.eq(j+2).find("td").eq(i).text(num4_bh);
+		  		
+		  		}
+		  	}
+		  }	  
+		
+
+		
+   
+		
+		  //流量户籍 横向合计
+		var trList5 = $("#customers_ji tbody").children("tr");
+		var tdList5 = $("#customers_ji tbody").children("tr").children("td");
+
+			for (var i=0;i<trList5.length-1;i++) {
+		  	var num4 = 0;
+		  	var nums4 = trList5.eq(i).find("td");	
+		  	for(var j=2;j<nums4.length-2;j++){
+		  		// console.log(nums4.eq(j))
+		  		num4 += parseFloat(nums4.eq(j).text());
+		  		// console.log(num4);
+		  		if(j == nums4.length-3) {
+
+		  			nums4.eq(j+1).text(num4)
+		  			
+		  		}
+	  	}
+	  } 
+
+	  	//流量户籍 纵向和
+	 for (var i=2;i<nums4.length-1;i++) {
+		  	var num_h = 0;
+		  	for(var j=0;j<trList5.length-2;j++){
+		  		
+		  		num_h += parseFloat(trList5.eq(j).find("td").eq(i).text());
+		  		 // console.info(trList5.eq(j+1).find("td").eq(i-1))
+		  		
+		  		if(j == trList5.length-3) {
+		  			trList5.eq(j+1).find("td").eq(i).text(num_h);
+		  			
+		  		}
+		  	}
+		  }	 
+    	
+		  //流量户籍 横向百分比
+	 for (var i=0;i<trList5.length-1;i++) {
+		  	var num2 = 0;
+		  	var nums1 = trList5.eq(i).find("td");	
+		  	for(var j=2;j<nums1.length-1;j++){
+		  
+		  		num2 += parseFloat(nums1.eq(j).text());
+		  		// console.log(num2);
+		  		if(j == nums1.length-3) {
+		  			// console.log(num2)
+		  			var num4_bh1 = ((num2/num_h)*100).toFixed(2)+'%';
+		  			nums1.eq(j+2).text(num4_bh1);
+		  			
+		  		}
+		  	}
+		  }	 
+
+		//流量户籍  纵向百分比
+	  for (var i=2;i<tdList5.length;i++) {
+		  	var num_s = 0;
+		  	for(var j=0;j<trList5.length-2;j++){
+		  		
+		  		num_s += parseFloat(trList5.eq(j).find("td").eq(i).text());
+		  		
+		  		if(j == trList5.length-3) {
+		  			var num4_bh = ((num_s/num_h)*100).toFixed(2)+'%';
+		  			
+		  			trList5.eq(j+2).find("td").eq(i).text(num4_bh);
+		  		
+		  		}
+		  	}
+		  }  
+		
+		
+		 
+
+        
+	</script>
+</body>
+</html>

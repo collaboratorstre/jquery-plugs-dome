@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页暑期安保</title>
+	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/css.css">
+	<link rel="stylesheet" href="./css/summer_security.css">
+
+</head>
+<body>
+
+	<div class="all_page">
+		<div id="baidu_map"></div>
+		<div class="top_title">
+			<div class="app-area-box">
+				        
+				        <div class="app-con-box">
+						     <div class="logo">
+		  						<div style='width:30%' id='clock'></div>
+		  						<div style='width:40%'>河北省高速交警总队大数据分析研判平台</div>
+		  						<div style='width:30%'></div>
+							</div>
+				     	</div>
+				     </div>
+		</div>
+		<div class="left_top">
+			
+			<div class="wet_fact">
+		<div class="qie_title">
+			<div id="qie_wet" class="btnDefault1">天气</div>
+			<div id="qie_fact" class="btnChecked1">概况</div>
+		</div>
+		<div id="wet_content">
+		    <div class="app-area-box" style="display: block;">
+		
+			<div class="summer-weathe">
+				<div class="summer-weathe-box">
+					<div class="summer-weathe-state">
+						<div><img id="beijingWeatherImg" src="./images/board/Clear.png" /></div>
+						<div>
+							<div id="beijingWeather">
+								晴
+							</div>
+						</div>
+					</div>
+					<div class="summer-weathe-city">北京</div>
+				</div>
+				<div class="summer-weathe-box">
+					<div class="summer-weathe-state">
+						<div><img id="tianjinWeather" src="./images/board/Clear.png" /></div>
+						<div>
+							<div  id="tianjinWeather">
+								晴
+							</div>
+						</div>
+					</div>
+					<div class="summer-weathe-city">天津</div>
+				</div>
+				<div class="summer-weathe-box">
+					<div class="summer-weathe-state">
+						<div><img id="xiangheWeatherImg" src="./images/board/Clear.png" /></div>
+						<div>
+							<div id="xiangheWeather">
+								晴
+							</div>
+						</div>
+					</div>
+					<div class="summer-weathe-city">香河</div>
+				</div>
+				<div class="summer-weathe-box">
+					<div class="summer-weathe-state">
+						<div><img id="tangshanWeatherImg" src="./images/board/Clear.png" /></div>
+						<div>
+							<div id="tangshanWeather">
+								
+							</div>
+						</div>
+					</div>
+					<div class="summer-weathe-city">唐山</div>
+				</div>
+				<div class="summer-weathe-box">
+					<div class="summer-weathe-state">
+						<div><img id="qinhuangdaoWeatherImg" src="./images/board/Clear.png" /></div>
+						<div>
+							<div id="qinhuangdaoWeather">
+								
+							</div>
+						</div>
+					</div>
+					<div class="summer-weathe-city">秦皇岛</div>
+				</div>
+				<div class="summer-weathe-box">
+					
+				</div>
+			</div>
+			
+			<div class="summer-weathe-inner">
+				<ul>
+					<li style="display: block;">
+						<div>
+							
+						</div>
+						</li>
+					<li style="display: none;">
+						<div>
+							河北省高管  十多个发送到收到十大歌手
+
+高速大概收到公司的公司的广东省广东省威锋网事故的时代广东省广东省公司的广东省广东省广东省个
+						</div>
+					</li>
+					<li style="display: none;">
+						<div>
+							河北省高管  十多个发送到收到十大歌手
+
+高速大概收到公司的公司的广东省广东省威锋网事故的时代广东省广东省公司的广东省广东省广东省个
+						</div>
+					</li>
+				</ul>
+				<ul>
+					<li>●</li>
+					<li>●</li>
+					<li>●</li>
+				</ul>
+			</div>
+		</div>
+
+		</div>
+		<div id="fact_content">
+			<div class="congest_shu">
+                  
+
+                      
+			<div class="congestionIndex" style="    margin-top: 36px;">
+				<div class="congestionIndex-box">
+					<div>拥堵指数</div>
+					<div id="wholeProvinceCrowded"></div>
+				</div>
+				
+				
+			</div>
+			
+			<div class="congestionIndex-table">
+					<table>
+						<tr>
+							<td><a id='jhHighWayTd' href="javascript:void(0)" onclick="showHighWay('00001')" style="text-decoration:none;color:white">京哈高速</a></td>
+							<td id='jhHighWay'>1.5</td>
+						</tr>
+						<tr>
+							<td><a id='tjHighWayTd' href="javascript:void(0)" onclick="showHighWay('21300')" style="text-decoration:none;color:white">唐津高速</a></td>
+							<td id='tjHighWay'>1.5</td>
+						</tr>
+						<tr>
+							<td><a id='yhHighWayTd' href="javascript:void(0)" onclick="showHighWay('21100')" style="text-decoration:none;color:white">沿海高速</a></td>
+							<td id='yhHighWay'>1.5</td>
+						</tr>
+					</table>
+			</div>
+	
+                           </div>
+			<div class="congets_pie">
+                                <div class="congest_wen" style="margin-left: 50px;margin-top: 1px;">拥堵</div>
+				<div id="congest_pie" style="width: 100%;height: 100px;"></div>
+				<div class="congest_nums">
+					<div class="con_zd">站点 <span id="con_zd">12</span> 
+
+</div>
+					<div class="con_fwq">服务区 <span id="con_fwq">31</span></div>
+					<div class="con_ld">路段 <span id="con_ld">79</span></div>
+				</div>
+				
+                      </div>
+			<div class="congets_control">
+                               <div class="congest_wen" style="margin-left: 50px;margin-top: 1px;">管制</div>
+                             <div id="congestone"   style="width:100px;height:100px;"></div>
+                               <div class="congest_nums">
+					<div class="con_zd" style="color:#00ff99">站点 <span id="con_zd" style="color:#00ff99">12</span> </div>
+					<div class="con_fwq" style="color:#5228e0">服务区 
+
+<span id="con_fwq" style="color:#5228e0">31</span></div>
+					<div class="con_ld" style="color:#00ff99">路段 <span id="con_ld" style="color:#00ff99">79</span></div>
+				</div>
+                       </div>
+		</div>
+	</div>
+
+		</div>
+		<div class="left_bottom">
+			<div class="high_speed">
+		
+		<div class="name_high">
+			<div id="hight_name">京哈高速</div>
+			<div class="high_nums">卡口数量<span id="high_nums">6</span></div>
+		</div>
+		<div class="search_road">
+			<input type="text" placeholder="卡口名称" style="background: #05054a;border-color:#002986">
+		</div>
+		<div class="search_content">
+			<ul class="search_inner">
+				<li>
+					<div class="name_ser">
+						<div class="name_cons">卢龙服务区-- 出口</div>
+						<div class="ser_status"><img src="./images/nor.png" alt="" style="vertical-align: middle;"></div>
+					</div>
+					<div class="infer_dir">
+						固定测速  京哈高速150km+900 沈阳方向 
+					</div>	
+				</li>
+				<li>
+					<div class="name_ser">
+						<div class="name_cons">迁安服务区-- 出口</div>
+						<div class="ser_status"><img src="./images/nor.png" alt="" style="vertical-align: middle;"></div>
+					</div>	
+					<div class="infer_dir">
+						固定测速  京哈高速150km+900 沈阳方向 
+					</div>	
+				</li>
+				<li>
+					<div class="name_ser">
+						<div class="name_cons">京哈高速分流点卡点</div>
+						<div class="ser_status"><img src="./images/nor.png" alt="" style="vertical-align: middle;"></div>
+					</div>
+					<div class="infer_dir">
+						固定测速  京哈高速150km+900 沈阳方向 
+					</div>	
+				</li>
+				<li>
+					<div class="name_ser">
+						<div class="name_cons">北戴河开放式卡口</div>
+						<div class="ser_status"><img src="./images/guz.png" alt="" style="vertical-align: middle;"></div>
+					</div>
+					<div class="infer_dir">
+						固定测速  京哈高速150km+900 沈阳方向 
+					</div>	
+				</li>
+				<li>
+					<div class="name_ser">
+						<div class="name_cons">卢龙服务区-- 出口</div>
+						<div class="ser_status"><img src="./images/nono.png" alt="" style="vertical-align: middle;"></div>
+					</div>	
+					<div class="infer_dir">
+						固定测速  京哈高速150km+900 沈阳方向 
+					</div>	
+				</li>
+				<li>
+					<div class="name_ser">
+						<div class="name_cons">京哈高速分流点卡点</div>
+						<div class="ser_status"><img src="./images/nono.png" alt="" style="vertical-align: middle;"></div>
+					</div>
+					<div class="infer_dir">
+						固定测速  京哈高速150km+900 沈阳方向 
+					</div>	
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="serial_number">
+		<div class="number_top">
+			<div class="out_page">
+				<< 返回列表
+			</div>
+			<div class="number_num">
+				编号： <span id="serial_cont">3927673</span>
+			</div>
+		</div>
+		<div class="road_cont">
+				        <div class="name_ser">
+							<div class="name_cons">秦皇岛收费站-- 出口</div>
+							<div class="ser_status"><img src="./images/nor.png" alt="" style="vertical-align: middle;"></div>
+					</div>	
+					<div class="infer_dir">固定测速  京哈高速150km+900 秦皇岛大队管辖</div>	
+							
+		</div>
+		<div class="video_cont">
+			<img src="./images/chesu.png" alt="">
+		</div>
+	</div>
+		</div>
+		<div class="center_top">
+			<div class="out_inner">
+				<ul class="legends">
+					<li>
+						<span class="len_tu"></span>
+						<span> >400 </span>
+					</li>
+					<li>
+						<span class="len_tu"></span>
+						<span> 300-400 </span>
+					</li>
+					<li>
+						<span class="len_tu"></span>
+						<span> 200-300 </span>
+					</li>
+					<li>
+						<span class="len_tu"></span>
+						<span> < 200 </span>
+					</li>
+					<li>
+						<span class="len_tu"></span>
+						<span>无流量</span>
+					</li>
+				</ul>
+				<div class="beijing_dir">
+					北京方向
+				</div>
+				<div class="shenyang_dir">
+					沈阳方法
+				</div>
+				<div id="yinyue" style="height: 50px;width: 800px">
+				
+			   </div>
+			   <div id="yinyue1" style="height: 50px;width: 800px">
+				
+			   </div>
+			</div>
+		</div>
+		<div class="right_car">
+			<div class="app-area-box" style="display: block;">
+		
+				<div class="app-area-box-title">
+					<div>通行车辆<span>（辆）</span><span></span><span></span><span>环暑</span><span>环秦</span><span>京哈</span><span>沿海</span></div>
+				</div>
+				
+				<div class="app-con-box">
+					
+					
+						<div id="CurrentVehicle-jh">
+						
+						</div>
+						
+					
+				</div>
+			</div>
+		</div>
+		<div class="right_task">
+			<div class="app-area-box" style="display: block;">
+
+				<div class="app-area-box-title">
+					<div>警卫任务<span>（项）</span></div>
+				</div>
+
+				<div class="app-con-box">
+
+					<div id="GuardTask2">
+
+					</div>
+
+					<div id="GuardTask1">
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="right_duty">
+				<div class="app-area-box" style="display: block;">
+		
+					<div class="app-area-box-title">
+						<div>勤务安排<span>（人）</span></div>
+					</div>
+					
+					<div class="app-con-box">
+						<div id="pavement-service">
+							
+						</div>
+						<div id="checkpoint-service">
+							
+						</div>
+					</div>
+				</div>
+		</div>
+		<div class="right_job">
+			<div class="app-area-box" style="display: block;">
+		
+			<div class="app-area-box-title">
+				<div>安保工作</div>
+			</div>
+			
+			<div class="app-con-box">
+					<div class="SecurityCheck">
+						<div class="SecurityCheck-title">
+							<ul>
+								<li>检查战果</li>
+								<li>检查 车辆</li>
+								<li>检查人员</li>
+							</ul>
+						</div>
+						<table>
+							<tr>
+								<td>总量</td>
+								<td>12000</td>
+								<td>12000</td>
+								<td>12000</td>
+							</tr>
+							<tr>
+								<td>检查站一</td>
+								<td>12000</td>
+								<td>12000</td>
+								<td>12000</td>
+							</tr>
+							<tr>
+								<td>检查站一</td>
+								<td>12000</td>
+								<td>12000</td>
+								<td>12000</td>
+							</tr>
+						</table>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="right_traffic">
+			<div class="app-area-box" style="display: block;">
+		
+				<div class="app-area-box-title">
+					<div>交通事故<span>（起）</span></div>
+				</div>
+				
+				<div class="app-con-box">
+					<div class="TrafficAccident">
+						<ul>
+							<li>今日</li>
+							<li>累计</li>
+						</ul>
+					</div>
+					<div id="TrafficAccident">
+						
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/weather.js"></script>
+<script type="text/javascript" src="./js/echarts_3x.js"></script>
+<script type="text/javascript" src="./js/summer_security.js"></script>
+
+ 
+
+</body>
+</html>

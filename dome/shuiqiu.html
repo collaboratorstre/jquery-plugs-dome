@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>水球图</title>
+    <link rel="stylesheet" type="text/css" href="./css/shuiqiu.css">
+    
+</head>
+<body>
+	
+	<div class="datas_total">
+         <div class="flow_nums">
+			<div class="throght_shu">
+				<div class="throght_wen">通行流量统计</div>
+				<div id="throght_nums">719</div>
+			</div>
+			<div id="flow_up"></div>
+			<div id="flow_down"></div>
+         </div>
+          <div class="danger_nums">
+			<div class="throght_shu">
+				<div class="danger_wen">两个一危量</div>
+				<div id="danger_nums">814</div>
+			</div>
+			<div id="danger_up"></div>
+			<div id="danger_down"></div>
+         </div>
+	</div>
+	
+	<div class="wet_fact">
+		<div class="qie_title">
+			<div id="qie_wet" class="btnDefault1">天气</div>
+			<div id="qie_fact" class="btnChecked1">概况</div>
+		</div>
+		<div id="wet_content">
+		    天气预报
+		</div>
+		<div id="fact_content">
+			<div class="congest_shu">
+
+			</div>
+			<div class="congets_pie">
+				<div class="congest_wen" style="margin-left: 52px;margin-top: 10px;">拥堵</div>
+				<div id="congest_pie" style="width: 100%;height: 100px;"></div>
+				<div class="congest_nums">
+					<div class="con_zd">站点 <span id="con_zd">12</span> </div>
+					<div class="con_fwq">服务区 <span id="con_fwq">31</span></div>
+					<div class="con_ld">路段 <span id="con_ld">79</span></div>
+				</div>
+			</div>
+			<div class="congets_control">333</div>
+		</div>
+	</div>
+
+	<div class="out_inner">
+		<ul class="legends">
+			<li>
+				<span class="len_tu"></span>
+				<span> >400 </span>
+			</li>
+			<li>
+				<span class="len_tu"></span>
+				<span> 300-400 </span>
+			</li>
+			<li>
+				<span class="len_tu"></span>
+				<span> 200-300 </span>
+			</li>
+			<li>
+				<span class="len_tu"></span>
+				<span> < 200 </span>
+			</li>
+			<li>
+				<span class="len_tu"></span>
+				<span>无流量</span>
+			</li>
+		</ul>
+		<div class="beijing_dir">
+			北京方向
+		</div>
+		<div class="shenyang_dir">
+			沈阳方法
+		</div>
+		<div id="yinyue" style="height: 50px;width: 800px">
+		
+	   </div>
+	   <div id="yinyue1" style="height: 50px;width: 800px">
+		
+	   </div>
+	</div>
+
+
+	<div class="high_speed">
+		
+		<div class="name_high">
+			<div id="hight_name">京哈高速</div>
+			<div class="high_nums">卡口数量<span id="high_nums">6</span></div>
+		</div>
+		<div class="search_road">
+			<input type="text" placeholder="卡口名称" style="background: #05054a;border-color:#002986">
+		</div>
+		<div class="search_content">
+			<ul class="search_inner">
+				<li>
+					<div class="name_ser">
+						<div class="name_cons">卢龙服务区-- 出口</div>
+						<div class="ser_status"><img src="./img/nor.png" alt="" style="vertical-align: middle;"></div>
+					</div>
+					<div class="infer_dir">
+						固定测速  京哈高速150km+900 沈阳方向 
+					</div>	
+				</li>
+				<li>
+					<div class="name_ser">
+						<div class="name_cons">迁安服务区-- 出口</div>
+						<div class="ser_status"><img src="./img/nor.png" alt="" style="vertical-align: middle;"></div>
+					</div>	
+					<div class="infer_dir">
+						固定测速  京哈高速150km+900 沈阳方向 
+					</div>	
+				</li>
+				<li>
+					<div class="name_ser">
+						<div class="name_cons">京哈高速分流点卡点</div>
+						<div class="ser_status"><img src="./img/nor.png" alt="" style="vertical-align: middle;"></div>
+					</div>
+					<div class="infer_dir">
+						固定测速  京哈高速150km+900 沈阳方向 
+					</div>	
+				</li>
+				<li>
+					<div class="name_ser">
+						<div class="name_cons">北戴河开放式卡口</div>
+						<div class="ser_status"><img src="./img/guz.png" alt="" style="vertical-align: middle;"></div>
+					</div>
+					<div class="infer_dir">
+						固定测速  京哈高速150km+900 沈阳方向 
+					</div>	
+				</li>
+				<li>
+					<div class="name_ser">
+						<div class="name_cons">卢龙服务区-- 出口</div>
+						<div class="ser_status"><img src="./img/nono.png" alt="" style="vertical-align: middle;"></div>
+					</div>	
+					<div class="infer_dir">
+						固定测速  京哈高速150km+900 沈阳方向 
+					</div>	
+				</li>
+				<li>
+					<div class="name_ser">
+						<div class="name_cons">京哈高速分流点卡点</div>
+						<div class="ser_status"><img src="./img/nono.png" alt="" style="vertical-align: middle;"></div>
+					</div>
+					<div class="infer_dir">
+						固定测速  京哈高速150km+900 沈阳方向 
+					</div>	
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+
+	<div class="serial_number">
+		<div class="number_top">
+			<div class="out_page">
+				<< 返回列表
+			</div>
+			<div class="number_num">
+				编号： <span id="serial_cont">3927673</span>
+			</div>
+		</div>
+		<div class="road_cont">
+				        <div class="name_ser">
+							<div class="name_cons">秦皇岛收费站-- 出口</div>
+							<div class="ser_status"><img src="./img/nor.png" alt="" style="vertical-align: middle;"></div>
+						</div>	
+						<div class="infer_dir">
+							固定测速  京哈高速150km+900 秦皇岛大队管辖 
+						</div>	
+		</div>
+		<div class="video_cont">
+			<img src="./img/chesu.png" alt="">
+		</div>
+	</div>
+
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/echarts_3x.js"></script>
+    <script type="text/javascript" src="./js/echarts-liquidfill.js"></script>
+
+    
+	<script type="text/javascript">
+
+	   var chart7 = echarts.init(document.getElementById('congest_pie'))
+		var	option7 = {
+			     color:['#00ebc2','#5016d7','#ffc02d'],
+			    tooltip : {
+			        show:false
+			    },
+			    legend: {
+			        show:false
+			    },
+			    series : [
+			        {
+			            name: '访问来源',
+			            type: 'pie',
+			            radius : '55%',
+			            center: ['70%', '50%'],
+			            data:[
+			              
+			                {value:1, name:'联盟广告'},
+			                {value:1, name:'视频广告'},
+			                {value:1, name:'搜索引擎'}
+			            ],
+			            label:{
+			                 normal: {
+			                    show: false
+			                }
+			            },
+			             labelLine: {
+			                normal: {
+			                    show: false
+			                }
+			            },
+			            itemStyle: {
+			                emphasis: {
+			                    shadowBlur: 10,
+			                    shadowOffsetX: 0,
+			                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+			                }
+			            }
+			        }
+			    ]
+			};
+			chart7.setOption(option7);
+
+			// 列表
+			$(".serial_number").hide();
+			$(".search_inner").on("click","li",function(){
+				$(".serial_number").show();
+				$(".high_speed").hide();
+			})
+			$(".out_page").click(function(){
+				$(".serial_number").hide();
+				$(".high_speed").show();
+			})
+
+			//类似音乐
+			
+			var chart5 = echarts.init(document.getElementById('yinyue'))
+ 			var option5 = {
+				  grid: {
+				        left: '10%',
+				        right: '10%',
+				        bottom: '0%',
+				        top: '0%',
+				        containLabel: true
+				    },
+				    
+				    
+				    
+				tooltip: {
+			        trigger: 'item',
+			        formatter: function(data) {
+			        	console.log(data);
+			            return data.seriesName +'上道：'+ data.value+'下道：'+ data.value; //提示框显示信息
+			        },
+			        triggerOn: 'mousemove'
+			    },
+			    xAxis : [
+			        {
+			            type : 'value',
+			            axisLabel: {
+				            show: false,
+				            textStyle: {color: '#fff' },
+				            rotate:-90,
+			            },
+			            axisTick: {
+					        show: false
+					    },
+			            splitLine: {show:false},
+			            
+			            axisLine:{
+			            	show:false,
+			            	lineStyle: {
+			                	color: 'rgba(83,155,253,0.2)'
+				            }
+			            }
+			        }
+			    ],
+			    yAxis : [
+			        {
+			            show:false,
+			            type : 'category',
+			            splitLine: {
+			            	show:false,
+			            },
+			            axisTick: {
+					        show: false
+					    },
+			            data :['北京方向'],
+			            axisLabel: {
+				            show: true,
+				            textStyle: {color: '#fff' }
+			            },
+			            axisLine:{
+			            	show:false,
+			            	lineStyle: {
+			                	color: 'rgba(83,155,253,0.2)'
+				            }
+			            }
+			            
+			        }
+			    ],
+			    series : [
+			        
+			        {
+			            name:'香河',
+			            type:'bar',
+			            stack: '总量',
+			            barWidth:10,
+			            barGap:0,
+			            itemStyle : { 
+			            	normal: {
+			                    color:'#0d0d65'
+			            			 }
+			            },
+			            label: {
+			                normal: {
+			                    show: false,
+			                    position: 'bottom',
+			                    formatter:'{a}',
+			                    color:'#fff'
+			                }
+			            },
+			            data:[900,]
+			        },
+			        {
+			            name:'玉田',
+			            type:'bar',
+			            stack: '总量',
+			            barWidth:20,
+			            barGap:0,
+			            itemStyle : { 
+			            	normal: {
+			                    color:'#f6ae2f'
+			            			 }
+			            },
+			            label: {
+			                normal: {
+			                    show: false,
+			                    position: 'bottom',
+			                    formatter:'{a}',
+			                    color:'#fff'
+			                }
+			            },
+			            data:[900,]
+			        },
+			        {
+			            name:'丰润',
+			            type:'bar',
+			            stack: '总量',
+			            barWidth:20,
+			            barGap:0,
+			            itemStyle : { 
+			            	normal: {
+			                    color:'#f08109'
+			            			 }
+			            },
+			            label: {
+			                normal: {
+			                    show: false,
+			                    position: 'bottom',
+			                    formatter:'{a}',
+			                    color:'#fff'
+			                }
+			            },
+			            data:[900,]
+			        },
+			        {
+			            name:'榛子镇',
+			            type:'bar',
+			            stack: '总量',
+			            barWidth:20,
+			            barGap:0,
+			            itemStyle : { 
+			            	normal: {
+			                    color:'#cc3333'
+			            			 }
+			            },
+			            label: {
+			                normal: {
+			                    show: false,
+			                    position: 'bottom',
+			                    formatter:'{a}',
+			                    color:'#fff'
+			                }
+			            },
+			            data:[900,]
+			        },
+			        {
+			            name:'迁安',
+			            type:'bar',
+			            stack: '总量',
+			            barWidth:20,
+			            barGap:0,
+			            itemStyle : { 
+			            	normal: {
+			                    color:'#33cc66'
+			            			 }
+			            },
+			            label: {
+			                normal: {
+			                    show: false,
+			                    position: 'bottom',
+			                    formatter:'{a}',
+			                    color:'#fff'
+			                }
+			            },
+			            data:[900,]
+			        },
+			        {
+			            name:'抚宁',
+			            type:'bar',
+			            stack: '总量',
+			            barWidth:20,
+			            barGap:0,
+			            itemStyle : { 
+			            	normal: {
+			                    color:'#f08109'
+			            			 }
+			            },
+			            label: {
+			                normal: {
+			                    show: false,
+			                    position: 'bottom',
+			                    formatter:'{a}',
+			                    color:'#fff'
+			                }
+			            },
+			            data:[900,]
+			        },
+			        {
+			            name:'承秦京哈互通',
+			            type:'bar',
+			            stack: '总量',
+			            barWidth:20,
+			            barGap:0,
+			            itemStyle : { 
+			            	normal: {
+			                    color:'#33cc66'
+			            			 }
+			            },
+			            label: {
+			                normal: {
+			                    show: false,
+			                    position: 'bottom',
+			                    formatter:'{a}',
+			                    color:'#fff'
+			                }
+			            },
+			            data:[900,]
+			        },
+			        {
+			            name:'山海关',
+			            type:'bar',
+			            stack: '总量',
+			            barWidth:20,
+			            barGap:0,
+			            itemStyle : { 
+			            	normal: {
+			            		show:false,
+			                    color:'#f6ae2f',
+			                    
+			            			 }
+			            	
+			            },
+			            label: {
+			                normal: {
+			                    show: false,
+			                    position: 'bottom',
+			                    formatter:'{a}',
+			                    color:'#fff'
+			                }
+			            },
+			            data:[900,]
+			        },
+			    ]
+			};
+                    
+			chart5.setOption(option5);
+
+			var chart6 = echarts.init(document.getElementById('yinyue1'))
+ 			var option6 = {
+				  grid: {
+				        left: '10%',
+				        right: '10%',
+				        bottom: '0%',
+				        top: '0%',
+				        containLabel: true
+				    },
+				    
+				    
+				    
+				tooltip: {
+			        trigger: 'item',
+			        formatter: function(data) {
+			            return data.seriesName +'道：'+ data.value+'下道：'+ data.value; //提示框显示信息
+			        },
+			        triggerOn: 'mousemove'
+			    },
+			    xAxis : [
+			        {
+			            type : 'value',
+			            axisLabel: {
+				            show: false,
+				            textStyle: {color: '#fff' },
+				            rotate:-90,
+			            },
+			            axisTick: {
+					        show: false
+					    },
+			            splitLine: {show:false},
+			            
+			            axisLine:{
+			            	show:false,
+			            	lineStyle: {
+			                	color: 'rgba(83,155,253,0.2)'
+				            }
+			            }
+			        }
+			    ],
+			    yAxis : [
+			        {
+			            show:false,
+			            type : 'category',
+			            splitLine: {
+			            	show:false,
+			            },
+			            axisTick: {
+					        show: false
+					    },
+			            data :['北京方向'],
+			            axisLabel: {
+				            show: true,
+				            textStyle: {color: '#fff' }
+			            },
+			            axisLine:{
+			            	show:false,
+			            	lineStyle: {
+			                	color: 'rgba(83,155,253,0.2)'
+				            }
+			            }
+			            
+			        }
+			    ],
+			    series : [
+			        
+			        {
+			            name:'香河',
+			            type:'bar',
+			            stack: '总量',
+			            barWidth:10,
+			            barGap:0,
+			            itemStyle : { 
+			            	normal: {
+			                    color:'#0d0d65'
+			            			 }
+			            },
+			            label: {
+			                normal: {
+			                    show: true,
+			                    position: 'bottom',
+			                    formatter:'{a}',
+			                    color:'#fff'
+			                }
+			            },
+			            data:[900,]
+			        },
+			        {
+			            name:'玉田',
+			            type:'bar',
+			            stack: '总量',
+			            barWidth:20,
+			            barGap:0,
+			            itemStyle : { 
+			            	normal: {
+			                    color:'#f6ae2f'
+			            			 }
+			            },
+			            label: {
+			                normal: {
+			                    show: true,
+			                    position: 'bottom',
+			                    formatter:'{a}',
+			                    color:'#fff'
+			                }
+			            },
+			            data:[900,]
+			        },
+			        {
+			            name:'丰润',
+			            type:'bar',
+			            stack: '总量',
+			            barWidth:20,
+			            barGap:0,
+			            itemStyle : { 
+			            	normal: {
+			                    color:'#f08109'
+			            			 }
+			            },
+			            label: {
+			                normal: {
+			                    show: true,
+			                    position: 'bottom',
+			                    formatter:'{a}',
+			                    color:'#fff'
+			                }
+			            },
+			            data:[900,]
+			        },
+			        {
+			            name:'榛子镇',
+			            type:'bar',
+			            stack: '总量',
+			            barWidth:20,
+			            barGap:0,
+			            itemStyle : { 
+			            	normal: {
+			                    color:'#cc3333'
+			            			 }
+			            },
+			            label: {
+			                normal: {
+			                    show: true,
+			                    position: 'bottom',
+			                    formatter:'{a}',
+			                    color:'#fff'
+			                }
+			            },
+			            data:[900,]
+			        },
+			        {
+			            name:'迁安',
+			            type:'bar',
+			            stack: '总量',
+			            barWidth:20,
+			            barGap:0,
+			            itemStyle : { 
+			            	normal: {
+			                    color:'#33cc66'
+			            			 }
+			            },
+			            label: {
+			                normal: {
+			                    show: true,
+			                    position: 'bottom',
+			                    formatter:'{a}',
+			                    color:'#fff'
+			                }
+			            },
+			            data:[900,]
+			        },
+			        {
+			            name:'抚宁',
+			            type:'bar',
+			            stack: '总量',
+			            barWidth:20,
+			            barGap:0,
+			            itemStyle : { 
+			            	normal: {
+			                    color:'#f08109'
+			            			 }
+			            },
+			            label: {
+			                normal: {
+			                    show: true,
+			                    position: 'bottom',
+			                    formatter:'{a}',
+			                    color:'#fff'
+			                }
+			            },
+			            data:[900,]
+			        },
+			        {
+			            name:'承秦京哈互通',
+			            type:'bar',
+			            stack: '总量',
+			            barWidth:20,
+			            barGap:0,
+			            itemStyle : { 
+			            	normal: {
+			                    color:'#33cc66'
+			            			 }
+			            },
+			            label: {
+			                normal: {
+			                    show: true,
+			                    position: 'bottom',
+			                    formatter:'{a}',
+			                    color:'#fff'
+			                }
+			            },
+			            data:[900,]
+			        },
+			        {
+			            name:'山海关',
+			            type:'bar',
+			            stack: '总量',
+			            barWidth:20,
+			            barGap:0,
+			            itemStyle : { 
+			            	normal: {
+			                    color:'#f6ae2f',
+			                    
+			            			 }
+			            	
+			            },
+			            label: {
+			                normal: {
+			                    show: true,
+			                    position: 'bottom',
+			                    formatter:'{a}',
+			                    color:'#fff'
+			                }
+			            },
+			            data:[900,]
+			        },
+			    ]
+			};
+                    
+			chart6.setOption(option6);
+			
+
+		
+
+			//类似音乐
+
+			// 天气与概括切换
+		    $("#fact_content").hide();
+			$("#wet_content").show();
+			$("#qie_wet").click(function(){		  
+			     $("#qie_wet").removeClass('btnChecked1').addClass('btnDefault1') ;
+			    $("#qie_fact").removeClass('btnDefault1').addClass('btnChecked1') ;
+			    $("#fact_content").hide();
+			    $("#wet_content").show();
+			})
+			$("#qie_fact").click(function(){
+			     $("#qie_wet").removeClass('btnDefault1').addClass('btnChecked1') ;
+			    $("#qie_fact").removeClass('btnChecked1').addClass('btnDefault1') ;
+			    $("#fact_content").show();
+			    $("#wet_content").hide();
+			})
+			// 天气与概括切换
+
+		var chart = echarts.init(document.getElementById('flow_up'));
+		var option = {
+		    series: [{
+		        type: 'liquidFill',
+		        data: [0.5],
+		        backgroundStyle: {
+		            borderWidth: 5,
+		            borderColor: '#00003e',
+		            color: '#00002b'
+		        },
+		         radius: '80%',
+		          itemStyle: {
+			            shadowBlur: 0
+			        },
+		         outline: {
+		            borderDistance: 3,
+		            itemStyle: {
+		                borderWidth: 3,
+		                shadowBlur: 20,
+		                 borderColor: '#0f0e4a',
+		                 shadowColor: '#0f0e4a'
+		            }
+		          
+		        },
+		       
+		         label: {
+		            normal: {
+		                
+		                formatter: function() {
+		                    return '318\n上道';
+		                },
+		                textStyle: {
+		                    fontSize: 15,
+		                    color: '#ffd500',
+		                    insideColor: 'white'
+		                }
+		            }
+		        }
+		       
+		    }]
+		};
+		chart.setOption(option);
+
+		var chart1 = echarts.init(document.getElementById('flow_down'));
+		var option1 = {
+		    series: [{
+		        type: 'liquidFill',
+		         data: [0.5],
+		          backgroundStyle: {
+		            borderWidth: 5,
+		            borderColor: '#00003e',
+		            color: '#00002b'
+		        },
+		         radius: '70%',
+		          itemStyle: {
+			            shadowBlur: 0
+			        },
+		         outline: {
+		            borderDistance: 3,
+		            itemStyle: {
+		                borderWidth: 3,
+		                shadowBlur: 20,
+		                 borderColor: '#0f0e4a',
+		                 shadowColor: '#0f0e4a'
+		            }
+		          
+		        },
+		         label: {
+		            normal: {
+		                
+		                formatter: function() {
+		                    return '400\n下道';
+		                },
+		                textStyle: {
+		                    fontSize: 15,
+		                    color: '#ffd500',
+		                     insideColor: 'white'
+		                }
+		            }
+		        }
+
+		    }]
+		};
+		chart1.setOption(option1);
+
+		var chart2 = echarts.init(document.getElementById('danger_up'));
+		var option2 = {
+		    series: [{
+		        type: 'liquidFill',
+		         data: [0.5],
+		          backgroundStyle: {
+		            borderWidth: 5,
+		            borderColor: '#00003e',
+		            color: '#00002b'
+		        },
+		         radius: '70%',
+		          itemStyle: {
+			            shadowBlur: 0
+			        },
+		         outline: {
+		            borderDistance: 3,
+		            itemStyle: {
+		                borderWidth: 3,
+		                shadowBlur: 20,
+		                 borderColor: '#0f0e4a',
+		                 shadowColor: '#0f0e4a'
+		            }
+		          
+		        },
+		         label: {
+		            normal: {
+		                
+		                formatter: function() {
+		                    return '464\n上道';
+		                },
+		                textStyle: {
+		                    fontSize: 15,
+		                    color: '#ffd500',
+		                    insideColor: 'white'
+		                }
+		            }
+		        }
+
+		    }]
+		};
+		chart2.setOption(option2);
+
+		var chart3 = echarts.init(document.getElementById('danger_down'));
+		var option3 = {
+		    series: [{
+		        type: 'liquidFill',
+		         data: [0.5],
+		         backgroundStyle: {
+		            borderWidth: 5,
+		            borderColor: '#00003e',
+		            color: '#00002b'
+		        },
+		         radius: '70%',
+		          itemStyle: {
+			            shadowBlur: 0
+			        },
+		         outline: {
+		            borderDistance: 3,
+		            itemStyle: {
+		                borderWidth: 3,
+		                shadowBlur: 20,
+		                 borderColor: '#0f0e4a',
+		                 shadowColor: '#0f0e4a'
+		            }
+		          
+		        },
+		         label: {
+		            normal: {
+		                
+		                formatter: function() {
+		                    return '377\n下道';
+		                },
+		                textStyle: {
+		                    fontSize: 15,
+		                    color: '#ffd500',
+		                    insideColor: 'white'
+		                }
+		            }
+		        }
+
+		    }]
+		};
+		chart3.setOption(option3);
+	</script>
+</body>
+</html>
