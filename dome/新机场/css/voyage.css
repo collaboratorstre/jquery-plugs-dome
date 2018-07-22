@@ -1,0 +1,191 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video,option,select {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+/* line 26, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 30, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 10, ../sass/screen.scss */
+body {
+  background: #00041f;
+  overflow: auto;
+  opacity: 1.0;
+}
+body,html {
+  background: #00041f;
+  opacity: 1.0;
+  width: 100%;
+  height: 100%;
+
+}
+.body-content{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Microsoft YaHei" !important;
+}
+.page-head-nav {
+    margin: 5px;
+    height: 10%;
+    background-color: #000c60;
+    border: 1px solid #0e538a;
+}
+.layout-column {
+    height: 88%;
+    width: 99.5%;
+    margin: 5px;
+}
+.top_con, .bot_con {
+    width: 100%;
+    height: 50%;
+    margin-bottom: 5px;
+}
+.top_con>div, .bot_con>div {
+    height: 100%;
+    width: 34%;
+    background-color: #000c60;
+    border: 1px solid #0e538a;
+    margin-right: 3px;
+}
+.top_con .tor_left{
+  width: 66%;
+}
+.bot_con>div{
+  height: 98%;
+  width: 50%;
+}
+.top_con .title_gra{
+    width: 95%;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 2px solid #697eb5;
+    margin: auto;
+    margin-top: 8px;
+    padding-left: 2px;
+}
+.bot_con .bot_left{
+  width: 60%;
+  height: 100%;
+  float: left;
+ 
+}
+.bot_con .bot_right{
+  width: 40%;
+  height: 100%;
+  float: left;
+
+}
+.bot_con .title_bot{
+    width: 95%;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 2px solid #697eb5;
+    margin: auto;
+    margin-top: 8px;
+    padding-left: 2px;
+}
+
+/*bootstrap table样式调整*/
+ #tor_table table{
+    margin-top: 5%;
+    margin-left: 3%;
+ }
+ 
+ #tor_table table td{
+  border:none;
+  color: white;
+ }
+ #tor_table tr td span{
+  color: yellow;
+  font-weight: bold;
+ }
+
+ .port_data table{
+    margin-top: 5%;
+    margin-left: 3%;
+ }
+ .port_data table td{
+  border:none !important;
+  color: white;
+ }
+ .port_data tr td span{
+  color: yellow;
+  font-weight: bold;
+ }
+ #depart_port table{
+   margin-top: 2%;
+    margin-left: 3%;
+ }
+ #depart_port table th{
+  border:none !important;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+ }
+ #depart_port table td{
+   border:none !important;
+  color: white;
+  text-align: center;
+ }
+
+/*bootstrap table样式调整*/

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>航空监测</title>
+	
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/voyage.css">
+    <script type="text/javascript" src="../js/echarts.js"></script>
+</head>
+<body>
+	<div class="body-content">
+		<div class="page-head-nav"></div>
+		<div class="layout-column">
+			<div class="top_con" style="display:flex;flex-direction: row">
+				<div class="tor_left">
+					<div class="title_gra">旅客监测</div>
+					<div class="tor_content" id="tor_direc" style="width: 100%;height: 86%;"></div>
+				</div>
+				<div class="tor_right">
+					<div class="title_gra">影响旅客监测因素</div>
+					<div class="table_content" id="tor_table" style="width: 100%;height: 86%;">
+						<table class="table">
+							  <tr>
+								<td>晚点率</td>
+								<td><span id="lkwdl">30%</span></td>
+								<td>人数</td>
+								<td><span id="lkwdrs">3000</span></td>
+							  </tr>
+							  <tr>
+								<td>正常到港率</td>
+								<td><span id="zcdgl">30%</span></td>
+								<td>人数</td>
+								<td><span id="zcdgrs">3000</span></td>
+							  </tr>
+							   <tr>
+								<td>正常离港率</td>
+								<td><span id="zclgl">30%</span></td>
+								<td>人数</td>
+								<td><span id="zclgrs">3000</span></td>
+							  </tr>
+							  <tr>
+								<td>延误率</td>
+								<td><span id="lkywl">30%</span></td>
+								<td>人数</td>
+								<td><span id="lkywrs">3000</span></td>
+							  </tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="bot_con" style="display:flex;flex-direction: row">
+				<div>
+					<div class="bot_left">
+						<div class="title_bot" style="margin-right: 0px;">到港监测</div>
+						<div class="port_content" id="arriv_port" style="width: 100%;height: 86%;">
+							
+						</div>
+					</div>
+					<div class="bot_right">
+						<div class="title_bot" style="margin-left: 0px;"></div>
+						<div class="port_data" style="width: 100%;height: 86%;">
+							<table class="table" style="border-collapse:separate; border-spacing:0px 15px;">
+							  <tr>
+								<td>晚点到港率</td>
+								<td><span id="hwdgl">30%</span></td>
+							  </tr>
+							  <tr>
+								<td>正常到港率</td>
+								<td><span id="hzcdgl">30%</span></td>
+							  </tr>
+							  <tr>
+								<td>延误到港率</td>
+								<td><span id="hywdgl">30%</span></td>
+							  </tr>
+						    </table>
+						</div>
+					</div>
+				</div>
+				<div>
+				    <!-- <div class="bot_left"> -->
+						<div class="title_bot">离港监测</div>
+						<div class="port_content" id="depart_port" style="width: 98%;height: 86%;overflow: hidden;">
+							<table class="table">
+							   <thead>
+									<tr>
+									  <th>航班公司</th>
+									  <th>班次</th>
+									  <th>飞机型号</th>
+									  <th>离港时间</th>
+									  <th>旅客数量</th>
+									</tr>
+							   </thead>
+							  <tbody id="depart_cont">
+
+							  </tbody>
+						    </table>
+						</div>
+					<!-- </div>
+					<div class="bot_right">
+						
+					</div> -->
+				</div>
+			</div>
+		</div>	
+
+	</div>
+
+
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/voyage.js"></script>
+</body>
+</html>
